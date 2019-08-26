@@ -38,10 +38,10 @@ public class AdresseDTO implements Serializable {
 	private String adresszusatz = null;
 
 	@Nonnull
-	private @NotNull String ort = "";
+	private @NotNull String plz = "";
 
 	@Nonnull
-	private @NotNull String plz = "";
+	private @NotNull String ort = "";
 
 	@Nonnull
 	private @NotEmpty String land = "";
@@ -53,14 +53,14 @@ public class AdresseDTO implements Serializable {
 		@Nonnull String strasse,
 		@Nullable String hausnummer,
 		@Nullable String adresszusatz,
-		@Nonnull String ort,
 		@Nonnull String plz,
+		@Nonnull String ort,
 		@Nonnull String land) {
 		this.strasse = strasse;
 		this.hausnummer = hausnummer;
 		this.adresszusatz = adresszusatz;
-		this.ort = ort;
 		this.plz = plz;
+		this.ort = ort;
 		this.land = land;
 	}
 
@@ -92,21 +92,21 @@ public class AdresseDTO implements Serializable {
 	}
 
 	@Nonnull
-	public String getOrt() {
-		return ort;
-	}
-
-	public void setOrt(@Nonnull String ort) {
-		this.ort = ort;
-	}
-
-	@Nonnull
 	public String getPlz() {
 		return plz;
 	}
 
 	public void setPlz(@Nonnull String plz) {
 		this.plz = plz;
+	}
+
+	@Nonnull
+	public String getOrt() {
+		return ort;
+	}
+
+	public void setOrt(@Nonnull String ort) {
+		this.ort = ort;
 	}
 
 	@Nonnull
