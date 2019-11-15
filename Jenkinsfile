@@ -1,4 +1,21 @@
-#!groovy​
+/*
+ * Copyright (C) 2019 DV Bern AG, Switzerland
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as
+ * published by the Free Software Foundation, either version 3 of the
+ * License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Affero General Public License for more details.
+ *
+ * You should have received a copy of the GNU Affero General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ */
+
+@Library('dvbern-ci') _
 
 properties([
 		[$class: 'BuildDiscarderProperty', strategy: [$class: 'LogRotator', numToKeepStr: '10']],
@@ -13,7 +30,7 @@ properties([
 ])
 
 def mvnVersion = "Maven_3.6.1"
-def jdkVersion = "JDK_1.8_221"
+def jdkVersion = "OpenJDK_1.8_222"
 // comma separated list of email addresses of all team members (for notification)
 def emailRecipients = "fabio.heer@dvbern.ch"
 
@@ -48,9 +65,17 @@ node {
 
 		stage('Release') {
 			try {
+				withCredentials([usernamePassword(credentialsId: 'jenkins-github-token', passwordVariable: 'password',
+						usernameVariable: 'username')]) {
+					// some block
 				withMaven(jdk: jdkVersion, maven: mvnVersion) {
-					genericSh "mvn -Pdvbern.oss -B jgitflow:release-start -DreleaseVersion=${params.releaseversion} " +
-							"-DdevelopmentVersion=${params.nextreleaseversion}-SNAPSHOT jgitflow:release-finish"
+						genericSh "mvn -Pdvbern.oss -B jgitflow:release-start " +
+								"-DreleaseVersion=${params.releaseversion} " +
+								"-DdevelopmentVersion=${params.nextreleaseversion}-SNAPSHOT " +
+								"-Dusername=${username} " +
+								"-Dpassword=${password} " +
+								"jgitflow:release-finish"
+					}
 				}
 			} catch (Exception e) {
 				currentBuild.result = "FAILURE"
@@ -59,10 +84,6 @@ node {
 						"(<${BUILD_URL}/console|Job>)")
 				throw e
 			}
-		}
-
-		stage('Trigger Master Build') {
-			build job: "./", wait: false
 		}
 	} else {
 		stage('Checkout') {
@@ -78,29 +99,14 @@ node {
 		currentBuild.displayName = "${branch}-${pomVersion()}-${env.BUILD_NUMBER}"
 
 		stage('Maven build') {
-			//returns a set of git revisions with the name of the committer
-			@NonCPS
-			def commitList = {
-				def changes = ""
-				currentBuild.changeSets.each {set ->
-					set.each {entry ->
-						changes += "${entry.commitId} - ${entry.msg} \n by ${entry.author.fullName}\n"
-					}
-				}
-				return changes
-			}
-
-			def handleFailures = {
+			def handleFailures = {error ->
 				if (branch.startsWith(featureBranchPrefix)) {
 					// feature branche failures should only notify the feature owner
 					step([$class: 'Mailer', notifyEveryUnstableBuild: true, recipients: emailextrecipients([[$class:
 																													 'RequesterRecipientProvider']]), sendToIndividuals: true])
 
 				} else {
-					// notify the team
-					mail(to: emailRecipients,
-							subject: "${env.JOB_NAME} Maven build failed for branch: " + branch,
-							body: "last commits are: " + commitList().toString() + " (<${BUILD_URL}/console|Job>)")
+					dvbErrorHandling.sendMail(emailRecipients, currentBuild, error)
 				}
 			}
 
@@ -115,11 +121,11 @@ node {
 					genericSh 'mvn -U -Pdvbern.oss -Dmaven.test.failure.ignore=true clean ' + verifyOrDeploy()
 				}
 				if (currentBuild.result == "UNSTABLE") {
-					handleFailures()
+					handleFailures("build is unstable")
 				}
 			} catch (Exception e) {
 				currentBuild.result = "FAILURE"
-				handleFailures()
+				handleFailures(e)
 				throw e
 			}
 		}
@@ -127,7 +133,6 @@ node {
 }
 
 def pomVersion() {
-	def pom = readFile 'pom.xml'
-	def project = new XmlSlurper().parseText(pom)
-	return project.version.toString()
+	def pom = readMavenPom file: 'pom.xml'
+	return pom.version
 }

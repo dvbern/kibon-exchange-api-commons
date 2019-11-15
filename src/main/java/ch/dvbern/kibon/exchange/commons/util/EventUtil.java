@@ -17,18 +17,7 @@
 
 package ch.dvbern.kibon.exchange.commons.util;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.SerializationFeature;
-import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
-
-public final class ObjectMapperUtil {
-
-	public static final ObjectMapper MAPPER = new ObjectMapper()
-		.registerModule(new JavaTimeModule())
-		.configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, false)
-		// does not work in Jackson 2.9.9 see JacksonBigDecimalAsPlainTest
-		//.configure(Feature.WRITE_BIGDECIMAL_AS_PLAIN, false)
-		;
+public final class EventUtil {
 
 	/**
 	 * eventId: can be used by consumers to detect duplicates
@@ -40,7 +29,7 @@ public final class ObjectMapperUtil {
 	 */
 	public static final String MESSAGE_HEADER_EVENT_TYPE = "eventType";
 
-	private ObjectMapperUtil() {
+	private EventUtil() {
 		// util
 	}
 }

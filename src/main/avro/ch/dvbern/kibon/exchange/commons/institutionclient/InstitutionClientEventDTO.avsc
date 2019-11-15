@@ -1,0 +1,19 @@
+{
+	"type": "record",
+	"name": "InstitutionClientEventDTO",
+	"namespace": "ch.dvbern.kibon.exchange.commons.institutionclient",
+	"fields": [
+		{
+			"name": "institutionId",
+			"type": "string"
+		},
+		{
+			"name": "clientName",
+			"type": "string"
+		},
+		{
+			"name": "clientType",
+			"type": "string"
+		}
+	]
+}

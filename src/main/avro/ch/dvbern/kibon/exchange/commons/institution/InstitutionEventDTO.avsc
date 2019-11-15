@@ -1,0 +1,64 @@
+{
+	"type": "record",
+	"name": "InstitutionEventDTO",
+	"namespace": "ch.dvbern.kibon.exchange.commons.institution",
+	"fields": [
+		{
+			"name": "id",
+			"type": "string"
+		},
+		{
+			"name": "name",
+			"type": "string"
+		},
+		{
+			"name": "traegerschaft",
+			"type": [
+				"null",
+				"string"
+			],
+			"default": null
+		},
+		{
+			"name": "adresse",
+			"type": {
+				"type": "record",
+				"name": "AdresseDTO",
+				"fields": [
+					{
+						"name": "strasse",
+						"type": "string"
+					},
+					{
+						"name": "hausnummer",
+						"type": [
+							"null",
+							"string"
+						],
+						"default": null
+					},
+					{
+						"name": "adresszusatz",
+						"type": [
+							"null",
+							"string"
+						],
+						"default": null
+					},
+					{
+						"name": "plz",
+						"type": "string"
+					},
+					{
+						"name": "ort",
+						"type": "string"
+					},
+					{
+						"name": "land",
+						"type": "string"
+					}
+				]
+			}
+		}
+	]
+}
