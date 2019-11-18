@@ -14,8 +14,8 @@ import org.apache.avro.message.SchemaStore;
 
 @org.apache.avro.specific.AvroGenerated
 public class VerfuegungEventDTO extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = -7836734692527502110L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"VerfuegungEventDTO\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.verfuegung\",\"fields\":[{\"name\":\"kind\",\"type\":{\"type\":\"record\",\"name\":\"KindDTO\",\"fields\":[{\"name\":\"vorname\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"nachname\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"geburtsdatum\",\"type\":{\"type\":\"int\",\"logicalType\":\"date\"}}]}},{\"name\":\"gesuchsteller\",\"type\":{\"type\":\"record\",\"name\":\"GesuchstellerDTO\",\"fields\":[{\"name\":\"vorname\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"nachname\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"email\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null}]}},{\"name\":\"betreuungsArt\",\"type\":{\"type\":\"enum\",\"name\":\"BetreuungsangebotTyp\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.types\",\"symbols\":[\"KITA\",\"TAGESSCHULE\",\"TAGESFAMILIEN\",\"FERIENINSEL\"]}},{\"name\":\"refnr\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"institutionId\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"von\",\"type\":{\"type\":\"int\",\"logicalType\":\"date\"}},{\"name\":\"bis\",\"type\":{\"type\":\"int\",\"logicalType\":\"date\"}},{\"name\":\"version\",\"type\":\"int\"},{\"name\":\"verfuegtAm\",\"type\":{\"type\":\"long\",\"logicalType\":\"timestamp-micros\"}},{\"name\":\"zeitabschnitte\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"ZeitabschnittDTO\",\"fields\":[{\"name\":\"von\",\"type\":{\"type\":\"int\",\"logicalType\":\"date\"}},{\"name\":\"bis\",\"type\":{\"type\":\"int\",\"logicalType\":\"date\"}},{\"name\":\"verfuegungNr\",\"type\":\"int\"},{\"name\":\"effektiveBetreuungPct\",\"type\":{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}},{\"name\":\"anspruchPct\",\"type\":\"int\"},{\"name\":\"verguenstigtPct\",\"type\":{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}},{\"name\":\"vollkosten\",\"type\":{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}},{\"name\":\"betreuungsgutschein\",\"type\":{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}},{\"name\":\"minimalerElternbeitrag\",\"type\":{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}},{\"name\":\"verguenstigung\",\"type\":{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}},{\"name\":\"verfuegteAnzahlZeiteinheiten\",\"type\":{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}},{\"name\":\"anspruchsberechtigteAnzahlZeiteinheiten\",\"type\":{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}},{\"name\":\"zeiteinheit\",\"type\":{\"type\":\"enum\",\"name\":\"Zeiteinheit\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.types\",\"symbols\":[\"DAYS\",\"HOURS\"]}}]}},\"default\":[]},{\"name\":\"ignorierteZeitabschnitte\",\"type\":{\"type\":\"array\",\"items\":\"ZeitabschnittDTO\"},\"default\":[]}]}");
+  private static final long serialVersionUID = 6690086540622454167L;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"VerfuegungEventDTO\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.verfuegung\",\"fields\":[{\"name\":\"kind\",\"type\":{\"type\":\"record\",\"name\":\"KindDTO\",\"fields\":[{\"name\":\"vorname\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"nachname\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"geburtsdatum\",\"type\":{\"type\":\"int\",\"logicalType\":\"date\"}}]}},{\"name\":\"gesuchsteller\",\"type\":{\"type\":\"record\",\"name\":\"GesuchstellerDTO\",\"fields\":[{\"name\":\"vorname\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"nachname\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"email\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null}]}},{\"name\":\"betreuungsArt\",\"type\":{\"type\":\"enum\",\"name\":\"BetreuungsangebotTyp\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.types\",\"symbols\":[\"KITA\",\"TAGESSCHULE\",\"TAGESFAMILIEN\",\"FERIENINSEL\"]}},{\"name\":\"refnr\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"institutionId\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"von\",\"type\":{\"type\":\"int\",\"logicalType\":\"date\"}},{\"name\":\"bis\",\"type\":{\"type\":\"int\",\"logicalType\":\"date\"}},{\"name\":\"version\",\"type\":\"int\"},{\"name\":\"verfuegtAm\",\"type\":{\"type\":\"long\",\"logicalType\":\"timestamp-micros\"}},{\"name\":\"gemeindeBfsNr\",\"type\":\"long\"},{\"name\":\"gemeindeName\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"zeitabschnitte\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"ZeitabschnittDTO\",\"fields\":[{\"name\":\"von\",\"type\":{\"type\":\"int\",\"logicalType\":\"date\"}},{\"name\":\"bis\",\"type\":{\"type\":\"int\",\"logicalType\":\"date\"}},{\"name\":\"verfuegungNr\",\"type\":\"int\"},{\"name\":\"effektiveBetreuungPct\",\"type\":{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}},{\"name\":\"anspruchPct\",\"type\":\"int\"},{\"name\":\"verguenstigtPct\",\"type\":{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}},{\"name\":\"vollkosten\",\"type\":{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}},{\"name\":\"betreuungsgutschein\",\"type\":{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}},{\"name\":\"minimalerElternbeitrag\",\"type\":{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}},{\"name\":\"verguenstigung\",\"type\":{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}},{\"name\":\"verfuegteAnzahlZeiteinheiten\",\"type\":{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}},{\"name\":\"anspruchsberechtigteAnzahlZeiteinheiten\",\"type\":{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}},{\"name\":\"zeiteinheit\",\"type\":{\"type\":\"enum\",\"name\":\"Zeiteinheit\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.types\",\"symbols\":[\"DAYS\",\"HOURS\"]}}]}},\"default\":[]},{\"name\":\"ignorierteZeitabschnitte\",\"type\":{\"type\":\"array\",\"items\":\"ZeitabschnittDTO\"},\"default\":[]}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static SpecificData MODEL$ = new SpecificData();
@@ -85,6 +85,8 @@ static {
    private java.time.LocalDate bis;
    private int version;
    private java.time.Instant verfuegtAm;
+   private long gemeindeBfsNr;
+   private java.lang.String gemeindeName;
    private java.util.List<ch.dvbern.kibon.exchange.commons.verfuegung.ZeitabschnittDTO> zeitabschnitte;
    private java.util.List<ch.dvbern.kibon.exchange.commons.verfuegung.ZeitabschnittDTO> ignorierteZeitabschnitte;
 
@@ -106,10 +108,12 @@ static {
    * @param bis The new value for bis
    * @param version The new value for version
    * @param verfuegtAm The new value for verfuegtAm
+   * @param gemeindeBfsNr The new value for gemeindeBfsNr
+   * @param gemeindeName The new value for gemeindeName
    * @param zeitabschnitte The new value for zeitabschnitte
    * @param ignorierteZeitabschnitte The new value for ignorierteZeitabschnitte
    */
-  public VerfuegungEventDTO(ch.dvbern.kibon.exchange.commons.verfuegung.KindDTO kind, ch.dvbern.kibon.exchange.commons.verfuegung.GesuchstellerDTO gesuchsteller, ch.dvbern.kibon.exchange.commons.types.BetreuungsangebotTyp betreuungsArt, java.lang.String refnr, java.lang.String institutionId, java.time.LocalDate von, java.time.LocalDate bis, java.lang.Integer version, java.time.Instant verfuegtAm, java.util.List<ch.dvbern.kibon.exchange.commons.verfuegung.ZeitabschnittDTO> zeitabschnitte, java.util.List<ch.dvbern.kibon.exchange.commons.verfuegung.ZeitabschnittDTO> ignorierteZeitabschnitte) {
+  public VerfuegungEventDTO(ch.dvbern.kibon.exchange.commons.verfuegung.KindDTO kind, ch.dvbern.kibon.exchange.commons.verfuegung.GesuchstellerDTO gesuchsteller, ch.dvbern.kibon.exchange.commons.types.BetreuungsangebotTyp betreuungsArt, java.lang.String refnr, java.lang.String institutionId, java.time.LocalDate von, java.time.LocalDate bis, java.lang.Integer version, java.time.Instant verfuegtAm, java.lang.Long gemeindeBfsNr, java.lang.String gemeindeName, java.util.List<ch.dvbern.kibon.exchange.commons.verfuegung.ZeitabschnittDTO> zeitabschnitte, java.util.List<ch.dvbern.kibon.exchange.commons.verfuegung.ZeitabschnittDTO> ignorierteZeitabschnitte) {
     this.kind = kind;
     this.gesuchsteller = gesuchsteller;
     this.betreuungsArt = betreuungsArt;
@@ -119,6 +123,8 @@ static {
     this.bis = bis;
     this.version = version;
     this.verfuegtAm = verfuegtAm.truncatedTo(java.time.temporal.ChronoUnit.MICROS);
+    this.gemeindeBfsNr = gemeindeBfsNr;
+    this.gemeindeName = gemeindeName;
     this.zeitabschnitte = zeitabschnitte;
     this.ignorierteZeitabschnitte = ignorierteZeitabschnitte;
   }
@@ -137,8 +143,10 @@ static {
     case 6: return bis;
     case 7: return version;
     case 8: return verfuegtAm;
-    case 9: return zeitabschnitte;
-    case 10: return ignorierteZeitabschnitte;
+    case 9: return gemeindeBfsNr;
+    case 10: return gemeindeName;
+    case 11: return zeitabschnitte;
+    case 12: return ignorierteZeitabschnitte;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -154,6 +162,8 @@ static {
       new org.apache.avro.data.TimeConversions.DateConversion(),
       null,
       new org.apache.avro.data.TimeConversions.TimestampMicrosConversion(),
+      null,
+      null,
       null,
       null,
       null
@@ -177,8 +187,10 @@ static {
     case 6: bis = (java.time.LocalDate)value$; break;
     case 7: version = (java.lang.Integer)value$; break;
     case 8: verfuegtAm = (java.time.Instant)value$; break;
-    case 9: zeitabschnitte = (java.util.List<ch.dvbern.kibon.exchange.commons.verfuegung.ZeitabschnittDTO>)value$; break;
-    case 10: ignorierteZeitabschnitte = (java.util.List<ch.dvbern.kibon.exchange.commons.verfuegung.ZeitabschnittDTO>)value$; break;
+    case 9: gemeindeBfsNr = (java.lang.Long)value$; break;
+    case 10: gemeindeName = (java.lang.String)value$; break;
+    case 11: zeitabschnitte = (java.util.List<ch.dvbern.kibon.exchange.commons.verfuegung.ZeitabschnittDTO>)value$; break;
+    case 12: ignorierteZeitabschnitte = (java.util.List<ch.dvbern.kibon.exchange.commons.verfuegung.ZeitabschnittDTO>)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -337,6 +349,40 @@ static {
   }
 
   /**
+   * Gets the value of the 'gemeindeBfsNr' field.
+   * @return The value of the 'gemeindeBfsNr' field.
+   */
+  public long getGemeindeBfsNr() {
+    return gemeindeBfsNr;
+  }
+
+
+  /**
+   * Sets the value of the 'gemeindeBfsNr' field.
+   * @param value the value to set.
+   */
+  public void setGemeindeBfsNr(long value) {
+    this.gemeindeBfsNr = value;
+  }
+
+  /**
+   * Gets the value of the 'gemeindeName' field.
+   * @return The value of the 'gemeindeName' field.
+   */
+  public java.lang.String getGemeindeName() {
+    return gemeindeName;
+  }
+
+
+  /**
+   * Sets the value of the 'gemeindeName' field.
+   * @param value the value to set.
+   */
+  public void setGemeindeName(java.lang.String value) {
+    this.gemeindeName = value;
+  }
+
+  /**
    * Gets the value of the 'zeitabschnitte' field.
    * @return The value of the 'zeitabschnitte' field.
    */
@@ -421,6 +467,8 @@ static {
     private java.time.LocalDate bis;
     private int version;
     private java.time.Instant verfuegtAm;
+    private long gemeindeBfsNr;
+    private java.lang.String gemeindeName;
     private java.util.List<ch.dvbern.kibon.exchange.commons.verfuegung.ZeitabschnittDTO> zeitabschnitte;
     private java.util.List<ch.dvbern.kibon.exchange.commons.verfuegung.ZeitabschnittDTO> ignorierteZeitabschnitte;
 
@@ -477,13 +525,21 @@ static {
         this.verfuegtAm = data().deepCopy(fields()[8].schema(), other.verfuegtAm);
         fieldSetFlags()[8] = other.fieldSetFlags()[8];
       }
-      if (isValidValue(fields()[9], other.zeitabschnitte)) {
-        this.zeitabschnitte = data().deepCopy(fields()[9].schema(), other.zeitabschnitte);
+      if (isValidValue(fields()[9], other.gemeindeBfsNr)) {
+        this.gemeindeBfsNr = data().deepCopy(fields()[9].schema(), other.gemeindeBfsNr);
         fieldSetFlags()[9] = other.fieldSetFlags()[9];
       }
-      if (isValidValue(fields()[10], other.ignorierteZeitabschnitte)) {
-        this.ignorierteZeitabschnitte = data().deepCopy(fields()[10].schema(), other.ignorierteZeitabschnitte);
+      if (isValidValue(fields()[10], other.gemeindeName)) {
+        this.gemeindeName = data().deepCopy(fields()[10].schema(), other.gemeindeName);
         fieldSetFlags()[10] = other.fieldSetFlags()[10];
+      }
+      if (isValidValue(fields()[11], other.zeitabschnitte)) {
+        this.zeitabschnitte = data().deepCopy(fields()[11].schema(), other.zeitabschnitte);
+        fieldSetFlags()[11] = other.fieldSetFlags()[11];
+      }
+      if (isValidValue(fields()[12], other.ignorierteZeitabschnitte)) {
+        this.ignorierteZeitabschnitte = data().deepCopy(fields()[12].schema(), other.ignorierteZeitabschnitte);
+        fieldSetFlags()[12] = other.fieldSetFlags()[12];
       }
     }
 
@@ -531,13 +587,21 @@ static {
         this.verfuegtAm = data().deepCopy(fields()[8].schema(), other.verfuegtAm);
         fieldSetFlags()[8] = true;
       }
-      if (isValidValue(fields()[9], other.zeitabschnitte)) {
-        this.zeitabschnitte = data().deepCopy(fields()[9].schema(), other.zeitabschnitte);
+      if (isValidValue(fields()[9], other.gemeindeBfsNr)) {
+        this.gemeindeBfsNr = data().deepCopy(fields()[9].schema(), other.gemeindeBfsNr);
         fieldSetFlags()[9] = true;
       }
-      if (isValidValue(fields()[10], other.ignorierteZeitabschnitte)) {
-        this.ignorierteZeitabschnitte = data().deepCopy(fields()[10].schema(), other.ignorierteZeitabschnitte);
+      if (isValidValue(fields()[10], other.gemeindeName)) {
+        this.gemeindeName = data().deepCopy(fields()[10].schema(), other.gemeindeName);
         fieldSetFlags()[10] = true;
+      }
+      if (isValidValue(fields()[11], other.zeitabschnitte)) {
+        this.zeitabschnitte = data().deepCopy(fields()[11].schema(), other.zeitabschnitte);
+        fieldSetFlags()[11] = true;
+      }
+      if (isValidValue(fields()[12], other.ignorierteZeitabschnitte)) {
+        this.ignorierteZeitabschnitte = data().deepCopy(fields()[12].schema(), other.ignorierteZeitabschnitte);
+        fieldSetFlags()[12] = true;
       }
     }
 
@@ -968,6 +1032,85 @@ static {
     }
 
     /**
+      * Gets the value of the 'gemeindeBfsNr' field.
+      * @return The value.
+      */
+    public long getGemeindeBfsNr() {
+      return gemeindeBfsNr;
+    }
+
+
+    /**
+      * Sets the value of the 'gemeindeBfsNr' field.
+      * @param value The value of 'gemeindeBfsNr'.
+      * @return This builder.
+      */
+    public ch.dvbern.kibon.exchange.commons.verfuegung.VerfuegungEventDTO.Builder setGemeindeBfsNr(long value) {
+      validate(fields()[9], value);
+      this.gemeindeBfsNr = value;
+      fieldSetFlags()[9] = true;
+      return this;
+    }
+
+    /**
+      * Checks whether the 'gemeindeBfsNr' field has been set.
+      * @return True if the 'gemeindeBfsNr' field has been set, false otherwise.
+      */
+    public boolean hasGemeindeBfsNr() {
+      return fieldSetFlags()[9];
+    }
+
+
+    /**
+      * Clears the value of the 'gemeindeBfsNr' field.
+      * @return This builder.
+      */
+    public ch.dvbern.kibon.exchange.commons.verfuegung.VerfuegungEventDTO.Builder clearGemeindeBfsNr() {
+      fieldSetFlags()[9] = false;
+      return this;
+    }
+
+    /**
+      * Gets the value of the 'gemeindeName' field.
+      * @return The value.
+      */
+    public java.lang.String getGemeindeName() {
+      return gemeindeName;
+    }
+
+
+    /**
+      * Sets the value of the 'gemeindeName' field.
+      * @param value The value of 'gemeindeName'.
+      * @return This builder.
+      */
+    public ch.dvbern.kibon.exchange.commons.verfuegung.VerfuegungEventDTO.Builder setGemeindeName(java.lang.String value) {
+      validate(fields()[10], value);
+      this.gemeindeName = value;
+      fieldSetFlags()[10] = true;
+      return this;
+    }
+
+    /**
+      * Checks whether the 'gemeindeName' field has been set.
+      * @return True if the 'gemeindeName' field has been set, false otherwise.
+      */
+    public boolean hasGemeindeName() {
+      return fieldSetFlags()[10];
+    }
+
+
+    /**
+      * Clears the value of the 'gemeindeName' field.
+      * @return This builder.
+      */
+    public ch.dvbern.kibon.exchange.commons.verfuegung.VerfuegungEventDTO.Builder clearGemeindeName() {
+      gemeindeName = null;
+      fieldSetFlags()[10] = false;
+      return this;
+    }
+
+    /**
       * Gets the value of the 'zeitabschnitte' field.
       * @return The value.
       */
@@ -982,9 +1125,9 @@ static {
       * @return This builder.
       */
     public ch.dvbern.kibon.exchange.commons.verfuegung.VerfuegungEventDTO.Builder setZeitabschnitte(java.util.List<ch.dvbern.kibon.exchange.commons.verfuegung.ZeitabschnittDTO> value) {
-      validate(fields()[9], value);
+      validate(fields()[11], value);
       this.zeitabschnitte = value;
-      fieldSetFlags()[9] = true;
+      fieldSetFlags()[11] = true;
       return this;
     }
 
@@ -993,7 +1136,7 @@ static {
       * @return True if the 'zeitabschnitte' field has been set, false otherwise.
       */
     public boolean hasZeitabschnitte() {
-      return fieldSetFlags()[9];
+      return fieldSetFlags()[11];
     }
 
 
@@ -1003,7 +1146,7 @@ static {
       */
     public ch.dvbern.kibon.exchange.commons.verfuegung.VerfuegungEventDTO.Builder clearZeitabschnitte() {
       zeitabschnitte = null;
-      fieldSetFlags()[9] = false;
+      fieldSetFlags()[11] = false;
       return this;
     }
 
@@ -1022,9 +1165,9 @@ static {
       * @return This builder.
       */
     public ch.dvbern.kibon.exchange.commons.verfuegung.VerfuegungEventDTO.Builder setIgnorierteZeitabschnitte(java.util.List<ch.dvbern.kibon.exchange.commons.verfuegung.ZeitabschnittDTO> value) {
-      validate(fields()[10], value);
+      validate(fields()[12], value);
       this.ignorierteZeitabschnitte = value;
-      fieldSetFlags()[10] = true;
+      fieldSetFlags()[12] = true;
       return this;
     }
 
@@ -1033,7 +1176,7 @@ static {
       * @return True if the 'ignorierteZeitabschnitte' field has been set, false otherwise.
       */
     public boolean hasIgnorierteZeitabschnitte() {
-      return fieldSetFlags()[10];
+      return fieldSetFlags()[12];
     }
 
 
@@ -1043,7 +1186,7 @@ static {
       */
     public ch.dvbern.kibon.exchange.commons.verfuegung.VerfuegungEventDTO.Builder clearIgnorierteZeitabschnitte() {
       ignorierteZeitabschnitte = null;
-      fieldSetFlags()[10] = false;
+      fieldSetFlags()[12] = false;
       return this;
     }
 
@@ -1079,8 +1222,10 @@ static {
         record.bis = fieldSetFlags()[6] ? this.bis : (java.time.LocalDate) defaultValue(fields()[6]);
         record.version = fieldSetFlags()[7] ? this.version : (java.lang.Integer) defaultValue(fields()[7]);
         record.verfuegtAm = fieldSetFlags()[8] ? this.verfuegtAm : (java.time.Instant) defaultValue(fields()[8]);
-        record.zeitabschnitte = fieldSetFlags()[9] ? this.zeitabschnitte : (java.util.List<ch.dvbern.kibon.exchange.commons.verfuegung.ZeitabschnittDTO>) defaultValue(fields()[9]);
-        record.ignorierteZeitabschnitte = fieldSetFlags()[10] ? this.ignorierteZeitabschnitte : (java.util.List<ch.dvbern.kibon.exchange.commons.verfuegung.ZeitabschnittDTO>) defaultValue(fields()[10]);
+        record.gemeindeBfsNr = fieldSetFlags()[9] ? this.gemeindeBfsNr : (java.lang.Long) defaultValue(fields()[9]);
+        record.gemeindeName = fieldSetFlags()[10] ? this.gemeindeName : (java.lang.String) defaultValue(fields()[10]);
+        record.zeitabschnitte = fieldSetFlags()[11] ? this.zeitabschnitte : (java.util.List<ch.dvbern.kibon.exchange.commons.verfuegung.ZeitabschnittDTO>) defaultValue(fields()[11]);
+        record.ignorierteZeitabschnitte = fieldSetFlags()[12] ? this.ignorierteZeitabschnitte : (java.util.List<ch.dvbern.kibon.exchange.commons.verfuegung.ZeitabschnittDTO>) defaultValue(fields()[12]);
         return record;
       } catch (org.apache.avro.AvroMissingFieldException e) {
         throw e;
