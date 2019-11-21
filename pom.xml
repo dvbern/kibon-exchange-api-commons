@@ -31,6 +31,7 @@
 
     <properties>
         <avro.version>1.9.1</avro.version>
+        <schema.registy.url>http://localhost:8081</schema.registy.url>
     </properties>
 
     <dependencies>
@@ -82,6 +83,26 @@
                         </configuration>
                     </execution>
                 </executions>
+            </plugin>
+            <plugin>
+                <groupId>io.confluent</groupId>
+                <artifactId>kafka-schema-registry-maven-plugin</artifactId>
+                <version>5.3.1</version>
+                <configuration>
+                    <outputDirectory>${project.basedir}/src/main/generated-schemas</outputDirectory>
+                    <schemaRegistryUrls>
+                        <param>${schema.registy.url}</param>
+                    </schemaRegistryUrls>
+                    <subjectPatterns>*</subjectPatterns>
+                    <subjects>
+                        <InstitutionEvents-value>src/main/avro/ch/dvbern/kibon/exchange/commons/institution/InstitutionEventDTO.avsc</InstitutionEvents-value>
+                        <InstitutionClientEvents-value>src/main/avro/ch/dvbern/kibon/exchange/commons/institutionclient/InstitutionClientEventDTO.avsc</InstitutionClientEvents-value>
+                        <VerfuegungEvents-value>src/main/avro/ch/dvbern/kibon/exchange/commons/verfuegung/VerfuegungEventDTO.avsc</VerfuegungEvents-value>
+                    </subjects>
+                </configuration>
+                <goals>
+                    <goal>test-compatibility</goal>
+                </goals>
             </plugin>
         </plugins>
     </build>
