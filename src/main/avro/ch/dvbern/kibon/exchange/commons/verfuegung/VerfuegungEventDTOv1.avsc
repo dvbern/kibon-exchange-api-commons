@@ -1,6 +1,6 @@
 {
 	"type": "record",
-	"name": "VerfuegungEventDTO",
+	"name": "VerfuegungEventDTOv1",
 	"namespace": "ch.dvbern.kibon.exchange.commons.verfuegung",
 	"fields": [
 		{
@@ -113,7 +113,7 @@
 				"type": "array",
 				"items": {
 					"type": "record",
-					"name": "ZeitabschnittDTO",
+					"name": "ZeitabschnittDTOv1",
 					"fields": [
 						{
 							"name": "von",
@@ -231,7 +231,7 @@
 			"name": "ignorierteZeitabschnitte",
 			"type": {
 				"type": "array",
-				"items": "ZeitabschnittDTO"
+				"items": "ZeitabschnittDTOv1"
 			},
 			"default": []
 		}

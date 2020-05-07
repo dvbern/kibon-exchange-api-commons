@@ -41,6 +41,33 @@ public final class VerfuegungEventTestUtil {
 	}
 
 	@Nonnull
+	public static VerfuegungEventDTOv1 createDTOv1() {
+		KindDTO kindDTO = createKindDTO();
+		GesuchstellerDTO gesuchstellerDTO = createGesuchstellerDTO();
+
+		LocalDate von = toLocalDate(FAKER.date().past(30, TimeUnit.DAYS));
+		LocalDate bis = toLocalDate(FAKER.date().past(20, TimeUnit.DAYS));
+
+		VerfuegungEventDTOv1 dto = VerfuegungEventDTOv1.newBuilder()
+			.setKind(kindDTO)
+			.setGesuchsteller(gesuchstellerDTO)
+			.setBetreuungsArt(BetreuungsangebotTyp.TAGESFAMILIEN)
+			.setRefnr("1.1.1")
+			.setInstitutionId(UUID.randomUUID().toString())
+			.setVon(von)
+			.setBis(bis)
+			.setVersion(2)
+			.setVerfuegtAm(Instant.now())
+			.setGemeindeBfsNr(FAKER.number().numberBetween(0, 400))
+			.setGemeindeName(FAKER.name().name())
+			.setZeitabschnitte(Arrays.asList(createZeitabschnittDTOv1(von, bis), createZeitabschnittDTOv1(von, bis)))
+			.setIgnorierteZeitabschnitte(Collections.singletonList(createZeitabschnittDTOv1(von, bis)))
+			.build();
+
+		return dto;
+	}
+
+	@Nonnull
 	public static VerfuegungEventDTO createDTO() {
 		KindDTO kindDTO = createKindDTO();
 		GesuchstellerDTO gesuchstellerDTO = createGesuchstellerDTO();
@@ -68,33 +95,6 @@ public final class VerfuegungEventTestUtil {
 	}
 
 	@Nonnull
-	public static VerfuegungEventDTOv2 createDTOv2() {
-		KindDTO kindDTO = createKindDTO();
-		GesuchstellerDTO gesuchstellerDTO = createGesuchstellerDTO();
-
-		LocalDate von = toLocalDate(FAKER.date().past(30, TimeUnit.DAYS));
-		LocalDate bis = toLocalDate(FAKER.date().past(20, TimeUnit.DAYS));
-
-		VerfuegungEventDTOv2 dto = VerfuegungEventDTOv2.newBuilder()
-			.setKind(kindDTO)
-			.setGesuchsteller(gesuchstellerDTO)
-			.setBetreuungsArt(BetreuungsangebotTyp.TAGESFAMILIEN)
-			.setRefnr("1.1.1")
-			.setInstitutionId(UUID.randomUUID().toString())
-			.setVon(von)
-			.setBis(bis)
-			.setVersion(2)
-			.setVerfuegtAm(Instant.now())
-			.setGemeindeBfsNr(FAKER.number().numberBetween(0, 400))
-			.setGemeindeName(FAKER.name().name())
-			.setZeitabschnitte(Arrays.asList(createZeitabschnittDTOv2(von, bis), createZeitabschnittDTOv2(von, bis)))
-			.setIgnorierteZeitabschnitte(Collections.singletonList(createZeitabschnittDTOv2(von, bis)))
-			.build();
-
-		return dto;
-	}
-
-	@Nonnull
 	public static GesuchstellerDTO createGesuchstellerDTO() {
 		return GesuchstellerDTO.newBuilder()
 			.setVorname(FAKER.name().firstName())
@@ -113,8 +113,8 @@ public final class VerfuegungEventTestUtil {
 	}
 
 	@Nonnull
-	public static ZeitabschnittDTO createZeitabschnittDTO(@Nonnull LocalDate von, @Nonnull LocalDate bis) {
-		return ZeitabschnittDTO.newBuilder()
+	public static ZeitabschnittDTOv1 createZeitabschnittDTOv1(@Nonnull LocalDate von, @Nonnull LocalDate bis) {
+		return ZeitabschnittDTOv1.newBuilder()
 			.setVon(von)
 			.setBis(bis)
 			.setVerfuegungNr(2)
@@ -132,8 +132,8 @@ public final class VerfuegungEventTestUtil {
 	}
 
 	@Nonnull
-	public static ZeitabschnittDTOv2 createZeitabschnittDTOv2(@Nonnull LocalDate von, @Nonnull LocalDate bis) {
-		return ZeitabschnittDTOv2.newBuilder()
+	public static ZeitabschnittDTO createZeitabschnittDTO(@Nonnull LocalDate von, @Nonnull LocalDate bis) {
+		return ZeitabschnittDTO.newBuilder()
 			.setVon(von)
 			.setBis(bis)
 			.setVerfuegungNr(2)

@@ -27,32 +27,32 @@ import static org.hamcrest.Matchers.everyItem;
 import static org.hamcrest.Matchers.hasProperty;
 import static org.hamcrest.Matchers.not;
 
-class VerfuegungEventDTOv2Test {
+class VerfuegungEventDTOTest {
 
 	/**
-	 * Verify that a VerfuegungEventDTO (old schema) can be parsed as a VerfuegungEventDTOv2.
+	 * Verify that a VerfuegungEventDTOv1 (old schema) can be parsed as a VerfuegungEventDTO (new schema).
 	 */
 	@Test
 	void canCreateFromVerfuegungEventDTO() {
-		VerfuegungEventDTO otherDTO = VerfuegungEventTestUtil.createDTO();
+		VerfuegungEventDTOv1 otherDTO = VerfuegungEventTestUtil.createDTOv1();
 		byte[] payload = AvroConverter.toAvroBinary(otherDTO);
 
-		VerfuegungEventDTOv2 dto =
-			AvroConverter.fromAvroBinary(otherDTO.getSchema(), VerfuegungEventDTOv2.getClassSchema(), payload);
+		VerfuegungEventDTO dto =
+			AvroConverter.fromAvroBinary(otherDTO.getSchema(), VerfuegungEventDTO.getClassSchema(), payload);
 
 		assertThat(dto.getZeitabschnitte(), everyItem(hasProperty("regelwerk", equalTo(Regelwerk.ASIV))));
 	}
 
 	/**
-	 * Verify that a VerfuegungEventDTOv2 (new schema) can be parsed as a VerfuegungEventDTO.
+	 * Verify that a VerfuegungEventDTO (new schema) can be parsed as a VerfuegungEventDTOv1 (old schema).
 	 */
 	@Test
 	void canConvertToVerfuegungEventDTO() {
-		VerfuegungEventDTOv2 otherDTO = VerfuegungEventTestUtil.createDTOv2();
+		VerfuegungEventDTO otherDTO = VerfuegungEventTestUtil.createDTO();
 		byte[] payload = AvroConverter.toAvroBinary(otherDTO);
 
-		VerfuegungEventDTO dto =
-			AvroConverter.fromAvroBinary(otherDTO.getSchema(), VerfuegungEventDTO.getClassSchema(), payload);
+		VerfuegungEventDTOv1 dto =
+			AvroConverter.fromAvroBinary(otherDTO.getSchema(), VerfuegungEventDTOv1.getClassSchema(), payload);
 
 		// the Avro conversion fails, when "Regelwerk" does not use a default value
 		assertThat(dto.getZeitabschnitte(), everyItem(not(hasProperty("regelwerk"))));

@@ -14,8 +14,8 @@ import org.apache.avro.message.SchemaStore;
 
 @org.apache.avro.specific.AvroGenerated
 public class ZeitabschnittDTO extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = -2894962162203064837L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"ZeitabschnittDTO\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.verfuegung\",\"fields\":[{\"name\":\"von\",\"type\":{\"type\":\"int\",\"logicalType\":\"date\"}},{\"name\":\"bis\",\"type\":{\"type\":\"int\",\"logicalType\":\"date\"}},{\"name\":\"verfuegungNr\",\"type\":\"int\"},{\"name\":\"effektiveBetreuungPct\",\"type\":{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}},{\"name\":\"anspruchPct\",\"type\":\"int\"},{\"name\":\"verguenstigtPct\",\"type\":{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}},{\"name\":\"vollkosten\",\"type\":{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}},{\"name\":\"betreuungsgutschein\",\"type\":{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}},{\"name\":\"minimalerElternbeitrag\",\"type\":{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}},{\"name\":\"verguenstigung\",\"type\":{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}},{\"name\":\"verfuegteAnzahlZeiteinheiten\",\"type\":{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}},{\"name\":\"anspruchsberechtigteAnzahlZeiteinheiten\",\"type\":{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}},{\"name\":\"zeiteinheit\",\"type\":{\"type\":\"enum\",\"name\":\"Zeiteinheit\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.types\",\"symbols\":[\"DAYS\",\"HOURS\"]}}]}");
+  private static final long serialVersionUID = 1468552913278042266L;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"ZeitabschnittDTO\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.verfuegung\",\"fields\":[{\"name\":\"von\",\"type\":{\"type\":\"int\",\"logicalType\":\"date\"}},{\"name\":\"bis\",\"type\":{\"type\":\"int\",\"logicalType\":\"date\"}},{\"name\":\"verfuegungNr\",\"type\":\"int\"},{\"name\":\"effektiveBetreuungPct\",\"type\":{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}},{\"name\":\"anspruchPct\",\"type\":\"int\"},{\"name\":\"verguenstigtPct\",\"type\":{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}},{\"name\":\"vollkosten\",\"type\":{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}},{\"name\":\"betreuungsgutschein\",\"type\":{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}},{\"name\":\"minimalerElternbeitrag\",\"type\":{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}},{\"name\":\"verguenstigung\",\"type\":{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}},{\"name\":\"verfuegteAnzahlZeiteinheiten\",\"type\":{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}},{\"name\":\"anspruchsberechtigteAnzahlZeiteinheiten\",\"type\":{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}},{\"name\":\"zeiteinheit\",\"type\":{\"type\":\"enum\",\"name\":\"Zeiteinheit\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.types\",\"symbols\":[\"DAYS\",\"HOURS\"]}},{\"name\":\"regelwerk\",\"type\":{\"type\":\"enum\",\"name\":\"Regelwerk\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.types\",\"symbols\":[\"ASIV\",\"FEBR\"]},\"default\":\"ASIV\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static SpecificData MODEL$ = new SpecificData();
@@ -88,6 +88,7 @@ static {
    private java.math.BigDecimal verfuegteAnzahlZeiteinheiten;
    private java.math.BigDecimal anspruchsberechtigteAnzahlZeiteinheiten;
    private ch.dvbern.kibon.exchange.commons.types.Zeiteinheit zeiteinheit;
+   private ch.dvbern.kibon.exchange.commons.types.Regelwerk regelwerk;
 
   /**
    * Default constructor.  Note that this does not initialize fields
@@ -111,8 +112,9 @@ static {
    * @param verfuegteAnzahlZeiteinheiten The new value for verfuegteAnzahlZeiteinheiten
    * @param anspruchsberechtigteAnzahlZeiteinheiten The new value for anspruchsberechtigteAnzahlZeiteinheiten
    * @param zeiteinheit The new value for zeiteinheit
+   * @param regelwerk The new value for regelwerk
    */
-  public ZeitabschnittDTO(java.time.LocalDate von, java.time.LocalDate bis, java.lang.Integer verfuegungNr, java.math.BigDecimal effektiveBetreuungPct, java.lang.Integer anspruchPct, java.math.BigDecimal verguenstigtPct, java.math.BigDecimal vollkosten, java.math.BigDecimal betreuungsgutschein, java.math.BigDecimal minimalerElternbeitrag, java.math.BigDecimal verguenstigung, java.math.BigDecimal verfuegteAnzahlZeiteinheiten, java.math.BigDecimal anspruchsberechtigteAnzahlZeiteinheiten, ch.dvbern.kibon.exchange.commons.types.Zeiteinheit zeiteinheit) {
+  public ZeitabschnittDTO(java.time.LocalDate von, java.time.LocalDate bis, java.lang.Integer verfuegungNr, java.math.BigDecimal effektiveBetreuungPct, java.lang.Integer anspruchPct, java.math.BigDecimal verguenstigtPct, java.math.BigDecimal vollkosten, java.math.BigDecimal betreuungsgutschein, java.math.BigDecimal minimalerElternbeitrag, java.math.BigDecimal verguenstigung, java.math.BigDecimal verfuegteAnzahlZeiteinheiten, java.math.BigDecimal anspruchsberechtigteAnzahlZeiteinheiten, ch.dvbern.kibon.exchange.commons.types.Zeiteinheit zeiteinheit, ch.dvbern.kibon.exchange.commons.types.Regelwerk regelwerk) {
     this.von = von;
     this.bis = bis;
     this.verfuegungNr = verfuegungNr;
@@ -126,6 +128,7 @@ static {
     this.verfuegteAnzahlZeiteinheiten = verfuegteAnzahlZeiteinheiten;
     this.anspruchsberechtigteAnzahlZeiteinheiten = anspruchsberechtigteAnzahlZeiteinheiten;
     this.zeiteinheit = zeiteinheit;
+    this.regelwerk = regelwerk;
   }
 
   public org.apache.avro.specific.SpecificData getSpecificData() { return MODEL$; }
@@ -146,6 +149,7 @@ static {
     case 10: return verfuegteAnzahlZeiteinheiten;
     case 11: return anspruchsberechtigteAnzahlZeiteinheiten;
     case 12: return zeiteinheit;
+    case 13: return regelwerk;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -164,6 +168,7 @@ static {
       new org.apache.avro.Conversions.DecimalConversion(),
       new org.apache.avro.Conversions.DecimalConversion(),
       new org.apache.avro.Conversions.DecimalConversion(),
+      null,
       null,
       null
   };
@@ -190,6 +195,7 @@ static {
     case 10: verfuegteAnzahlZeiteinheiten = (java.math.BigDecimal)value$; break;
     case 11: anspruchsberechtigteAnzahlZeiteinheiten = (java.math.BigDecimal)value$; break;
     case 12: zeiteinheit = (ch.dvbern.kibon.exchange.commons.types.Zeiteinheit)value$; break;
+    case 13: regelwerk = (ch.dvbern.kibon.exchange.commons.types.Regelwerk)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -416,6 +422,23 @@ static {
   }
 
   /**
+   * Gets the value of the 'regelwerk' field.
+   * @return The value of the 'regelwerk' field.
+   */
+  public ch.dvbern.kibon.exchange.commons.types.Regelwerk getRegelwerk() {
+    return regelwerk;
+  }
+
+
+  /**
+   * Sets the value of the 'regelwerk' field.
+   * @param value the value to set.
+   */
+  public void setRegelwerk(ch.dvbern.kibon.exchange.commons.types.Regelwerk value) {
+    this.regelwerk = value;
+  }
+
+  /**
    * Creates a new ZeitabschnittDTO RecordBuilder.
    * @return A new ZeitabschnittDTO RecordBuilder
    */
@@ -468,6 +491,7 @@ static {
     private java.math.BigDecimal verfuegteAnzahlZeiteinheiten;
     private java.math.BigDecimal anspruchsberechtigteAnzahlZeiteinheiten;
     private ch.dvbern.kibon.exchange.commons.types.Zeiteinheit zeiteinheit;
+    private ch.dvbern.kibon.exchange.commons.types.Regelwerk regelwerk;
 
     /** Creates a new Builder */
     private Builder() {
@@ -532,6 +556,10 @@ static {
         this.zeiteinheit = data().deepCopy(fields()[12].schema(), other.zeiteinheit);
         fieldSetFlags()[12] = other.fieldSetFlags()[12];
       }
+      if (isValidValue(fields()[13], other.regelwerk)) {
+        this.regelwerk = data().deepCopy(fields()[13].schema(), other.regelwerk);
+        fieldSetFlags()[13] = other.fieldSetFlags()[13];
+      }
     }
 
     /**
@@ -591,6 +619,10 @@ static {
       if (isValidValue(fields()[12], other.zeiteinheit)) {
         this.zeiteinheit = data().deepCopy(fields()[12].schema(), other.zeiteinheit);
         fieldSetFlags()[12] = true;
+      }
+      if (isValidValue(fields()[13], other.regelwerk)) {
+        this.regelwerk = data().deepCopy(fields()[13].schema(), other.regelwerk);
+        fieldSetFlags()[13] = true;
       }
     }
 
@@ -1110,6 +1142,46 @@ static {
       return this;
     }
 
+    /**
+      * Gets the value of the 'regelwerk' field.
+      * @return The value.
+      */
+    public ch.dvbern.kibon.exchange.commons.types.Regelwerk getRegelwerk() {
+      return regelwerk;
+    }
+
+
+    /**
+      * Sets the value of the 'regelwerk' field.
+      * @param value The value of 'regelwerk'.
+      * @return This builder.
+      */
+    public ch.dvbern.kibon.exchange.commons.verfuegung.ZeitabschnittDTO.Builder setRegelwerk(ch.dvbern.kibon.exchange.commons.types.Regelwerk value) {
+      validate(fields()[13], value);
+      this.regelwerk = value;
+      fieldSetFlags()[13] = true;
+      return this;
+    }
+
+    /**
+      * Checks whether the 'regelwerk' field has been set.
+      * @return True if the 'regelwerk' field has been set, false otherwise.
+      */
+    public boolean hasRegelwerk() {
+      return fieldSetFlags()[13];
+    }
+
+
+    /**
+      * Clears the value of the 'regelwerk' field.
+      * @return This builder.
+      */
+    public ch.dvbern.kibon.exchange.commons.verfuegung.ZeitabschnittDTO.Builder clearRegelwerk() {
+      regelwerk = null;
+      fieldSetFlags()[13] = false;
+      return this;
+    }
+
     @Override
     @SuppressWarnings("unchecked")
     public ZeitabschnittDTO build() {
@@ -1128,6 +1200,7 @@ static {
         record.verfuegteAnzahlZeiteinheiten = fieldSetFlags()[10] ? this.verfuegteAnzahlZeiteinheiten : (java.math.BigDecimal) defaultValue(fields()[10]);
         record.anspruchsberechtigteAnzahlZeiteinheiten = fieldSetFlags()[11] ? this.anspruchsberechtigteAnzahlZeiteinheiten : (java.math.BigDecimal) defaultValue(fields()[11]);
         record.zeiteinheit = fieldSetFlags()[12] ? this.zeiteinheit : (ch.dvbern.kibon.exchange.commons.types.Zeiteinheit) defaultValue(fields()[12]);
+        record.regelwerk = fieldSetFlags()[13] ? this.regelwerk : (ch.dvbern.kibon.exchange.commons.types.Regelwerk) defaultValue(fields()[13]);
         return record;
       } catch (org.apache.avro.AvroMissingFieldException e) {
         throw e;
