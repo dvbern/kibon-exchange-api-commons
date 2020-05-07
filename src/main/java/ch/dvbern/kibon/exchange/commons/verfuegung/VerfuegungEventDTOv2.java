@@ -13,9 +13,9 @@ import org.apache.avro.message.BinaryMessageDecoder;
 import org.apache.avro.message.SchemaStore;
 
 @org.apache.avro.specific.AvroGenerated
-public class VerfuegungEventDTO extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = 6690086540622454167L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"VerfuegungEventDTO\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.verfuegung\",\"fields\":[{\"name\":\"kind\",\"type\":{\"type\":\"record\",\"name\":\"KindDTO\",\"fields\":[{\"name\":\"vorname\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"nachname\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"geburtsdatum\",\"type\":{\"type\":\"int\",\"logicalType\":\"date\"}}]}},{\"name\":\"gesuchsteller\",\"type\":{\"type\":\"record\",\"name\":\"GesuchstellerDTO\",\"fields\":[{\"name\":\"vorname\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"nachname\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"email\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null}]}},{\"name\":\"betreuungsArt\",\"type\":{\"type\":\"enum\",\"name\":\"BetreuungsangebotTyp\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.types\",\"symbols\":[\"KITA\",\"TAGESSCHULE\",\"TAGESFAMILIEN\",\"FERIENINSEL\"]}},{\"name\":\"refnr\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"institutionId\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"von\",\"type\":{\"type\":\"int\",\"logicalType\":\"date\"}},{\"name\":\"bis\",\"type\":{\"type\":\"int\",\"logicalType\":\"date\"}},{\"name\":\"version\",\"type\":\"int\"},{\"name\":\"verfuegtAm\",\"type\":{\"type\":\"long\",\"logicalType\":\"timestamp-micros\"}},{\"name\":\"gemeindeBfsNr\",\"type\":\"long\"},{\"name\":\"gemeindeName\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"zeitabschnitte\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"ZeitabschnittDTO\",\"fields\":[{\"name\":\"von\",\"type\":{\"type\":\"int\",\"logicalType\":\"date\"}},{\"name\":\"bis\",\"type\":{\"type\":\"int\",\"logicalType\":\"date\"}},{\"name\":\"verfuegungNr\",\"type\":\"int\"},{\"name\":\"effektiveBetreuungPct\",\"type\":{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}},{\"name\":\"anspruchPct\",\"type\":\"int\"},{\"name\":\"verguenstigtPct\",\"type\":{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}},{\"name\":\"vollkosten\",\"type\":{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}},{\"name\":\"betreuungsgutschein\",\"type\":{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}},{\"name\":\"minimalerElternbeitrag\",\"type\":{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}},{\"name\":\"verguenstigung\",\"type\":{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}},{\"name\":\"verfuegteAnzahlZeiteinheiten\",\"type\":{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}},{\"name\":\"anspruchsberechtigteAnzahlZeiteinheiten\",\"type\":{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}},{\"name\":\"zeiteinheit\",\"type\":{\"type\":\"enum\",\"name\":\"Zeiteinheit\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.types\",\"symbols\":[\"DAYS\",\"HOURS\"]}}]}},\"default\":[]},{\"name\":\"ignorierteZeitabschnitte\",\"type\":{\"type\":\"array\",\"items\":\"ZeitabschnittDTO\"},\"default\":[]}]}");
+public class VerfuegungEventDTOv2 extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
+  private static final long serialVersionUID = -894508072739036009L;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"VerfuegungEventDTOv2\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.verfuegung\",\"fields\":[{\"name\":\"kind\",\"type\":{\"type\":\"record\",\"name\":\"KindDTO\",\"fields\":[{\"name\":\"vorname\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"nachname\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"geburtsdatum\",\"type\":{\"type\":\"int\",\"logicalType\":\"date\"}}]}},{\"name\":\"gesuchsteller\",\"type\":{\"type\":\"record\",\"name\":\"GesuchstellerDTO\",\"fields\":[{\"name\":\"vorname\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"nachname\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"email\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null}]}},{\"name\":\"betreuungsArt\",\"type\":{\"type\":\"enum\",\"name\":\"BetreuungsangebotTyp\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.types\",\"symbols\":[\"KITA\",\"TAGESSCHULE\",\"TAGESFAMILIEN\",\"FERIENINSEL\"]}},{\"name\":\"refnr\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"institutionId\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"von\",\"type\":{\"type\":\"int\",\"logicalType\":\"date\"}},{\"name\":\"bis\",\"type\":{\"type\":\"int\",\"logicalType\":\"date\"}},{\"name\":\"version\",\"type\":\"int\"},{\"name\":\"verfuegtAm\",\"type\":{\"type\":\"long\",\"logicalType\":\"timestamp-micros\"}},{\"name\":\"gemeindeBfsNr\",\"type\":\"long\"},{\"name\":\"gemeindeName\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"zeitabschnitte\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"ZeitabschnittDTOv2\",\"fields\":[{\"name\":\"von\",\"type\":{\"type\":\"int\",\"logicalType\":\"date\"}},{\"name\":\"bis\",\"type\":{\"type\":\"int\",\"logicalType\":\"date\"}},{\"name\":\"verfuegungNr\",\"type\":\"int\"},{\"name\":\"effektiveBetreuungPct\",\"type\":{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}},{\"name\":\"anspruchPct\",\"type\":\"int\"},{\"name\":\"verguenstigtPct\",\"type\":{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}},{\"name\":\"vollkosten\",\"type\":{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}},{\"name\":\"betreuungsgutschein\",\"type\":{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}},{\"name\":\"minimalerElternbeitrag\",\"type\":{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}},{\"name\":\"verguenstigung\",\"type\":{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}},{\"name\":\"verfuegteAnzahlZeiteinheiten\",\"type\":{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}},{\"name\":\"anspruchsberechtigteAnzahlZeiteinheiten\",\"type\":{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}},{\"name\":\"zeiteinheit\",\"type\":{\"type\":\"enum\",\"name\":\"Zeiteinheit\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.types\",\"symbols\":[\"DAYS\",\"HOURS\"]}},{\"name\":\"regelwerk\",\"type\":{\"type\":\"enum\",\"name\":\"Regelwerk\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.types\",\"symbols\":[\"ASIV\",\"FEBR\"]},\"default\":\"ASIV\"}]}},\"default\":[]},{\"name\":\"ignorierteZeitabschnitte\",\"type\":{\"type\":\"array\",\"items\":\"ZeitabschnittDTOv2\"},\"default\":[]}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static SpecificData MODEL$ = new SpecificData();
@@ -25,17 +25,17 @@ static {
     MODEL$.addLogicalTypeConversion(new org.apache.avro.Conversions.DecimalConversion());
   }
 
-  private static final BinaryMessageEncoder<VerfuegungEventDTO> ENCODER =
-      new BinaryMessageEncoder<VerfuegungEventDTO>(MODEL$, SCHEMA$);
+  private static final BinaryMessageEncoder<VerfuegungEventDTOv2> ENCODER =
+      new BinaryMessageEncoder<VerfuegungEventDTOv2>(MODEL$, SCHEMA$);
 
-  private static final BinaryMessageDecoder<VerfuegungEventDTO> DECODER =
-      new BinaryMessageDecoder<VerfuegungEventDTO>(MODEL$, SCHEMA$);
+  private static final BinaryMessageDecoder<VerfuegungEventDTOv2> DECODER =
+      new BinaryMessageDecoder<VerfuegungEventDTOv2>(MODEL$, SCHEMA$);
 
   /**
    * Return the BinaryMessageEncoder instance used by this class.
    * @return the message encoder used by this class
    */
-  public static BinaryMessageEncoder<VerfuegungEventDTO> getEncoder() {
+  public static BinaryMessageEncoder<VerfuegungEventDTOv2> getEncoder() {
     return ENCODER;
   }
 
@@ -43,7 +43,7 @@ static {
    * Return the BinaryMessageDecoder instance used by this class.
    * @return the message decoder used by this class
    */
-  public static BinaryMessageDecoder<VerfuegungEventDTO> getDecoder() {
+  public static BinaryMessageDecoder<VerfuegungEventDTOv2> getDecoder() {
     return DECODER;
   }
 
@@ -52,12 +52,12 @@ static {
    * @param resolver a {@link SchemaStore} used to find schemas by fingerprint
    * @return a BinaryMessageDecoder instance for this class backed by the given SchemaStore
    */
-  public static BinaryMessageDecoder<VerfuegungEventDTO> createDecoder(SchemaStore resolver) {
-    return new BinaryMessageDecoder<VerfuegungEventDTO>(MODEL$, SCHEMA$, resolver);
+  public static BinaryMessageDecoder<VerfuegungEventDTOv2> createDecoder(SchemaStore resolver) {
+    return new BinaryMessageDecoder<VerfuegungEventDTOv2>(MODEL$, SCHEMA$, resolver);
   }
 
   /**
-   * Serializes this VerfuegungEventDTO to a ByteBuffer.
+   * Serializes this VerfuegungEventDTOv2 to a ByteBuffer.
    * @return a buffer holding the serialized data for this instance
    * @throws java.io.IOException if this instance could not be serialized
    */
@@ -66,12 +66,12 @@ static {
   }
 
   /**
-   * Deserializes a VerfuegungEventDTO from a ByteBuffer.
+   * Deserializes a VerfuegungEventDTOv2 from a ByteBuffer.
    * @param b a byte buffer holding serialized data for an instance of this class
-   * @return a VerfuegungEventDTO instance decoded from the given buffer
+   * @return a VerfuegungEventDTOv2 instance decoded from the given buffer
    * @throws java.io.IOException if the given bytes could not be deserialized into an instance of this class
    */
-  public static VerfuegungEventDTO fromByteBuffer(
+  public static VerfuegungEventDTOv2 fromByteBuffer(
       java.nio.ByteBuffer b) throws java.io.IOException {
     return DECODER.decode(b);
   }
@@ -87,15 +87,15 @@ static {
    private java.time.Instant verfuegtAm;
    private long gemeindeBfsNr;
    private java.lang.String gemeindeName;
-   private java.util.List<ch.dvbern.kibon.exchange.commons.verfuegung.ZeitabschnittDTO> zeitabschnitte;
-   private java.util.List<ch.dvbern.kibon.exchange.commons.verfuegung.ZeitabschnittDTO> ignorierteZeitabschnitte;
+   private java.util.List<ch.dvbern.kibon.exchange.commons.verfuegung.ZeitabschnittDTOv2> zeitabschnitte;
+   private java.util.List<ch.dvbern.kibon.exchange.commons.verfuegung.ZeitabschnittDTOv2> ignorierteZeitabschnitte;
 
   /**
    * Default constructor.  Note that this does not initialize fields
    * to their default values from the schema.  If that is desired then
    * one should use <code>newBuilder()</code>.
    */
-  public VerfuegungEventDTO() {}
+  public VerfuegungEventDTOv2() {}
 
   /**
    * All-args constructor.
@@ -113,7 +113,7 @@ static {
    * @param zeitabschnitte The new value for zeitabschnitte
    * @param ignorierteZeitabschnitte The new value for ignorierteZeitabschnitte
    */
-  public VerfuegungEventDTO(ch.dvbern.kibon.exchange.commons.verfuegung.KindDTO kind, ch.dvbern.kibon.exchange.commons.verfuegung.GesuchstellerDTO gesuchsteller, ch.dvbern.kibon.exchange.commons.types.BetreuungsangebotTyp betreuungsArt, java.lang.String refnr, java.lang.String institutionId, java.time.LocalDate von, java.time.LocalDate bis, java.lang.Integer version, java.time.Instant verfuegtAm, java.lang.Long gemeindeBfsNr, java.lang.String gemeindeName, java.util.List<ch.dvbern.kibon.exchange.commons.verfuegung.ZeitabschnittDTO> zeitabschnitte, java.util.List<ch.dvbern.kibon.exchange.commons.verfuegung.ZeitabschnittDTO> ignorierteZeitabschnitte) {
+  public VerfuegungEventDTOv2(ch.dvbern.kibon.exchange.commons.verfuegung.KindDTO kind, ch.dvbern.kibon.exchange.commons.verfuegung.GesuchstellerDTO gesuchsteller, ch.dvbern.kibon.exchange.commons.types.BetreuungsangebotTyp betreuungsArt, java.lang.String refnr, java.lang.String institutionId, java.time.LocalDate von, java.time.LocalDate bis, java.lang.Integer version, java.time.Instant verfuegtAm, java.lang.Long gemeindeBfsNr, java.lang.String gemeindeName, java.util.List<ch.dvbern.kibon.exchange.commons.verfuegung.ZeitabschnittDTOv2> zeitabschnitte, java.util.List<ch.dvbern.kibon.exchange.commons.verfuegung.ZeitabschnittDTOv2> ignorierteZeitabschnitte) {
     this.kind = kind;
     this.gesuchsteller = gesuchsteller;
     this.betreuungsArt = betreuungsArt;
@@ -189,8 +189,8 @@ static {
     case 8: verfuegtAm = (java.time.Instant)value$; break;
     case 9: gemeindeBfsNr = (java.lang.Long)value$; break;
     case 10: gemeindeName = (java.lang.String)value$; break;
-    case 11: zeitabschnitte = (java.util.List<ch.dvbern.kibon.exchange.commons.verfuegung.ZeitabschnittDTO>)value$; break;
-    case 12: ignorierteZeitabschnitte = (java.util.List<ch.dvbern.kibon.exchange.commons.verfuegung.ZeitabschnittDTO>)value$; break;
+    case 11: zeitabschnitte = (java.util.List<ch.dvbern.kibon.exchange.commons.verfuegung.ZeitabschnittDTOv2>)value$; break;
+    case 12: ignorierteZeitabschnitte = (java.util.List<ch.dvbern.kibon.exchange.commons.verfuegung.ZeitabschnittDTOv2>)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -386,7 +386,7 @@ static {
    * Gets the value of the 'zeitabschnitte' field.
    * @return The value of the 'zeitabschnitte' field.
    */
-  public java.util.List<ch.dvbern.kibon.exchange.commons.verfuegung.ZeitabschnittDTO> getZeitabschnitte() {
+  public java.util.List<ch.dvbern.kibon.exchange.commons.verfuegung.ZeitabschnittDTOv2> getZeitabschnitte() {
     return zeitabschnitte;
   }
 
@@ -395,7 +395,7 @@ static {
    * Sets the value of the 'zeitabschnitte' field.
    * @param value the value to set.
    */
-  public void setZeitabschnitte(java.util.List<ch.dvbern.kibon.exchange.commons.verfuegung.ZeitabschnittDTO> value) {
+  public void setZeitabschnitte(java.util.List<ch.dvbern.kibon.exchange.commons.verfuegung.ZeitabschnittDTOv2> value) {
     this.zeitabschnitte = value;
   }
 
@@ -403,7 +403,7 @@ static {
    * Gets the value of the 'ignorierteZeitabschnitte' field.
    * @return The value of the 'ignorierteZeitabschnitte' field.
    */
-  public java.util.List<ch.dvbern.kibon.exchange.commons.verfuegung.ZeitabschnittDTO> getIgnorierteZeitabschnitte() {
+  public java.util.List<ch.dvbern.kibon.exchange.commons.verfuegung.ZeitabschnittDTOv2> getIgnorierteZeitabschnitte() {
     return ignorierteZeitabschnitte;
   }
 
@@ -412,49 +412,49 @@ static {
    * Sets the value of the 'ignorierteZeitabschnitte' field.
    * @param value the value to set.
    */
-  public void setIgnorierteZeitabschnitte(java.util.List<ch.dvbern.kibon.exchange.commons.verfuegung.ZeitabschnittDTO> value) {
+  public void setIgnorierteZeitabschnitte(java.util.List<ch.dvbern.kibon.exchange.commons.verfuegung.ZeitabschnittDTOv2> value) {
     this.ignorierteZeitabschnitte = value;
   }
 
   /**
-   * Creates a new VerfuegungEventDTO RecordBuilder.
-   * @return A new VerfuegungEventDTO RecordBuilder
+   * Creates a new VerfuegungEventDTOv2 RecordBuilder.
+   * @return A new VerfuegungEventDTOv2 RecordBuilder
    */
-  public static ch.dvbern.kibon.exchange.commons.verfuegung.VerfuegungEventDTO.Builder newBuilder() {
-    return new ch.dvbern.kibon.exchange.commons.verfuegung.VerfuegungEventDTO.Builder();
+  public static ch.dvbern.kibon.exchange.commons.verfuegung.VerfuegungEventDTOv2.Builder newBuilder() {
+    return new ch.dvbern.kibon.exchange.commons.verfuegung.VerfuegungEventDTOv2.Builder();
   }
 
   /**
-   * Creates a new VerfuegungEventDTO RecordBuilder by copying an existing Builder.
+   * Creates a new VerfuegungEventDTOv2 RecordBuilder by copying an existing Builder.
    * @param other The existing builder to copy.
-   * @return A new VerfuegungEventDTO RecordBuilder
+   * @return A new VerfuegungEventDTOv2 RecordBuilder
    */
-  public static ch.dvbern.kibon.exchange.commons.verfuegung.VerfuegungEventDTO.Builder newBuilder(ch.dvbern.kibon.exchange.commons.verfuegung.VerfuegungEventDTO.Builder other) {
+  public static ch.dvbern.kibon.exchange.commons.verfuegung.VerfuegungEventDTOv2.Builder newBuilder(ch.dvbern.kibon.exchange.commons.verfuegung.VerfuegungEventDTOv2.Builder other) {
     if (other == null) {
-      return new ch.dvbern.kibon.exchange.commons.verfuegung.VerfuegungEventDTO.Builder();
+      return new ch.dvbern.kibon.exchange.commons.verfuegung.VerfuegungEventDTOv2.Builder();
     } else {
-      return new ch.dvbern.kibon.exchange.commons.verfuegung.VerfuegungEventDTO.Builder(other);
+      return new ch.dvbern.kibon.exchange.commons.verfuegung.VerfuegungEventDTOv2.Builder(other);
     }
   }
 
   /**
-   * Creates a new VerfuegungEventDTO RecordBuilder by copying an existing VerfuegungEventDTO instance.
+   * Creates a new VerfuegungEventDTOv2 RecordBuilder by copying an existing VerfuegungEventDTOv2 instance.
    * @param other The existing instance to copy.
-   * @return A new VerfuegungEventDTO RecordBuilder
+   * @return A new VerfuegungEventDTOv2 RecordBuilder
    */
-  public static ch.dvbern.kibon.exchange.commons.verfuegung.VerfuegungEventDTO.Builder newBuilder(ch.dvbern.kibon.exchange.commons.verfuegung.VerfuegungEventDTO other) {
+  public static ch.dvbern.kibon.exchange.commons.verfuegung.VerfuegungEventDTOv2.Builder newBuilder(ch.dvbern.kibon.exchange.commons.verfuegung.VerfuegungEventDTOv2 other) {
     if (other == null) {
-      return new ch.dvbern.kibon.exchange.commons.verfuegung.VerfuegungEventDTO.Builder();
+      return new ch.dvbern.kibon.exchange.commons.verfuegung.VerfuegungEventDTOv2.Builder();
     } else {
-      return new ch.dvbern.kibon.exchange.commons.verfuegung.VerfuegungEventDTO.Builder(other);
+      return new ch.dvbern.kibon.exchange.commons.verfuegung.VerfuegungEventDTOv2.Builder(other);
     }
   }
 
   /**
-   * RecordBuilder for VerfuegungEventDTO instances.
+   * RecordBuilder for VerfuegungEventDTOv2 instances.
    */
-  public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<VerfuegungEventDTO>
-    implements org.apache.avro.data.RecordBuilder<VerfuegungEventDTO> {
+  public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<VerfuegungEventDTOv2>
+    implements org.apache.avro.data.RecordBuilder<VerfuegungEventDTOv2> {
 
     private ch.dvbern.kibon.exchange.commons.verfuegung.KindDTO kind;
     private ch.dvbern.kibon.exchange.commons.verfuegung.KindDTO.Builder kindBuilder;
@@ -469,8 +469,8 @@ static {
     private java.time.Instant verfuegtAm;
     private long gemeindeBfsNr;
     private java.lang.String gemeindeName;
-    private java.util.List<ch.dvbern.kibon.exchange.commons.verfuegung.ZeitabschnittDTO> zeitabschnitte;
-    private java.util.List<ch.dvbern.kibon.exchange.commons.verfuegung.ZeitabschnittDTO> ignorierteZeitabschnitte;
+    private java.util.List<ch.dvbern.kibon.exchange.commons.verfuegung.ZeitabschnittDTOv2> zeitabschnitte;
+    private java.util.List<ch.dvbern.kibon.exchange.commons.verfuegung.ZeitabschnittDTOv2> ignorierteZeitabschnitte;
 
     /** Creates a new Builder */
     private Builder() {
@@ -481,7 +481,7 @@ static {
      * Creates a Builder by copying an existing Builder.
      * @param other The existing Builder to copy.
      */
-    private Builder(ch.dvbern.kibon.exchange.commons.verfuegung.VerfuegungEventDTO.Builder other) {
+    private Builder(ch.dvbern.kibon.exchange.commons.verfuegung.VerfuegungEventDTOv2.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.kind)) {
         this.kind = data().deepCopy(fields()[0].schema(), other.kind);
@@ -544,10 +544,10 @@ static {
     }
 
     /**
-     * Creates a Builder by copying an existing VerfuegungEventDTO instance
+     * Creates a Builder by copying an existing VerfuegungEventDTOv2 instance
      * @param other The existing instance to copy.
      */
-    private Builder(ch.dvbern.kibon.exchange.commons.verfuegung.VerfuegungEventDTO other) {
+    private Builder(ch.dvbern.kibon.exchange.commons.verfuegung.VerfuegungEventDTOv2 other) {
       super(SCHEMA$);
       if (isValidValue(fields()[0], other.kind)) {
         this.kind = data().deepCopy(fields()[0].schema(), other.kind);
@@ -619,7 +619,7 @@ static {
       * @param value The value of 'kind'.
       * @return This builder.
       */
-    public ch.dvbern.kibon.exchange.commons.verfuegung.VerfuegungEventDTO.Builder setKind(ch.dvbern.kibon.exchange.commons.verfuegung.KindDTO value) {
+    public ch.dvbern.kibon.exchange.commons.verfuegung.VerfuegungEventDTOv2.Builder setKind(ch.dvbern.kibon.exchange.commons.verfuegung.KindDTO value) {
       validate(fields()[0], value);
       this.kindBuilder = null;
       this.kind = value;
@@ -655,7 +655,7 @@ static {
      * @param value The builder instance that must be set.
      * @return This builder.
      */
-    public ch.dvbern.kibon.exchange.commons.verfuegung.VerfuegungEventDTO.Builder setKindBuilder(ch.dvbern.kibon.exchange.commons.verfuegung.KindDTO.Builder value) {
+    public ch.dvbern.kibon.exchange.commons.verfuegung.VerfuegungEventDTOv2.Builder setKindBuilder(ch.dvbern.kibon.exchange.commons.verfuegung.KindDTO.Builder value) {
       clearKind();
       kindBuilder = value;
       return this;
@@ -673,7 +673,7 @@ static {
       * Clears the value of the 'kind' field.
       * @return This builder.
       */
-    public ch.dvbern.kibon.exchange.commons.verfuegung.VerfuegungEventDTO.Builder clearKind() {
+    public ch.dvbern.kibon.exchange.commons.verfuegung.VerfuegungEventDTOv2.Builder clearKind() {
       kind = null;
       kindBuilder = null;
       fieldSetFlags()[0] = false;
@@ -694,7 +694,7 @@ static {
       * @param value The value of 'gesuchsteller'.
       * @return This builder.
       */
-    public ch.dvbern.kibon.exchange.commons.verfuegung.VerfuegungEventDTO.Builder setGesuchsteller(ch.dvbern.kibon.exchange.commons.verfuegung.GesuchstellerDTO value) {
+    public ch.dvbern.kibon.exchange.commons.verfuegung.VerfuegungEventDTOv2.Builder setGesuchsteller(ch.dvbern.kibon.exchange.commons.verfuegung.GesuchstellerDTO value) {
       validate(fields()[1], value);
       this.gesuchstellerBuilder = null;
       this.gesuchsteller = value;
@@ -730,7 +730,7 @@ static {
      * @param value The builder instance that must be set.
      * @return This builder.
      */
-    public ch.dvbern.kibon.exchange.commons.verfuegung.VerfuegungEventDTO.Builder setGesuchstellerBuilder(ch.dvbern.kibon.exchange.commons.verfuegung.GesuchstellerDTO.Builder value) {
+    public ch.dvbern.kibon.exchange.commons.verfuegung.VerfuegungEventDTOv2.Builder setGesuchstellerBuilder(ch.dvbern.kibon.exchange.commons.verfuegung.GesuchstellerDTO.Builder value) {
       clearGesuchsteller();
       gesuchstellerBuilder = value;
       return this;
@@ -748,7 +748,7 @@ static {
       * Clears the value of the 'gesuchsteller' field.
       * @return This builder.
       */
-    public ch.dvbern.kibon.exchange.commons.verfuegung.VerfuegungEventDTO.Builder clearGesuchsteller() {
+    public ch.dvbern.kibon.exchange.commons.verfuegung.VerfuegungEventDTOv2.Builder clearGesuchsteller() {
       gesuchsteller = null;
       gesuchstellerBuilder = null;
       fieldSetFlags()[1] = false;
@@ -769,7 +769,7 @@ static {
       * @param value The value of 'betreuungsArt'.
       * @return This builder.
       */
-    public ch.dvbern.kibon.exchange.commons.verfuegung.VerfuegungEventDTO.Builder setBetreuungsArt(ch.dvbern.kibon.exchange.commons.types.BetreuungsangebotTyp value) {
+    public ch.dvbern.kibon.exchange.commons.verfuegung.VerfuegungEventDTOv2.Builder setBetreuungsArt(ch.dvbern.kibon.exchange.commons.types.BetreuungsangebotTyp value) {
       validate(fields()[2], value);
       this.betreuungsArt = value;
       fieldSetFlags()[2] = true;
@@ -789,7 +789,7 @@ static {
       * Clears the value of the 'betreuungsArt' field.
       * @return This builder.
       */
-    public ch.dvbern.kibon.exchange.commons.verfuegung.VerfuegungEventDTO.Builder clearBetreuungsArt() {
+    public ch.dvbern.kibon.exchange.commons.verfuegung.VerfuegungEventDTOv2.Builder clearBetreuungsArt() {
       betreuungsArt = null;
       fieldSetFlags()[2] = false;
       return this;
@@ -809,7 +809,7 @@ static {
       * @param value The value of 'refnr'.
       * @return This builder.
       */
-    public ch.dvbern.kibon.exchange.commons.verfuegung.VerfuegungEventDTO.Builder setRefnr(java.lang.String value) {
+    public ch.dvbern.kibon.exchange.commons.verfuegung.VerfuegungEventDTOv2.Builder setRefnr(java.lang.String value) {
       validate(fields()[3], value);
       this.refnr = value;
       fieldSetFlags()[3] = true;
@@ -829,7 +829,7 @@ static {
       * Clears the value of the 'refnr' field.
       * @return This builder.
       */
-    public ch.dvbern.kibon.exchange.commons.verfuegung.VerfuegungEventDTO.Builder clearRefnr() {
+    public ch.dvbern.kibon.exchange.commons.verfuegung.VerfuegungEventDTOv2.Builder clearRefnr() {
       refnr = null;
       fieldSetFlags()[3] = false;
       return this;
@@ -849,7 +849,7 @@ static {
       * @param value The value of 'institutionId'.
       * @return This builder.
       */
-    public ch.dvbern.kibon.exchange.commons.verfuegung.VerfuegungEventDTO.Builder setInstitutionId(java.lang.String value) {
+    public ch.dvbern.kibon.exchange.commons.verfuegung.VerfuegungEventDTOv2.Builder setInstitutionId(java.lang.String value) {
       validate(fields()[4], value);
       this.institutionId = value;
       fieldSetFlags()[4] = true;
@@ -869,7 +869,7 @@ static {
       * Clears the value of the 'institutionId' field.
       * @return This builder.
       */
-    public ch.dvbern.kibon.exchange.commons.verfuegung.VerfuegungEventDTO.Builder clearInstitutionId() {
+    public ch.dvbern.kibon.exchange.commons.verfuegung.VerfuegungEventDTOv2.Builder clearInstitutionId() {
       institutionId = null;
       fieldSetFlags()[4] = false;
       return this;
@@ -889,7 +889,7 @@ static {
       * @param value The value of 'von'.
       * @return This builder.
       */
-    public ch.dvbern.kibon.exchange.commons.verfuegung.VerfuegungEventDTO.Builder setVon(java.time.LocalDate value) {
+    public ch.dvbern.kibon.exchange.commons.verfuegung.VerfuegungEventDTOv2.Builder setVon(java.time.LocalDate value) {
       validate(fields()[5], value);
       this.von = value;
       fieldSetFlags()[5] = true;
@@ -909,7 +909,7 @@ static {
       * Clears the value of the 'von' field.
       * @return This builder.
       */
-    public ch.dvbern.kibon.exchange.commons.verfuegung.VerfuegungEventDTO.Builder clearVon() {
+    public ch.dvbern.kibon.exchange.commons.verfuegung.VerfuegungEventDTOv2.Builder clearVon() {
       fieldSetFlags()[5] = false;
       return this;
     }
@@ -928,7 +928,7 @@ static {
       * @param value The value of 'bis'.
       * @return This builder.
       */
-    public ch.dvbern.kibon.exchange.commons.verfuegung.VerfuegungEventDTO.Builder setBis(java.time.LocalDate value) {
+    public ch.dvbern.kibon.exchange.commons.verfuegung.VerfuegungEventDTOv2.Builder setBis(java.time.LocalDate value) {
       validate(fields()[6], value);
       this.bis = value;
       fieldSetFlags()[6] = true;
@@ -948,7 +948,7 @@ static {
       * Clears the value of the 'bis' field.
       * @return This builder.
       */
-    public ch.dvbern.kibon.exchange.commons.verfuegung.VerfuegungEventDTO.Builder clearBis() {
+    public ch.dvbern.kibon.exchange.commons.verfuegung.VerfuegungEventDTOv2.Builder clearBis() {
       fieldSetFlags()[6] = false;
       return this;
     }
@@ -967,7 +967,7 @@ static {
       * @param value The value of 'version'.
       * @return This builder.
       */
-    public ch.dvbern.kibon.exchange.commons.verfuegung.VerfuegungEventDTO.Builder setVersion(int value) {
+    public ch.dvbern.kibon.exchange.commons.verfuegung.VerfuegungEventDTOv2.Builder setVersion(int value) {
       validate(fields()[7], value);
       this.version = value;
       fieldSetFlags()[7] = true;
@@ -987,7 +987,7 @@ static {
       * Clears the value of the 'version' field.
       * @return This builder.
       */
-    public ch.dvbern.kibon.exchange.commons.verfuegung.VerfuegungEventDTO.Builder clearVersion() {
+    public ch.dvbern.kibon.exchange.commons.verfuegung.VerfuegungEventDTOv2.Builder clearVersion() {
       fieldSetFlags()[7] = false;
       return this;
     }
@@ -1006,7 +1006,7 @@ static {
       * @param value The value of 'verfuegtAm'.
       * @return This builder.
       */
-    public ch.dvbern.kibon.exchange.commons.verfuegung.VerfuegungEventDTO.Builder setVerfuegtAm(java.time.Instant value) {
+    public ch.dvbern.kibon.exchange.commons.verfuegung.VerfuegungEventDTOv2.Builder setVerfuegtAm(java.time.Instant value) {
       validate(fields()[8], value);
       this.verfuegtAm = value.truncatedTo(java.time.temporal.ChronoUnit.MICROS);
       fieldSetFlags()[8] = true;
@@ -1026,7 +1026,7 @@ static {
       * Clears the value of the 'verfuegtAm' field.
       * @return This builder.
       */
-    public ch.dvbern.kibon.exchange.commons.verfuegung.VerfuegungEventDTO.Builder clearVerfuegtAm() {
+    public ch.dvbern.kibon.exchange.commons.verfuegung.VerfuegungEventDTOv2.Builder clearVerfuegtAm() {
       fieldSetFlags()[8] = false;
       return this;
     }
@@ -1045,7 +1045,7 @@ static {
       * @param value The value of 'gemeindeBfsNr'.
       * @return This builder.
       */
-    public ch.dvbern.kibon.exchange.commons.verfuegung.VerfuegungEventDTO.Builder setGemeindeBfsNr(long value) {
+    public ch.dvbern.kibon.exchange.commons.verfuegung.VerfuegungEventDTOv2.Builder setGemeindeBfsNr(long value) {
       validate(fields()[9], value);
       this.gemeindeBfsNr = value;
       fieldSetFlags()[9] = true;
@@ -1065,7 +1065,7 @@ static {
       * Clears the value of the 'gemeindeBfsNr' field.
       * @return This builder.
       */
-    public ch.dvbern.kibon.exchange.commons.verfuegung.VerfuegungEventDTO.Builder clearGemeindeBfsNr() {
+    public ch.dvbern.kibon.exchange.commons.verfuegung.VerfuegungEventDTOv2.Builder clearGemeindeBfsNr() {
       fieldSetFlags()[9] = false;
       return this;
     }
@@ -1084,7 +1084,7 @@ static {
       * @param value The value of 'gemeindeName'.
       * @return This builder.
       */
-    public ch.dvbern.kibon.exchange.commons.verfuegung.VerfuegungEventDTO.Builder setGemeindeName(java.lang.String value) {
+    public ch.dvbern.kibon.exchange.commons.verfuegung.VerfuegungEventDTOv2.Builder setGemeindeName(java.lang.String value) {
       validate(fields()[10], value);
       this.gemeindeName = value;
       fieldSetFlags()[10] = true;
@@ -1104,7 +1104,7 @@ static {
       * Clears the value of the 'gemeindeName' field.
       * @return This builder.
       */
-    public ch.dvbern.kibon.exchange.commons.verfuegung.VerfuegungEventDTO.Builder clearGemeindeName() {
+    public ch.dvbern.kibon.exchange.commons.verfuegung.VerfuegungEventDTOv2.Builder clearGemeindeName() {
       gemeindeName = null;
       fieldSetFlags()[10] = false;
       return this;
@@ -1114,7 +1114,7 @@ static {
       * Gets the value of the 'zeitabschnitte' field.
       * @return The value.
       */
-    public java.util.List<ch.dvbern.kibon.exchange.commons.verfuegung.ZeitabschnittDTO> getZeitabschnitte() {
+    public java.util.List<ch.dvbern.kibon.exchange.commons.verfuegung.ZeitabschnittDTOv2> getZeitabschnitte() {
       return zeitabschnitte;
     }
 
@@ -1124,7 +1124,7 @@ static {
       * @param value The value of 'zeitabschnitte'.
       * @return This builder.
       */
-    public ch.dvbern.kibon.exchange.commons.verfuegung.VerfuegungEventDTO.Builder setZeitabschnitte(java.util.List<ch.dvbern.kibon.exchange.commons.verfuegung.ZeitabschnittDTO> value) {
+    public ch.dvbern.kibon.exchange.commons.verfuegung.VerfuegungEventDTOv2.Builder setZeitabschnitte(java.util.List<ch.dvbern.kibon.exchange.commons.verfuegung.ZeitabschnittDTOv2> value) {
       validate(fields()[11], value);
       this.zeitabschnitte = value;
       fieldSetFlags()[11] = true;
@@ -1144,7 +1144,7 @@ static {
       * Clears the value of the 'zeitabschnitte' field.
       * @return This builder.
       */
-    public ch.dvbern.kibon.exchange.commons.verfuegung.VerfuegungEventDTO.Builder clearZeitabschnitte() {
+    public ch.dvbern.kibon.exchange.commons.verfuegung.VerfuegungEventDTOv2.Builder clearZeitabschnitte() {
       zeitabschnitte = null;
       fieldSetFlags()[11] = false;
       return this;
@@ -1154,7 +1154,7 @@ static {
       * Gets the value of the 'ignorierteZeitabschnitte' field.
       * @return The value.
       */
-    public java.util.List<ch.dvbern.kibon.exchange.commons.verfuegung.ZeitabschnittDTO> getIgnorierteZeitabschnitte() {
+    public java.util.List<ch.dvbern.kibon.exchange.commons.verfuegung.ZeitabschnittDTOv2> getIgnorierteZeitabschnitte() {
       return ignorierteZeitabschnitte;
     }
 
@@ -1164,7 +1164,7 @@ static {
       * @param value The value of 'ignorierteZeitabschnitte'.
       * @return This builder.
       */
-    public ch.dvbern.kibon.exchange.commons.verfuegung.VerfuegungEventDTO.Builder setIgnorierteZeitabschnitte(java.util.List<ch.dvbern.kibon.exchange.commons.verfuegung.ZeitabschnittDTO> value) {
+    public ch.dvbern.kibon.exchange.commons.verfuegung.VerfuegungEventDTOv2.Builder setIgnorierteZeitabschnitte(java.util.List<ch.dvbern.kibon.exchange.commons.verfuegung.ZeitabschnittDTOv2> value) {
       validate(fields()[12], value);
       this.ignorierteZeitabschnitte = value;
       fieldSetFlags()[12] = true;
@@ -1184,7 +1184,7 @@ static {
       * Clears the value of the 'ignorierteZeitabschnitte' field.
       * @return This builder.
       */
-    public ch.dvbern.kibon.exchange.commons.verfuegung.VerfuegungEventDTO.Builder clearIgnorierteZeitabschnitte() {
+    public ch.dvbern.kibon.exchange.commons.verfuegung.VerfuegungEventDTOv2.Builder clearIgnorierteZeitabschnitte() {
       ignorierteZeitabschnitte = null;
       fieldSetFlags()[12] = false;
       return this;
@@ -1192,9 +1192,9 @@ static {
 
     @Override
     @SuppressWarnings("unchecked")
-    public VerfuegungEventDTO build() {
+    public VerfuegungEventDTOv2 build() {
       try {
-        VerfuegungEventDTO record = new VerfuegungEventDTO();
+        VerfuegungEventDTOv2 record = new VerfuegungEventDTOv2();
         if (kindBuilder != null) {
           try {
             record.kind = this.kindBuilder.build();
@@ -1224,8 +1224,8 @@ static {
         record.verfuegtAm = fieldSetFlags()[8] ? this.verfuegtAm : (java.time.Instant) defaultValue(fields()[8]);
         record.gemeindeBfsNr = fieldSetFlags()[9] ? this.gemeindeBfsNr : (java.lang.Long) defaultValue(fields()[9]);
         record.gemeindeName = fieldSetFlags()[10] ? this.gemeindeName : (java.lang.String) defaultValue(fields()[10]);
-        record.zeitabschnitte = fieldSetFlags()[11] ? this.zeitabschnitte : (java.util.List<ch.dvbern.kibon.exchange.commons.verfuegung.ZeitabschnittDTO>) defaultValue(fields()[11]);
-        record.ignorierteZeitabschnitte = fieldSetFlags()[12] ? this.ignorierteZeitabschnitte : (java.util.List<ch.dvbern.kibon.exchange.commons.verfuegung.ZeitabschnittDTO>) defaultValue(fields()[12]);
+        record.zeitabschnitte = fieldSetFlags()[11] ? this.zeitabschnitte : (java.util.List<ch.dvbern.kibon.exchange.commons.verfuegung.ZeitabschnittDTOv2>) defaultValue(fields()[11]);
+        record.ignorierteZeitabschnitte = fieldSetFlags()[12] ? this.ignorierteZeitabschnitte : (java.util.List<ch.dvbern.kibon.exchange.commons.verfuegung.ZeitabschnittDTOv2>) defaultValue(fields()[12]);
         return record;
       } catch (org.apache.avro.AvroMissingFieldException e) {
         throw e;
@@ -1236,8 +1236,8 @@ static {
   }
 
   @SuppressWarnings("unchecked")
-  private static final org.apache.avro.io.DatumWriter<VerfuegungEventDTO>
-    WRITER$ = (org.apache.avro.io.DatumWriter<VerfuegungEventDTO>)MODEL$.createDatumWriter(SCHEMA$);
+  private static final org.apache.avro.io.DatumWriter<VerfuegungEventDTOv2>
+    WRITER$ = (org.apache.avro.io.DatumWriter<VerfuegungEventDTOv2>)MODEL$.createDatumWriter(SCHEMA$);
 
   @Override public void writeExternal(java.io.ObjectOutput out)
     throws java.io.IOException {
@@ -1245,8 +1245,8 @@ static {
   }
 
   @SuppressWarnings("unchecked")
-  private static final org.apache.avro.io.DatumReader<VerfuegungEventDTO>
-    READER$ = (org.apache.avro.io.DatumReader<VerfuegungEventDTO>)MODEL$.createDatumReader(SCHEMA$);
+  private static final org.apache.avro.io.DatumReader<VerfuegungEventDTOv2>
+    READER$ = (org.apache.avro.io.DatumReader<VerfuegungEventDTOv2>)MODEL$.createDatumReader(SCHEMA$);
 
   @Override public void readExternal(java.io.ObjectInput in)
     throws java.io.IOException {
