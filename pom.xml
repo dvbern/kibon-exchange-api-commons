@@ -52,6 +52,39 @@
             <artifactId>avro</artifactId>
             <version>${avro.version}</version>
         </dependency>
+
+        <!-- region test -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>5.6.2</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest</artifactId>
+            <version>2.2</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>eu.codearte.catch-exception</groupId>
+            <artifactId>catch-exception</artifactId>
+            <version>2.0</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.github.javafaker</groupId>
+            <artifactId>javafaker</artifactId>
+            <version>1.0.0</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>1.7.30</version>
+            <scope>test</scope>
+        </dependency>
+        <!-- endregion -->
     </dependencies>
 
     <build>
@@ -63,6 +96,26 @@
                     <source>1.8</source>
                     <target>1.8</target>
                 </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.22.2</version>
+            </plugin>
+            <plugin>
+                <artifactId>maven-failsafe-plugin</artifactId>
+                <version>2.22.2</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.2.0</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>test-jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
             <plugin>
                 <groupId>org.apache.avro</groupId>
@@ -97,7 +150,7 @@
                     <subjects>
                         <InstitutionEvents-value>src/main/avro/ch/dvbern/kibon/exchange/commons/institution/InstitutionEventDTO.avsc</InstitutionEvents-value>
                         <InstitutionClientEvents-value>src/main/avro/ch/dvbern/kibon/exchange/commons/institutionclient/InstitutionClientEventDTO.avsc</InstitutionClientEvents-value>
-                        <VerfuegungEvents-value>src/main/avro/ch/dvbern/kibon/exchange/commons/verfuegung/VerfuegungEventDTO.avsc</VerfuegungEvents-value>
+                        <VerfuegungEvents-value>src/main/avro/ch/dvbern/kibon/exchange/commons/verfuegung/VerfuegungEventDTOv2.avsc</VerfuegungEvents-value>
                     </subjects>
                 </configuration>
                 <goals>
