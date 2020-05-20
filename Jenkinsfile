@@ -45,7 +45,7 @@ properties([
 def mvnVersion = "Maven_3.6.3"
 def jdkVersion = "OpenJDK_1.8_222"
 // comma separated list of email addresses of all team members (for notification)
-def emailRecipients = "fabio.heer@dvbern.ch"
+def recipients = "fabio.heer@dvbern.ch"
 
 def masterBranchName = "master"
 def developBranchName = "develop"
@@ -78,7 +78,7 @@ def doDeploymentBuild = {
 							sendToIndividuals       : true])
 
 				} else {
-					dvbErrorHandling.sendMail(emailRecipients, currentBuild, error)
+					dvbErrorHandling.sendMail(recipients, currentBuild, error)
 				}
 			}
 
@@ -112,8 +112,7 @@ def doRelease = {
 	dvbJGitFlowRelease {
 		releaseversion = releaseVersion
 		nextreleaseversion = nextReleaseVersion
-		emailRecipients
-		jdkVersion
+		emailRecipients = recipients
 		credentialsId = 'jenkins-github-token'
 	}
 }
