@@ -17,11 +17,24 @@
 
 @Library('dvbern-ci') _
 
+def DEPLOYMENT_BUILD = 'build-and-deploy'
+def RELEASE_BUILD = 'release'
+def SECURITY_CHECK_BUILD = 'security-check'
+
 properties([
-		[$class: 'BuildDiscarderProperty', strategy: [$class: 'LogRotator', numToKeepStr: '10']],
+		disableConcurrentBuilds(),
+		[
+				$class  : 'BuildDiscarderProperty',
+				strategy: [$class: 'LogRotator', numToKeepStr: '10']
+		],
+		[
+				$class       : 'GithubProjectProperty',
+				displayName  : '',
+				projectUrlStr: 'https://github.com/dvbern/kibon-exchange-api-commons/'
+		],
 		parameters([
-				booleanParam(defaultValue: false, description: 'Do you want to perform a Release?', name:
-						'performRelease'),
+				choice(choices: [DEPLOYMENT_BUILD, RELEASE_BUILD, SECURITY_CHECK_BUILD],
+						description: 'What type of build should the pipeline execute?', name: 'buildType'),
 				string(defaultValue: '', description: 'This release version', name: 'releaseversion', trim:
 						true),
 				string(defaultValue: '', description: 'The next release version', name: 'nextreleaseversion',
@@ -29,10 +42,10 @@ properties([
 		])
 ])
 
-def mvnVersion = "Maven_3.6.1"
+def mvnVersion = "Maven_3.6.3"
 def jdkVersion = "OpenJDK_1.8_222"
 // comma separated list of email addresses of all team members (for notification)
-def emailRecipients = "fabio.heer@dvbern.ch"
+def recipients = "fabio.heer@dvbern.ch"
 
 def masterBranchName = "master"
 def developBranchName = "develop"
@@ -40,51 +53,8 @@ def featureBranchPrefix = "feature"
 def releaseBranchPrefix = "release"
 def hotfixBranchPrefix = "hotfix"
 
-node {
-	def isUnix = isUnix()
-
-	def genericSh = {cmd ->
-		if (Boolean.valueOf(isUnix)) {
-			sh cmd
-		} else {
-			bat cmd
-		}
-	}
-
-	if (params.performRelease) {
-		currentBuild.displayName = "Release-${params.releaseversion}-${env.BUILD_NUMBER}"
-
-		stage('Checkout') {
-			checkout([
-					$class           : 'GitSCM',
-					branches         : [[name: "${developBranchName}"]],
-					extensions       : [[$class: 'LocalBranch', localBranch: "${developBranchName}"]],
-					userRemoteConfigs: scm.userRemoteConfigs
-			])
-		}
-
-		stage('Release') {
-			try {
-				withCredentials([usernamePassword(credentialsId: 'jenkins-github-token', passwordVariable: 'password',
-						usernameVariable: 'username')]) {
-				withMaven(jdk: jdkVersion, maven: mvnVersion) {
-						genericSh "mvn -Pdvbern.oss -B jgitflow:release-start " +
-								"-DreleaseVersion=${params.releaseversion} " +
-								"-DdevelopmentVersion=${params.nextreleaseversion}-SNAPSHOT " +
-								"-Dusername=${username} " +
-								"-Dpassword=${password} " +
-								"jgitflow:release-finish"
-					}
-				}
-			} catch (Exception e) {
-				currentBuild.result = "FAILURE"
-				// notify the team
-				mail(to: emailRecipients, subject: "${env.JOB_NAME} Release failed", body: "See: " +
-						"(<${BUILD_URL}/console|Job>)")
-				throw e
-			}
-		}
-	} else {
+def doDeploymentBuild = {
+	node {
 		stage('Checkout') {
 			checkout([
 					$class           : 'GitSCM',
@@ -95,17 +65,20 @@ node {
 		}
 
 		String branch = env.BRANCH_NAME.toString()
-		currentBuild.displayName = "${branch}-${pomVersion()}-${env.BUILD_NUMBER}"
+		currentBuild.displayName = "${branch}-${dvbMaven.pomVersion()}-${env.BUILD_NUMBER}"
 
 		stage('Maven build') {
 			def handleFailures = {error ->
 				if (branch.startsWith(featureBranchPrefix)) {
 					// feature branche failures should only notify the feature owner
-					step([$class: 'Mailer', notifyEveryUnstableBuild: true, recipients: emailextrecipients([[$class:
-																													 'RequesterRecipientProvider']]), sendToIndividuals: true])
+					step([
+							$class                  : 'Mailer',
+							notifyEveryUnstableBuild: true,
+							recipients              : emailextrecipients([[$class: 'RequesterRecipientProvider']]),
+							sendToIndividuals       : true])
 
 				} else {
-					dvbErrorHandling.sendMail(emailRecipients, currentBuild, error)
+					dvbErrorHandling.sendMail(recipients, currentBuild, error)
 				}
 			}
 
@@ -117,7 +90,7 @@ node {
 
 			try {
 				withMaven(jdk: jdkVersion, maven: mvnVersion) {
-					genericSh 'mvn -U -Pdvbern.oss -Dmaven.test.failure.ignore=true clean ' + verifyOrDeploy()
+					dvbUtil.genericSh 'mvn -U -Pdvbern.oss -Dmaven.test.failure.ignore=true clean ' + verifyOrDeploy()
 				}
 				if (currentBuild.result == "UNSTABLE") {
 					handleFailures("build is unstable")
@@ -131,7 +104,50 @@ node {
 	}
 }
 
-def pomVersion() {
-	def pom = readMavenPom file: 'pom.xml'
-	return pom.version
+def doRelease = {
+	// see https://issues.jenkins-ci.org/browse/JENKINS-53512
+	def releaseVersion = params.releaseversion
+	def nextReleaseVersion = params.nextreleaseversion
+
+	dvbJGitFlowRelease {
+		releaseversion = releaseVersion
+		nextreleaseversion = nextReleaseVersion
+		emailRecipients = recipients
+		credentialsId = 'jenkins-github-token'
+	}
+}
+
+def doSecurityCheck = {
+	node {
+		stage('Checkout') {
+			checkout([
+					$class           : 'GitSCM',
+					branches         : scm.branches,
+					extensions       : scm.extensions + [[$class: 'LocalBranch', localBranch: '']],
+					userRemoteConfigs: scm.userRemoteConfigs
+			])
+		}
+
+		String branch = env.BRANCH_NAME.toString()
+		currentBuild.displayName = "Security Check ${branch}-${dvbMaven.pomVersion()}-${env.BUILD_NUMBER}"
+
+		stage('Dependency Check') {
+			dependencyCheck additionalArguments: '', odcInstallation: 'latest'
+			dependencyCheckPublisher pattern: ''
+		}
+	}
+}
+
+switch (params.buildType) {
+case DEPLOYMENT_BUILD:
+	doDeploymentBuild()
+	break
+case RELEASE_BUILD:
+	doRelease()
+	break
+case SECURITY_CHECK_BUILD:
+	doSecurityCheck()
+	break
+default:
+	doDeploymentBuild()
 }

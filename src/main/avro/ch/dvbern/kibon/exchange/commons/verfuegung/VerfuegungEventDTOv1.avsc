@@ -1,0 +1,239 @@
+{
+	"type": "record",
+	"name": "VerfuegungEventDTOv1",
+	"namespace": "ch.dvbern.kibon.exchange.commons.verfuegung",
+	"fields": [
+		{
+			"name": "kind",
+			"type": {
+				"type": "record",
+				"name": "KindDTO",
+				"fields": [
+					{
+						"name": "vorname",
+						"type": "string"
+					},
+					{
+						"name": "nachname",
+						"type": "string"
+					},
+					{
+						"name": "geburtsdatum",
+						"type": {
+							"type": "int",
+							"logicalType": "date"
+						}
+					}
+				]
+			}
+		},
+		{
+			"name": "gesuchsteller",
+			"type": {
+				"type": "record",
+				"name": "GesuchstellerDTO",
+				"fields": [
+					{
+						"name": "vorname",
+						"type": "string"
+					},
+					{
+						"name": "nachname",
+						"type": "string"
+					},
+					{
+						"name": "email",
+						"type": [
+							"null",
+							"string"
+						],
+						"default": null
+					}
+				]
+			}
+		},
+		{
+			"name": "betreuungsArt",
+			"type": {
+				"type": "enum",
+				"name": "BetreuungsangebotTyp",
+				"namespace": "ch.dvbern.kibon.exchange.commons.types",
+				"symbols": [
+					"KITA",
+					"TAGESSCHULE",
+					"TAGESFAMILIEN",
+					"FERIENINSEL"
+				]
+			}
+		},
+		{
+			"name": "refnr",
+			"type": "string"
+		},
+		{
+			"name": "institutionId",
+			"type": "string"
+		},
+		{
+			"name": "von",
+			"type": {
+				"type": "int",
+				"logicalType": "date"
+			}
+		},
+		{
+			"name": "bis",
+			"type": {
+				"type": "int",
+				"logicalType": "date"
+			}
+		},
+		{
+			"name": "version",
+			"type": "int"
+		},
+		{
+			"name": "verfuegtAm",
+			"type": {
+				"type": "long",
+				"logicalType": "timestamp-micros"
+			}
+		},
+		{
+			"name": "gemeindeBfsNr",
+			"type": "long"
+		},
+		{
+			"name": "gemeindeName",
+			"type": "string"
+		},
+		{
+			"name": "zeitabschnitte",
+			"type": {
+				"type": "array",
+				"items": {
+					"type": "record",
+					"name": "ZeitabschnittDTOv1",
+					"fields": [
+						{
+							"name": "von",
+							"type": {
+								"type": "int",
+								"logicalType": "date"
+							}
+						},
+						{
+							"name": "bis",
+							"type": {
+								"type": "int",
+								"logicalType": "date"
+							}
+						},
+						{
+							"name": "verfuegungNr",
+							"type": "int"
+						},
+						{
+							"name": "effektiveBetreuungPct",
+							"type": {
+								"type": "bytes",
+								"logicalType": "decimal",
+								"precision": 19,
+								"scale": 2
+							}
+						},
+						{
+							"name": "anspruchPct",
+							"type": "int"
+						},
+						{
+							"name": "verguenstigtPct",
+							"type": {
+								"type": "bytes",
+								"logicalType": "decimal",
+								"precision": 19,
+								"scale": 2
+							}
+						},
+						{
+							"name": "vollkosten",
+							"type": {
+								"type": "bytes",
+								"logicalType": "decimal",
+								"precision": 19,
+								"scale": 2
+							}
+						},
+						{
+							"name": "betreuungsgutschein",
+							"type": {
+								"type": "bytes",
+								"logicalType": "decimal",
+								"precision": 19,
+								"scale": 2
+							}
+						},
+						{
+							"name": "minimalerElternbeitrag",
+							"type": {
+
+								"type": "bytes",
+								"logicalType": "decimal",
+								"precision": 19,
+								"scale": 2
+							}
+						},
+						{
+							"name": "verguenstigung",
+							"type": {
+								"type": "bytes",
+								"logicalType": "decimal",
+								"precision": 19,
+								"scale": 2
+							}
+						},
+						{
+							"name": "verfuegteAnzahlZeiteinheiten",
+							"type": {
+								"type": "bytes",
+								"logicalType": "decimal",
+								"precision": 19,
+								"scale": 2
+							}
+						},
+						{
+							"name": "anspruchsberechtigteAnzahlZeiteinheiten",
+							"type": {
+								"type": "bytes",
+								"logicalType": "decimal",
+								"precision": 19,
+								"scale": 2
+							}
+						},
+						{
+							"name": "zeiteinheit",
+							"type": {
+								"type": "enum",
+								"name": "Zeiteinheit",
+								"namespace": "ch.dvbern.kibon.exchange.commons.types",
+								"symbols": [
+									"DAYS",
+									"HOURS"
+								]
+							}
+						}
+					]
+				}
+			},
+			"default": []
+		},
+		{
+			"name": "ignorierteZeitabschnitte",
+			"type": {
+				"type": "array",
+				"items": "ZeitabschnittDTOv1"
+			},
+			"default": []
+		}
+	]
+}
