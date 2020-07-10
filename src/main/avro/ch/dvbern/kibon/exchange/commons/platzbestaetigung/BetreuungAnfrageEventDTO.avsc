@@ -1,0 +1,96 @@
+{
+	"type": "record",
+	"name": "BetreuungAnfrageEventDTO",
+	"namespace": "ch.dvbern.kibon.exchange.commons.platzbestaetigung",
+	"fields": [
+		{
+			"name": "refnr",
+			"type": "string"
+		},
+		{
+			"name": "periodeVon",
+			"type": {
+            	"type": "int",
+            	"logicalType": "date"
+            }
+		},
+		{
+        	"name": "periodeBis",
+        	"type": {
+            	"type": "int",
+            	"logicalType": "date"
+            }
+        },
+        {
+        	"name": "institutionId",
+        	"type": "string"
+        },
+        {
+        	"name": "gesuchsteller",
+        	"type": {
+        		"type": "record",
+        		"name": "GesuchstellerDTO",
+        		"fields": [
+        			{
+        				"name": "vorname",
+        				"type": "string"
+        			},
+        			{
+        				"name": "nachname",
+        				"type": "string"
+        			},
+        			{
+        				"name": "email",
+        				"type": [
+        					"null",
+        					"string"
+        				],
+        				"default": null
+        			}
+        		]
+        	}
+        },
+        {
+       		"name": "kind",
+       		"type": {
+       			"type": "record",
+       			"name": "KindDTO",
+       			"fields": [
+       				{
+       					"name": "vorname",
+       					"type": "string"
+       				},
+       				{
+       					"name": "nachname",
+       					"type": "string"
+       				},
+       				{
+       					"name": "geburtsdatum",
+       					"type": {
+       						"type": "int",
+       						"logicalType": "date"
+       					}
+       				}
+       			]
+       		}
+        },
+        {
+        	"name": "betreuungsArt",
+        	"type": {
+        		"type": "enum",
+        		"name": "BetreuungsangebotTyp",
+        		"namespace": "ch.dvbern.kibon.exchange.commons.types",
+        		"symbols": [
+        			"KITA",
+        			"TAGESSCHULE",
+        			"TAGESFAMILIEN",
+        			"FERIENINSEL"
+        		]
+        	}
+        },
+        {
+        	"name": "abgelehntVonGesuchsteller",
+        	"type": "boolean"
+        }
+  	]
+}
