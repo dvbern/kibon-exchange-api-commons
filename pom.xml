@@ -26,7 +26,7 @@
 
     <groupId>ch.dvbern.kibon</groupId>
     <artifactId>kibon-exchange-api-commons</artifactId>
-    <version>1.1.0</version>
+    <version>1.1.1</version>
     <packaging>jar</packaging>
 
     <properties>
@@ -151,6 +151,8 @@
                         <InstitutionEvents-value>src/main/avro/ch/dvbern/kibon/exchange/commons/institution/InstitutionEventDTO.avsc</InstitutionEvents-value>
                         <InstitutionClientEvents-value>src/main/avro/ch/dvbern/kibon/exchange/commons/institutionclient/InstitutionClientEventDTO.avsc</InstitutionClientEvents-value>
                         <VerfuegungEvents-value>src/main/avro/ch/dvbern/kibon/exchange/commons/verfuegung/VerfuegungEventDTOv2.avsc</VerfuegungEvents-value>
+                        <BetreuungAnfrageEvents-value>src/main/avro/ch/dvbern/kibon/exchange/commons/platzbestaetigung/BetreuungAnfrageEventDTO.avsc</BetreuungAnfrageEvents-value>
+                        <BetreuungEvents-value>src/main/avro/ch/dvbern/kibon/exchange/commons/platzbestaetigung/BetreuungEventDTO.avsc</BetreuungEvents-value>
                     </subjects>
                 </configuration>
                 <goals>
