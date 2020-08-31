@@ -14,8 +14,8 @@ import org.apache.avro.message.SchemaStore;
 
 @org.apache.avro.specific.AvroGenerated
 public class BetreuungEventDTO extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = 5752459081578159491L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"BetreuungEventDTO\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.platzbestaetigung\",\"fields\":[{\"name\":\"institutionId\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"refnr\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"zeitabschnitte\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"ZeitabschnittDTO\",\"fields\":[{\"name\":\"betreuungskosten\",\"type\":{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}},{\"name\":\"betreuungspensum\",\"type\":{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}},{\"name\":\"von\",\"type\":{\"type\":\"int\",\"logicalType\":\"date\"}},{\"name\":\"bis\",\"type\":{\"type\":\"int\",\"logicalType\":\"date\"}},{\"name\":\"pensumUnit\",\"type\":{\"type\":\"enum\",\"name\":\"Zeiteinheit\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.types\",\"symbols\":[\"DAYS\",\"HOURS\"]}},{\"name\":\"anzahlMonatlicheHauptmahlzeiten\",\"type\":\"int\"},{\"name\":\"anzahlMonatlicheNebenmahlzeiten\",\"type\":\"int\"},{\"name\":\"tarifProHauptmahlzeiten\",\"type\":[\"null\",{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}],\"default\":null},{\"name\":\"tarifProNebenmahlzeiten\",\"type\":[\"null\",{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}],\"default\":null}]}},\"default\":[]},{\"name\":\"gemeindeBfsNr\",\"type\":[\"null\",\"long\"],\"default\":null},{\"name\":\"gemeindeName\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null}]}");
+  private static final long serialVersionUID = 3572277275447774854L;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"BetreuungEventDTO\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.platzbestaetigung\",\"fields\":[{\"name\":\"institutionId\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"refnr\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"zeitabschnitte\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"ZeitabschnittDTO\",\"fields\":[{\"name\":\"betreuungskosten\",\"type\":{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}},{\"name\":\"betreuungspensum\",\"type\":{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}},{\"name\":\"von\",\"type\":{\"type\":\"int\",\"logicalType\":\"date\"}},{\"name\":\"bis\",\"type\":{\"type\":\"int\",\"logicalType\":\"date\"}},{\"name\":\"pensumUnit\",\"type\":{\"type\":\"enum\",\"name\":\"Zeiteinheit\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.types\",\"symbols\":[\"DAYS\",\"HOURS\"]}},{\"name\":\"anzahlMonatlicheHauptmahlzeiten\",\"type\":\"int\"},{\"name\":\"anzahlMonatlicheNebenmahlzeiten\",\"type\":\"int\"},{\"name\":\"tarifProHauptmahlzeiten\",\"type\":[\"null\",{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}],\"default\":null},{\"name\":\"tarifProNebenmahlzeiten\",\"type\":[\"null\",{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}],\"default\":null}]}},\"default\":[]},{\"name\":\"gemeindeBfsNr\",\"type\":[\"null\",\"long\"],\"default\":null},{\"name\":\"gemeindeName\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"ausserordentlicherBetreuungsaufwand\",\"type\":\"boolean\",\"default\":false}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static SpecificData MODEL$ = new SpecificData();
@@ -80,6 +80,7 @@ static {
    private java.util.List<ch.dvbern.kibon.exchange.commons.platzbestaetigung.ZeitabschnittDTO> zeitabschnitte;
    private java.lang.Long gemeindeBfsNr;
    private java.lang.String gemeindeName;
+   private boolean ausserordentlicherBetreuungsaufwand;
 
   /**
    * Default constructor.  Note that this does not initialize fields
@@ -95,13 +96,15 @@ static {
    * @param zeitabschnitte The new value for zeitabschnitte
    * @param gemeindeBfsNr The new value for gemeindeBfsNr
    * @param gemeindeName The new value for gemeindeName
+   * @param ausserordentlicherBetreuungsaufwand The new value for ausserordentlicherBetreuungsaufwand
    */
-  public BetreuungEventDTO(java.lang.String institutionId, java.lang.String refnr, java.util.List<ch.dvbern.kibon.exchange.commons.platzbestaetigung.ZeitabschnittDTO> zeitabschnitte, java.lang.Long gemeindeBfsNr, java.lang.String gemeindeName) {
+  public BetreuungEventDTO(java.lang.String institutionId, java.lang.String refnr, java.util.List<ch.dvbern.kibon.exchange.commons.platzbestaetigung.ZeitabschnittDTO> zeitabschnitte, java.lang.Long gemeindeBfsNr, java.lang.String gemeindeName, java.lang.Boolean ausserordentlicherBetreuungsaufwand) {
     this.institutionId = institutionId;
     this.refnr = refnr;
     this.zeitabschnitte = zeitabschnitte;
     this.gemeindeBfsNr = gemeindeBfsNr;
     this.gemeindeName = gemeindeName;
+    this.ausserordentlicherBetreuungsaufwand = ausserordentlicherBetreuungsaufwand;
   }
 
   public org.apache.avro.specific.SpecificData getSpecificData() { return MODEL$; }
@@ -114,6 +117,7 @@ static {
     case 2: return zeitabschnitte;
     case 3: return gemeindeBfsNr;
     case 4: return gemeindeName;
+    case 5: return ausserordentlicherBetreuungsaufwand;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -127,6 +131,7 @@ static {
     case 2: zeitabschnitte = (java.util.List<ch.dvbern.kibon.exchange.commons.platzbestaetigung.ZeitabschnittDTO>)value$; break;
     case 3: gemeindeBfsNr = (java.lang.Long)value$; break;
     case 4: gemeindeName = (java.lang.String)value$; break;
+    case 5: ausserordentlicherBetreuungsaufwand = (java.lang.Boolean)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -217,6 +222,23 @@ static {
   }
 
   /**
+   * Gets the value of the 'ausserordentlicherBetreuungsaufwand' field.
+   * @return The value of the 'ausserordentlicherBetreuungsaufwand' field.
+   */
+  public boolean getAusserordentlicherBetreuungsaufwand() {
+    return ausserordentlicherBetreuungsaufwand;
+  }
+
+
+  /**
+   * Sets the value of the 'ausserordentlicherBetreuungsaufwand' field.
+   * @param value the value to set.
+   */
+  public void setAusserordentlicherBetreuungsaufwand(boolean value) {
+    this.ausserordentlicherBetreuungsaufwand = value;
+  }
+
+  /**
    * Creates a new BetreuungEventDTO RecordBuilder.
    * @return A new BetreuungEventDTO RecordBuilder
    */
@@ -261,6 +283,7 @@ static {
     private java.util.List<ch.dvbern.kibon.exchange.commons.platzbestaetigung.ZeitabschnittDTO> zeitabschnitte;
     private java.lang.Long gemeindeBfsNr;
     private java.lang.String gemeindeName;
+    private boolean ausserordentlicherBetreuungsaufwand;
 
     /** Creates a new Builder */
     private Builder() {
@@ -293,6 +316,10 @@ static {
         this.gemeindeName = data().deepCopy(fields()[4].schema(), other.gemeindeName);
         fieldSetFlags()[4] = other.fieldSetFlags()[4];
       }
+      if (isValidValue(fields()[5], other.ausserordentlicherBetreuungsaufwand)) {
+        this.ausserordentlicherBetreuungsaufwand = data().deepCopy(fields()[5].schema(), other.ausserordentlicherBetreuungsaufwand);
+        fieldSetFlags()[5] = other.fieldSetFlags()[5];
+      }
     }
 
     /**
@@ -320,6 +347,10 @@ static {
       if (isValidValue(fields()[4], other.gemeindeName)) {
         this.gemeindeName = data().deepCopy(fields()[4].schema(), other.gemeindeName);
         fieldSetFlags()[4] = true;
+      }
+      if (isValidValue(fields()[5], other.ausserordentlicherBetreuungsaufwand)) {
+        this.ausserordentlicherBetreuungsaufwand = data().deepCopy(fields()[5].schema(), other.ausserordentlicherBetreuungsaufwand);
+        fieldSetFlags()[5] = true;
       }
     }
 
@@ -523,6 +554,45 @@ static {
       return this;
     }
 
+    /**
+      * Gets the value of the 'ausserordentlicherBetreuungsaufwand' field.
+      * @return The value.
+      */
+    public boolean getAusserordentlicherBetreuungsaufwand() {
+      return ausserordentlicherBetreuungsaufwand;
+    }
+
+
+    /**
+      * Sets the value of the 'ausserordentlicherBetreuungsaufwand' field.
+      * @param value The value of 'ausserordentlicherBetreuungsaufwand'.
+      * @return This builder.
+      */
+    public ch.dvbern.kibon.exchange.commons.platzbestaetigung.BetreuungEventDTO.Builder setAusserordentlicherBetreuungsaufwand(boolean value) {
+      validate(fields()[5], value);
+      this.ausserordentlicherBetreuungsaufwand = value;
+      fieldSetFlags()[5] = true;
+      return this;
+    }
+
+    /**
+      * Checks whether the 'ausserordentlicherBetreuungsaufwand' field has been set.
+      * @return True if the 'ausserordentlicherBetreuungsaufwand' field has been set, false otherwise.
+      */
+    public boolean hasAusserordentlicherBetreuungsaufwand() {
+      return fieldSetFlags()[5];
+    }
+
+
+    /**
+      * Clears the value of the 'ausserordentlicherBetreuungsaufwand' field.
+      * @return This builder.
+      */
+    public ch.dvbern.kibon.exchange.commons.platzbestaetigung.BetreuungEventDTO.Builder clearAusserordentlicherBetreuungsaufwand() {
+      fieldSetFlags()[5] = false;
+      return this;
+    }
+
     @Override
     @SuppressWarnings("unchecked")
     public BetreuungEventDTO build() {
@@ -533,6 +603,7 @@ static {
         record.zeitabschnitte = fieldSetFlags()[2] ? this.zeitabschnitte : (java.util.List<ch.dvbern.kibon.exchange.commons.platzbestaetigung.ZeitabschnittDTO>) defaultValue(fields()[2]);
         record.gemeindeBfsNr = fieldSetFlags()[3] ? this.gemeindeBfsNr : (java.lang.Long) defaultValue(fields()[3]);
         record.gemeindeName = fieldSetFlags()[4] ? this.gemeindeName : (java.lang.String) defaultValue(fields()[4]);
+        record.ausserordentlicherBetreuungsaufwand = fieldSetFlags()[5] ? this.ausserordentlicherBetreuungsaufwand : (java.lang.Boolean) defaultValue(fields()[5]);
         return record;
       } catch (org.apache.avro.AvroMissingFieldException e) {
         throw e;
