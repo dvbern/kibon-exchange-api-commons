@@ -14,8 +14,8 @@ import org.apache.avro.message.SchemaStore;
 
 @org.apache.avro.specific.AvroGenerated
 public class InstitutionEventDTO extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = -7349067361341900515L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"InstitutionEventDTO\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.institution\",\"fields\":[{\"name\":\"id\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"name\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"traegerschaft\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"adresse\",\"type\":{\"type\":\"record\",\"name\":\"KontaktAngabenDTO\",\"fields\":[{\"name\":\"anschrift\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"strasse\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"hausnummer\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"adresszusatz\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"plz\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"ort\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"land\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"gemeinde\",\"type\":{\"type\":\"record\",\"name\":\"GemeindeDTO\",\"fields\":[{\"name\":\"name\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"bfsNummer\",\"type\":[\"null\",\"long\"],\"default\":null}]},\"default\":{\"name\":null,\"bfsNummer\":null}},{\"name\":\"email\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"telefon\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"webseite\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null}],\"aliases\":[\"AdresseDTO\"]}},{\"name\":\"betreuungsAdressen\",\"type\":{\"type\":\"array\",\"items\":\"KontaktAngabenDTO\"},\"default\":[]},{\"name\":\"oeffnungsTage\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"enum\",\"name\":\"Wochentag\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.types\",\"symbols\":[\"MONDAY\",\"TUESDAY\",\"WEDNESDAY\",\"THURSDAY\",\"FRIDAY\",\"SATURDAY\",\"SUNDAY\"]}},\"default\":[]},{\"name\":\"offenVon\",\"type\":[\"null\",\"long\"],\"default\":null},{\"name\":\"offenBis\",\"type\":[\"null\",\"long\"],\"default\":null},{\"name\":\"oeffnungsAbweichungen\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"altersKategorien\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"enum\",\"name\":\"AltersKategorie\",\"symbols\":[\"BABY\",\"VORSCHULE\",\"KINDERGARTEN\",\"SCHULE\"]}},\"default\":[]},{\"name\":\"subventioniertePlaetze\",\"type\":\"boolean\",\"default\":false},{\"name\":\"anzahlPlaetze\",\"type\":[\"null\",{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}],\"default\":null},{\"name\":\"anzahlPlaetzeFirmen\",\"type\":[\"null\",{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}],\"default\":null},{\"name\":\"timestampMutiert\",\"type\":[\"null\",\"long\"],\"default\":null}]}");
+  private static final long serialVersionUID = -3354708890355760800L;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"InstitutionEventDTO\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.institution\",\"fields\":[{\"name\":\"id\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"name\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"traegerschaft\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"betreuungsArt\",\"type\":[\"null\",{\"type\":\"enum\",\"name\":\"BetreuungsangebotTyp\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.types\",\"symbols\":[\"KITA\",\"TAGESSCHULE\",\"TAGESFAMILIEN\",\"FERIENINSEL\"]}],\"default\":null},{\"name\":\"adresse\",\"type\":{\"type\":\"record\",\"name\":\"KontaktAngabenDTO\",\"fields\":[{\"name\":\"anschrift\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"strasse\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"hausnummer\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"adresszusatz\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"plz\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"ort\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"land\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"gemeinde\",\"type\":{\"type\":\"record\",\"name\":\"GemeindeDTO\",\"fields\":[{\"name\":\"name\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"bfsNummer\",\"type\":[\"null\",\"long\"],\"default\":null}]},\"default\":{\"name\":null,\"bfsNummer\":null}},{\"name\":\"email\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"telefon\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"webseite\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null}],\"aliases\":[\"AdresseDTO\"]}},{\"name\":\"betreuungsAdressen\",\"type\":{\"type\":\"array\",\"items\":\"KontaktAngabenDTO\"},\"default\":[]},{\"name\":\"oeffnungsTage\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"enum\",\"name\":\"Wochentag\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.types\",\"symbols\":[\"MONDAY\",\"TUESDAY\",\"WEDNESDAY\",\"THURSDAY\",\"FRIDAY\",\"SATURDAY\",\"SUNDAY\"]}},\"default\":[]},{\"name\":\"offenVon\",\"type\":[\"null\",\"long\"],\"default\":null},{\"name\":\"offenBis\",\"type\":[\"null\",\"long\"],\"default\":null},{\"name\":\"oeffnungsAbweichungen\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"altersKategorien\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"enum\",\"name\":\"AltersKategorie\",\"symbols\":[\"BABY\",\"VORSCHULE\",\"KINDERGARTEN\",\"SCHULE\"]}},\"default\":[]},{\"name\":\"subventioniertePlaetze\",\"type\":\"boolean\",\"default\":false},{\"name\":\"anzahlPlaetze\",\"type\":[\"null\",{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}],\"default\":null},{\"name\":\"anzahlPlaetzeFirmen\",\"type\":[\"null\",{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}],\"default\":null},{\"name\":\"timestampMutiert\",\"type\":[\"null\",\"long\"],\"default\":null}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static SpecificData MODEL$ = new SpecificData();
@@ -77,6 +77,7 @@ static {
    private java.lang.String id;
    private java.lang.String name;
    private java.lang.String traegerschaft;
+   private ch.dvbern.kibon.exchange.commons.types.BetreuungsangebotTyp betreuungsArt;
    private ch.dvbern.kibon.exchange.commons.institution.KontaktAngabenDTO adresse;
    private java.util.List<ch.dvbern.kibon.exchange.commons.institution.KontaktAngabenDTO> betreuungsAdressen;
    private java.util.List<ch.dvbern.kibon.exchange.commons.types.Wochentag> oeffnungsTage;
@@ -101,6 +102,7 @@ static {
    * @param id The new value for id
    * @param name The new value for name
    * @param traegerschaft The new value for traegerschaft
+   * @param betreuungsArt The new value for betreuungsArt
    * @param adresse The new value for adresse
    * @param betreuungsAdressen The new value for betreuungsAdressen
    * @param oeffnungsTage The new value for oeffnungsTage
@@ -113,10 +115,11 @@ static {
    * @param anzahlPlaetzeFirmen The new value for anzahlPlaetzeFirmen
    * @param timestampMutiert The new value for timestampMutiert
    */
-  public InstitutionEventDTO(java.lang.String id, java.lang.String name, java.lang.String traegerschaft, ch.dvbern.kibon.exchange.commons.institution.KontaktAngabenDTO adresse, java.util.List<ch.dvbern.kibon.exchange.commons.institution.KontaktAngabenDTO> betreuungsAdressen, java.util.List<ch.dvbern.kibon.exchange.commons.types.Wochentag> oeffnungsTage, java.lang.Long offenVon, java.lang.Long offenBis, java.lang.String oeffnungsAbweichungen, java.util.List<ch.dvbern.kibon.exchange.commons.institution.AltersKategorie> altersKategorien, java.lang.Boolean subventioniertePlaetze, java.math.BigDecimal anzahlPlaetze, java.math.BigDecimal anzahlPlaetzeFirmen, java.lang.Long timestampMutiert) {
+  public InstitutionEventDTO(java.lang.String id, java.lang.String name, java.lang.String traegerschaft, ch.dvbern.kibon.exchange.commons.types.BetreuungsangebotTyp betreuungsArt, ch.dvbern.kibon.exchange.commons.institution.KontaktAngabenDTO adresse, java.util.List<ch.dvbern.kibon.exchange.commons.institution.KontaktAngabenDTO> betreuungsAdressen, java.util.List<ch.dvbern.kibon.exchange.commons.types.Wochentag> oeffnungsTage, java.lang.Long offenVon, java.lang.Long offenBis, java.lang.String oeffnungsAbweichungen, java.util.List<ch.dvbern.kibon.exchange.commons.institution.AltersKategorie> altersKategorien, java.lang.Boolean subventioniertePlaetze, java.math.BigDecimal anzahlPlaetze, java.math.BigDecimal anzahlPlaetzeFirmen, java.lang.Long timestampMutiert) {
     this.id = id;
     this.name = name;
     this.traegerschaft = traegerschaft;
+    this.betreuungsArt = betreuungsArt;
     this.adresse = adresse;
     this.betreuungsAdressen = betreuungsAdressen;
     this.oeffnungsTage = oeffnungsTage;
@@ -138,17 +141,18 @@ static {
     case 0: return id;
     case 1: return name;
     case 2: return traegerschaft;
-    case 3: return adresse;
-    case 4: return betreuungsAdressen;
-    case 5: return oeffnungsTage;
-    case 6: return offenVon;
-    case 7: return offenBis;
-    case 8: return oeffnungsAbweichungen;
-    case 9: return altersKategorien;
-    case 10: return subventioniertePlaetze;
-    case 11: return anzahlPlaetze;
-    case 12: return anzahlPlaetzeFirmen;
-    case 13: return timestampMutiert;
+    case 3: return betreuungsArt;
+    case 4: return adresse;
+    case 5: return betreuungsAdressen;
+    case 6: return oeffnungsTage;
+    case 7: return offenVon;
+    case 8: return offenBis;
+    case 9: return oeffnungsAbweichungen;
+    case 10: return altersKategorien;
+    case 11: return subventioniertePlaetze;
+    case 12: return anzahlPlaetze;
+    case 13: return anzahlPlaetzeFirmen;
+    case 14: return timestampMutiert;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -160,17 +164,18 @@ static {
     case 0: id = (java.lang.String)value$; break;
     case 1: name = (java.lang.String)value$; break;
     case 2: traegerschaft = (java.lang.String)value$; break;
-    case 3: adresse = (ch.dvbern.kibon.exchange.commons.institution.KontaktAngabenDTO)value$; break;
-    case 4: betreuungsAdressen = (java.util.List<ch.dvbern.kibon.exchange.commons.institution.KontaktAngabenDTO>)value$; break;
-    case 5: oeffnungsTage = (java.util.List<ch.dvbern.kibon.exchange.commons.types.Wochentag>)value$; break;
-    case 6: offenVon = (java.lang.Long)value$; break;
-    case 7: offenBis = (java.lang.Long)value$; break;
-    case 8: oeffnungsAbweichungen = (java.lang.String)value$; break;
-    case 9: altersKategorien = (java.util.List<ch.dvbern.kibon.exchange.commons.institution.AltersKategorie>)value$; break;
-    case 10: subventioniertePlaetze = (java.lang.Boolean)value$; break;
-    case 11: anzahlPlaetze = (java.math.BigDecimal)value$; break;
-    case 12: anzahlPlaetzeFirmen = (java.math.BigDecimal)value$; break;
-    case 13: timestampMutiert = (java.lang.Long)value$; break;
+    case 3: betreuungsArt = (ch.dvbern.kibon.exchange.commons.types.BetreuungsangebotTyp)value$; break;
+    case 4: adresse = (ch.dvbern.kibon.exchange.commons.institution.KontaktAngabenDTO)value$; break;
+    case 5: betreuungsAdressen = (java.util.List<ch.dvbern.kibon.exchange.commons.institution.KontaktAngabenDTO>)value$; break;
+    case 6: oeffnungsTage = (java.util.List<ch.dvbern.kibon.exchange.commons.types.Wochentag>)value$; break;
+    case 7: offenVon = (java.lang.Long)value$; break;
+    case 8: offenBis = (java.lang.Long)value$; break;
+    case 9: oeffnungsAbweichungen = (java.lang.String)value$; break;
+    case 10: altersKategorien = (java.util.List<ch.dvbern.kibon.exchange.commons.institution.AltersKategorie>)value$; break;
+    case 11: subventioniertePlaetze = (java.lang.Boolean)value$; break;
+    case 12: anzahlPlaetze = (java.math.BigDecimal)value$; break;
+    case 13: anzahlPlaetzeFirmen = (java.math.BigDecimal)value$; break;
+    case 14: timestampMutiert = (java.lang.Long)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -224,6 +229,23 @@ static {
    */
   public void setTraegerschaft(java.lang.String value) {
     this.traegerschaft = value;
+  }
+
+  /**
+   * Gets the value of the 'betreuungsArt' field.
+   * @return The value of the 'betreuungsArt' field.
+   */
+  public ch.dvbern.kibon.exchange.commons.types.BetreuungsangebotTyp getBetreuungsArt() {
+    return betreuungsArt;
+  }
+
+
+  /**
+   * Sets the value of the 'betreuungsArt' field.
+   * @param value the value to set.
+   */
+  public void setBetreuungsArt(ch.dvbern.kibon.exchange.commons.types.BetreuungsangebotTyp value) {
+    this.betreuungsArt = value;
   }
 
   /**
@@ -456,6 +478,7 @@ static {
     private java.lang.String id;
     private java.lang.String name;
     private java.lang.String traegerschaft;
+    private ch.dvbern.kibon.exchange.commons.types.BetreuungsangebotTyp betreuungsArt;
     private ch.dvbern.kibon.exchange.commons.institution.KontaktAngabenDTO adresse;
     private ch.dvbern.kibon.exchange.commons.institution.KontaktAngabenDTO.Builder adresseBuilder;
     private java.util.List<ch.dvbern.kibon.exchange.commons.institution.KontaktAngabenDTO> betreuungsAdressen;
@@ -492,52 +515,56 @@ static {
         this.traegerschaft = data().deepCopy(fields()[2].schema(), other.traegerschaft);
         fieldSetFlags()[2] = other.fieldSetFlags()[2];
       }
-      if (isValidValue(fields()[3], other.adresse)) {
-        this.adresse = data().deepCopy(fields()[3].schema(), other.adresse);
+      if (isValidValue(fields()[3], other.betreuungsArt)) {
+        this.betreuungsArt = data().deepCopy(fields()[3].schema(), other.betreuungsArt);
         fieldSetFlags()[3] = other.fieldSetFlags()[3];
+      }
+      if (isValidValue(fields()[4], other.adresse)) {
+        this.adresse = data().deepCopy(fields()[4].schema(), other.adresse);
+        fieldSetFlags()[4] = other.fieldSetFlags()[4];
       }
       if (other.hasAdresseBuilder()) {
         this.adresseBuilder = ch.dvbern.kibon.exchange.commons.institution.KontaktAngabenDTO.newBuilder(other.getAdresseBuilder());
       }
-      if (isValidValue(fields()[4], other.betreuungsAdressen)) {
-        this.betreuungsAdressen = data().deepCopy(fields()[4].schema(), other.betreuungsAdressen);
-        fieldSetFlags()[4] = other.fieldSetFlags()[4];
-      }
-      if (isValidValue(fields()[5], other.oeffnungsTage)) {
-        this.oeffnungsTage = data().deepCopy(fields()[5].schema(), other.oeffnungsTage);
+      if (isValidValue(fields()[5], other.betreuungsAdressen)) {
+        this.betreuungsAdressen = data().deepCopy(fields()[5].schema(), other.betreuungsAdressen);
         fieldSetFlags()[5] = other.fieldSetFlags()[5];
       }
-      if (isValidValue(fields()[6], other.offenVon)) {
-        this.offenVon = data().deepCopy(fields()[6].schema(), other.offenVon);
+      if (isValidValue(fields()[6], other.oeffnungsTage)) {
+        this.oeffnungsTage = data().deepCopy(fields()[6].schema(), other.oeffnungsTage);
         fieldSetFlags()[6] = other.fieldSetFlags()[6];
       }
-      if (isValidValue(fields()[7], other.offenBis)) {
-        this.offenBis = data().deepCopy(fields()[7].schema(), other.offenBis);
+      if (isValidValue(fields()[7], other.offenVon)) {
+        this.offenVon = data().deepCopy(fields()[7].schema(), other.offenVon);
         fieldSetFlags()[7] = other.fieldSetFlags()[7];
       }
-      if (isValidValue(fields()[8], other.oeffnungsAbweichungen)) {
-        this.oeffnungsAbweichungen = data().deepCopy(fields()[8].schema(), other.oeffnungsAbweichungen);
+      if (isValidValue(fields()[8], other.offenBis)) {
+        this.offenBis = data().deepCopy(fields()[8].schema(), other.offenBis);
         fieldSetFlags()[8] = other.fieldSetFlags()[8];
       }
-      if (isValidValue(fields()[9], other.altersKategorien)) {
-        this.altersKategorien = data().deepCopy(fields()[9].schema(), other.altersKategorien);
+      if (isValidValue(fields()[9], other.oeffnungsAbweichungen)) {
+        this.oeffnungsAbweichungen = data().deepCopy(fields()[9].schema(), other.oeffnungsAbweichungen);
         fieldSetFlags()[9] = other.fieldSetFlags()[9];
       }
-      if (isValidValue(fields()[10], other.subventioniertePlaetze)) {
-        this.subventioniertePlaetze = data().deepCopy(fields()[10].schema(), other.subventioniertePlaetze);
+      if (isValidValue(fields()[10], other.altersKategorien)) {
+        this.altersKategorien = data().deepCopy(fields()[10].schema(), other.altersKategorien);
         fieldSetFlags()[10] = other.fieldSetFlags()[10];
       }
-      if (isValidValue(fields()[11], other.anzahlPlaetze)) {
-        this.anzahlPlaetze = data().deepCopy(fields()[11].schema(), other.anzahlPlaetze);
+      if (isValidValue(fields()[11], other.subventioniertePlaetze)) {
+        this.subventioniertePlaetze = data().deepCopy(fields()[11].schema(), other.subventioniertePlaetze);
         fieldSetFlags()[11] = other.fieldSetFlags()[11];
       }
-      if (isValidValue(fields()[12], other.anzahlPlaetzeFirmen)) {
-        this.anzahlPlaetzeFirmen = data().deepCopy(fields()[12].schema(), other.anzahlPlaetzeFirmen);
+      if (isValidValue(fields()[12], other.anzahlPlaetze)) {
+        this.anzahlPlaetze = data().deepCopy(fields()[12].schema(), other.anzahlPlaetze);
         fieldSetFlags()[12] = other.fieldSetFlags()[12];
       }
-      if (isValidValue(fields()[13], other.timestampMutiert)) {
-        this.timestampMutiert = data().deepCopy(fields()[13].schema(), other.timestampMutiert);
+      if (isValidValue(fields()[13], other.anzahlPlaetzeFirmen)) {
+        this.anzahlPlaetzeFirmen = data().deepCopy(fields()[13].schema(), other.anzahlPlaetzeFirmen);
         fieldSetFlags()[13] = other.fieldSetFlags()[13];
+      }
+      if (isValidValue(fields()[14], other.timestampMutiert)) {
+        this.timestampMutiert = data().deepCopy(fields()[14].schema(), other.timestampMutiert);
+        fieldSetFlags()[14] = other.fieldSetFlags()[14];
       }
     }
 
@@ -559,50 +586,54 @@ static {
         this.traegerschaft = data().deepCopy(fields()[2].schema(), other.traegerschaft);
         fieldSetFlags()[2] = true;
       }
-      if (isValidValue(fields()[3], other.adresse)) {
-        this.adresse = data().deepCopy(fields()[3].schema(), other.adresse);
+      if (isValidValue(fields()[3], other.betreuungsArt)) {
+        this.betreuungsArt = data().deepCopy(fields()[3].schema(), other.betreuungsArt);
         fieldSetFlags()[3] = true;
       }
-      this.adresseBuilder = null;
-      if (isValidValue(fields()[4], other.betreuungsAdressen)) {
-        this.betreuungsAdressen = data().deepCopy(fields()[4].schema(), other.betreuungsAdressen);
+      if (isValidValue(fields()[4], other.adresse)) {
+        this.adresse = data().deepCopy(fields()[4].schema(), other.adresse);
         fieldSetFlags()[4] = true;
       }
-      if (isValidValue(fields()[5], other.oeffnungsTage)) {
-        this.oeffnungsTage = data().deepCopy(fields()[5].schema(), other.oeffnungsTage);
+      this.adresseBuilder = null;
+      if (isValidValue(fields()[5], other.betreuungsAdressen)) {
+        this.betreuungsAdressen = data().deepCopy(fields()[5].schema(), other.betreuungsAdressen);
         fieldSetFlags()[5] = true;
       }
-      if (isValidValue(fields()[6], other.offenVon)) {
-        this.offenVon = data().deepCopy(fields()[6].schema(), other.offenVon);
+      if (isValidValue(fields()[6], other.oeffnungsTage)) {
+        this.oeffnungsTage = data().deepCopy(fields()[6].schema(), other.oeffnungsTage);
         fieldSetFlags()[6] = true;
       }
-      if (isValidValue(fields()[7], other.offenBis)) {
-        this.offenBis = data().deepCopy(fields()[7].schema(), other.offenBis);
+      if (isValidValue(fields()[7], other.offenVon)) {
+        this.offenVon = data().deepCopy(fields()[7].schema(), other.offenVon);
         fieldSetFlags()[7] = true;
       }
-      if (isValidValue(fields()[8], other.oeffnungsAbweichungen)) {
-        this.oeffnungsAbweichungen = data().deepCopy(fields()[8].schema(), other.oeffnungsAbweichungen);
+      if (isValidValue(fields()[8], other.offenBis)) {
+        this.offenBis = data().deepCopy(fields()[8].schema(), other.offenBis);
         fieldSetFlags()[8] = true;
       }
-      if (isValidValue(fields()[9], other.altersKategorien)) {
-        this.altersKategorien = data().deepCopy(fields()[9].schema(), other.altersKategorien);
+      if (isValidValue(fields()[9], other.oeffnungsAbweichungen)) {
+        this.oeffnungsAbweichungen = data().deepCopy(fields()[9].schema(), other.oeffnungsAbweichungen);
         fieldSetFlags()[9] = true;
       }
-      if (isValidValue(fields()[10], other.subventioniertePlaetze)) {
-        this.subventioniertePlaetze = data().deepCopy(fields()[10].schema(), other.subventioniertePlaetze);
+      if (isValidValue(fields()[10], other.altersKategorien)) {
+        this.altersKategorien = data().deepCopy(fields()[10].schema(), other.altersKategorien);
         fieldSetFlags()[10] = true;
       }
-      if (isValidValue(fields()[11], other.anzahlPlaetze)) {
-        this.anzahlPlaetze = data().deepCopy(fields()[11].schema(), other.anzahlPlaetze);
+      if (isValidValue(fields()[11], other.subventioniertePlaetze)) {
+        this.subventioniertePlaetze = data().deepCopy(fields()[11].schema(), other.subventioniertePlaetze);
         fieldSetFlags()[11] = true;
       }
-      if (isValidValue(fields()[12], other.anzahlPlaetzeFirmen)) {
-        this.anzahlPlaetzeFirmen = data().deepCopy(fields()[12].schema(), other.anzahlPlaetzeFirmen);
+      if (isValidValue(fields()[12], other.anzahlPlaetze)) {
+        this.anzahlPlaetze = data().deepCopy(fields()[12].schema(), other.anzahlPlaetze);
         fieldSetFlags()[12] = true;
       }
-      if (isValidValue(fields()[13], other.timestampMutiert)) {
-        this.timestampMutiert = data().deepCopy(fields()[13].schema(), other.timestampMutiert);
+      if (isValidValue(fields()[13], other.anzahlPlaetzeFirmen)) {
+        this.anzahlPlaetzeFirmen = data().deepCopy(fields()[13].schema(), other.anzahlPlaetzeFirmen);
         fieldSetFlags()[13] = true;
+      }
+      if (isValidValue(fields()[14], other.timestampMutiert)) {
+        this.timestampMutiert = data().deepCopy(fields()[14].schema(), other.timestampMutiert);
+        fieldSetFlags()[14] = true;
       }
     }
 
@@ -727,6 +758,46 @@ static {
     }
 
     /**
+      * Gets the value of the 'betreuungsArt' field.
+      * @return The value.
+      */
+    public ch.dvbern.kibon.exchange.commons.types.BetreuungsangebotTyp getBetreuungsArt() {
+      return betreuungsArt;
+    }
+
+
+    /**
+      * Sets the value of the 'betreuungsArt' field.
+      * @param value The value of 'betreuungsArt'.
+      * @return This builder.
+      */
+    public ch.dvbern.kibon.exchange.commons.institution.InstitutionEventDTO.Builder setBetreuungsArt(ch.dvbern.kibon.exchange.commons.types.BetreuungsangebotTyp value) {
+      validate(fields()[3], value);
+      this.betreuungsArt = value;
+      fieldSetFlags()[3] = true;
+      return this;
+    }
+
+    /**
+      * Checks whether the 'betreuungsArt' field has been set.
+      * @return True if the 'betreuungsArt' field has been set, false otherwise.
+      */
+    public boolean hasBetreuungsArt() {
+      return fieldSetFlags()[3];
+    }
+
+
+    /**
+      * Clears the value of the 'betreuungsArt' field.
+      * @return This builder.
+      */
+    public ch.dvbern.kibon.exchange.commons.institution.InstitutionEventDTO.Builder clearBetreuungsArt() {
+      betreuungsArt = null;
+      fieldSetFlags()[3] = false;
+      return this;
+    }
+
+    /**
       * Gets the value of the 'adresse' field.
       * @return The value.
       */
@@ -741,10 +812,10 @@ static {
       * @return This builder.
       */
     public ch.dvbern.kibon.exchange.commons.institution.InstitutionEventDTO.Builder setAdresse(ch.dvbern.kibon.exchange.commons.institution.KontaktAngabenDTO value) {
-      validate(fields()[3], value);
+      validate(fields()[4], value);
       this.adresseBuilder = null;
       this.adresse = value;
-      fieldSetFlags()[3] = true;
+      fieldSetFlags()[4] = true;
       return this;
     }
 
@@ -753,7 +824,7 @@ static {
       * @return True if the 'adresse' field has been set, false otherwise.
       */
     public boolean hasAdresse() {
-      return fieldSetFlags()[3];
+      return fieldSetFlags()[4];
     }
 
     /**
@@ -797,7 +868,7 @@ static {
     public ch.dvbern.kibon.exchange.commons.institution.InstitutionEventDTO.Builder clearAdresse() {
       adresse = null;
       adresseBuilder = null;
-      fieldSetFlags()[3] = false;
+      fieldSetFlags()[4] = false;
       return this;
     }
 
@@ -816,9 +887,9 @@ static {
       * @return This builder.
       */
     public ch.dvbern.kibon.exchange.commons.institution.InstitutionEventDTO.Builder setBetreuungsAdressen(java.util.List<ch.dvbern.kibon.exchange.commons.institution.KontaktAngabenDTO> value) {
-      validate(fields()[4], value);
+      validate(fields()[5], value);
       this.betreuungsAdressen = value;
-      fieldSetFlags()[4] = true;
+      fieldSetFlags()[5] = true;
       return this;
     }
 
@@ -827,7 +898,7 @@ static {
       * @return True if the 'betreuungsAdressen' field has been set, false otherwise.
       */
     public boolean hasBetreuungsAdressen() {
-      return fieldSetFlags()[4];
+      return fieldSetFlags()[5];
     }
 
 
@@ -837,7 +908,7 @@ static {
       */
     public ch.dvbern.kibon.exchange.commons.institution.InstitutionEventDTO.Builder clearBetreuungsAdressen() {
       betreuungsAdressen = null;
-      fieldSetFlags()[4] = false;
+      fieldSetFlags()[5] = false;
       return this;
     }
 
@@ -856,9 +927,9 @@ static {
       * @return This builder.
       */
     public ch.dvbern.kibon.exchange.commons.institution.InstitutionEventDTO.Builder setOeffnungsTage(java.util.List<ch.dvbern.kibon.exchange.commons.types.Wochentag> value) {
-      validate(fields()[5], value);
+      validate(fields()[6], value);
       this.oeffnungsTage = value;
-      fieldSetFlags()[5] = true;
+      fieldSetFlags()[6] = true;
       return this;
     }
 
@@ -867,7 +938,7 @@ static {
       * @return True if the 'oeffnungsTage' field has been set, false otherwise.
       */
     public boolean hasOeffnungsTage() {
-      return fieldSetFlags()[5];
+      return fieldSetFlags()[6];
     }
 
 
@@ -877,7 +948,7 @@ static {
       */
     public ch.dvbern.kibon.exchange.commons.institution.InstitutionEventDTO.Builder clearOeffnungsTage() {
       oeffnungsTage = null;
-      fieldSetFlags()[5] = false;
+      fieldSetFlags()[6] = false;
       return this;
     }
 
@@ -896,9 +967,9 @@ static {
       * @return This builder.
       */
     public ch.dvbern.kibon.exchange.commons.institution.InstitutionEventDTO.Builder setOffenVon(java.lang.Long value) {
-      validate(fields()[6], value);
+      validate(fields()[7], value);
       this.offenVon = value;
-      fieldSetFlags()[6] = true;
+      fieldSetFlags()[7] = true;
       return this;
     }
 
@@ -907,7 +978,7 @@ static {
       * @return True if the 'offenVon' field has been set, false otherwise.
       */
     public boolean hasOffenVon() {
-      return fieldSetFlags()[6];
+      return fieldSetFlags()[7];
     }
 
 
@@ -917,7 +988,7 @@ static {
       */
     public ch.dvbern.kibon.exchange.commons.institution.InstitutionEventDTO.Builder clearOffenVon() {
       offenVon = null;
-      fieldSetFlags()[6] = false;
+      fieldSetFlags()[7] = false;
       return this;
     }
 
@@ -936,9 +1007,9 @@ static {
       * @return This builder.
       */
     public ch.dvbern.kibon.exchange.commons.institution.InstitutionEventDTO.Builder setOffenBis(java.lang.Long value) {
-      validate(fields()[7], value);
+      validate(fields()[8], value);
       this.offenBis = value;
-      fieldSetFlags()[7] = true;
+      fieldSetFlags()[8] = true;
       return this;
     }
 
@@ -947,7 +1018,7 @@ static {
       * @return True if the 'offenBis' field has been set, false otherwise.
       */
     public boolean hasOffenBis() {
-      return fieldSetFlags()[7];
+      return fieldSetFlags()[8];
     }
 
 
@@ -957,7 +1028,7 @@ static {
       */
     public ch.dvbern.kibon.exchange.commons.institution.InstitutionEventDTO.Builder clearOffenBis() {
       offenBis = null;
-      fieldSetFlags()[7] = false;
+      fieldSetFlags()[8] = false;
       return this;
     }
 
@@ -976,9 +1047,9 @@ static {
       * @return This builder.
       */
     public ch.dvbern.kibon.exchange.commons.institution.InstitutionEventDTO.Builder setOeffnungsAbweichungen(java.lang.String value) {
-      validate(fields()[8], value);
+      validate(fields()[9], value);
       this.oeffnungsAbweichungen = value;
-      fieldSetFlags()[8] = true;
+      fieldSetFlags()[9] = true;
       return this;
     }
 
@@ -987,7 +1058,7 @@ static {
       * @return True if the 'oeffnungsAbweichungen' field has been set, false otherwise.
       */
     public boolean hasOeffnungsAbweichungen() {
-      return fieldSetFlags()[8];
+      return fieldSetFlags()[9];
     }
 
 
@@ -997,7 +1068,7 @@ static {
       */
     public ch.dvbern.kibon.exchange.commons.institution.InstitutionEventDTO.Builder clearOeffnungsAbweichungen() {
       oeffnungsAbweichungen = null;
-      fieldSetFlags()[8] = false;
+      fieldSetFlags()[9] = false;
       return this;
     }
 
@@ -1016,9 +1087,9 @@ static {
       * @return This builder.
       */
     public ch.dvbern.kibon.exchange.commons.institution.InstitutionEventDTO.Builder setAltersKategorien(java.util.List<ch.dvbern.kibon.exchange.commons.institution.AltersKategorie> value) {
-      validate(fields()[9], value);
+      validate(fields()[10], value);
       this.altersKategorien = value;
-      fieldSetFlags()[9] = true;
+      fieldSetFlags()[10] = true;
       return this;
     }
 
@@ -1027,7 +1098,7 @@ static {
       * @return True if the 'altersKategorien' field has been set, false otherwise.
       */
     public boolean hasAltersKategorien() {
-      return fieldSetFlags()[9];
+      return fieldSetFlags()[10];
     }
 
 
@@ -1037,7 +1108,7 @@ static {
       */
     public ch.dvbern.kibon.exchange.commons.institution.InstitutionEventDTO.Builder clearAltersKategorien() {
       altersKategorien = null;
-      fieldSetFlags()[9] = false;
+      fieldSetFlags()[10] = false;
       return this;
     }
 
@@ -1056,9 +1127,9 @@ static {
       * @return This builder.
       */
     public ch.dvbern.kibon.exchange.commons.institution.InstitutionEventDTO.Builder setSubventioniertePlaetze(boolean value) {
-      validate(fields()[10], value);
+      validate(fields()[11], value);
       this.subventioniertePlaetze = value;
-      fieldSetFlags()[10] = true;
+      fieldSetFlags()[11] = true;
       return this;
     }
 
@@ -1067,7 +1138,7 @@ static {
       * @return True if the 'subventioniertePlaetze' field has been set, false otherwise.
       */
     public boolean hasSubventioniertePlaetze() {
-      return fieldSetFlags()[10];
+      return fieldSetFlags()[11];
     }
 
 
@@ -1076,7 +1147,7 @@ static {
       * @return This builder.
       */
     public ch.dvbern.kibon.exchange.commons.institution.InstitutionEventDTO.Builder clearSubventioniertePlaetze() {
-      fieldSetFlags()[10] = false;
+      fieldSetFlags()[11] = false;
       return this;
     }
 
@@ -1095,9 +1166,9 @@ static {
       * @return This builder.
       */
     public ch.dvbern.kibon.exchange.commons.institution.InstitutionEventDTO.Builder setAnzahlPlaetze(java.math.BigDecimal value) {
-      validate(fields()[11], value);
+      validate(fields()[12], value);
       this.anzahlPlaetze = value;
-      fieldSetFlags()[11] = true;
+      fieldSetFlags()[12] = true;
       return this;
     }
 
@@ -1106,7 +1177,7 @@ static {
       * @return True if the 'anzahlPlaetze' field has been set, false otherwise.
       */
     public boolean hasAnzahlPlaetze() {
-      return fieldSetFlags()[11];
+      return fieldSetFlags()[12];
     }
 
 
@@ -1116,7 +1187,7 @@ static {
       */
     public ch.dvbern.kibon.exchange.commons.institution.InstitutionEventDTO.Builder clearAnzahlPlaetze() {
       anzahlPlaetze = null;
-      fieldSetFlags()[11] = false;
+      fieldSetFlags()[12] = false;
       return this;
     }
 
@@ -1135,9 +1206,9 @@ static {
       * @return This builder.
       */
     public ch.dvbern.kibon.exchange.commons.institution.InstitutionEventDTO.Builder setAnzahlPlaetzeFirmen(java.math.BigDecimal value) {
-      validate(fields()[12], value);
+      validate(fields()[13], value);
       this.anzahlPlaetzeFirmen = value;
-      fieldSetFlags()[12] = true;
+      fieldSetFlags()[13] = true;
       return this;
     }
 
@@ -1146,7 +1217,7 @@ static {
       * @return True if the 'anzahlPlaetzeFirmen' field has been set, false otherwise.
       */
     public boolean hasAnzahlPlaetzeFirmen() {
-      return fieldSetFlags()[12];
+      return fieldSetFlags()[13];
     }
 
 
@@ -1156,7 +1227,7 @@ static {
       */
     public ch.dvbern.kibon.exchange.commons.institution.InstitutionEventDTO.Builder clearAnzahlPlaetzeFirmen() {
       anzahlPlaetzeFirmen = null;
-      fieldSetFlags()[12] = false;
+      fieldSetFlags()[13] = false;
       return this;
     }
 
@@ -1175,9 +1246,9 @@ static {
       * @return This builder.
       */
     public ch.dvbern.kibon.exchange.commons.institution.InstitutionEventDTO.Builder setTimestampMutiert(java.lang.Long value) {
-      validate(fields()[13], value);
+      validate(fields()[14], value);
       this.timestampMutiert = value;
-      fieldSetFlags()[13] = true;
+      fieldSetFlags()[14] = true;
       return this;
     }
 
@@ -1186,7 +1257,7 @@ static {
       * @return True if the 'timestampMutiert' field has been set, false otherwise.
       */
     public boolean hasTimestampMutiert() {
-      return fieldSetFlags()[13];
+      return fieldSetFlags()[14];
     }
 
 
@@ -1196,7 +1267,7 @@ static {
       */
     public ch.dvbern.kibon.exchange.commons.institution.InstitutionEventDTO.Builder clearTimestampMutiert() {
       timestampMutiert = null;
-      fieldSetFlags()[13] = false;
+      fieldSetFlags()[14] = false;
       return this;
     }
 
@@ -1208,6 +1279,7 @@ static {
         record.id = fieldSetFlags()[0] ? this.id : (java.lang.String) defaultValue(fields()[0]);
         record.name = fieldSetFlags()[1] ? this.name : (java.lang.String) defaultValue(fields()[1]);
         record.traegerschaft = fieldSetFlags()[2] ? this.traegerschaft : (java.lang.String) defaultValue(fields()[2]);
+        record.betreuungsArt = fieldSetFlags()[3] ? this.betreuungsArt : (ch.dvbern.kibon.exchange.commons.types.BetreuungsangebotTyp) defaultValue(fields()[3]);
         if (adresseBuilder != null) {
           try {
             record.adresse = this.adresseBuilder.build();
@@ -1216,18 +1288,18 @@ static {
             throw e;
           }
         } else {
-          record.adresse = fieldSetFlags()[3] ? this.adresse : (ch.dvbern.kibon.exchange.commons.institution.KontaktAngabenDTO) defaultValue(fields()[3]);
+          record.adresse = fieldSetFlags()[4] ? this.adresse : (ch.dvbern.kibon.exchange.commons.institution.KontaktAngabenDTO) defaultValue(fields()[4]);
         }
-        record.betreuungsAdressen = fieldSetFlags()[4] ? this.betreuungsAdressen : (java.util.List<ch.dvbern.kibon.exchange.commons.institution.KontaktAngabenDTO>) defaultValue(fields()[4]);
-        record.oeffnungsTage = fieldSetFlags()[5] ? this.oeffnungsTage : (java.util.List<ch.dvbern.kibon.exchange.commons.types.Wochentag>) defaultValue(fields()[5]);
-        record.offenVon = fieldSetFlags()[6] ? this.offenVon : (java.lang.Long) defaultValue(fields()[6]);
-        record.offenBis = fieldSetFlags()[7] ? this.offenBis : (java.lang.Long) defaultValue(fields()[7]);
-        record.oeffnungsAbweichungen = fieldSetFlags()[8] ? this.oeffnungsAbweichungen : (java.lang.String) defaultValue(fields()[8]);
-        record.altersKategorien = fieldSetFlags()[9] ? this.altersKategorien : (java.util.List<ch.dvbern.kibon.exchange.commons.institution.AltersKategorie>) defaultValue(fields()[9]);
-        record.subventioniertePlaetze = fieldSetFlags()[10] ? this.subventioniertePlaetze : (java.lang.Boolean) defaultValue(fields()[10]);
-        record.anzahlPlaetze = fieldSetFlags()[11] ? this.anzahlPlaetze : (java.math.BigDecimal) defaultValue(fields()[11]);
-        record.anzahlPlaetzeFirmen = fieldSetFlags()[12] ? this.anzahlPlaetzeFirmen : (java.math.BigDecimal) defaultValue(fields()[12]);
-        record.timestampMutiert = fieldSetFlags()[13] ? this.timestampMutiert : (java.lang.Long) defaultValue(fields()[13]);
+        record.betreuungsAdressen = fieldSetFlags()[5] ? this.betreuungsAdressen : (java.util.List<ch.dvbern.kibon.exchange.commons.institution.KontaktAngabenDTO>) defaultValue(fields()[5]);
+        record.oeffnungsTage = fieldSetFlags()[6] ? this.oeffnungsTage : (java.util.List<ch.dvbern.kibon.exchange.commons.types.Wochentag>) defaultValue(fields()[6]);
+        record.offenVon = fieldSetFlags()[7] ? this.offenVon : (java.lang.Long) defaultValue(fields()[7]);
+        record.offenBis = fieldSetFlags()[8] ? this.offenBis : (java.lang.Long) defaultValue(fields()[8]);
+        record.oeffnungsAbweichungen = fieldSetFlags()[9] ? this.oeffnungsAbweichungen : (java.lang.String) defaultValue(fields()[9]);
+        record.altersKategorien = fieldSetFlags()[10] ? this.altersKategorien : (java.util.List<ch.dvbern.kibon.exchange.commons.institution.AltersKategorie>) defaultValue(fields()[10]);
+        record.subventioniertePlaetze = fieldSetFlags()[11] ? this.subventioniertePlaetze : (java.lang.Boolean) defaultValue(fields()[11]);
+        record.anzahlPlaetze = fieldSetFlags()[12] ? this.anzahlPlaetze : (java.math.BigDecimal) defaultValue(fields()[12]);
+        record.anzahlPlaetzeFirmen = fieldSetFlags()[13] ? this.anzahlPlaetzeFirmen : (java.math.BigDecimal) defaultValue(fields()[13]);
+        record.timestampMutiert = fieldSetFlags()[14] ? this.timestampMutiert : (java.lang.Long) defaultValue(fields()[14]);
         return record;
       } catch (org.apache.avro.AvroMissingFieldException e) {
         throw e;

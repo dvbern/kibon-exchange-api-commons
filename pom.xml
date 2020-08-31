@@ -59,7 +59,6 @@
             <optional>true</optional>
         </dependency>
 
-
         <!-- region test -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
@@ -140,6 +139,11 @@
                             <fieldVisibility>PRIVATE</fieldVisibility>
                             <sourceDirectory>${project.basedir}/src/main/avro/</sourceDirectory>
                             <outputDirectory>${project.basedir}/src/main/java/</outputDirectory>
+                            <imports>
+                                <!-- types can be referenced by other (multiple!) *.avsc files, but that requires them to be imported first -->
+                                <import>${project.basedir}/src/main/avro/ch/dvbern/kibon/exchange/commons/types/Zeiteinheit.avsc</import>
+                                <import>${project.basedir}/src/main/avro/ch/dvbern/kibon/exchange/commons/types/BetreuungsangebotType.avsc</import>
+                            </imports>
                         </configuration>
                     </execution>
                 </executions>

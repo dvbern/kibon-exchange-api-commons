@@ -20,6 +20,14 @@
 			"default": null
 		},
 		{
+			"name": "betreuungsArt",
+			"type": [
+				"null",
+				"ch.dvbern.kibon.exchange.commons.types.BetreuungsangebotTyp"
+			],
+			"default": null
+		},
+		{
 			"name": "adresse",
 			"type": {
 				"type": "record",
