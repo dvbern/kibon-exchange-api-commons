@@ -26,7 +26,7 @@
 
     <groupId>ch.dvbern.kibon</groupId>
     <artifactId>kibon-exchange-api-commons</artifactId>
-    <version>1.2.1-SNAPSHOT</version>
+    <version>1.2.2-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <properties>
