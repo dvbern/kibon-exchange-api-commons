@@ -49,6 +49,12 @@ public final class DateConverter {
 		return datum == null ? null : AVRO_CONVERTER.toLong(datum, null, null);
 	}
 
+	@Nullable
+	@Contract("null -> null; !null -> !null")
+	public static Long fromLocalDateTime(@Nullable LocalDateTime datum) {
+		return datum == null ? null : serialize(of(datum));
+	}
+
 	/**
 	 * Maps time-micros to Instant
 	 */
@@ -56,6 +62,15 @@ public final class DateConverter {
 	@Contract("null -> null; !null -> !null")
 	public static Instant deserialize(@Nullable Long datum) {
 		return datum == null ? null : AVRO_CONVERTER.fromLong(datum, null, null);
+	}
+
+	/**
+	 * Maps time-micros to Instant
+	 */
+	@Nullable
+	@Contract("null -> null; !null -> !null")
+	public static LocalDateTime toLocalDateTime(@Nullable Long datum) {
+		return datum == null ? null : of(deserialize(datum));
 	}
 
 	@Nonnull
