@@ -1,0 +1,237 @@
+{
+	"type": "record",
+	"name": "InstitutionEventDTO",
+	"namespace": "ch.dvbern.kibon.exchange.commons.institution",
+	"fields": [
+		{
+			"name": "id",
+			"type": "string"
+		},
+		{
+			"name": "name",
+			"type": "string"
+		},
+		{
+			"name": "traegerschaft",
+			"type": [
+				"null",
+				"string"
+			],
+			"default": null
+		},
+		{
+			"name": "adresse",
+			"type": {
+				"type": "record",
+				"name": "KontaktAngabenDTO",
+				"aliases": [
+					"AdresseDTO"
+				],
+				"fields": [
+					{
+						"name": "anschrift",
+						"type": [
+							"null",
+							"string"
+						],
+						"default": null
+					},
+					{
+						"name": "strasse",
+						"type": "string"
+					},
+					{
+						"name": "hausnummer",
+						"type": [
+							"null",
+							"string"
+						],
+						"default": null
+					},
+					{
+						"name": "adresszusatz",
+						"type": [
+							"null",
+							"string"
+						],
+						"default": null
+					},
+					{
+						"name": "plz",
+						"type": "string"
+					},
+					{
+						"name": "ort",
+						"type": "string"
+					},
+					{
+						"name": "land",
+						"type": "string"
+					},
+					{
+						"name": "gemeinde",
+						"type": {
+							"type": "record",
+							"name": "GemeindeDTO",
+							"fields": [
+								{
+									"name": "name",
+									"type": [
+										"null",
+										"string"
+									],
+									"default": null
+								},
+								{
+									"name": "bfsNummer",
+									"type": [
+										"null",
+										"long"
+									],
+									"default": null
+								}
+							]
+						},
+						"default": {
+							"name": null,
+							"bfsNummer": null
+						}
+					},
+					{
+						"name": "email",
+						"type": [
+							"null",
+							"string"
+						],
+						"default": null
+					},
+					{
+						"name": "telefon",
+						"type": [
+							"null",
+							"string"
+						],
+						"default": null
+					},
+					{
+						"name": "webseite",
+						"type": [
+							"null",
+							"string"
+						],
+						"default": null
+					}
+				]
+			}
+		},
+		{
+			"name": "betreuungsAdressen",
+			"type": {
+				"type": "array",
+				"items": "KontaktAngabenDTO"
+			},
+			"default": []
+		},
+		{
+			"name": "oeffnungsTage",
+			"type": {
+				"type": "array",
+				"items": {
+					"type": "enum",
+					"name": "Wochentag",
+					"namespace": "ch.dvbern.kibon.exchange.commons.types",
+					"symbols": [
+						"MONDAY",
+						"TUESDAY",
+						"WEDNESDAY",
+						"THURSDAY",
+						"FRIDAY",
+						"SATURDAY",
+						"SUNDAY"
+					]
+				}
+			},
+			"default": []
+		},
+		{
+			"name": "offenVon",
+			"type": [
+				"null",
+				"long"
+			],
+			"default": null
+		},
+		{
+			"name": "offenBis",
+			"type": [
+				"null",
+				"long"
+			],
+			"default": null
+		},
+		{
+			"name": "oeffnungsAbweichungen",
+			"type": [
+				"null",
+				"string"
+			],
+			"default": null
+		},
+		{
+			"name": "altersKategorien",
+			"type": {
+				"type": "array",
+				"items": {
+					"type": "enum",
+					"name": "AltersKategorie",
+					"symbols": [
+						"BABY",
+						"VORSCHULE",
+						"KINDERGARTEN",
+						"SCHULE"
+					]
+				}
+			},
+			"default": []
+		},
+		{
+			"name": "subventioniertePlaetze",
+			"type": "boolean",
+			"default": false
+		},
+		{
+			"name": "anzahlPlaetze",
+			"type": [
+				"null",
+				{
+					"type": "bytes",
+					"logicalType": "decimal",
+					"precision": 19,
+					"scale": 2
+				}
+			],
+			"default": null
+		},
+		{
+			"name": "anzahlPlaetzeFirmen",
+			"type": [
+				"null",
+				{
+					"type": "bytes",
+					"logicalType": "decimal",
+					"precision": 19,
+					"scale": 2
+				}
+			],
+			"default": null
+		},
+		{
+			"name": "timestampMutiert",
+			"type": [
+				"null",
+				"long"
+			],
+			"default": null
+		}
+	]
+}
