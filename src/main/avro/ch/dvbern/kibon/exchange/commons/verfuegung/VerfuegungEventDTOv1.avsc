@@ -5,52 +5,11 @@
 	"fields": [
 		{
 			"name": "kind",
-			"type": {
-				"type": "record",
-				"name": "KindDTO",
-				"fields": [
-					{
-						"name": "vorname",
-						"type": "string"
-					},
-					{
-						"name": "nachname",
-						"type": "string"
-					},
-					{
-						"name": "geburtsdatum",
-						"type": {
-							"type": "int",
-							"logicalType": "date"
-						}
-					}
-				]
-			}
+			"type": "KindDTO"
 		},
 		{
 			"name": "gesuchsteller",
-			"type": {
-				"type": "record",
-				"name": "GesuchstellerDTO",
-				"fields": [
-					{
-						"name": "vorname",
-						"type": "string"
-					},
-					{
-						"name": "nachname",
-						"type": "string"
-					},
-					{
-						"name": "email",
-						"type": [
-							"null",
-							"string"
-						],
-						"default": null
-					}
-				]
-			}
+			"type": "GesuchstellerDTO"
 		},
 		{
 			"name": "betreuungsArt",
