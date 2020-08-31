@@ -18,12 +18,8 @@
 package ch.dvbern.kibon.exchange.commons.util;
 
 import java.io.ByteArrayOutputStream;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
-import java.time.ZoneId;
 
 import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
 
 import org.apache.avro.Schema;
 import org.apache.avro.generic.GenericDatumReader;
@@ -37,7 +33,6 @@ import org.apache.avro.io.EncoderFactory;
 import org.apache.avro.specific.SpecificDatumReader;
 import org.apache.avro.specific.SpecificDatumWriter;
 import org.apache.avro.specific.SpecificRecordBase;
-import org.jetbrains.annotations.Contract;
 
 public final class AvroConverter {
 
@@ -105,33 +100,5 @@ public final class AvroConverter {
 		} catch (Exception e) {
 			throw new IllegalStateException("failed converting from avro", e);
 		}
-	}
-
-	/**
-	 * Due to Avro bug https://issues.apache.org/jira/projects/AVRO/issues/AVRO-2904?filter=allopenissues, union types
-	 * and logical-types timestamp-micros and time-micros cannot be used together: the class generator does not create
-	 * the required conversion mapping. Furthermore, we cannot simply add it to the generated class, because the
-	 * converters don't allow the combination with NULL.
-	 *
-	 * The conversion here maps LocalTime to time-micros.
-	 */
-	@Nullable
-	@Contract("null -> null; !null -> !null")
-	public static Long convert(@Nullable LocalTime datum) {
-		return datum == null ? null : datum.toNanoOfDay() / 1000;
-	}
-
-	/**
-	 * Due to Avro bug https://issues.apache.org/jira/projects/AVRO/issues/AVRO-2904?filter=allopenissues, union types
-	 * and logical-types timestamp-micros and time-micros cannot be used together: the class generator does not create
-	 * the required conversion mapping. Furthermore, we cannot simply add it to the generated class, because the
-	 * converters don't allow the combination with NULL.
-	 *
-	 * The conversion here maps LocalDateTime to time-micros.
-	 */
-	@Nullable
-	@Contract("null -> null; !null -> !null")
-	public static Long convert(@Nullable LocalDateTime datum) {
-		return datum == null ? null : datum.atZone(ZoneId.systemDefault()).toInstant().toEpochMilli();
 	}
 }

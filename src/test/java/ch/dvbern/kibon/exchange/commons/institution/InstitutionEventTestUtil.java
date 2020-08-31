@@ -18,16 +18,16 @@
 package ch.dvbern.kibon.exchange.commons.institution;
 
 import java.math.BigDecimal;
-import java.time.Instant;
+import java.time.LocalDateTime;
 import java.time.LocalTime;
-import java.time.temporal.ChronoUnit;
 import java.util.Arrays;
 import java.util.UUID;
 
 import javax.annotation.Nonnull;
 
 import ch.dvbern.kibon.exchange.commons.types.Wochentag;
-import ch.dvbern.kibon.exchange.commons.util.AvroConverter;
+import ch.dvbern.kibon.exchange.commons.util.DateConverter;
+import ch.dvbern.kibon.exchange.commons.util.TimeConverter;
 import com.github.javafaker.Faker;
 
 public final class InstitutionEventTestUtil {
@@ -46,14 +46,14 @@ public final class InstitutionEventTestUtil {
 			.setAdresse(createKontaktAngabenDTO())
 			.setBetreuungsAdressen(Arrays.asList(createKontaktAngabenDTO(), createKontaktAngabenDTO()))
 			.setOeffnungsTage(Arrays.asList(Wochentag.values().clone()))
-			.setOffenVon(AvroConverter.convert(timeBetween(0, 14)))
-			.setOffenBis(AvroConverter.convert(timeBetween(14, 20)))
+			.setOffenVon(TimeConverter.serialize(timeBetween(0, 14)))
+			.setOffenBis(TimeConverter.serialize(timeBetween(14, 20)))
 			.setOeffnungsAbweichungen(FAKER.lorem().characters(0, 4000))
 			.setAltersKategorien(Arrays.asList(AltersKategorie.BABY, AltersKategorie.KINDERGARTEN))
 			.setSubventioniertePlaetze(FAKER.bool().bool())
 			.setAnzahlPlaetze(getRandomBigDecimal())
 			.setAnzahlPlaetzeFirmen(getRandomBigDecimal())
-			.setTimestampMutiert(Instant.now().truncatedTo(ChronoUnit.MICROS).toEpochMilli())
+			.setTimestampMutiert(DateConverter.serialize(DateConverter.of(LocalDateTime.now())))
 			.build();
 
 		return dto;
