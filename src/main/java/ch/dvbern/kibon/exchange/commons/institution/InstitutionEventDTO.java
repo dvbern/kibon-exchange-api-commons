@@ -14,11 +14,14 @@ import org.apache.avro.message.SchemaStore;
 
 @org.apache.avro.specific.AvroGenerated
 public class InstitutionEventDTO extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = -2217656976502139806L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"InstitutionEventDTO\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.institution\",\"fields\":[{\"name\":\"id\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"name\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"traegerschaft\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"adresse\",\"type\":{\"type\":\"record\",\"name\":\"AdresseDTO\",\"fields\":[{\"name\":\"strasse\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"hausnummer\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"adresszusatz\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"plz\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"ort\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"land\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}]}}]}");
+  private static final long serialVersionUID = -7349067361341900515L;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"InstitutionEventDTO\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.institution\",\"fields\":[{\"name\":\"id\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"name\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"traegerschaft\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"adresse\",\"type\":{\"type\":\"record\",\"name\":\"KontaktAngabenDTO\",\"fields\":[{\"name\":\"anschrift\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"strasse\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"hausnummer\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"adresszusatz\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"plz\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"ort\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"land\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"gemeinde\",\"type\":{\"type\":\"record\",\"name\":\"GemeindeDTO\",\"fields\":[{\"name\":\"name\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"bfsNummer\",\"type\":[\"null\",\"long\"],\"default\":null}]},\"default\":{\"name\":null,\"bfsNummer\":null}},{\"name\":\"email\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"telefon\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"webseite\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null}],\"aliases\":[\"AdresseDTO\"]}},{\"name\":\"betreuungsAdressen\",\"type\":{\"type\":\"array\",\"items\":\"KontaktAngabenDTO\"},\"default\":[]},{\"name\":\"oeffnungsTage\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"enum\",\"name\":\"Wochentag\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.types\",\"symbols\":[\"MONDAY\",\"TUESDAY\",\"WEDNESDAY\",\"THURSDAY\",\"FRIDAY\",\"SATURDAY\",\"SUNDAY\"]}},\"default\":[]},{\"name\":\"offenVon\",\"type\":[\"null\",\"long\"],\"default\":null},{\"name\":\"offenBis\",\"type\":[\"null\",\"long\"],\"default\":null},{\"name\":\"oeffnungsAbweichungen\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"altersKategorien\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"enum\",\"name\":\"AltersKategorie\",\"symbols\":[\"BABY\",\"VORSCHULE\",\"KINDERGARTEN\",\"SCHULE\"]}},\"default\":[]},{\"name\":\"subventioniertePlaetze\",\"type\":\"boolean\",\"default\":false},{\"name\":\"anzahlPlaetze\",\"type\":[\"null\",{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}],\"default\":null},{\"name\":\"anzahlPlaetzeFirmen\",\"type\":[\"null\",{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}],\"default\":null},{\"name\":\"timestampMutiert\",\"type\":[\"null\",\"long\"],\"default\":null}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static SpecificData MODEL$ = new SpecificData();
+static {
+    MODEL$.addLogicalTypeConversion(new org.apache.avro.Conversions.DecimalConversion());
+  }
 
   private static final BinaryMessageEncoder<InstitutionEventDTO> ENCODER =
       new BinaryMessageEncoder<InstitutionEventDTO>(MODEL$, SCHEMA$);
@@ -74,7 +77,17 @@ public class InstitutionEventDTO extends org.apache.avro.specific.SpecificRecord
    private java.lang.String id;
    private java.lang.String name;
    private java.lang.String traegerschaft;
-   private ch.dvbern.kibon.exchange.commons.institution.AdresseDTO adresse;
+   private ch.dvbern.kibon.exchange.commons.institution.KontaktAngabenDTO adresse;
+   private java.util.List<ch.dvbern.kibon.exchange.commons.institution.KontaktAngabenDTO> betreuungsAdressen;
+   private java.util.List<ch.dvbern.kibon.exchange.commons.types.Wochentag> oeffnungsTage;
+   private java.lang.Long offenVon;
+   private java.lang.Long offenBis;
+   private java.lang.String oeffnungsAbweichungen;
+   private java.util.List<ch.dvbern.kibon.exchange.commons.institution.AltersKategorie> altersKategorien;
+   private boolean subventioniertePlaetze;
+   private java.math.BigDecimal anzahlPlaetze;
+   private java.math.BigDecimal anzahlPlaetzeFirmen;
+   private java.lang.Long timestampMutiert;
 
   /**
    * Default constructor.  Note that this does not initialize fields
@@ -89,12 +102,32 @@ public class InstitutionEventDTO extends org.apache.avro.specific.SpecificRecord
    * @param name The new value for name
    * @param traegerschaft The new value for traegerschaft
    * @param adresse The new value for adresse
+   * @param betreuungsAdressen The new value for betreuungsAdressen
+   * @param oeffnungsTage The new value for oeffnungsTage
+   * @param offenVon The new value for offenVon
+   * @param offenBis The new value for offenBis
+   * @param oeffnungsAbweichungen The new value for oeffnungsAbweichungen
+   * @param altersKategorien The new value for altersKategorien
+   * @param subventioniertePlaetze The new value for subventioniertePlaetze
+   * @param anzahlPlaetze The new value for anzahlPlaetze
+   * @param anzahlPlaetzeFirmen The new value for anzahlPlaetzeFirmen
+   * @param timestampMutiert The new value for timestampMutiert
    */
-  public InstitutionEventDTO(java.lang.String id, java.lang.String name, java.lang.String traegerschaft, ch.dvbern.kibon.exchange.commons.institution.AdresseDTO adresse) {
+  public InstitutionEventDTO(java.lang.String id, java.lang.String name, java.lang.String traegerschaft, ch.dvbern.kibon.exchange.commons.institution.KontaktAngabenDTO adresse, java.util.List<ch.dvbern.kibon.exchange.commons.institution.KontaktAngabenDTO> betreuungsAdressen, java.util.List<ch.dvbern.kibon.exchange.commons.types.Wochentag> oeffnungsTage, java.lang.Long offenVon, java.lang.Long offenBis, java.lang.String oeffnungsAbweichungen, java.util.List<ch.dvbern.kibon.exchange.commons.institution.AltersKategorie> altersKategorien, java.lang.Boolean subventioniertePlaetze, java.math.BigDecimal anzahlPlaetze, java.math.BigDecimal anzahlPlaetzeFirmen, java.lang.Long timestampMutiert) {
     this.id = id;
     this.name = name;
     this.traegerschaft = traegerschaft;
     this.adresse = adresse;
+    this.betreuungsAdressen = betreuungsAdressen;
+    this.oeffnungsTage = oeffnungsTage;
+    this.offenVon = offenVon;
+    this.offenBis = offenBis;
+    this.oeffnungsAbweichungen = oeffnungsAbweichungen;
+    this.altersKategorien = altersKategorien;
+    this.subventioniertePlaetze = subventioniertePlaetze;
+    this.anzahlPlaetze = anzahlPlaetze;
+    this.anzahlPlaetzeFirmen = anzahlPlaetzeFirmen;
+    this.timestampMutiert = timestampMutiert;
   }
 
   public org.apache.avro.specific.SpecificData getSpecificData() { return MODEL$; }
@@ -106,6 +139,16 @@ public class InstitutionEventDTO extends org.apache.avro.specific.SpecificRecord
     case 1: return name;
     case 2: return traegerschaft;
     case 3: return adresse;
+    case 4: return betreuungsAdressen;
+    case 5: return oeffnungsTage;
+    case 6: return offenVon;
+    case 7: return offenBis;
+    case 8: return oeffnungsAbweichungen;
+    case 9: return altersKategorien;
+    case 10: return subventioniertePlaetze;
+    case 11: return anzahlPlaetze;
+    case 12: return anzahlPlaetzeFirmen;
+    case 13: return timestampMutiert;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -117,7 +160,17 @@ public class InstitutionEventDTO extends org.apache.avro.specific.SpecificRecord
     case 0: id = (java.lang.String)value$; break;
     case 1: name = (java.lang.String)value$; break;
     case 2: traegerschaft = (java.lang.String)value$; break;
-    case 3: adresse = (ch.dvbern.kibon.exchange.commons.institution.AdresseDTO)value$; break;
+    case 3: adresse = (ch.dvbern.kibon.exchange.commons.institution.KontaktAngabenDTO)value$; break;
+    case 4: betreuungsAdressen = (java.util.List<ch.dvbern.kibon.exchange.commons.institution.KontaktAngabenDTO>)value$; break;
+    case 5: oeffnungsTage = (java.util.List<ch.dvbern.kibon.exchange.commons.types.Wochentag>)value$; break;
+    case 6: offenVon = (java.lang.Long)value$; break;
+    case 7: offenBis = (java.lang.Long)value$; break;
+    case 8: oeffnungsAbweichungen = (java.lang.String)value$; break;
+    case 9: altersKategorien = (java.util.List<ch.dvbern.kibon.exchange.commons.institution.AltersKategorie>)value$; break;
+    case 10: subventioniertePlaetze = (java.lang.Boolean)value$; break;
+    case 11: anzahlPlaetze = (java.math.BigDecimal)value$; break;
+    case 12: anzahlPlaetzeFirmen = (java.math.BigDecimal)value$; break;
+    case 13: timestampMutiert = (java.lang.Long)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -177,7 +230,7 @@ public class InstitutionEventDTO extends org.apache.avro.specific.SpecificRecord
    * Gets the value of the 'adresse' field.
    * @return The value of the 'adresse' field.
    */
-  public ch.dvbern.kibon.exchange.commons.institution.AdresseDTO getAdresse() {
+  public ch.dvbern.kibon.exchange.commons.institution.KontaktAngabenDTO getAdresse() {
     return adresse;
   }
 
@@ -186,8 +239,178 @@ public class InstitutionEventDTO extends org.apache.avro.specific.SpecificRecord
    * Sets the value of the 'adresse' field.
    * @param value the value to set.
    */
-  public void setAdresse(ch.dvbern.kibon.exchange.commons.institution.AdresseDTO value) {
+  public void setAdresse(ch.dvbern.kibon.exchange.commons.institution.KontaktAngabenDTO value) {
     this.adresse = value;
+  }
+
+  /**
+   * Gets the value of the 'betreuungsAdressen' field.
+   * @return The value of the 'betreuungsAdressen' field.
+   */
+  public java.util.List<ch.dvbern.kibon.exchange.commons.institution.KontaktAngabenDTO> getBetreuungsAdressen() {
+    return betreuungsAdressen;
+  }
+
+
+  /**
+   * Sets the value of the 'betreuungsAdressen' field.
+   * @param value the value to set.
+   */
+  public void setBetreuungsAdressen(java.util.List<ch.dvbern.kibon.exchange.commons.institution.KontaktAngabenDTO> value) {
+    this.betreuungsAdressen = value;
+  }
+
+  /**
+   * Gets the value of the 'oeffnungsTage' field.
+   * @return The value of the 'oeffnungsTage' field.
+   */
+  public java.util.List<ch.dvbern.kibon.exchange.commons.types.Wochentag> getOeffnungsTage() {
+    return oeffnungsTage;
+  }
+
+
+  /**
+   * Sets the value of the 'oeffnungsTage' field.
+   * @param value the value to set.
+   */
+  public void setOeffnungsTage(java.util.List<ch.dvbern.kibon.exchange.commons.types.Wochentag> value) {
+    this.oeffnungsTage = value;
+  }
+
+  /**
+   * Gets the value of the 'offenVon' field.
+   * @return The value of the 'offenVon' field.
+   */
+  public java.lang.Long getOffenVon() {
+    return offenVon;
+  }
+
+
+  /**
+   * Sets the value of the 'offenVon' field.
+   * @param value the value to set.
+   */
+  public void setOffenVon(java.lang.Long value) {
+    this.offenVon = value;
+  }
+
+  /**
+   * Gets the value of the 'offenBis' field.
+   * @return The value of the 'offenBis' field.
+   */
+  public java.lang.Long getOffenBis() {
+    return offenBis;
+  }
+
+
+  /**
+   * Sets the value of the 'offenBis' field.
+   * @param value the value to set.
+   */
+  public void setOffenBis(java.lang.Long value) {
+    this.offenBis = value;
+  }
+
+  /**
+   * Gets the value of the 'oeffnungsAbweichungen' field.
+   * @return The value of the 'oeffnungsAbweichungen' field.
+   */
+  public java.lang.String getOeffnungsAbweichungen() {
+    return oeffnungsAbweichungen;
+  }
+
+
+  /**
+   * Sets the value of the 'oeffnungsAbweichungen' field.
+   * @param value the value to set.
+   */
+  public void setOeffnungsAbweichungen(java.lang.String value) {
+    this.oeffnungsAbweichungen = value;
+  }
+
+  /**
+   * Gets the value of the 'altersKategorien' field.
+   * @return The value of the 'altersKategorien' field.
+   */
+  public java.util.List<ch.dvbern.kibon.exchange.commons.institution.AltersKategorie> getAltersKategorien() {
+    return altersKategorien;
+  }
+
+
+  /**
+   * Sets the value of the 'altersKategorien' field.
+   * @param value the value to set.
+   */
+  public void setAltersKategorien(java.util.List<ch.dvbern.kibon.exchange.commons.institution.AltersKategorie> value) {
+    this.altersKategorien = value;
+  }
+
+  /**
+   * Gets the value of the 'subventioniertePlaetze' field.
+   * @return The value of the 'subventioniertePlaetze' field.
+   */
+  public boolean getSubventioniertePlaetze() {
+    return subventioniertePlaetze;
+  }
+
+
+  /**
+   * Sets the value of the 'subventioniertePlaetze' field.
+   * @param value the value to set.
+   */
+  public void setSubventioniertePlaetze(boolean value) {
+    this.subventioniertePlaetze = value;
+  }
+
+  /**
+   * Gets the value of the 'anzahlPlaetze' field.
+   * @return The value of the 'anzahlPlaetze' field.
+   */
+  public java.math.BigDecimal getAnzahlPlaetze() {
+    return anzahlPlaetze;
+  }
+
+
+  /**
+   * Sets the value of the 'anzahlPlaetze' field.
+   * @param value the value to set.
+   */
+  public void setAnzahlPlaetze(java.math.BigDecimal value) {
+    this.anzahlPlaetze = value;
+  }
+
+  /**
+   * Gets the value of the 'anzahlPlaetzeFirmen' field.
+   * @return The value of the 'anzahlPlaetzeFirmen' field.
+   */
+  public java.math.BigDecimal getAnzahlPlaetzeFirmen() {
+    return anzahlPlaetzeFirmen;
+  }
+
+
+  /**
+   * Sets the value of the 'anzahlPlaetzeFirmen' field.
+   * @param value the value to set.
+   */
+  public void setAnzahlPlaetzeFirmen(java.math.BigDecimal value) {
+    this.anzahlPlaetzeFirmen = value;
+  }
+
+  /**
+   * Gets the value of the 'timestampMutiert' field.
+   * @return The value of the 'timestampMutiert' field.
+   */
+  public java.lang.Long getTimestampMutiert() {
+    return timestampMutiert;
+  }
+
+
+  /**
+   * Sets the value of the 'timestampMutiert' field.
+   * @param value the value to set.
+   */
+  public void setTimestampMutiert(java.lang.Long value) {
+    this.timestampMutiert = value;
   }
 
   /**
@@ -233,8 +456,18 @@ public class InstitutionEventDTO extends org.apache.avro.specific.SpecificRecord
     private java.lang.String id;
     private java.lang.String name;
     private java.lang.String traegerschaft;
-    private ch.dvbern.kibon.exchange.commons.institution.AdresseDTO adresse;
-    private ch.dvbern.kibon.exchange.commons.institution.AdresseDTO.Builder adresseBuilder;
+    private ch.dvbern.kibon.exchange.commons.institution.KontaktAngabenDTO adresse;
+    private ch.dvbern.kibon.exchange.commons.institution.KontaktAngabenDTO.Builder adresseBuilder;
+    private java.util.List<ch.dvbern.kibon.exchange.commons.institution.KontaktAngabenDTO> betreuungsAdressen;
+    private java.util.List<ch.dvbern.kibon.exchange.commons.types.Wochentag> oeffnungsTage;
+    private java.lang.Long offenVon;
+    private java.lang.Long offenBis;
+    private java.lang.String oeffnungsAbweichungen;
+    private java.util.List<ch.dvbern.kibon.exchange.commons.institution.AltersKategorie> altersKategorien;
+    private boolean subventioniertePlaetze;
+    private java.math.BigDecimal anzahlPlaetze;
+    private java.math.BigDecimal anzahlPlaetzeFirmen;
+    private java.lang.Long timestampMutiert;
 
     /** Creates a new Builder */
     private Builder() {
@@ -264,7 +497,47 @@ public class InstitutionEventDTO extends org.apache.avro.specific.SpecificRecord
         fieldSetFlags()[3] = other.fieldSetFlags()[3];
       }
       if (other.hasAdresseBuilder()) {
-        this.adresseBuilder = ch.dvbern.kibon.exchange.commons.institution.AdresseDTO.newBuilder(other.getAdresseBuilder());
+        this.adresseBuilder = ch.dvbern.kibon.exchange.commons.institution.KontaktAngabenDTO.newBuilder(other.getAdresseBuilder());
+      }
+      if (isValidValue(fields()[4], other.betreuungsAdressen)) {
+        this.betreuungsAdressen = data().deepCopy(fields()[4].schema(), other.betreuungsAdressen);
+        fieldSetFlags()[4] = other.fieldSetFlags()[4];
+      }
+      if (isValidValue(fields()[5], other.oeffnungsTage)) {
+        this.oeffnungsTage = data().deepCopy(fields()[5].schema(), other.oeffnungsTage);
+        fieldSetFlags()[5] = other.fieldSetFlags()[5];
+      }
+      if (isValidValue(fields()[6], other.offenVon)) {
+        this.offenVon = data().deepCopy(fields()[6].schema(), other.offenVon);
+        fieldSetFlags()[6] = other.fieldSetFlags()[6];
+      }
+      if (isValidValue(fields()[7], other.offenBis)) {
+        this.offenBis = data().deepCopy(fields()[7].schema(), other.offenBis);
+        fieldSetFlags()[7] = other.fieldSetFlags()[7];
+      }
+      if (isValidValue(fields()[8], other.oeffnungsAbweichungen)) {
+        this.oeffnungsAbweichungen = data().deepCopy(fields()[8].schema(), other.oeffnungsAbweichungen);
+        fieldSetFlags()[8] = other.fieldSetFlags()[8];
+      }
+      if (isValidValue(fields()[9], other.altersKategorien)) {
+        this.altersKategorien = data().deepCopy(fields()[9].schema(), other.altersKategorien);
+        fieldSetFlags()[9] = other.fieldSetFlags()[9];
+      }
+      if (isValidValue(fields()[10], other.subventioniertePlaetze)) {
+        this.subventioniertePlaetze = data().deepCopy(fields()[10].schema(), other.subventioniertePlaetze);
+        fieldSetFlags()[10] = other.fieldSetFlags()[10];
+      }
+      if (isValidValue(fields()[11], other.anzahlPlaetze)) {
+        this.anzahlPlaetze = data().deepCopy(fields()[11].schema(), other.anzahlPlaetze);
+        fieldSetFlags()[11] = other.fieldSetFlags()[11];
+      }
+      if (isValidValue(fields()[12], other.anzahlPlaetzeFirmen)) {
+        this.anzahlPlaetzeFirmen = data().deepCopy(fields()[12].schema(), other.anzahlPlaetzeFirmen);
+        fieldSetFlags()[12] = other.fieldSetFlags()[12];
+      }
+      if (isValidValue(fields()[13], other.timestampMutiert)) {
+        this.timestampMutiert = data().deepCopy(fields()[13].schema(), other.timestampMutiert);
+        fieldSetFlags()[13] = other.fieldSetFlags()[13];
       }
     }
 
@@ -291,6 +564,46 @@ public class InstitutionEventDTO extends org.apache.avro.specific.SpecificRecord
         fieldSetFlags()[3] = true;
       }
       this.adresseBuilder = null;
+      if (isValidValue(fields()[4], other.betreuungsAdressen)) {
+        this.betreuungsAdressen = data().deepCopy(fields()[4].schema(), other.betreuungsAdressen);
+        fieldSetFlags()[4] = true;
+      }
+      if (isValidValue(fields()[5], other.oeffnungsTage)) {
+        this.oeffnungsTage = data().deepCopy(fields()[5].schema(), other.oeffnungsTage);
+        fieldSetFlags()[5] = true;
+      }
+      if (isValidValue(fields()[6], other.offenVon)) {
+        this.offenVon = data().deepCopy(fields()[6].schema(), other.offenVon);
+        fieldSetFlags()[6] = true;
+      }
+      if (isValidValue(fields()[7], other.offenBis)) {
+        this.offenBis = data().deepCopy(fields()[7].schema(), other.offenBis);
+        fieldSetFlags()[7] = true;
+      }
+      if (isValidValue(fields()[8], other.oeffnungsAbweichungen)) {
+        this.oeffnungsAbweichungen = data().deepCopy(fields()[8].schema(), other.oeffnungsAbweichungen);
+        fieldSetFlags()[8] = true;
+      }
+      if (isValidValue(fields()[9], other.altersKategorien)) {
+        this.altersKategorien = data().deepCopy(fields()[9].schema(), other.altersKategorien);
+        fieldSetFlags()[9] = true;
+      }
+      if (isValidValue(fields()[10], other.subventioniertePlaetze)) {
+        this.subventioniertePlaetze = data().deepCopy(fields()[10].schema(), other.subventioniertePlaetze);
+        fieldSetFlags()[10] = true;
+      }
+      if (isValidValue(fields()[11], other.anzahlPlaetze)) {
+        this.anzahlPlaetze = data().deepCopy(fields()[11].schema(), other.anzahlPlaetze);
+        fieldSetFlags()[11] = true;
+      }
+      if (isValidValue(fields()[12], other.anzahlPlaetzeFirmen)) {
+        this.anzahlPlaetzeFirmen = data().deepCopy(fields()[12].schema(), other.anzahlPlaetzeFirmen);
+        fieldSetFlags()[12] = true;
+      }
+      if (isValidValue(fields()[13], other.timestampMutiert)) {
+        this.timestampMutiert = data().deepCopy(fields()[13].schema(), other.timestampMutiert);
+        fieldSetFlags()[13] = true;
+      }
     }
 
     /**
@@ -417,7 +730,7 @@ public class InstitutionEventDTO extends org.apache.avro.specific.SpecificRecord
       * Gets the value of the 'adresse' field.
       * @return The value.
       */
-    public ch.dvbern.kibon.exchange.commons.institution.AdresseDTO getAdresse() {
+    public ch.dvbern.kibon.exchange.commons.institution.KontaktAngabenDTO getAdresse() {
       return adresse;
     }
 
@@ -427,7 +740,7 @@ public class InstitutionEventDTO extends org.apache.avro.specific.SpecificRecord
       * @param value The value of 'adresse'.
       * @return This builder.
       */
-    public ch.dvbern.kibon.exchange.commons.institution.InstitutionEventDTO.Builder setAdresse(ch.dvbern.kibon.exchange.commons.institution.AdresseDTO value) {
+    public ch.dvbern.kibon.exchange.commons.institution.InstitutionEventDTO.Builder setAdresse(ch.dvbern.kibon.exchange.commons.institution.KontaktAngabenDTO value) {
       validate(fields()[3], value);
       this.adresseBuilder = null;
       this.adresse = value;
@@ -447,12 +760,12 @@ public class InstitutionEventDTO extends org.apache.avro.specific.SpecificRecord
      * Gets the Builder instance for the 'adresse' field and creates one if it doesn't exist yet.
      * @return This builder.
      */
-    public ch.dvbern.kibon.exchange.commons.institution.AdresseDTO.Builder getAdresseBuilder() {
+    public ch.dvbern.kibon.exchange.commons.institution.KontaktAngabenDTO.Builder getAdresseBuilder() {
       if (adresseBuilder == null) {
         if (hasAdresse()) {
-          setAdresseBuilder(ch.dvbern.kibon.exchange.commons.institution.AdresseDTO.newBuilder(adresse));
+          setAdresseBuilder(ch.dvbern.kibon.exchange.commons.institution.KontaktAngabenDTO.newBuilder(adresse));
         } else {
-          setAdresseBuilder(ch.dvbern.kibon.exchange.commons.institution.AdresseDTO.newBuilder());
+          setAdresseBuilder(ch.dvbern.kibon.exchange.commons.institution.KontaktAngabenDTO.newBuilder());
         }
       }
       return adresseBuilder;
@@ -463,7 +776,7 @@ public class InstitutionEventDTO extends org.apache.avro.specific.SpecificRecord
      * @param value The builder instance that must be set.
      * @return This builder.
      */
-    public ch.dvbern.kibon.exchange.commons.institution.InstitutionEventDTO.Builder setAdresseBuilder(ch.dvbern.kibon.exchange.commons.institution.AdresseDTO.Builder value) {
+    public ch.dvbern.kibon.exchange.commons.institution.InstitutionEventDTO.Builder setAdresseBuilder(ch.dvbern.kibon.exchange.commons.institution.KontaktAngabenDTO.Builder value) {
       clearAdresse();
       adresseBuilder = value;
       return this;
@@ -488,6 +801,405 @@ public class InstitutionEventDTO extends org.apache.avro.specific.SpecificRecord
       return this;
     }
 
+    /**
+      * Gets the value of the 'betreuungsAdressen' field.
+      * @return The value.
+      */
+    public java.util.List<ch.dvbern.kibon.exchange.commons.institution.KontaktAngabenDTO> getBetreuungsAdressen() {
+      return betreuungsAdressen;
+    }
+
+
+    /**
+      * Sets the value of the 'betreuungsAdressen' field.
+      * @param value The value of 'betreuungsAdressen'.
+      * @return This builder.
+      */
+    public ch.dvbern.kibon.exchange.commons.institution.InstitutionEventDTO.Builder setBetreuungsAdressen(java.util.List<ch.dvbern.kibon.exchange.commons.institution.KontaktAngabenDTO> value) {
+      validate(fields()[4], value);
+      this.betreuungsAdressen = value;
+      fieldSetFlags()[4] = true;
+      return this;
+    }
+
+    /**
+      * Checks whether the 'betreuungsAdressen' field has been set.
+      * @return True if the 'betreuungsAdressen' field has been set, false otherwise.
+      */
+    public boolean hasBetreuungsAdressen() {
+      return fieldSetFlags()[4];
+    }
+
+
+    /**
+      * Clears the value of the 'betreuungsAdressen' field.
+      * @return This builder.
+      */
+    public ch.dvbern.kibon.exchange.commons.institution.InstitutionEventDTO.Builder clearBetreuungsAdressen() {
+      betreuungsAdressen = null;
+      fieldSetFlags()[4] = false;
+      return this;
+    }
+
+    /**
+      * Gets the value of the 'oeffnungsTage' field.
+      * @return The value.
+      */
+    public java.util.List<ch.dvbern.kibon.exchange.commons.types.Wochentag> getOeffnungsTage() {
+      return oeffnungsTage;
+    }
+
+
+    /**
+      * Sets the value of the 'oeffnungsTage' field.
+      * @param value The value of 'oeffnungsTage'.
+      * @return This builder.
+      */
+    public ch.dvbern.kibon.exchange.commons.institution.InstitutionEventDTO.Builder setOeffnungsTage(java.util.List<ch.dvbern.kibon.exchange.commons.types.Wochentag> value) {
+      validate(fields()[5], value);
+      this.oeffnungsTage = value;
+      fieldSetFlags()[5] = true;
+      return this;
+    }
+
+    /**
+      * Checks whether the 'oeffnungsTage' field has been set.
+      * @return True if the 'oeffnungsTage' field has been set, false otherwise.
+      */
+    public boolean hasOeffnungsTage() {
+      return fieldSetFlags()[5];
+    }
+
+
+    /**
+      * Clears the value of the 'oeffnungsTage' field.
+      * @return This builder.
+      */
+    public ch.dvbern.kibon.exchange.commons.institution.InstitutionEventDTO.Builder clearOeffnungsTage() {
+      oeffnungsTage = null;
+      fieldSetFlags()[5] = false;
+      return this;
+    }
+
+    /**
+      * Gets the value of the 'offenVon' field.
+      * @return The value.
+      */
+    public java.lang.Long getOffenVon() {
+      return offenVon;
+    }
+
+
+    /**
+      * Sets the value of the 'offenVon' field.
+      * @param value The value of 'offenVon'.
+      * @return This builder.
+      */
+    public ch.dvbern.kibon.exchange.commons.institution.InstitutionEventDTO.Builder setOffenVon(java.lang.Long value) {
+      validate(fields()[6], value);
+      this.offenVon = value;
+      fieldSetFlags()[6] = true;
+      return this;
+    }
+
+    /**
+      * Checks whether the 'offenVon' field has been set.
+      * @return True if the 'offenVon' field has been set, false otherwise.
+      */
+    public boolean hasOffenVon() {
+      return fieldSetFlags()[6];
+    }
+
+
+    /**
+      * Clears the value of the 'offenVon' field.
+      * @return This builder.
+      */
+    public ch.dvbern.kibon.exchange.commons.institution.InstitutionEventDTO.Builder clearOffenVon() {
+      offenVon = null;
+      fieldSetFlags()[6] = false;
+      return this;
+    }
+
+    /**
+      * Gets the value of the 'offenBis' field.
+      * @return The value.
+      */
+    public java.lang.Long getOffenBis() {
+      return offenBis;
+    }
+
+
+    /**
+      * Sets the value of the 'offenBis' field.
+      * @param value The value of 'offenBis'.
+      * @return This builder.
+      */
+    public ch.dvbern.kibon.exchange.commons.institution.InstitutionEventDTO.Builder setOffenBis(java.lang.Long value) {
+      validate(fields()[7], value);
+      this.offenBis = value;
+      fieldSetFlags()[7] = true;
+      return this;
+    }
+
+    /**
+      * Checks whether the 'offenBis' field has been set.
+      * @return True if the 'offenBis' field has been set, false otherwise.
+      */
+    public boolean hasOffenBis() {
+      return fieldSetFlags()[7];
+    }
+
+
+    /**
+      * Clears the value of the 'offenBis' field.
+      * @return This builder.
+      */
+    public ch.dvbern.kibon.exchange.commons.institution.InstitutionEventDTO.Builder clearOffenBis() {
+      offenBis = null;
+      fieldSetFlags()[7] = false;
+      return this;
+    }
+
+    /**
+      * Gets the value of the 'oeffnungsAbweichungen' field.
+      * @return The value.
+      */
+    public java.lang.String getOeffnungsAbweichungen() {
+      return oeffnungsAbweichungen;
+    }
+
+
+    /**
+      * Sets the value of the 'oeffnungsAbweichungen' field.
+      * @param value The value of 'oeffnungsAbweichungen'.
+      * @return This builder.
+      */
+    public ch.dvbern.kibon.exchange.commons.institution.InstitutionEventDTO.Builder setOeffnungsAbweichungen(java.lang.String value) {
+      validate(fields()[8], value);
+      this.oeffnungsAbweichungen = value;
+      fieldSetFlags()[8] = true;
+      return this;
+    }
+
+    /**
+      * Checks whether the 'oeffnungsAbweichungen' field has been set.
+      * @return True if the 'oeffnungsAbweichungen' field has been set, false otherwise.
+      */
+    public boolean hasOeffnungsAbweichungen() {
+      return fieldSetFlags()[8];
+    }
+
+
+    /**
+      * Clears the value of the 'oeffnungsAbweichungen' field.
+      * @return This builder.
+      */
+    public ch.dvbern.kibon.exchange.commons.institution.InstitutionEventDTO.Builder clearOeffnungsAbweichungen() {
+      oeffnungsAbweichungen = null;
+      fieldSetFlags()[8] = false;
+      return this;
+    }
+
+    /**
+      * Gets the value of the 'altersKategorien' field.
+      * @return The value.
+      */
+    public java.util.List<ch.dvbern.kibon.exchange.commons.institution.AltersKategorie> getAltersKategorien() {
+      return altersKategorien;
+    }
+
+
+    /**
+      * Sets the value of the 'altersKategorien' field.
+      * @param value The value of 'altersKategorien'.
+      * @return This builder.
+      */
+    public ch.dvbern.kibon.exchange.commons.institution.InstitutionEventDTO.Builder setAltersKategorien(java.util.List<ch.dvbern.kibon.exchange.commons.institution.AltersKategorie> value) {
+      validate(fields()[9], value);
+      this.altersKategorien = value;
+      fieldSetFlags()[9] = true;
+      return this;
+    }
+
+    /**
+      * Checks whether the 'altersKategorien' field has been set.
+      * @return True if the 'altersKategorien' field has been set, false otherwise.
+      */
+    public boolean hasAltersKategorien() {
+      return fieldSetFlags()[9];
+    }
+
+
+    /**
+      * Clears the value of the 'altersKategorien' field.
+      * @return This builder.
+      */
+    public ch.dvbern.kibon.exchange.commons.institution.InstitutionEventDTO.Builder clearAltersKategorien() {
+      altersKategorien = null;
+      fieldSetFlags()[9] = false;
+      return this;
+    }
+
+    /**
+      * Gets the value of the 'subventioniertePlaetze' field.
+      * @return The value.
+      */
+    public boolean getSubventioniertePlaetze() {
+      return subventioniertePlaetze;
+    }
+
+
+    /**
+      * Sets the value of the 'subventioniertePlaetze' field.
+      * @param value The value of 'subventioniertePlaetze'.
+      * @return This builder.
+      */
+    public ch.dvbern.kibon.exchange.commons.institution.InstitutionEventDTO.Builder setSubventioniertePlaetze(boolean value) {
+      validate(fields()[10], value);
+      this.subventioniertePlaetze = value;
+      fieldSetFlags()[10] = true;
+      return this;
+    }
+
+    /**
+      * Checks whether the 'subventioniertePlaetze' field has been set.
+      * @return True if the 'subventioniertePlaetze' field has been set, false otherwise.
+      */
+    public boolean hasSubventioniertePlaetze() {
+      return fieldSetFlags()[10];
+    }
+
+
+    /**
+      * Clears the value of the 'subventioniertePlaetze' field.
+      * @return This builder.
+      */
+    public ch.dvbern.kibon.exchange.commons.institution.InstitutionEventDTO.Builder clearSubventioniertePlaetze() {
+      fieldSetFlags()[10] = false;
+      return this;
+    }
+
+    /**
+      * Gets the value of the 'anzahlPlaetze' field.
+      * @return The value.
+      */
+    public java.math.BigDecimal getAnzahlPlaetze() {
+      return anzahlPlaetze;
+    }
+
+
+    /**
+      * Sets the value of the 'anzahlPlaetze' field.
+      * @param value The value of 'anzahlPlaetze'.
+      * @return This builder.
+      */
+    public ch.dvbern.kibon.exchange.commons.institution.InstitutionEventDTO.Builder setAnzahlPlaetze(java.math.BigDecimal value) {
+      validate(fields()[11], value);
+      this.anzahlPlaetze = value;
+      fieldSetFlags()[11] = true;
+      return this;
+    }
+
+    /**
+      * Checks whether the 'anzahlPlaetze' field has been set.
+      * @return True if the 'anzahlPlaetze' field has been set, false otherwise.
+      */
+    public boolean hasAnzahlPlaetze() {
+      return fieldSetFlags()[11];
+    }
+
+
+    /**
+      * Clears the value of the 'anzahlPlaetze' field.
+      * @return This builder.
+      */
+    public ch.dvbern.kibon.exchange.commons.institution.InstitutionEventDTO.Builder clearAnzahlPlaetze() {
+      anzahlPlaetze = null;
+      fieldSetFlags()[11] = false;
+      return this;
+    }
+
+    /**
+      * Gets the value of the 'anzahlPlaetzeFirmen' field.
+      * @return The value.
+      */
+    public java.math.BigDecimal getAnzahlPlaetzeFirmen() {
+      return anzahlPlaetzeFirmen;
+    }
+
+
+    /**
+      * Sets the value of the 'anzahlPlaetzeFirmen' field.
+      * @param value The value of 'anzahlPlaetzeFirmen'.
+      * @return This builder.
+      */
+    public ch.dvbern.kibon.exchange.commons.institution.InstitutionEventDTO.Builder setAnzahlPlaetzeFirmen(java.math.BigDecimal value) {
+      validate(fields()[12], value);
+      this.anzahlPlaetzeFirmen = value;
+      fieldSetFlags()[12] = true;
+      return this;
+    }
+
+    /**
+      * Checks whether the 'anzahlPlaetzeFirmen' field has been set.
+      * @return True if the 'anzahlPlaetzeFirmen' field has been set, false otherwise.
+      */
+    public boolean hasAnzahlPlaetzeFirmen() {
+      return fieldSetFlags()[12];
+    }
+
+
+    /**
+      * Clears the value of the 'anzahlPlaetzeFirmen' field.
+      * @return This builder.
+      */
+    public ch.dvbern.kibon.exchange.commons.institution.InstitutionEventDTO.Builder clearAnzahlPlaetzeFirmen() {
+      anzahlPlaetzeFirmen = null;
+      fieldSetFlags()[12] = false;
+      return this;
+    }
+
+    /**
+      * Gets the value of the 'timestampMutiert' field.
+      * @return The value.
+      */
+    public java.lang.Long getTimestampMutiert() {
+      return timestampMutiert;
+    }
+
+
+    /**
+      * Sets the value of the 'timestampMutiert' field.
+      * @param value The value of 'timestampMutiert'.
+      * @return This builder.
+      */
+    public ch.dvbern.kibon.exchange.commons.institution.InstitutionEventDTO.Builder setTimestampMutiert(java.lang.Long value) {
+      validate(fields()[13], value);
+      this.timestampMutiert = value;
+      fieldSetFlags()[13] = true;
+      return this;
+    }
+
+    /**
+      * Checks whether the 'timestampMutiert' field has been set.
+      * @return True if the 'timestampMutiert' field has been set, false otherwise.
+      */
+    public boolean hasTimestampMutiert() {
+      return fieldSetFlags()[13];
+    }
+
+
+    /**
+      * Clears the value of the 'timestampMutiert' field.
+      * @return This builder.
+      */
+    public ch.dvbern.kibon.exchange.commons.institution.InstitutionEventDTO.Builder clearTimestampMutiert() {
+      timestampMutiert = null;
+      fieldSetFlags()[13] = false;
+      return this;
+    }
+
     @Override
     @SuppressWarnings("unchecked")
     public InstitutionEventDTO build() {
@@ -504,8 +1216,18 @@ public class InstitutionEventDTO extends org.apache.avro.specific.SpecificRecord
             throw e;
           }
         } else {
-          record.adresse = fieldSetFlags()[3] ? this.adresse : (ch.dvbern.kibon.exchange.commons.institution.AdresseDTO) defaultValue(fields()[3]);
+          record.adresse = fieldSetFlags()[3] ? this.adresse : (ch.dvbern.kibon.exchange.commons.institution.KontaktAngabenDTO) defaultValue(fields()[3]);
         }
+        record.betreuungsAdressen = fieldSetFlags()[4] ? this.betreuungsAdressen : (java.util.List<ch.dvbern.kibon.exchange.commons.institution.KontaktAngabenDTO>) defaultValue(fields()[4]);
+        record.oeffnungsTage = fieldSetFlags()[5] ? this.oeffnungsTage : (java.util.List<ch.dvbern.kibon.exchange.commons.types.Wochentag>) defaultValue(fields()[5]);
+        record.offenVon = fieldSetFlags()[6] ? this.offenVon : (java.lang.Long) defaultValue(fields()[6]);
+        record.offenBis = fieldSetFlags()[7] ? this.offenBis : (java.lang.Long) defaultValue(fields()[7]);
+        record.oeffnungsAbweichungen = fieldSetFlags()[8] ? this.oeffnungsAbweichungen : (java.lang.String) defaultValue(fields()[8]);
+        record.altersKategorien = fieldSetFlags()[9] ? this.altersKategorien : (java.util.List<ch.dvbern.kibon.exchange.commons.institution.AltersKategorie>) defaultValue(fields()[9]);
+        record.subventioniertePlaetze = fieldSetFlags()[10] ? this.subventioniertePlaetze : (java.lang.Boolean) defaultValue(fields()[10]);
+        record.anzahlPlaetze = fieldSetFlags()[11] ? this.anzahlPlaetze : (java.math.BigDecimal) defaultValue(fields()[11]);
+        record.anzahlPlaetzeFirmen = fieldSetFlags()[12] ? this.anzahlPlaetzeFirmen : (java.math.BigDecimal) defaultValue(fields()[12]);
+        record.timestampMutiert = fieldSetFlags()[13] ? this.timestampMutiert : (java.lang.Long) defaultValue(fields()[13]);
         return record;
       } catch (org.apache.avro.AvroMissingFieldException e) {
         throw e;
@@ -533,81 +1255,6 @@ public class InstitutionEventDTO extends org.apache.avro.specific.SpecificRecord
     READER$.read(this, SpecificData.getDecoder(in));
   }
 
-  @Override protected boolean hasCustomCoders() { return true; }
-
-  @Override public void customEncode(org.apache.avro.io.Encoder out)
-    throws java.io.IOException
-  {
-    out.writeString(this.id);
-
-    out.writeString(this.name);
-
-    if (this.traegerschaft == null) {
-      out.writeIndex(0);
-      out.writeNull();
-    } else {
-      out.writeIndex(1);
-      out.writeString(this.traegerschaft);
-    }
-
-    this.adresse.customEncode(out);
-
-  }
-
-  @Override public void customDecode(org.apache.avro.io.ResolvingDecoder in)
-    throws java.io.IOException
-  {
-    org.apache.avro.Schema.Field[] fieldOrder = in.readFieldOrderIfDiff();
-    if (fieldOrder == null) {
-      this.id = in.readString();
-
-      this.name = in.readString();
-
-      if (in.readIndex() != 1) {
-        in.readNull();
-        this.traegerschaft = null;
-      } else {
-        this.traegerschaft = in.readString();
-      }
-
-      if (this.adresse == null) {
-        this.adresse = new ch.dvbern.kibon.exchange.commons.institution.AdresseDTO();
-      }
-      this.adresse.customDecode(in);
-
-    } else {
-      for (int i = 0; i < 4; i++) {
-        switch (fieldOrder[i].pos()) {
-        case 0:
-          this.id = in.readString();
-          break;
-
-        case 1:
-          this.name = in.readString();
-          break;
-
-        case 2:
-          if (in.readIndex() != 1) {
-            in.readNull();
-            this.traegerschaft = null;
-          } else {
-            this.traegerschaft = in.readString();
-          }
-          break;
-
-        case 3:
-          if (this.adresse == null) {
-            this.adresse = new ch.dvbern.kibon.exchange.commons.institution.AdresseDTO();
-          }
-          this.adresse.customDecode(in);
-          break;
-
-        default:
-          throw new java.io.IOException("Corrupt ResolvingDecoder.");
-        }
-      }
-    }
-  }
 }
 
 

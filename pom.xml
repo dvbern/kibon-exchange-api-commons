@@ -26,7 +26,7 @@
 
     <groupId>ch.dvbern.kibon</groupId>
     <artifactId>kibon-exchange-api-commons</artifactId>
-    <version>1.2.0</version>
+    <version>1.2.1</version>
     <packaging>jar</packaging>
 
     <properties>
@@ -52,6 +52,13 @@
             <artifactId>avro</artifactId>
             <version>${avro.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.jetbrains</groupId>
+            <artifactId>annotations</artifactId>
+            <version>19.0.0</version>
+            <optional>true</optional>
+        </dependency>
+
 
         <!-- region test -->
         <dependency>
@@ -148,7 +155,7 @@
                     </schemaRegistryUrls>
                     <subjectPatterns>*</subjectPatterns>
                     <subjects>
-                        <InstitutionEvents-value>src/main/avro/ch/dvbern/kibon/exchange/commons/institution/InstitutionEventDTO.avsc</InstitutionEvents-value>
+                        <InstitutionEvents-value>src/main/avro/ch/dvbern/kibon/exchange/commons/institution/InstitutionEventDTOv2.avsc</InstitutionEvents-value>
                         <InstitutionClientEvents-value>src/main/avro/ch/dvbern/kibon/exchange/commons/institutionclient/InstitutionClientEventDTO.avsc</InstitutionClientEvents-value>
                         <VerfuegungEvents-value>src/main/avro/ch/dvbern/kibon/exchange/commons/verfuegung/VerfuegungEventDTOv2.avsc</VerfuegungEvents-value>
                         <BetreuungAnfrageEvents-value>src/main/avro/ch/dvbern/kibon/exchange/commons/platzbestaetigung/BetreuungAnfrageEventDTO.avsc</BetreuungAnfrageEvents-value>
