@@ -1,0 +1,11 @@
+{
+	"type": "enum",
+	"name": "BetreuungsangebotTyp",
+	"namespace": "ch.dvbern.kibon.exchange.commons.types",
+	"symbols": [
+		"KITA",
+		"TAGESSCHULE",
+		"TAGESFAMILIEN",
+		"FERIENINSEL"
+	]
+}

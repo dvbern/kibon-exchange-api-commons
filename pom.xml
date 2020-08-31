@@ -26,7 +26,7 @@
 
     <groupId>ch.dvbern.kibon</groupId>
     <artifactId>kibon-exchange-api-commons</artifactId>
-    <version>1.2.2</version>
+    <version>1.2.3</version>
     <packaging>jar</packaging>
 
     <properties>
@@ -58,7 +58,6 @@
             <version>19.0.0</version>
             <optional>true</optional>
         </dependency>
-
 
         <!-- region test -->
         <dependency>
@@ -140,6 +139,11 @@
                             <fieldVisibility>PRIVATE</fieldVisibility>
                             <sourceDirectory>${project.basedir}/src/main/avro/</sourceDirectory>
                             <outputDirectory>${project.basedir}/src/main/java/</outputDirectory>
+                            <imports>
+                                <!-- types can be referenced by other (multiple!) *.avsc files, but that requires them to be imported first -->
+                                <import>${project.basedir}/src/main/avro/ch/dvbern/kibon/exchange/commons/types/Zeiteinheit.avsc</import>
+                                <import>${project.basedir}/src/main/avro/ch/dvbern/kibon/exchange/commons/types/BetreuungsangebotType.avsc</import>
+                            </imports>
                         </configuration>
                     </execution>
                 </executions>

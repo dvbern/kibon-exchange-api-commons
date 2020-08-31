@@ -76,17 +76,7 @@
         },
         {
         	"name": "betreuungsArt",
-        	"type": {
-        		"type": "enum",
-        		"name": "BetreuungsangebotTyp",
-        		"namespace": "ch.dvbern.kibon.exchange.commons.types",
-        		"symbols": [
-        			"KITA",
-        			"TAGESSCHULE",
-        			"TAGESFAMILIEN",
-        			"FERIENINSEL"
-        		]
-        	}
+        	"type": "ch.dvbern.kibon.exchange.commons.types.BetreuungsangebotTyp"
         },
         {
         	"name": "abgelehntVonGesuchsteller",

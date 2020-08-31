@@ -25,6 +25,7 @@ import java.util.UUID;
 
 import javax.annotation.Nonnull;
 
+import ch.dvbern.kibon.exchange.commons.types.BetreuungsangebotTyp;
 import ch.dvbern.kibon.exchange.commons.types.Wochentag;
 import ch.dvbern.kibon.exchange.commons.util.DateConverter;
 import ch.dvbern.kibon.exchange.commons.util.TimeConverter;
@@ -43,6 +44,7 @@ public final class InstitutionEventTestUtil {
 			.setId(UUID.randomUUID().toString())
 			.setName(FAKER.company().name())
 			.setTraegerschaft(FAKER.company().buzzword())
+			.setBetreuungsArt(BetreuungsangebotTyp.TAGESFAMILIEN)
 			.setAdresse(createKontaktAngabenDTO())
 			.setBetreuungsAdressen(Arrays.asList(createKontaktAngabenDTO(), createKontaktAngabenDTO()))
 			.setOeffnungsTage(Arrays.asList(Wochentag.values().clone()))

@@ -5,66 +5,15 @@
 	"fields": [
 		{
 			"name": "kind",
-			"type": {
-				"type": "record",
-				"name": "KindDTO",
-				"fields": [
-					{
-						"name": "vorname",
-						"type": "string"
-					},
-					{
-						"name": "nachname",
-						"type": "string"
-					},
-					{
-						"name": "geburtsdatum",
-						"type": {
-							"type": "int",
-							"logicalType": "date"
-						}
-					}
-				]
-			}
+			"type": "KindDTO"
 		},
 		{
 			"name": "gesuchsteller",
-			"type": {
-				"type": "record",
-				"name": "GesuchstellerDTO",
-				"fields": [
-					{
-						"name": "vorname",
-						"type": "string"
-					},
-					{
-						"name": "nachname",
-						"type": "string"
-					},
-					{
-						"name": "email",
-						"type": [
-							"null",
-							"string"
-						],
-						"default": null
-					}
-				]
-			}
+			"type": "GesuchstellerDTO"
 		},
 		{
 			"name": "betreuungsArt",
-			"type": {
-				"type": "enum",
-				"name": "BetreuungsangebotTyp",
-				"namespace": "ch.dvbern.kibon.exchange.commons.types",
-				"symbols": [
-					"KITA",
-					"TAGESSCHULE",
-					"TAGESFAMILIEN",
-					"FERIENINSEL"
-				]
-			}
+			"type": "ch.dvbern.kibon.exchange.commons.types.BetreuungsangebotTyp"
 		},
 		{
 			"name": "refnr",
@@ -212,15 +161,7 @@
 						},
 						{
 							"name": "zeiteinheit",
-							"type": {
-								"type": "enum",
-								"name": "Zeiteinheit",
-								"namespace": "ch.dvbern.kibon.exchange.commons.types",
-								"symbols": [
-									"DAYS",
-									"HOURS"
-								]
-							}
+							"type":  "ch.dvbern.kibon.exchange.commons.types.Zeiteinheit"
 						},
 						{
 							"name": "regelwerk",

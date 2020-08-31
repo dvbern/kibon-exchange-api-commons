@@ -53,15 +53,7 @@
         				},
         				{
                         	"name": "pensumUnit",
-                        	"type": {
-                        		"type": "enum",
-                        		"name": "Zeiteinheit",
-                        		"namespace": "ch.dvbern.kibon.exchange.commons.types",
-                        		"symbols": [
-                        			"DAYS",
-                        			"HOURS"
-                        		]
-                        	}
+                        	"type": "ch.dvbern.kibon.exchange.commons.types.Zeiteinheit"
                         },
                         {
                         	"name": "anzahlMonatlicheHauptmahlzeiten",
