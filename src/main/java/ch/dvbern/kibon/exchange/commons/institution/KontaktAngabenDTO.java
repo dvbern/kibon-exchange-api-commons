@@ -134,7 +134,7 @@ public class KontaktAngabenDTO extends org.apache.avro.specific.SpecificRecordBa
     case 8: return email;
     case 9: return telefon;
     case 10: return webseite;
-    default: throw new org.apache.avro.AvroRuntimeException("Bad index");
+    default: throw new IndexOutOfBoundsException("Invalid index: " + field$);
     }
   }
 
@@ -142,18 +142,18 @@ public class KontaktAngabenDTO extends org.apache.avro.specific.SpecificRecordBa
   @SuppressWarnings(value="unchecked")
   public void put(int field$, java.lang.Object value$) {
     switch (field$) {
-    case 0: anschrift = (java.lang.String)value$; break;
-    case 1: strasse = (java.lang.String)value$; break;
-    case 2: hausnummer = (java.lang.String)value$; break;
-    case 3: adresszusatz = (java.lang.String)value$; break;
-    case 4: plz = (java.lang.String)value$; break;
-    case 5: ort = (java.lang.String)value$; break;
-    case 6: land = (java.lang.String)value$; break;
+    case 0: anschrift = value$ != null ? value$.toString() : null; break;
+    case 1: strasse = value$ != null ? value$.toString() : null; break;
+    case 2: hausnummer = value$ != null ? value$.toString() : null; break;
+    case 3: adresszusatz = value$ != null ? value$.toString() : null; break;
+    case 4: plz = value$ != null ? value$.toString() : null; break;
+    case 5: ort = value$ != null ? value$.toString() : null; break;
+    case 6: land = value$ != null ? value$.toString() : null; break;
     case 7: gemeinde = (ch.dvbern.kibon.exchange.commons.institution.GemeindeDTO)value$; break;
-    case 8: email = (java.lang.String)value$; break;
-    case 9: telefon = (java.lang.String)value$; break;
-    case 10: webseite = (java.lang.String)value$; break;
-    default: throw new org.apache.avro.AvroRuntimeException("Bad index");
+    case 8: email = value$ != null ? value$.toString() : null; break;
+    case 9: telefon = value$ != null ? value$.toString() : null; break;
+    case 10: webseite = value$ != null ? value$.toString() : null; break;
+    default: throw new IndexOutOfBoundsException("Invalid index: " + field$);
     }
   }
 
@@ -381,6 +381,7 @@ public class KontaktAngabenDTO extends org.apache.avro.specific.SpecificRecordBa
   /**
    * RecordBuilder for KontaktAngabenDTO instances.
    */
+  @org.apache.avro.specific.AvroGenerated
   public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<KontaktAngabenDTO>
     implements org.apache.avro.data.RecordBuilder<KontaktAngabenDTO> {
 

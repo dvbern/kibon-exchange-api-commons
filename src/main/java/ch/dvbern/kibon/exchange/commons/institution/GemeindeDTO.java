@@ -98,7 +98,7 @@ public class GemeindeDTO extends org.apache.avro.specific.SpecificRecordBase imp
     switch (field$) {
     case 0: return name;
     case 1: return bfsNummer;
-    default: throw new org.apache.avro.AvroRuntimeException("Bad index");
+    default: throw new IndexOutOfBoundsException("Invalid index: " + field$);
     }
   }
 
@@ -106,9 +106,9 @@ public class GemeindeDTO extends org.apache.avro.specific.SpecificRecordBase imp
   @SuppressWarnings(value="unchecked")
   public void put(int field$, java.lang.Object value$) {
     switch (field$) {
-    case 0: name = (java.lang.String)value$; break;
+    case 0: name = value$ != null ? value$.toString() : null; break;
     case 1: bfsNummer = (java.lang.Long)value$; break;
-    default: throw new org.apache.avro.AvroRuntimeException("Bad index");
+    default: throw new IndexOutOfBoundsException("Invalid index: " + field$);
     }
   }
 
@@ -183,6 +183,7 @@ public class GemeindeDTO extends org.apache.avro.specific.SpecificRecordBase imp
   /**
    * RecordBuilder for GemeindeDTO instances.
    */
+  @org.apache.avro.specific.AvroGenerated
   public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<GemeindeDTO>
     implements org.apache.avro.data.RecordBuilder<GemeindeDTO> {
 

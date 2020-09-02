@@ -30,7 +30,7 @@
     <packaging>jar</packaging>
 
     <properties>
-        <avro.version>1.9.1</avro.version>
+        <avro.version>1.10.0</avro.version>
         <schema.registy.url>http://localhost:8081</schema.registy.url>
     </properties>
 
@@ -81,7 +81,7 @@
         <dependency>
             <groupId>com.github.javafaker</groupId>
             <artifactId>javafaker</artifactId>
-            <version>1.0.0</version>
+            <version>1.0.2</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -153,7 +153,7 @@
             <plugin>
                 <groupId>io.confluent</groupId>
                 <artifactId>kafka-schema-registry-maven-plugin</artifactId>
-                <version>5.3.1</version>
+                <version>5.5.1</version>
                 <configuration>
                     <outputDirectory>${project.basedir}/src/main/generated-schemas</outputDirectory>
                     <schemaRegistryUrls>

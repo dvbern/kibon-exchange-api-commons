@@ -106,7 +106,7 @@ public class InstitutionEventDTOv1 extends org.apache.avro.specific.SpecificReco
     case 1: return name;
     case 2: return traegerschaft;
     case 3: return adresse;
-    default: throw new org.apache.avro.AvroRuntimeException("Bad index");
+    default: throw new IndexOutOfBoundsException("Invalid index: " + field$);
     }
   }
 
@@ -114,11 +114,11 @@ public class InstitutionEventDTOv1 extends org.apache.avro.specific.SpecificReco
   @SuppressWarnings(value="unchecked")
   public void put(int field$, java.lang.Object value$) {
     switch (field$) {
-    case 0: id = (java.lang.String)value$; break;
-    case 1: name = (java.lang.String)value$; break;
-    case 2: traegerschaft = (java.lang.String)value$; break;
+    case 0: id = value$ != null ? value$.toString() : null; break;
+    case 1: name = value$ != null ? value$.toString() : null; break;
+    case 2: traegerschaft = value$ != null ? value$.toString() : null; break;
     case 3: adresse = (ch.dvbern.kibon.exchange.commons.institution.AdresseDTO)value$; break;
-    default: throw new org.apache.avro.AvroRuntimeException("Bad index");
+    default: throw new IndexOutOfBoundsException("Invalid index: " + field$);
     }
   }
 
@@ -227,6 +227,7 @@ public class InstitutionEventDTOv1 extends org.apache.avro.specific.SpecificReco
   /**
    * RecordBuilder for InstitutionEventDTOv1 instances.
    */
+  @org.apache.avro.specific.AvroGenerated
   public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<InstitutionEventDTOv1>
     implements org.apache.avro.data.RecordBuilder<InstitutionEventDTOv1> {
 

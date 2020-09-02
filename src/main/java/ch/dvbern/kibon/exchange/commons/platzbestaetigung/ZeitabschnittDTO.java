@@ -130,7 +130,7 @@ static {
     case 6: return anzahlMonatlicheNebenmahlzeiten;
     case 7: return tarifProHauptmahlzeiten;
     case 8: return tarifProNebenmahlzeiten;
-    default: throw new org.apache.avro.AvroRuntimeException("Bad index");
+    default: throw new IndexOutOfBoundsException("Invalid index: " + field$);
     }
   }
 
@@ -166,7 +166,7 @@ static {
     case 6: anzahlMonatlicheNebenmahlzeiten = (java.lang.Integer)value$; break;
     case 7: tarifProHauptmahlzeiten = (java.math.BigDecimal)value$; break;
     case 8: tarifProNebenmahlzeiten = (java.math.BigDecimal)value$; break;
-    default: throw new org.apache.avro.AvroRuntimeException("Bad index");
+    default: throw new IndexOutOfBoundsException("Invalid index: " + field$);
     }
   }
 
@@ -360,6 +360,7 @@ static {
   /**
    * RecordBuilder for ZeitabschnittDTO instances.
    */
+  @org.apache.avro.specific.AvroGenerated
   public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<ZeitabschnittDTO>
     implements org.apache.avro.data.RecordBuilder<ZeitabschnittDTO> {
 

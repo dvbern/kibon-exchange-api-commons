@@ -153,7 +153,7 @@ static {
     case 12: return anzahlPlaetze;
     case 13: return anzahlPlaetzeFirmen;
     case 14: return timestampMutiert;
-    default: throw new org.apache.avro.AvroRuntimeException("Bad index");
+    default: throw new IndexOutOfBoundsException("Invalid index: " + field$);
     }
   }
 
@@ -161,22 +161,22 @@ static {
   @SuppressWarnings(value="unchecked")
   public void put(int field$, java.lang.Object value$) {
     switch (field$) {
-    case 0: id = (java.lang.String)value$; break;
-    case 1: name = (java.lang.String)value$; break;
-    case 2: traegerschaft = (java.lang.String)value$; break;
+    case 0: id = value$ != null ? value$.toString() : null; break;
+    case 1: name = value$ != null ? value$.toString() : null; break;
+    case 2: traegerschaft = value$ != null ? value$.toString() : null; break;
     case 3: betreuungsArt = (ch.dvbern.kibon.exchange.commons.types.BetreuungsangebotTyp)value$; break;
     case 4: adresse = (ch.dvbern.kibon.exchange.commons.institution.KontaktAngabenDTO)value$; break;
     case 5: betreuungsAdressen = (java.util.List<ch.dvbern.kibon.exchange.commons.institution.KontaktAngabenDTO>)value$; break;
     case 6: oeffnungsTage = (java.util.List<ch.dvbern.kibon.exchange.commons.types.Wochentag>)value$; break;
     case 7: offenVon = (java.lang.Long)value$; break;
     case 8: offenBis = (java.lang.Long)value$; break;
-    case 9: oeffnungsAbweichungen = (java.lang.String)value$; break;
+    case 9: oeffnungsAbweichungen = value$ != null ? value$.toString() : null; break;
     case 10: altersKategorien = (java.util.List<ch.dvbern.kibon.exchange.commons.institution.AltersKategorie>)value$; break;
     case 11: subventioniertePlaetze = (java.lang.Boolean)value$; break;
     case 12: anzahlPlaetze = (java.math.BigDecimal)value$; break;
     case 13: anzahlPlaetzeFirmen = (java.math.BigDecimal)value$; break;
     case 14: timestampMutiert = (java.lang.Long)value$; break;
-    default: throw new org.apache.avro.AvroRuntimeException("Bad index");
+    default: throw new IndexOutOfBoundsException("Invalid index: " + field$);
     }
   }
 
@@ -472,6 +472,7 @@ static {
   /**
    * RecordBuilder for InstitutionEventDTO instances.
    */
+  @org.apache.avro.specific.AvroGenerated
   public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<InstitutionEventDTO>
     implements org.apache.avro.data.RecordBuilder<InstitutionEventDTO> {
 

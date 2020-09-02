@@ -102,7 +102,7 @@ public class GesuchstellerDTO extends org.apache.avro.specific.SpecificRecordBas
     case 0: return vorname;
     case 1: return nachname;
     case 2: return email;
-    default: throw new org.apache.avro.AvroRuntimeException("Bad index");
+    default: throw new IndexOutOfBoundsException("Invalid index: " + field$);
     }
   }
 
@@ -110,10 +110,10 @@ public class GesuchstellerDTO extends org.apache.avro.specific.SpecificRecordBas
   @SuppressWarnings(value="unchecked")
   public void put(int field$, java.lang.Object value$) {
     switch (field$) {
-    case 0: vorname = (java.lang.String)value$; break;
-    case 1: nachname = (java.lang.String)value$; break;
-    case 2: email = (java.lang.String)value$; break;
-    default: throw new org.apache.avro.AvroRuntimeException("Bad index");
+    case 0: vorname = value$ != null ? value$.toString() : null; break;
+    case 1: nachname = value$ != null ? value$.toString() : null; break;
+    case 2: email = value$ != null ? value$.toString() : null; break;
+    default: throw new IndexOutOfBoundsException("Invalid index: " + field$);
     }
   }
 
@@ -205,6 +205,7 @@ public class GesuchstellerDTO extends org.apache.avro.specific.SpecificRecordBas
   /**
    * RecordBuilder for GesuchstellerDTO instances.
    */
+  @org.apache.avro.specific.AvroGenerated
   public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<GesuchstellerDTO>
     implements org.apache.avro.data.RecordBuilder<GesuchstellerDTO> {
 
