@@ -114,7 +114,7 @@ public class AdresseDTO extends org.apache.avro.specific.SpecificRecordBase impl
     case 3: return plz;
     case 4: return ort;
     case 5: return land;
-    default: throw new org.apache.avro.AvroRuntimeException("Bad index");
+    default: throw new IndexOutOfBoundsException("Invalid index: " + field$);
     }
   }
 
@@ -122,13 +122,13 @@ public class AdresseDTO extends org.apache.avro.specific.SpecificRecordBase impl
   @SuppressWarnings(value="unchecked")
   public void put(int field$, java.lang.Object value$) {
     switch (field$) {
-    case 0: strasse = (java.lang.String)value$; break;
-    case 1: hausnummer = (java.lang.String)value$; break;
-    case 2: adresszusatz = (java.lang.String)value$; break;
-    case 3: plz = (java.lang.String)value$; break;
-    case 4: ort = (java.lang.String)value$; break;
-    case 5: land = (java.lang.String)value$; break;
-    default: throw new org.apache.avro.AvroRuntimeException("Bad index");
+    case 0: strasse = value$ != null ? value$.toString() : null; break;
+    case 1: hausnummer = value$ != null ? value$.toString() : null; break;
+    case 2: adresszusatz = value$ != null ? value$.toString() : null; break;
+    case 3: plz = value$ != null ? value$.toString() : null; break;
+    case 4: ort = value$ != null ? value$.toString() : null; break;
+    case 5: land = value$ != null ? value$.toString() : null; break;
+    default: throw new IndexOutOfBoundsException("Invalid index: " + field$);
     }
   }
 
@@ -271,6 +271,7 @@ public class AdresseDTO extends org.apache.avro.specific.SpecificRecordBase impl
   /**
    * RecordBuilder for AdresseDTO instances.
    */
+  @org.apache.avro.specific.AvroGenerated
   public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<AdresseDTO>
     implements org.apache.avro.data.RecordBuilder<AdresseDTO> {
 

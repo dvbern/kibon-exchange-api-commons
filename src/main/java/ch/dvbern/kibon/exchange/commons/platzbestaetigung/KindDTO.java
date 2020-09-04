@@ -105,7 +105,7 @@ static {
     case 0: return vorname;
     case 1: return nachname;
     case 2: return geburtsdatum;
-    default: throw new org.apache.avro.AvroRuntimeException("Bad index");
+    default: throw new IndexOutOfBoundsException("Invalid index: " + field$);
     }
   }
 
@@ -126,10 +126,10 @@ static {
   @SuppressWarnings(value="unchecked")
   public void put(int field$, java.lang.Object value$) {
     switch (field$) {
-    case 0: vorname = (java.lang.String)value$; break;
-    case 1: nachname = (java.lang.String)value$; break;
+    case 0: vorname = value$ != null ? value$.toString() : null; break;
+    case 1: nachname = value$ != null ? value$.toString() : null; break;
     case 2: geburtsdatum = (java.time.LocalDate)value$; break;
-    default: throw new org.apache.avro.AvroRuntimeException("Bad index");
+    default: throw new IndexOutOfBoundsException("Invalid index: " + field$);
     }
   }
 
@@ -221,6 +221,7 @@ static {
   /**
    * RecordBuilder for KindDTO instances.
    */
+  @org.apache.avro.specific.AvroGenerated
   public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<KindDTO>
     implements org.apache.avro.data.RecordBuilder<KindDTO> {
 

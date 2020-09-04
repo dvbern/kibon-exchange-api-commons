@@ -141,6 +141,42 @@
 			"default": []
 		},
 		{
+			"name": "status",
+			"type": {
+				"type": "enum",
+				"name": "InstitutionStatus",
+				"symbols": [
+					"AKTIV",
+					"KONFIGURATION",
+					"EINGELADEN",
+					"DELETED"
+				]
+			},
+			"default": "AKTIV"
+		},
+		{
+			"name": "betreuungsGutscheineAb",
+			"type": [
+				"null",
+				{
+					"type": "int",
+					"logicalType": "date"
+				}
+			],
+			"default": null
+		},
+		{
+			"name": "betreuungsGutscheineBis",
+			"type": [
+				"null",
+				{
+					"type": "int",
+					"logicalType": "date"
+				}
+			],
+			"default": null
+		},
+		{
 			"name": "oeffnungsTage",
 			"type": {
 				"type": "array",

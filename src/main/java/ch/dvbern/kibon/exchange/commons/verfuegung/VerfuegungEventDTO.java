@@ -147,7 +147,7 @@ static {
     case 10: return gemeindeName;
     case 11: return zeitabschnitte;
     case 12: return ignorierteZeitabschnitte;
-    default: throw new org.apache.avro.AvroRuntimeException("Bad index");
+    default: throw new IndexOutOfBoundsException("Invalid index: " + field$);
     }
   }
 
@@ -181,17 +181,17 @@ static {
     case 0: kind = (ch.dvbern.kibon.exchange.commons.verfuegung.KindDTO)value$; break;
     case 1: gesuchsteller = (ch.dvbern.kibon.exchange.commons.verfuegung.GesuchstellerDTO)value$; break;
     case 2: betreuungsArt = (ch.dvbern.kibon.exchange.commons.types.BetreuungsangebotTyp)value$; break;
-    case 3: refnr = (java.lang.String)value$; break;
-    case 4: institutionId = (java.lang.String)value$; break;
+    case 3: refnr = value$ != null ? value$.toString() : null; break;
+    case 4: institutionId = value$ != null ? value$.toString() : null; break;
     case 5: von = (java.time.LocalDate)value$; break;
     case 6: bis = (java.time.LocalDate)value$; break;
     case 7: version = (java.lang.Integer)value$; break;
     case 8: verfuegtAm = (java.time.Instant)value$; break;
     case 9: gemeindeBfsNr = (java.lang.Long)value$; break;
-    case 10: gemeindeName = (java.lang.String)value$; break;
+    case 10: gemeindeName = value$ != null ? value$.toString() : null; break;
     case 11: zeitabschnitte = (java.util.List<ch.dvbern.kibon.exchange.commons.verfuegung.ZeitabschnittDTO>)value$; break;
     case 12: ignorierteZeitabschnitte = (java.util.List<ch.dvbern.kibon.exchange.commons.verfuegung.ZeitabschnittDTO>)value$; break;
-    default: throw new org.apache.avro.AvroRuntimeException("Bad index");
+    default: throw new IndexOutOfBoundsException("Invalid index: " + field$);
     }
   }
 
@@ -453,6 +453,7 @@ static {
   /**
    * RecordBuilder for VerfuegungEventDTO instances.
    */
+  @org.apache.avro.specific.AvroGenerated
   public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<VerfuegungEventDTO>
     implements org.apache.avro.data.RecordBuilder<VerfuegungEventDTO> {
 

@@ -18,6 +18,7 @@
 package ch.dvbern.kibon.exchange.commons.institution;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.Arrays;
@@ -45,6 +46,8 @@ public final class InstitutionEventTestUtil {
 			.setName(FAKER.company().name())
 			.setTraegerschaft(FAKER.company().buzzword())
 			.setBetreuungsArt(BetreuungsangebotTyp.TAGESFAMILIEN)
+			.setStatus(InstitutionStatus.KONFIGURATION)
+			.setBetreuungsGutscheineAb(LocalDate.of(2020, 8, 1))
 			.setAdresse(createKontaktAngabenDTO())
 			.setBetreuungsAdressen(Arrays.asList(createKontaktAngabenDTO(), createKontaktAngabenDTO()))
 			.setOeffnungsTage(Arrays.asList(Wochentag.values().clone()))

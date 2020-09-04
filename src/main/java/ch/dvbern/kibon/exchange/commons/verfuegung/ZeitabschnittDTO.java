@@ -150,7 +150,7 @@ static {
     case 11: return anspruchsberechtigteAnzahlZeiteinheiten;
     case 12: return zeiteinheit;
     case 13: return regelwerk;
-    default: throw new org.apache.avro.AvroRuntimeException("Bad index");
+    default: throw new IndexOutOfBoundsException("Invalid index: " + field$);
     }
   }
 
@@ -196,7 +196,7 @@ static {
     case 11: anspruchsberechtigteAnzahlZeiteinheiten = (java.math.BigDecimal)value$; break;
     case 12: zeiteinheit = (ch.dvbern.kibon.exchange.commons.types.Zeiteinheit)value$; break;
     case 13: regelwerk = (ch.dvbern.kibon.exchange.commons.types.Regelwerk)value$; break;
-    default: throw new org.apache.avro.AvroRuntimeException("Bad index");
+    default: throw new IndexOutOfBoundsException("Invalid index: " + field$);
     }
   }
 
@@ -475,6 +475,7 @@ static {
   /**
    * RecordBuilder for ZeitabschnittDTO instances.
    */
+  @org.apache.avro.specific.AvroGenerated
   public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<ZeitabschnittDTO>
     implements org.apache.avro.data.RecordBuilder<ZeitabschnittDTO> {
 

@@ -146,7 +146,7 @@ static {
     case 10: return verfuegteAnzahlZeiteinheiten;
     case 11: return anspruchsberechtigteAnzahlZeiteinheiten;
     case 12: return zeiteinheit;
-    default: throw new org.apache.avro.AvroRuntimeException("Bad index");
+    default: throw new IndexOutOfBoundsException("Invalid index: " + field$);
     }
   }
 
@@ -190,7 +190,7 @@ static {
     case 10: verfuegteAnzahlZeiteinheiten = (java.math.BigDecimal)value$; break;
     case 11: anspruchsberechtigteAnzahlZeiteinheiten = (java.math.BigDecimal)value$; break;
     case 12: zeiteinheit = (ch.dvbern.kibon.exchange.commons.types.Zeiteinheit)value$; break;
-    default: throw new org.apache.avro.AvroRuntimeException("Bad index");
+    default: throw new IndexOutOfBoundsException("Invalid index: " + field$);
     }
   }
 
@@ -452,6 +452,7 @@ static {
   /**
    * RecordBuilder for ZeitabschnittDTOv1 instances.
    */
+  @org.apache.avro.specific.AvroGenerated
   public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<ZeitabschnittDTOv1>
     implements org.apache.avro.data.RecordBuilder<ZeitabschnittDTOv1> {
 

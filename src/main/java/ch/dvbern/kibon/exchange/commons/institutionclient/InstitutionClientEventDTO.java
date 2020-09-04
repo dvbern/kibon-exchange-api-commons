@@ -102,7 +102,7 @@ public class InstitutionClientEventDTO extends org.apache.avro.specific.Specific
     case 0: return institutionId;
     case 1: return clientName;
     case 2: return clientType;
-    default: throw new org.apache.avro.AvroRuntimeException("Bad index");
+    default: throw new IndexOutOfBoundsException("Invalid index: " + field$);
     }
   }
 
@@ -110,10 +110,10 @@ public class InstitutionClientEventDTO extends org.apache.avro.specific.Specific
   @SuppressWarnings(value="unchecked")
   public void put(int field$, java.lang.Object value$) {
     switch (field$) {
-    case 0: institutionId = (java.lang.String)value$; break;
-    case 1: clientName = (java.lang.String)value$; break;
-    case 2: clientType = (java.lang.String)value$; break;
-    default: throw new org.apache.avro.AvroRuntimeException("Bad index");
+    case 0: institutionId = value$ != null ? value$.toString() : null; break;
+    case 1: clientName = value$ != null ? value$.toString() : null; break;
+    case 2: clientType = value$ != null ? value$.toString() : null; break;
+    default: throw new IndexOutOfBoundsException("Invalid index: " + field$);
     }
   }
 
@@ -205,6 +205,7 @@ public class InstitutionClientEventDTO extends org.apache.avro.specific.Specific
   /**
    * RecordBuilder for InstitutionClientEventDTO instances.
    */
+  @org.apache.avro.specific.AvroGenerated
   public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<InstitutionClientEventDTO>
     implements org.apache.avro.data.RecordBuilder<InstitutionClientEventDTO> {
 

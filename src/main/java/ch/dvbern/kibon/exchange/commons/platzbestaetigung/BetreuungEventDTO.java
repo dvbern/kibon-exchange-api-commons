@@ -118,7 +118,7 @@ static {
     case 3: return gemeindeBfsNr;
     case 4: return gemeindeName;
     case 5: return ausserordentlicherBetreuungsaufwand;
-    default: throw new org.apache.avro.AvroRuntimeException("Bad index");
+    default: throw new IndexOutOfBoundsException("Invalid index: " + field$);
     }
   }
 
@@ -126,13 +126,13 @@ static {
   @SuppressWarnings(value="unchecked")
   public void put(int field$, java.lang.Object value$) {
     switch (field$) {
-    case 0: institutionId = (java.lang.String)value$; break;
-    case 1: refnr = (java.lang.String)value$; break;
+    case 0: institutionId = value$ != null ? value$.toString() : null; break;
+    case 1: refnr = value$ != null ? value$.toString() : null; break;
     case 2: zeitabschnitte = (java.util.List<ch.dvbern.kibon.exchange.commons.platzbestaetigung.ZeitabschnittDTO>)value$; break;
     case 3: gemeindeBfsNr = (java.lang.Long)value$; break;
-    case 4: gemeindeName = (java.lang.String)value$; break;
+    case 4: gemeindeName = value$ != null ? value$.toString() : null; break;
     case 5: ausserordentlicherBetreuungsaufwand = (java.lang.Boolean)value$; break;
-    default: throw new org.apache.avro.AvroRuntimeException("Bad index");
+    default: throw new IndexOutOfBoundsException("Invalid index: " + field$);
     }
   }
 
@@ -275,6 +275,7 @@ static {
   /**
    * RecordBuilder for BetreuungEventDTO instances.
    */
+  @org.apache.avro.specific.AvroGenerated
   public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<BetreuungEventDTO>
     implements org.apache.avro.data.RecordBuilder<BetreuungEventDTO> {
 
