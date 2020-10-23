@@ -57,11 +57,29 @@
                         },
                         {
                         	"name": "anzahlMonatlicheHauptmahlzeiten",
-                        	"type": "int"
+                        	"type": [
+								"null",
+								{
+									"type": "bytes",
+									"logicalType": "decimal",
+									"precision": 19,
+									"scale": 2
+								}
+							],
+							"default": null
                         },
                         {
                             "name": "anzahlMonatlicheNebenmahlzeiten",
-                            "type": "int"
+                            "type": [
+								"null",
+								{
+									"type": "bytes",
+									"logicalType": "decimal",
+									"precision": 19,
+									"scale": 2
+								}
+							],
+							"default": null
                         },
 						{
 							"name": "tarifProHauptmahlzeiten",
