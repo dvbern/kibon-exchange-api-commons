@@ -13,24 +13,24 @@ import org.apache.avro.message.BinaryMessageDecoder;
 import org.apache.avro.message.SchemaStore;
 
 @org.apache.avro.specific.AvroGenerated
-public class InstitutionClientEventDTO extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = -6444347110884908990L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"InstitutionClientEventDTO\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.institutionclient\",\"fields\":[{\"name\":\"institutionId\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"clientName\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"clientType\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}]}");
+public class InstitutionClientEventDTOv1 extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
+  private static final long serialVersionUID = 988073644411632905L;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"InstitutionClientEventDTOv1\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.institutionclient\",\"fields\":[{\"name\":\"institutionId\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"clientName\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"clientType\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static SpecificData MODEL$ = new SpecificData();
 
-  private static final BinaryMessageEncoder<InstitutionClientEventDTO> ENCODER =
-      new BinaryMessageEncoder<InstitutionClientEventDTO>(MODEL$, SCHEMA$);
+  private static final BinaryMessageEncoder<InstitutionClientEventDTOv1> ENCODER =
+      new BinaryMessageEncoder<InstitutionClientEventDTOv1>(MODEL$, SCHEMA$);
 
-  private static final BinaryMessageDecoder<InstitutionClientEventDTO> DECODER =
-      new BinaryMessageDecoder<InstitutionClientEventDTO>(MODEL$, SCHEMA$);
+  private static final BinaryMessageDecoder<InstitutionClientEventDTOv1> DECODER =
+      new BinaryMessageDecoder<InstitutionClientEventDTOv1>(MODEL$, SCHEMA$);
 
   /**
    * Return the BinaryMessageEncoder instance used by this class.
    * @return the message encoder used by this class
    */
-  public static BinaryMessageEncoder<InstitutionClientEventDTO> getEncoder() {
+  public static BinaryMessageEncoder<InstitutionClientEventDTOv1> getEncoder() {
     return ENCODER;
   }
 
@@ -38,7 +38,7 @@ public class InstitutionClientEventDTO extends org.apache.avro.specific.Specific
    * Return the BinaryMessageDecoder instance used by this class.
    * @return the message decoder used by this class
    */
-  public static BinaryMessageDecoder<InstitutionClientEventDTO> getDecoder() {
+  public static BinaryMessageDecoder<InstitutionClientEventDTOv1> getDecoder() {
     return DECODER;
   }
 
@@ -47,12 +47,12 @@ public class InstitutionClientEventDTO extends org.apache.avro.specific.Specific
    * @param resolver a {@link SchemaStore} used to find schemas by fingerprint
    * @return a BinaryMessageDecoder instance for this class backed by the given SchemaStore
    */
-  public static BinaryMessageDecoder<InstitutionClientEventDTO> createDecoder(SchemaStore resolver) {
-    return new BinaryMessageDecoder<InstitutionClientEventDTO>(MODEL$, SCHEMA$, resolver);
+  public static BinaryMessageDecoder<InstitutionClientEventDTOv1> createDecoder(SchemaStore resolver) {
+    return new BinaryMessageDecoder<InstitutionClientEventDTOv1>(MODEL$, SCHEMA$, resolver);
   }
 
   /**
-   * Serializes this InstitutionClientEventDTO to a ByteBuffer.
+   * Serializes this InstitutionClientEventDTOv1 to a ByteBuffer.
    * @return a buffer holding the serialized data for this instance
    * @throws java.io.IOException if this instance could not be serialized
    */
@@ -61,12 +61,12 @@ public class InstitutionClientEventDTO extends org.apache.avro.specific.Specific
   }
 
   /**
-   * Deserializes a InstitutionClientEventDTO from a ByteBuffer.
+   * Deserializes a InstitutionClientEventDTOv1 from a ByteBuffer.
    * @param b a byte buffer holding serialized data for an instance of this class
-   * @return a InstitutionClientEventDTO instance decoded from the given buffer
+   * @return a InstitutionClientEventDTOv1 instance decoded from the given buffer
    * @throws java.io.IOException if the given bytes could not be deserialized into an instance of this class
    */
-  public static InstitutionClientEventDTO fromByteBuffer(
+  public static InstitutionClientEventDTOv1 fromByteBuffer(
       java.nio.ByteBuffer b) throws java.io.IOException {
     return DECODER.decode(b);
   }
@@ -80,7 +80,7 @@ public class InstitutionClientEventDTO extends org.apache.avro.specific.Specific
    * to their default values from the schema.  If that is desired then
    * one should use <code>newBuilder()</code>.
    */
-  public InstitutionClientEventDTO() {}
+  public InstitutionClientEventDTOv1() {}
 
   /**
    * All-args constructor.
@@ -88,7 +88,7 @@ public class InstitutionClientEventDTO extends org.apache.avro.specific.Specific
    * @param clientName The new value for clientName
    * @param clientType The new value for clientType
    */
-  public InstitutionClientEventDTO(java.lang.String institutionId, java.lang.String clientName, java.lang.String clientType) {
+  public InstitutionClientEventDTOv1(java.lang.String institutionId, java.lang.String clientName, java.lang.String clientType) {
     this.institutionId = institutionId;
     this.clientName = clientName;
     this.clientType = clientType;
@@ -169,45 +169,45 @@ public class InstitutionClientEventDTO extends org.apache.avro.specific.Specific
   }
 
   /**
-   * Creates a new InstitutionClientEventDTO RecordBuilder.
-   * @return A new InstitutionClientEventDTO RecordBuilder
+   * Creates a new InstitutionClientEventDTOv1 RecordBuilder.
+   * @return A new InstitutionClientEventDTOv1 RecordBuilder
    */
-  public static ch.dvbern.kibon.exchange.commons.institutionclient.InstitutionClientEventDTO.Builder newBuilder() {
-    return new ch.dvbern.kibon.exchange.commons.institutionclient.InstitutionClientEventDTO.Builder();
+  public static ch.dvbern.kibon.exchange.commons.institutionclient.InstitutionClientEventDTOv1.Builder newBuilder() {
+    return new ch.dvbern.kibon.exchange.commons.institutionclient.InstitutionClientEventDTOv1.Builder();
   }
 
   /**
-   * Creates a new InstitutionClientEventDTO RecordBuilder by copying an existing Builder.
+   * Creates a new InstitutionClientEventDTOv1 RecordBuilder by copying an existing Builder.
    * @param other The existing builder to copy.
-   * @return A new InstitutionClientEventDTO RecordBuilder
+   * @return A new InstitutionClientEventDTOv1 RecordBuilder
    */
-  public static ch.dvbern.kibon.exchange.commons.institutionclient.InstitutionClientEventDTO.Builder newBuilder(ch.dvbern.kibon.exchange.commons.institutionclient.InstitutionClientEventDTO.Builder other) {
+  public static ch.dvbern.kibon.exchange.commons.institutionclient.InstitutionClientEventDTOv1.Builder newBuilder(ch.dvbern.kibon.exchange.commons.institutionclient.InstitutionClientEventDTOv1.Builder other) {
     if (other == null) {
-      return new ch.dvbern.kibon.exchange.commons.institutionclient.InstitutionClientEventDTO.Builder();
+      return new ch.dvbern.kibon.exchange.commons.institutionclient.InstitutionClientEventDTOv1.Builder();
     } else {
-      return new ch.dvbern.kibon.exchange.commons.institutionclient.InstitutionClientEventDTO.Builder(other);
+      return new ch.dvbern.kibon.exchange.commons.institutionclient.InstitutionClientEventDTOv1.Builder(other);
     }
   }
 
   /**
-   * Creates a new InstitutionClientEventDTO RecordBuilder by copying an existing InstitutionClientEventDTO instance.
+   * Creates a new InstitutionClientEventDTOv1 RecordBuilder by copying an existing InstitutionClientEventDTOv1 instance.
    * @param other The existing instance to copy.
-   * @return A new InstitutionClientEventDTO RecordBuilder
+   * @return A new InstitutionClientEventDTOv1 RecordBuilder
    */
-  public static ch.dvbern.kibon.exchange.commons.institutionclient.InstitutionClientEventDTO.Builder newBuilder(ch.dvbern.kibon.exchange.commons.institutionclient.InstitutionClientEventDTO other) {
+  public static ch.dvbern.kibon.exchange.commons.institutionclient.InstitutionClientEventDTOv1.Builder newBuilder(ch.dvbern.kibon.exchange.commons.institutionclient.InstitutionClientEventDTOv1 other) {
     if (other == null) {
-      return new ch.dvbern.kibon.exchange.commons.institutionclient.InstitutionClientEventDTO.Builder();
+      return new ch.dvbern.kibon.exchange.commons.institutionclient.InstitutionClientEventDTOv1.Builder();
     } else {
-      return new ch.dvbern.kibon.exchange.commons.institutionclient.InstitutionClientEventDTO.Builder(other);
+      return new ch.dvbern.kibon.exchange.commons.institutionclient.InstitutionClientEventDTOv1.Builder(other);
     }
   }
 
   /**
-   * RecordBuilder for InstitutionClientEventDTO instances.
+   * RecordBuilder for InstitutionClientEventDTOv1 instances.
    */
   @org.apache.avro.specific.AvroGenerated
-  public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<InstitutionClientEventDTO>
-    implements org.apache.avro.data.RecordBuilder<InstitutionClientEventDTO> {
+  public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<InstitutionClientEventDTOv1>
+    implements org.apache.avro.data.RecordBuilder<InstitutionClientEventDTOv1> {
 
     private java.lang.String institutionId;
     private java.lang.String clientName;
@@ -222,7 +222,7 @@ public class InstitutionClientEventDTO extends org.apache.avro.specific.Specific
      * Creates a Builder by copying an existing Builder.
      * @param other The existing Builder to copy.
      */
-    private Builder(ch.dvbern.kibon.exchange.commons.institutionclient.InstitutionClientEventDTO.Builder other) {
+    private Builder(ch.dvbern.kibon.exchange.commons.institutionclient.InstitutionClientEventDTOv1.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.institutionId)) {
         this.institutionId = data().deepCopy(fields()[0].schema(), other.institutionId);
@@ -239,10 +239,10 @@ public class InstitutionClientEventDTO extends org.apache.avro.specific.Specific
     }
 
     /**
-     * Creates a Builder by copying an existing InstitutionClientEventDTO instance
+     * Creates a Builder by copying an existing InstitutionClientEventDTOv1 instance
      * @param other The existing instance to copy.
      */
-    private Builder(ch.dvbern.kibon.exchange.commons.institutionclient.InstitutionClientEventDTO other) {
+    private Builder(ch.dvbern.kibon.exchange.commons.institutionclient.InstitutionClientEventDTOv1 other) {
       super(SCHEMA$);
       if (isValidValue(fields()[0], other.institutionId)) {
         this.institutionId = data().deepCopy(fields()[0].schema(), other.institutionId);
@@ -272,7 +272,7 @@ public class InstitutionClientEventDTO extends org.apache.avro.specific.Specific
       * @param value The value of 'institutionId'.
       * @return This builder.
       */
-    public ch.dvbern.kibon.exchange.commons.institutionclient.InstitutionClientEventDTO.Builder setInstitutionId(java.lang.String value) {
+    public ch.dvbern.kibon.exchange.commons.institutionclient.InstitutionClientEventDTOv1.Builder setInstitutionId(java.lang.String value) {
       validate(fields()[0], value);
       this.institutionId = value;
       fieldSetFlags()[0] = true;
@@ -292,7 +292,7 @@ public class InstitutionClientEventDTO extends org.apache.avro.specific.Specific
       * Clears the value of the 'institutionId' field.
       * @return This builder.
       */
-    public ch.dvbern.kibon.exchange.commons.institutionclient.InstitutionClientEventDTO.Builder clearInstitutionId() {
+    public ch.dvbern.kibon.exchange.commons.institutionclient.InstitutionClientEventDTOv1.Builder clearInstitutionId() {
       institutionId = null;
       fieldSetFlags()[0] = false;
       return this;
@@ -312,7 +312,7 @@ public class InstitutionClientEventDTO extends org.apache.avro.specific.Specific
       * @param value The value of 'clientName'.
       * @return This builder.
       */
-    public ch.dvbern.kibon.exchange.commons.institutionclient.InstitutionClientEventDTO.Builder setClientName(java.lang.String value) {
+    public ch.dvbern.kibon.exchange.commons.institutionclient.InstitutionClientEventDTOv1.Builder setClientName(java.lang.String value) {
       validate(fields()[1], value);
       this.clientName = value;
       fieldSetFlags()[1] = true;
@@ -332,7 +332,7 @@ public class InstitutionClientEventDTO extends org.apache.avro.specific.Specific
       * Clears the value of the 'clientName' field.
       * @return This builder.
       */
-    public ch.dvbern.kibon.exchange.commons.institutionclient.InstitutionClientEventDTO.Builder clearClientName() {
+    public ch.dvbern.kibon.exchange.commons.institutionclient.InstitutionClientEventDTOv1.Builder clearClientName() {
       clientName = null;
       fieldSetFlags()[1] = false;
       return this;
@@ -352,7 +352,7 @@ public class InstitutionClientEventDTO extends org.apache.avro.specific.Specific
       * @param value The value of 'clientType'.
       * @return This builder.
       */
-    public ch.dvbern.kibon.exchange.commons.institutionclient.InstitutionClientEventDTO.Builder setClientType(java.lang.String value) {
+    public ch.dvbern.kibon.exchange.commons.institutionclient.InstitutionClientEventDTOv1.Builder setClientType(java.lang.String value) {
       validate(fields()[2], value);
       this.clientType = value;
       fieldSetFlags()[2] = true;
@@ -372,7 +372,7 @@ public class InstitutionClientEventDTO extends org.apache.avro.specific.Specific
       * Clears the value of the 'clientType' field.
       * @return This builder.
       */
-    public ch.dvbern.kibon.exchange.commons.institutionclient.InstitutionClientEventDTO.Builder clearClientType() {
+    public ch.dvbern.kibon.exchange.commons.institutionclient.InstitutionClientEventDTOv1.Builder clearClientType() {
       clientType = null;
       fieldSetFlags()[2] = false;
       return this;
@@ -380,9 +380,9 @@ public class InstitutionClientEventDTO extends org.apache.avro.specific.Specific
 
     @Override
     @SuppressWarnings("unchecked")
-    public InstitutionClientEventDTO build() {
+    public InstitutionClientEventDTOv1 build() {
       try {
-        InstitutionClientEventDTO record = new InstitutionClientEventDTO();
+        InstitutionClientEventDTOv1 record = new InstitutionClientEventDTOv1();
         record.institutionId = fieldSetFlags()[0] ? this.institutionId : (java.lang.String) defaultValue(fields()[0]);
         record.clientName = fieldSetFlags()[1] ? this.clientName : (java.lang.String) defaultValue(fields()[1]);
         record.clientType = fieldSetFlags()[2] ? this.clientType : (java.lang.String) defaultValue(fields()[2]);
@@ -396,8 +396,8 @@ public class InstitutionClientEventDTO extends org.apache.avro.specific.Specific
   }
 
   @SuppressWarnings("unchecked")
-  private static final org.apache.avro.io.DatumWriter<InstitutionClientEventDTO>
-    WRITER$ = (org.apache.avro.io.DatumWriter<InstitutionClientEventDTO>)MODEL$.createDatumWriter(SCHEMA$);
+  private static final org.apache.avro.io.DatumWriter<InstitutionClientEventDTOv1>
+    WRITER$ = (org.apache.avro.io.DatumWriter<InstitutionClientEventDTOv1>)MODEL$.createDatumWriter(SCHEMA$);
 
   @Override public void writeExternal(java.io.ObjectOutput out)
     throws java.io.IOException {
@@ -405,8 +405,8 @@ public class InstitutionClientEventDTO extends org.apache.avro.specific.Specific
   }
 
   @SuppressWarnings("unchecked")
-  private static final org.apache.avro.io.DatumReader<InstitutionClientEventDTO>
-    READER$ = (org.apache.avro.io.DatumReader<InstitutionClientEventDTO>)MODEL$.createDatumReader(SCHEMA$);
+  private static final org.apache.avro.io.DatumReader<InstitutionClientEventDTOv1>
+    READER$ = (org.apache.avro.io.DatumReader<InstitutionClientEventDTOv1>)MODEL$.createDatumReader(SCHEMA$);
 
   @Override public void readExternal(java.io.ObjectInput in)
     throws java.io.IOException {
