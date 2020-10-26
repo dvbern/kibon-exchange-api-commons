@@ -56,12 +56,30 @@
                         	"type": "ch.dvbern.kibon.exchange.commons.types.Zeiteinheit"
                         },
                         {
-                        	"name": "anzahlMonatlicheHauptmahlzeiten",
-                        	"type": "int"
+                        	"name": "anzahlHauptmahlzeiten",
+                        	"type": [
+								"null",
+								{
+									"type": "bytes",
+									"logicalType": "decimal",
+									"precision": 19,
+									"scale": 2
+								}
+							],
+							"default": null
                         },
                         {
-                            "name": "anzahlMonatlicheNebenmahlzeiten",
-                            "type": "int"
+                            "name": "anzahlNebenmahlzeiten",
+                            "type": [
+								"null",
+								{
+									"type": "bytes",
+									"logicalType": "decimal",
+									"precision": 19,
+									"scale": 2
+								}
+							],
+							"default": null
                         },
 						{
 							"name": "tarifProHauptmahlzeiten",
