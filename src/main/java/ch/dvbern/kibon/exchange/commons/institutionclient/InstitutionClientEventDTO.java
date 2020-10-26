@@ -14,11 +14,14 @@ import org.apache.avro.message.SchemaStore;
 
 @org.apache.avro.specific.AvroGenerated
 public class InstitutionClientEventDTO extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = -6444347110884908990L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"InstitutionClientEventDTO\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.institutionclient\",\"fields\":[{\"name\":\"institutionId\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"clientName\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"clientType\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}]}");
+  private static final long serialVersionUID = -2897084502256238830L;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"InstitutionClientEventDTO\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.institutionclient\",\"fields\":[{\"name\":\"institutionId\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"clientName\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"clientType\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"gueltigAb\",\"type\":[\"null\",{\"type\":\"int\",\"logicalType\":\"date\"}],\"default\":null},{\"name\":\"gueltigBis\",\"type\":[\"null\",{\"type\":\"int\",\"logicalType\":\"date\"}],\"default\":null}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static SpecificData MODEL$ = new SpecificData();
+static {
+    MODEL$.addLogicalTypeConversion(new org.apache.avro.data.TimeConversions.DateConversion());
+  }
 
   private static final BinaryMessageEncoder<InstitutionClientEventDTO> ENCODER =
       new BinaryMessageEncoder<InstitutionClientEventDTO>(MODEL$, SCHEMA$);
@@ -74,6 +77,8 @@ public class InstitutionClientEventDTO extends org.apache.avro.specific.Specific
    private java.lang.String institutionId;
    private java.lang.String clientName;
    private java.lang.String clientType;
+   private java.time.LocalDate gueltigAb;
+   private java.time.LocalDate gueltigBis;
 
   /**
    * Default constructor.  Note that this does not initialize fields
@@ -87,11 +92,15 @@ public class InstitutionClientEventDTO extends org.apache.avro.specific.Specific
    * @param institutionId The new value for institutionId
    * @param clientName The new value for clientName
    * @param clientType The new value for clientType
+   * @param gueltigAb The new value for gueltigAb
+   * @param gueltigBis The new value for gueltigBis
    */
-  public InstitutionClientEventDTO(java.lang.String institutionId, java.lang.String clientName, java.lang.String clientType) {
+  public InstitutionClientEventDTO(java.lang.String institutionId, java.lang.String clientName, java.lang.String clientType, java.time.LocalDate gueltigAb, java.time.LocalDate gueltigBis) {
     this.institutionId = institutionId;
     this.clientName = clientName;
     this.clientType = clientType;
+    this.gueltigAb = gueltigAb;
+    this.gueltigBis = gueltigBis;
   }
 
   public org.apache.avro.specific.SpecificData getSpecificData() { return MODEL$; }
@@ -102,6 +111,8 @@ public class InstitutionClientEventDTO extends org.apache.avro.specific.Specific
     case 0: return institutionId;
     case 1: return clientName;
     case 2: return clientType;
+    case 3: return gueltigAb;
+    case 4: return gueltigBis;
     default: throw new IndexOutOfBoundsException("Invalid index: " + field$);
     }
   }
@@ -113,6 +124,8 @@ public class InstitutionClientEventDTO extends org.apache.avro.specific.Specific
     case 0: institutionId = value$ != null ? value$.toString() : null; break;
     case 1: clientName = value$ != null ? value$.toString() : null; break;
     case 2: clientType = value$ != null ? value$.toString() : null; break;
+    case 3: gueltigAb = (java.time.LocalDate)value$; break;
+    case 4: gueltigBis = (java.time.LocalDate)value$; break;
     default: throw new IndexOutOfBoundsException("Invalid index: " + field$);
     }
   }
@@ -169,6 +182,40 @@ public class InstitutionClientEventDTO extends org.apache.avro.specific.Specific
   }
 
   /**
+   * Gets the value of the 'gueltigAb' field.
+   * @return The value of the 'gueltigAb' field.
+   */
+  public java.time.LocalDate getGueltigAb() {
+    return gueltigAb;
+  }
+
+
+  /**
+   * Sets the value of the 'gueltigAb' field.
+   * @param value the value to set.
+   */
+  public void setGueltigAb(java.time.LocalDate value) {
+    this.gueltigAb = value;
+  }
+
+  /**
+   * Gets the value of the 'gueltigBis' field.
+   * @return The value of the 'gueltigBis' field.
+   */
+  public java.time.LocalDate getGueltigBis() {
+    return gueltigBis;
+  }
+
+
+  /**
+   * Sets the value of the 'gueltigBis' field.
+   * @param value the value to set.
+   */
+  public void setGueltigBis(java.time.LocalDate value) {
+    this.gueltigBis = value;
+  }
+
+  /**
    * Creates a new InstitutionClientEventDTO RecordBuilder.
    * @return A new InstitutionClientEventDTO RecordBuilder
    */
@@ -212,6 +259,8 @@ public class InstitutionClientEventDTO extends org.apache.avro.specific.Specific
     private java.lang.String institutionId;
     private java.lang.String clientName;
     private java.lang.String clientType;
+    private java.time.LocalDate gueltigAb;
+    private java.time.LocalDate gueltigBis;
 
     /** Creates a new Builder */
     private Builder() {
@@ -236,6 +285,14 @@ public class InstitutionClientEventDTO extends org.apache.avro.specific.Specific
         this.clientType = data().deepCopy(fields()[2].schema(), other.clientType);
         fieldSetFlags()[2] = other.fieldSetFlags()[2];
       }
+      if (isValidValue(fields()[3], other.gueltigAb)) {
+        this.gueltigAb = data().deepCopy(fields()[3].schema(), other.gueltigAb);
+        fieldSetFlags()[3] = other.fieldSetFlags()[3];
+      }
+      if (isValidValue(fields()[4], other.gueltigBis)) {
+        this.gueltigBis = data().deepCopy(fields()[4].schema(), other.gueltigBis);
+        fieldSetFlags()[4] = other.fieldSetFlags()[4];
+      }
     }
 
     /**
@@ -255,6 +312,14 @@ public class InstitutionClientEventDTO extends org.apache.avro.specific.Specific
       if (isValidValue(fields()[2], other.clientType)) {
         this.clientType = data().deepCopy(fields()[2].schema(), other.clientType);
         fieldSetFlags()[2] = true;
+      }
+      if (isValidValue(fields()[3], other.gueltigAb)) {
+        this.gueltigAb = data().deepCopy(fields()[3].schema(), other.gueltigAb);
+        fieldSetFlags()[3] = true;
+      }
+      if (isValidValue(fields()[4], other.gueltigBis)) {
+        this.gueltigBis = data().deepCopy(fields()[4].schema(), other.gueltigBis);
+        fieldSetFlags()[4] = true;
       }
     }
 
@@ -378,6 +443,86 @@ public class InstitutionClientEventDTO extends org.apache.avro.specific.Specific
       return this;
     }
 
+    /**
+      * Gets the value of the 'gueltigAb' field.
+      * @return The value.
+      */
+    public java.time.LocalDate getGueltigAb() {
+      return gueltigAb;
+    }
+
+
+    /**
+      * Sets the value of the 'gueltigAb' field.
+      * @param value The value of 'gueltigAb'.
+      * @return This builder.
+      */
+    public ch.dvbern.kibon.exchange.commons.institutionclient.InstitutionClientEventDTO.Builder setGueltigAb(java.time.LocalDate value) {
+      validate(fields()[3], value);
+      this.gueltigAb = value;
+      fieldSetFlags()[3] = true;
+      return this;
+    }
+
+    /**
+      * Checks whether the 'gueltigAb' field has been set.
+      * @return True if the 'gueltigAb' field has been set, false otherwise.
+      */
+    public boolean hasGueltigAb() {
+      return fieldSetFlags()[3];
+    }
+
+
+    /**
+      * Clears the value of the 'gueltigAb' field.
+      * @return This builder.
+      */
+    public ch.dvbern.kibon.exchange.commons.institutionclient.InstitutionClientEventDTO.Builder clearGueltigAb() {
+      gueltigAb = null;
+      fieldSetFlags()[3] = false;
+      return this;
+    }
+
+    /**
+      * Gets the value of the 'gueltigBis' field.
+      * @return The value.
+      */
+    public java.time.LocalDate getGueltigBis() {
+      return gueltigBis;
+    }
+
+
+    /**
+      * Sets the value of the 'gueltigBis' field.
+      * @param value The value of 'gueltigBis'.
+      * @return This builder.
+      */
+    public ch.dvbern.kibon.exchange.commons.institutionclient.InstitutionClientEventDTO.Builder setGueltigBis(java.time.LocalDate value) {
+      validate(fields()[4], value);
+      this.gueltigBis = value;
+      fieldSetFlags()[4] = true;
+      return this;
+    }
+
+    /**
+      * Checks whether the 'gueltigBis' field has been set.
+      * @return True if the 'gueltigBis' field has been set, false otherwise.
+      */
+    public boolean hasGueltigBis() {
+      return fieldSetFlags()[4];
+    }
+
+
+    /**
+      * Clears the value of the 'gueltigBis' field.
+      * @return This builder.
+      */
+    public ch.dvbern.kibon.exchange.commons.institutionclient.InstitutionClientEventDTO.Builder clearGueltigBis() {
+      gueltigBis = null;
+      fieldSetFlags()[4] = false;
+      return this;
+    }
+
     @Override
     @SuppressWarnings("unchecked")
     public InstitutionClientEventDTO build() {
@@ -386,6 +531,8 @@ public class InstitutionClientEventDTO extends org.apache.avro.specific.Specific
         record.institutionId = fieldSetFlags()[0] ? this.institutionId : (java.lang.String) defaultValue(fields()[0]);
         record.clientName = fieldSetFlags()[1] ? this.clientName : (java.lang.String) defaultValue(fields()[1]);
         record.clientType = fieldSetFlags()[2] ? this.clientType : (java.lang.String) defaultValue(fields()[2]);
+        record.gueltigAb = fieldSetFlags()[3] ? this.gueltigAb : (java.time.LocalDate) defaultValue(fields()[3]);
+        record.gueltigBis = fieldSetFlags()[4] ? this.gueltigBis : (java.time.LocalDate) defaultValue(fields()[4]);
         return record;
       } catch (org.apache.avro.AvroMissingFieldException e) {
         throw e;
@@ -413,51 +560,6 @@ public class InstitutionClientEventDTO extends org.apache.avro.specific.Specific
     READER$.read(this, SpecificData.getDecoder(in));
   }
 
-  @Override protected boolean hasCustomCoders() { return true; }
-
-  @Override public void customEncode(org.apache.avro.io.Encoder out)
-    throws java.io.IOException
-  {
-    out.writeString(this.institutionId);
-
-    out.writeString(this.clientName);
-
-    out.writeString(this.clientType);
-
-  }
-
-  @Override public void customDecode(org.apache.avro.io.ResolvingDecoder in)
-    throws java.io.IOException
-  {
-    org.apache.avro.Schema.Field[] fieldOrder = in.readFieldOrderIfDiff();
-    if (fieldOrder == null) {
-      this.institutionId = in.readString();
-
-      this.clientName = in.readString();
-
-      this.clientType = in.readString();
-
-    } else {
-      for (int i = 0; i < 3; i++) {
-        switch (fieldOrder[i].pos()) {
-        case 0:
-          this.institutionId = in.readString();
-          break;
-
-        case 1:
-          this.clientName = in.readString();
-          break;
-
-        case 2:
-          this.clientType = in.readString();
-          break;
-
-        default:
-          throw new java.io.IOException("Corrupt ResolvingDecoder.");
-        }
-      }
-    }
-  }
 }
 
 
