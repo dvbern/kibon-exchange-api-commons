@@ -24,6 +24,15 @@ import javax.annotation.Nullable;
 import org.apache.avro.data.TimeConversions.TimeMicrosConversion;
 import org.jetbrains.annotations.Contract;
 
+/**
+ * <p>
+ * Due to Avro bug https://issues.apache.org/jira/projects/AVRO/issues/AVRO-2904?filter=allopenissues, union
+ * types and logical-types timestamp-micros and time-micros cannot be used together: the class generator does not
+ * create the required conversion mapping. Furthermore, we cannot simply add it to the generated class, because
+ * the converters don't allow the combination with NULL.
+ * </p>
+ * {@link TimestampConverter}
+ */
 public final class TimeConverter {
 
 	private static final TimeMicrosConversion AVRO_CONVERTER = new TimeMicrosConversion();
@@ -33,11 +42,6 @@ public final class TimeConverter {
 	}
 
 	/**
-	 * Due to Avro bug https://issues.apache.org/jira/projects/AVRO/issues/AVRO-2904?filter=allopenissues, union
-	 * types and logical-types timestamp-micros and time-micros cannot be used together: the class generator does not
-	 * create the required conversion mapping. Furthermore, we cannot simply add it to the generated class, because
-	 * the converters don't allow the combination with NULL.
-	 *
 	 * The conversion here maps LocalTime to time-micros.
 	 */
 	@Nullable

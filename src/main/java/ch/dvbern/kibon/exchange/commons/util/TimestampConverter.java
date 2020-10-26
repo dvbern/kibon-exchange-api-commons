@@ -27,21 +27,25 @@ import javax.annotation.Nullable;
 import org.apache.avro.data.TimeConversions.TimestampMicrosConversion;
 import org.jetbrains.annotations.Contract;
 
-public final class DateConverter {
+/**
+ * <p>
+ * Due to Avro bug https://issues.apache.org/jira/projects/AVRO/issues/AVRO-2904?filter=allopenissues, union types
+ * and logical-types timestamp-micros and time-micros cannot be used together: the class generator does not create
+ * the required conversion mapping. Furthermore, we cannot simply add it to the generated class, because the
+ * converters don't allow the combination with NULL.
+ * </p>
+ * {@link TimeConverter}
+ */
+public final class TimestampConverter {
 
 	private static final TimestampMicrosConversion AVRO_CONVERTER = new TimestampMicrosConversion();
 
-	private DateConverter() {
+	private TimestampConverter() {
 		// util
 	}
 
 	/**
-	 * Due to Avro bug https://issues.apache.org/jira/projects/AVRO/issues/AVRO-2904?filter=allopenissues, union types
-	 * and logical-types timestamp-micros and time-micros cannot be used together: the class generator does not create
-	 * the required conversion mapping. Furthermore, we cannot simply add it to the generated class, because the
-	 * converters don't allow the combination with NULL.
-	 *
-	 * The conversion here maps Instant to time-micros.
+	 * The conversion here maps Instant to timestamp-micros.
 	 */
 	@Nullable
 	@Contract("null -> null; !null -> !null")
@@ -49,6 +53,9 @@ public final class DateConverter {
 		return datum == null ? null : AVRO_CONVERTER.toLong(datum, null, null);
 	}
 
+	/**
+	 * Maps LocalDateTime to timestamp-micros
+	 */
 	@Nullable
 	@Contract("null -> null; !null -> !null")
 	public static Long fromLocalDateTime(@Nullable LocalDateTime datum) {
@@ -56,7 +63,7 @@ public final class DateConverter {
 	}
 
 	/**
-	 * Maps time-micros to Instant
+	 * Maps timestamp-micros to Instant
 	 */
 	@Nullable
 	@Contract("null -> null; !null -> !null")
@@ -65,7 +72,7 @@ public final class DateConverter {
 	}
 
 	/**
-	 * Maps time-micros to Instant
+	 * Maps timestamp-micros to LocalDateTime
 	 */
 	@Nullable
 	@Contract("null -> null; !null -> !null")
