@@ -56,7 +56,7 @@
                         	"type": "ch.dvbern.kibon.exchange.commons.types.Zeiteinheit"
                         },
                         {
-                        	"name": "anzahlMonatlicheHauptmahlzeiten",
+                        	"name": "anzahlHauptmahlzeiten",
                         	"type": [
 								"null",
 								{
@@ -69,7 +69,7 @@
 							"default": null
                         },
                         {
-                            "name": "anzahlMonatlicheNebenmahlzeiten",
+                            "name": "anzahlNebenmahlzeiten",
                             "type": [
 								"null",
 								{
