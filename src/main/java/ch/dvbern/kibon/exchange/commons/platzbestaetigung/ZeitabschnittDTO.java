@@ -14,8 +14,8 @@ import org.apache.avro.message.SchemaStore;
 
 @org.apache.avro.specific.AvroGenerated
 public class ZeitabschnittDTO extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = -7759908903340694902L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"ZeitabschnittDTO\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.platzbestaetigung\",\"fields\":[{\"name\":\"betreuungskosten\",\"type\":{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}},{\"name\":\"betreuungspensum\",\"type\":{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}},{\"name\":\"von\",\"type\":{\"type\":\"int\",\"logicalType\":\"date\"}},{\"name\":\"bis\",\"type\":{\"type\":\"int\",\"logicalType\":\"date\"}},{\"name\":\"pensumUnit\",\"type\":{\"type\":\"enum\",\"name\":\"Zeiteinheit\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.types\",\"symbols\":[\"DAYS\",\"HOURS\",\"PERCENTAGE\"]}},{\"name\":\"anzahlMonatlicheHauptmahlzeiten\",\"type\":\"int\"},{\"name\":\"anzahlMonatlicheNebenmahlzeiten\",\"type\":\"int\"},{\"name\":\"tarifProHauptmahlzeiten\",\"type\":[\"null\",{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}],\"default\":null},{\"name\":\"tarifProNebenmahlzeiten\",\"type\":[\"null\",{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}],\"default\":null}]}");
+  private static final long serialVersionUID = 5429116957685637304L;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"ZeitabschnittDTO\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.platzbestaetigung\",\"fields\":[{\"name\":\"betreuungskosten\",\"type\":{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}},{\"name\":\"betreuungspensum\",\"type\":{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}},{\"name\":\"von\",\"type\":{\"type\":\"int\",\"logicalType\":\"date\"}},{\"name\":\"bis\",\"type\":{\"type\":\"int\",\"logicalType\":\"date\"}},{\"name\":\"pensumUnit\",\"type\":{\"type\":\"enum\",\"name\":\"Zeiteinheit\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.types\",\"symbols\":[\"DAYS\",\"HOURS\",\"PERCENTAGE\"]}},{\"name\":\"anzahlHauptmahlzeiten\",\"type\":[\"null\",{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}],\"default\":null},{\"name\":\"anzahlNebenmahlzeiten\",\"type\":[\"null\",{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}],\"default\":null},{\"name\":\"tarifProHauptmahlzeiten\",\"type\":[\"null\",{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}],\"default\":null},{\"name\":\"tarifProNebenmahlzeiten\",\"type\":[\"null\",{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}],\"default\":null}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static SpecificData MODEL$ = new SpecificData();
@@ -80,8 +80,8 @@ static {
    private java.time.LocalDate von;
    private java.time.LocalDate bis;
    private ch.dvbern.kibon.exchange.commons.types.Zeiteinheit pensumUnit;
-   private int anzahlMonatlicheHauptmahlzeiten;
-   private int anzahlMonatlicheNebenmahlzeiten;
+   private java.math.BigDecimal anzahlHauptmahlzeiten;
+   private java.math.BigDecimal anzahlNebenmahlzeiten;
    private java.math.BigDecimal tarifProHauptmahlzeiten;
    private java.math.BigDecimal tarifProNebenmahlzeiten;
 
@@ -99,19 +99,19 @@ static {
    * @param von The new value for von
    * @param bis The new value for bis
    * @param pensumUnit The new value for pensumUnit
-   * @param anzahlMonatlicheHauptmahlzeiten The new value for anzahlMonatlicheHauptmahlzeiten
-   * @param anzahlMonatlicheNebenmahlzeiten The new value for anzahlMonatlicheNebenmahlzeiten
+   * @param anzahlHauptmahlzeiten The new value for anzahlHauptmahlzeiten
+   * @param anzahlNebenmahlzeiten The new value for anzahlNebenmahlzeiten
    * @param tarifProHauptmahlzeiten The new value for tarifProHauptmahlzeiten
    * @param tarifProNebenmahlzeiten The new value for tarifProNebenmahlzeiten
    */
-  public ZeitabschnittDTO(java.math.BigDecimal betreuungskosten, java.math.BigDecimal betreuungspensum, java.time.LocalDate von, java.time.LocalDate bis, ch.dvbern.kibon.exchange.commons.types.Zeiteinheit pensumUnit, java.lang.Integer anzahlMonatlicheHauptmahlzeiten, java.lang.Integer anzahlMonatlicheNebenmahlzeiten, java.math.BigDecimal tarifProHauptmahlzeiten, java.math.BigDecimal tarifProNebenmahlzeiten) {
+  public ZeitabschnittDTO(java.math.BigDecimal betreuungskosten, java.math.BigDecimal betreuungspensum, java.time.LocalDate von, java.time.LocalDate bis, ch.dvbern.kibon.exchange.commons.types.Zeiteinheit pensumUnit, java.math.BigDecimal anzahlHauptmahlzeiten, java.math.BigDecimal anzahlNebenmahlzeiten, java.math.BigDecimal tarifProHauptmahlzeiten, java.math.BigDecimal tarifProNebenmahlzeiten) {
     this.betreuungskosten = betreuungskosten;
     this.betreuungspensum = betreuungspensum;
     this.von = von;
     this.bis = bis;
     this.pensumUnit = pensumUnit;
-    this.anzahlMonatlicheHauptmahlzeiten = anzahlMonatlicheHauptmahlzeiten;
-    this.anzahlMonatlicheNebenmahlzeiten = anzahlMonatlicheNebenmahlzeiten;
+    this.anzahlHauptmahlzeiten = anzahlHauptmahlzeiten;
+    this.anzahlNebenmahlzeiten = anzahlNebenmahlzeiten;
     this.tarifProHauptmahlzeiten = tarifProHauptmahlzeiten;
     this.tarifProNebenmahlzeiten = tarifProNebenmahlzeiten;
   }
@@ -126,8 +126,8 @@ static {
     case 2: return von;
     case 3: return bis;
     case 4: return pensumUnit;
-    case 5: return anzahlMonatlicheHauptmahlzeiten;
-    case 6: return anzahlMonatlicheNebenmahlzeiten;
+    case 5: return anzahlHauptmahlzeiten;
+    case 6: return anzahlNebenmahlzeiten;
     case 7: return tarifProHauptmahlzeiten;
     case 8: return tarifProNebenmahlzeiten;
     default: throw new IndexOutOfBoundsException("Invalid index: " + field$);
@@ -162,8 +162,8 @@ static {
     case 2: von = (java.time.LocalDate)value$; break;
     case 3: bis = (java.time.LocalDate)value$; break;
     case 4: pensumUnit = (ch.dvbern.kibon.exchange.commons.types.Zeiteinheit)value$; break;
-    case 5: anzahlMonatlicheHauptmahlzeiten = (java.lang.Integer)value$; break;
-    case 6: anzahlMonatlicheNebenmahlzeiten = (java.lang.Integer)value$; break;
+    case 5: anzahlHauptmahlzeiten = (java.math.BigDecimal)value$; break;
+    case 6: anzahlNebenmahlzeiten = (java.math.BigDecimal)value$; break;
     case 7: tarifProHauptmahlzeiten = (java.math.BigDecimal)value$; break;
     case 8: tarifProNebenmahlzeiten = (java.math.BigDecimal)value$; break;
     default: throw new IndexOutOfBoundsException("Invalid index: " + field$);
@@ -256,37 +256,37 @@ static {
   }
 
   /**
-   * Gets the value of the 'anzahlMonatlicheHauptmahlzeiten' field.
-   * @return The value of the 'anzahlMonatlicheHauptmahlzeiten' field.
+   * Gets the value of the 'anzahlHauptmahlzeiten' field.
+   * @return The value of the 'anzahlHauptmahlzeiten' field.
    */
-  public int getAnzahlMonatlicheHauptmahlzeiten() {
-    return anzahlMonatlicheHauptmahlzeiten;
+  public java.math.BigDecimal getAnzahlHauptmahlzeiten() {
+    return anzahlHauptmahlzeiten;
   }
 
 
   /**
-   * Sets the value of the 'anzahlMonatlicheHauptmahlzeiten' field.
+   * Sets the value of the 'anzahlHauptmahlzeiten' field.
    * @param value the value to set.
    */
-  public void setAnzahlMonatlicheHauptmahlzeiten(int value) {
-    this.anzahlMonatlicheHauptmahlzeiten = value;
+  public void setAnzahlHauptmahlzeiten(java.math.BigDecimal value) {
+    this.anzahlHauptmahlzeiten = value;
   }
 
   /**
-   * Gets the value of the 'anzahlMonatlicheNebenmahlzeiten' field.
-   * @return The value of the 'anzahlMonatlicheNebenmahlzeiten' field.
+   * Gets the value of the 'anzahlNebenmahlzeiten' field.
+   * @return The value of the 'anzahlNebenmahlzeiten' field.
    */
-  public int getAnzahlMonatlicheNebenmahlzeiten() {
-    return anzahlMonatlicheNebenmahlzeiten;
+  public java.math.BigDecimal getAnzahlNebenmahlzeiten() {
+    return anzahlNebenmahlzeiten;
   }
 
 
   /**
-   * Sets the value of the 'anzahlMonatlicheNebenmahlzeiten' field.
+   * Sets the value of the 'anzahlNebenmahlzeiten' field.
    * @param value the value to set.
    */
-  public void setAnzahlMonatlicheNebenmahlzeiten(int value) {
-    this.anzahlMonatlicheNebenmahlzeiten = value;
+  public void setAnzahlNebenmahlzeiten(java.math.BigDecimal value) {
+    this.anzahlNebenmahlzeiten = value;
   }
 
   /**
@@ -369,8 +369,8 @@ static {
     private java.time.LocalDate von;
     private java.time.LocalDate bis;
     private ch.dvbern.kibon.exchange.commons.types.Zeiteinheit pensumUnit;
-    private int anzahlMonatlicheHauptmahlzeiten;
-    private int anzahlMonatlicheNebenmahlzeiten;
+    private java.math.BigDecimal anzahlHauptmahlzeiten;
+    private java.math.BigDecimal anzahlNebenmahlzeiten;
     private java.math.BigDecimal tarifProHauptmahlzeiten;
     private java.math.BigDecimal tarifProNebenmahlzeiten;
 
@@ -405,12 +405,12 @@ static {
         this.pensumUnit = data().deepCopy(fields()[4].schema(), other.pensumUnit);
         fieldSetFlags()[4] = other.fieldSetFlags()[4];
       }
-      if (isValidValue(fields()[5], other.anzahlMonatlicheHauptmahlzeiten)) {
-        this.anzahlMonatlicheHauptmahlzeiten = data().deepCopy(fields()[5].schema(), other.anzahlMonatlicheHauptmahlzeiten);
+      if (isValidValue(fields()[5], other.anzahlHauptmahlzeiten)) {
+        this.anzahlHauptmahlzeiten = data().deepCopy(fields()[5].schema(), other.anzahlHauptmahlzeiten);
         fieldSetFlags()[5] = other.fieldSetFlags()[5];
       }
-      if (isValidValue(fields()[6], other.anzahlMonatlicheNebenmahlzeiten)) {
-        this.anzahlMonatlicheNebenmahlzeiten = data().deepCopy(fields()[6].schema(), other.anzahlMonatlicheNebenmahlzeiten);
+      if (isValidValue(fields()[6], other.anzahlNebenmahlzeiten)) {
+        this.anzahlNebenmahlzeiten = data().deepCopy(fields()[6].schema(), other.anzahlNebenmahlzeiten);
         fieldSetFlags()[6] = other.fieldSetFlags()[6];
       }
       if (isValidValue(fields()[7], other.tarifProHauptmahlzeiten)) {
@@ -449,12 +449,12 @@ static {
         this.pensumUnit = data().deepCopy(fields()[4].schema(), other.pensumUnit);
         fieldSetFlags()[4] = true;
       }
-      if (isValidValue(fields()[5], other.anzahlMonatlicheHauptmahlzeiten)) {
-        this.anzahlMonatlicheHauptmahlzeiten = data().deepCopy(fields()[5].schema(), other.anzahlMonatlicheHauptmahlzeiten);
+      if (isValidValue(fields()[5], other.anzahlHauptmahlzeiten)) {
+        this.anzahlHauptmahlzeiten = data().deepCopy(fields()[5].schema(), other.anzahlHauptmahlzeiten);
         fieldSetFlags()[5] = true;
       }
-      if (isValidValue(fields()[6], other.anzahlMonatlicheNebenmahlzeiten)) {
-        this.anzahlMonatlicheNebenmahlzeiten = data().deepCopy(fields()[6].schema(), other.anzahlMonatlicheNebenmahlzeiten);
+      if (isValidValue(fields()[6], other.anzahlNebenmahlzeiten)) {
+        this.anzahlNebenmahlzeiten = data().deepCopy(fields()[6].schema(), other.anzahlNebenmahlzeiten);
         fieldSetFlags()[6] = true;
       }
       if (isValidValue(fields()[7], other.tarifProHauptmahlzeiten)) {
@@ -666,79 +666,81 @@ static {
     }
 
     /**
-      * Gets the value of the 'anzahlMonatlicheHauptmahlzeiten' field.
+      * Gets the value of the 'anzahlHauptmahlzeiten' field.
       * @return The value.
       */
-    public int getAnzahlMonatlicheHauptmahlzeiten() {
-      return anzahlMonatlicheHauptmahlzeiten;
+    public java.math.BigDecimal getAnzahlHauptmahlzeiten() {
+      return anzahlHauptmahlzeiten;
     }
 
 
     /**
-      * Sets the value of the 'anzahlMonatlicheHauptmahlzeiten' field.
-      * @param value The value of 'anzahlMonatlicheHauptmahlzeiten'.
+      * Sets the value of the 'anzahlHauptmahlzeiten' field.
+      * @param value The value of 'anzahlHauptmahlzeiten'.
       * @return This builder.
       */
-    public ch.dvbern.kibon.exchange.commons.platzbestaetigung.ZeitabschnittDTO.Builder setAnzahlMonatlicheHauptmahlzeiten(int value) {
+    public ch.dvbern.kibon.exchange.commons.platzbestaetigung.ZeitabschnittDTO.Builder setAnzahlHauptmahlzeiten(java.math.BigDecimal value) {
       validate(fields()[5], value);
-      this.anzahlMonatlicheHauptmahlzeiten = value;
+      this.anzahlHauptmahlzeiten = value;
       fieldSetFlags()[5] = true;
       return this;
     }
 
     /**
-      * Checks whether the 'anzahlMonatlicheHauptmahlzeiten' field has been set.
-      * @return True if the 'anzahlMonatlicheHauptmahlzeiten' field has been set, false otherwise.
+      * Checks whether the 'anzahlHauptmahlzeiten' field has been set.
+      * @return True if the 'anzahlHauptmahlzeiten' field has been set, false otherwise.
       */
-    public boolean hasAnzahlMonatlicheHauptmahlzeiten() {
+    public boolean hasAnzahlHauptmahlzeiten() {
       return fieldSetFlags()[5];
     }
 
 
     /**
-      * Clears the value of the 'anzahlMonatlicheHauptmahlzeiten' field.
+      * Clears the value of the 'anzahlHauptmahlzeiten' field.
       * @return This builder.
       */
-    public ch.dvbern.kibon.exchange.commons.platzbestaetigung.ZeitabschnittDTO.Builder clearAnzahlMonatlicheHauptmahlzeiten() {
+    public ch.dvbern.kibon.exchange.commons.platzbestaetigung.ZeitabschnittDTO.Builder clearAnzahlHauptmahlzeiten() {
+      anzahlHauptmahlzeiten = null;
       fieldSetFlags()[5] = false;
       return this;
     }
 
     /**
-      * Gets the value of the 'anzahlMonatlicheNebenmahlzeiten' field.
+      * Gets the value of the 'anzahlNebenmahlzeiten' field.
       * @return The value.
       */
-    public int getAnzahlMonatlicheNebenmahlzeiten() {
-      return anzahlMonatlicheNebenmahlzeiten;
+    public java.math.BigDecimal getAnzahlNebenmahlzeiten() {
+      return anzahlNebenmahlzeiten;
     }
 
 
     /**
-      * Sets the value of the 'anzahlMonatlicheNebenmahlzeiten' field.
-      * @param value The value of 'anzahlMonatlicheNebenmahlzeiten'.
+      * Sets the value of the 'anzahlNebenmahlzeiten' field.
+      * @param value The value of 'anzahlNebenmahlzeiten'.
       * @return This builder.
       */
-    public ch.dvbern.kibon.exchange.commons.platzbestaetigung.ZeitabschnittDTO.Builder setAnzahlMonatlicheNebenmahlzeiten(int value) {
+    public ch.dvbern.kibon.exchange.commons.platzbestaetigung.ZeitabschnittDTO.Builder setAnzahlNebenmahlzeiten(java.math.BigDecimal value) {
       validate(fields()[6], value);
-      this.anzahlMonatlicheNebenmahlzeiten = value;
+      this.anzahlNebenmahlzeiten = value;
       fieldSetFlags()[6] = true;
       return this;
     }
 
     /**
-      * Checks whether the 'anzahlMonatlicheNebenmahlzeiten' field has been set.
-      * @return True if the 'anzahlMonatlicheNebenmahlzeiten' field has been set, false otherwise.
+      * Checks whether the 'anzahlNebenmahlzeiten' field has been set.
+      * @return True if the 'anzahlNebenmahlzeiten' field has been set, false otherwise.
       */
-    public boolean hasAnzahlMonatlicheNebenmahlzeiten() {
+    public boolean hasAnzahlNebenmahlzeiten() {
       return fieldSetFlags()[6];
     }
 
 
     /**
-      * Clears the value of the 'anzahlMonatlicheNebenmahlzeiten' field.
+      * Clears the value of the 'anzahlNebenmahlzeiten' field.
       * @return This builder.
       */
-    public ch.dvbern.kibon.exchange.commons.platzbestaetigung.ZeitabschnittDTO.Builder clearAnzahlMonatlicheNebenmahlzeiten() {
+    public ch.dvbern.kibon.exchange.commons.platzbestaetigung.ZeitabschnittDTO.Builder clearAnzahlNebenmahlzeiten() {
+      anzahlNebenmahlzeiten = null;
       fieldSetFlags()[6] = false;
       return this;
     }
@@ -833,8 +835,8 @@ static {
         record.von = fieldSetFlags()[2] ? this.von : (java.time.LocalDate) defaultValue(fields()[2]);
         record.bis = fieldSetFlags()[3] ? this.bis : (java.time.LocalDate) defaultValue(fields()[3]);
         record.pensumUnit = fieldSetFlags()[4] ? this.pensumUnit : (ch.dvbern.kibon.exchange.commons.types.Zeiteinheit) defaultValue(fields()[4]);
-        record.anzahlMonatlicheHauptmahlzeiten = fieldSetFlags()[5] ? this.anzahlMonatlicheHauptmahlzeiten : (java.lang.Integer) defaultValue(fields()[5]);
-        record.anzahlMonatlicheNebenmahlzeiten = fieldSetFlags()[6] ? this.anzahlMonatlicheNebenmahlzeiten : (java.lang.Integer) defaultValue(fields()[6]);
+        record.anzahlHauptmahlzeiten = fieldSetFlags()[5] ? this.anzahlHauptmahlzeiten : (java.math.BigDecimal) defaultValue(fields()[5]);
+        record.anzahlNebenmahlzeiten = fieldSetFlags()[6] ? this.anzahlNebenmahlzeiten : (java.math.BigDecimal) defaultValue(fields()[6]);
         record.tarifProHauptmahlzeiten = fieldSetFlags()[7] ? this.tarifProHauptmahlzeiten : (java.math.BigDecimal) defaultValue(fields()[7]);
         record.tarifProNebenmahlzeiten = fieldSetFlags()[8] ? this.tarifProNebenmahlzeiten : (java.math.BigDecimal) defaultValue(fields()[8]);
         return record;
