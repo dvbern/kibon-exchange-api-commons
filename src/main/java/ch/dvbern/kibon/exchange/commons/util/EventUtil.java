@@ -28,6 +28,10 @@ public final class EventUtil {
 	 * suitable event handlers.
 	 */
 	public static final String MESSAGE_HEADER_EVENT_TYPE = "eventType";
+	/**
+	 * clientName: can be used by consumers to identify the client who sended the event
+	 */
+	public static final String MESSAGE_HEADER_CLIENT_NAME = "clientName";
 
 	private EventUtil() {
 		// util

@@ -25,18 +25,18 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.is;
 
-class DateConverterTest {
+class TimestampConverterTest {
 
 	@Test
 	void serialize() {
 		Instant instant = Instant.ofEpochSecond(2, 1005_001_001);
 
 		// note: nanos are stripped off
-		assertThat(DateConverter.serialize(instant), is(3_005_001L));
+		assertThat(TimestampConverter.serialize(instant), is(3_005_001L));
 	}
 
 	@Test
 	void deserialize() {
-		assertThat(DateConverter.deserialize(1_005_001L), equalTo(Instant.ofEpochSecond(1, 5_001_000)));
+		assertThat(TimestampConverter.deserialize(1_005_001L), equalTo(Instant.ofEpochSecond(1, 5_001_000)));
 	}
 }

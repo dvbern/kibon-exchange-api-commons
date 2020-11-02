@@ -28,7 +28,7 @@ import javax.annotation.Nonnull;
 
 import ch.dvbern.kibon.exchange.commons.types.BetreuungsangebotTyp;
 import ch.dvbern.kibon.exchange.commons.types.Wochentag;
-import ch.dvbern.kibon.exchange.commons.util.DateConverter;
+import ch.dvbern.kibon.exchange.commons.util.TimestampConverter;
 import ch.dvbern.kibon.exchange.commons.util.TimeConverter;
 import com.github.javafaker.Faker;
 
@@ -58,7 +58,7 @@ public final class InstitutionEventTestUtil {
 			.setSubventioniertePlaetze(FAKER.bool().bool())
 			.setAnzahlPlaetze(getRandomBigDecimal())
 			.setAnzahlPlaetzeFirmen(getRandomBigDecimal())
-			.setTimestampMutiert(DateConverter.serialize(DateConverter.of(LocalDateTime.now())))
+			.setTimestampMutiert(TimestampConverter.serialize(TimestampConverter.of(LocalDateTime.now())))
 			.build();
 
 		return dto;
