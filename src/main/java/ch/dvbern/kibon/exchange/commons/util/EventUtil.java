@@ -31,7 +31,7 @@ public final class EventUtil {
 	/**
 	 * clientName: can be used by consumers to identify the client who sended the event
 	 */
-	public static final String MESSAGE_HEADER_CLIENT_ NAME = "clientName";
+	public static final String MESSAGE_HEADER_CLIENT_NAME = "clientName";
 
 	private EventUtil() {
 		// util
