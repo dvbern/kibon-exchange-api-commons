@@ -114,6 +114,14 @@
 						"default": null
 					},
 					{
+						"name": "alternativeEmail",
+						"type": [
+							"null",
+							"string"
+						],
+						"default": null
+					},
+					{
 						"name": "telefon",
 						"type": [
 							"null",
