@@ -14,8 +14,8 @@ import org.apache.avro.message.SchemaStore;
 
 @org.apache.avro.specific.AvroGenerated
 public class KontaktAngabenDTO extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = -3831738950510678309L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"KontaktAngabenDTO\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.institution\",\"fields\":[{\"name\":\"anschrift\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"strasse\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"hausnummer\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"adresszusatz\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"plz\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"ort\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"land\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"gemeinde\",\"type\":{\"type\":\"record\",\"name\":\"GemeindeDTO\",\"fields\":[{\"name\":\"name\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"bfsNummer\",\"type\":[\"null\",\"long\"],\"default\":null}]},\"default\":{\"name\":null,\"bfsNummer\":null}},{\"name\":\"email\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"alternativeEmail\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"telefon\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"webseite\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null}],\"aliases\":[\"AdresseDTO\"]}");
+  private static final long serialVersionUID = -4243564648028306189L;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"KontaktAngabenDTO\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.institution\",\"fields\":[{\"name\":\"anschrift\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"strasse\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"hausnummer\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"adresszusatz\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"plz\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"ort\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"land\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"gemeinde\",\"type\":{\"type\":\"record\",\"name\":\"GemeindeDTO\",\"fields\":[{\"name\":\"name\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"bfsNummer\",\"type\":[\"null\",\"long\"],\"default\":null}]},\"default\":{\"name\":null,\"bfsNummer\":null}},{\"name\":\"email\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"telefon\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"webseite\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null}],\"aliases\":[\"AdresseDTO\"]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static SpecificData MODEL$ = new SpecificData();
@@ -80,7 +80,6 @@ public class KontaktAngabenDTO extends org.apache.avro.specific.SpecificRecordBa
    private java.lang.String land;
    private ch.dvbern.kibon.exchange.commons.institution.GemeindeDTO gemeinde;
    private java.lang.String email;
-   private java.lang.String alternativeEmail;
    private java.lang.String telefon;
    private java.lang.String webseite;
 
@@ -102,11 +101,10 @@ public class KontaktAngabenDTO extends org.apache.avro.specific.SpecificRecordBa
    * @param land The new value for land
    * @param gemeinde The new value for gemeinde
    * @param email The new value for email
-   * @param alternativeEmail The new value for alternativeEmail
    * @param telefon The new value for telefon
    * @param webseite The new value for webseite
    */
-  public KontaktAngabenDTO(java.lang.String anschrift, java.lang.String strasse, java.lang.String hausnummer, java.lang.String adresszusatz, java.lang.String plz, java.lang.String ort, java.lang.String land, ch.dvbern.kibon.exchange.commons.institution.GemeindeDTO gemeinde, java.lang.String email, java.lang.String alternativeEmail, java.lang.String telefon, java.lang.String webseite) {
+  public KontaktAngabenDTO(java.lang.String anschrift, java.lang.String strasse, java.lang.String hausnummer, java.lang.String adresszusatz, java.lang.String plz, java.lang.String ort, java.lang.String land, ch.dvbern.kibon.exchange.commons.institution.GemeindeDTO gemeinde, java.lang.String email, java.lang.String telefon, java.lang.String webseite) {
     this.anschrift = anschrift;
     this.strasse = strasse;
     this.hausnummer = hausnummer;
@@ -116,7 +114,6 @@ public class KontaktAngabenDTO extends org.apache.avro.specific.SpecificRecordBa
     this.land = land;
     this.gemeinde = gemeinde;
     this.email = email;
-    this.alternativeEmail = alternativeEmail;
     this.telefon = telefon;
     this.webseite = webseite;
   }
@@ -135,9 +132,8 @@ public class KontaktAngabenDTO extends org.apache.avro.specific.SpecificRecordBa
     case 6: return land;
     case 7: return gemeinde;
     case 8: return email;
-    case 9: return alternativeEmail;
-    case 10: return telefon;
-    case 11: return webseite;
+    case 9: return telefon;
+    case 10: return webseite;
     default: throw new IndexOutOfBoundsException("Invalid index: " + field$);
     }
   }
@@ -155,9 +151,8 @@ public class KontaktAngabenDTO extends org.apache.avro.specific.SpecificRecordBa
     case 6: land = value$ != null ? value$.toString() : null; break;
     case 7: gemeinde = (ch.dvbern.kibon.exchange.commons.institution.GemeindeDTO)value$; break;
     case 8: email = value$ != null ? value$.toString() : null; break;
-    case 9: alternativeEmail = value$ != null ? value$.toString() : null; break;
-    case 10: telefon = value$ != null ? value$.toString() : null; break;
-    case 11: webseite = value$ != null ? value$.toString() : null; break;
+    case 9: telefon = value$ != null ? value$.toString() : null; break;
+    case 10: webseite = value$ != null ? value$.toString() : null; break;
     default: throw new IndexOutOfBoundsException("Invalid index: " + field$);
     }
   }
@@ -316,23 +311,6 @@ public class KontaktAngabenDTO extends org.apache.avro.specific.SpecificRecordBa
   }
 
   /**
-   * Gets the value of the 'alternativeEmail' field.
-   * @return The value of the 'alternativeEmail' field.
-   */
-  public java.lang.String getAlternativeEmail() {
-    return alternativeEmail;
-  }
-
-
-  /**
-   * Sets the value of the 'alternativeEmail' field.
-   * @param value the value to set.
-   */
-  public void setAlternativeEmail(java.lang.String value) {
-    this.alternativeEmail = value;
-  }
-
-  /**
    * Gets the value of the 'telefon' field.
    * @return The value of the 'telefon' field.
    */
@@ -417,7 +395,6 @@ public class KontaktAngabenDTO extends org.apache.avro.specific.SpecificRecordBa
     private ch.dvbern.kibon.exchange.commons.institution.GemeindeDTO gemeinde;
     private ch.dvbern.kibon.exchange.commons.institution.GemeindeDTO.Builder gemeindeBuilder;
     private java.lang.String email;
-    private java.lang.String alternativeEmail;
     private java.lang.String telefon;
     private java.lang.String webseite;
 
@@ -471,17 +448,13 @@ public class KontaktAngabenDTO extends org.apache.avro.specific.SpecificRecordBa
         this.email = data().deepCopy(fields()[8].schema(), other.email);
         fieldSetFlags()[8] = other.fieldSetFlags()[8];
       }
-      if (isValidValue(fields()[9], other.alternativeEmail)) {
-        this.alternativeEmail = data().deepCopy(fields()[9].schema(), other.alternativeEmail);
+      if (isValidValue(fields()[9], other.telefon)) {
+        this.telefon = data().deepCopy(fields()[9].schema(), other.telefon);
         fieldSetFlags()[9] = other.fieldSetFlags()[9];
       }
-      if (isValidValue(fields()[10], other.telefon)) {
-        this.telefon = data().deepCopy(fields()[10].schema(), other.telefon);
+      if (isValidValue(fields()[10], other.webseite)) {
+        this.webseite = data().deepCopy(fields()[10].schema(), other.webseite);
         fieldSetFlags()[10] = other.fieldSetFlags()[10];
-      }
-      if (isValidValue(fields()[11], other.webseite)) {
-        this.webseite = data().deepCopy(fields()[11].schema(), other.webseite);
-        fieldSetFlags()[11] = other.fieldSetFlags()[11];
       }
     }
 
@@ -528,17 +501,13 @@ public class KontaktAngabenDTO extends org.apache.avro.specific.SpecificRecordBa
         this.email = data().deepCopy(fields()[8].schema(), other.email);
         fieldSetFlags()[8] = true;
       }
-      if (isValidValue(fields()[9], other.alternativeEmail)) {
-        this.alternativeEmail = data().deepCopy(fields()[9].schema(), other.alternativeEmail);
+      if (isValidValue(fields()[9], other.telefon)) {
+        this.telefon = data().deepCopy(fields()[9].schema(), other.telefon);
         fieldSetFlags()[9] = true;
       }
-      if (isValidValue(fields()[10], other.telefon)) {
-        this.telefon = data().deepCopy(fields()[10].schema(), other.telefon);
+      if (isValidValue(fields()[10], other.webseite)) {
+        this.webseite = data().deepCopy(fields()[10].schema(), other.webseite);
         fieldSetFlags()[10] = true;
-      }
-      if (isValidValue(fields()[11], other.webseite)) {
-        this.webseite = data().deepCopy(fields()[11].schema(), other.webseite);
-        fieldSetFlags()[11] = true;
       }
     }
 
@@ -938,46 +907,6 @@ public class KontaktAngabenDTO extends org.apache.avro.specific.SpecificRecordBa
     }
 
     /**
-      * Gets the value of the 'alternativeEmail' field.
-      * @return The value.
-      */
-    public java.lang.String getAlternativeEmail() {
-      return alternativeEmail;
-    }
-
-
-    /**
-      * Sets the value of the 'alternativeEmail' field.
-      * @param value The value of 'alternativeEmail'.
-      * @return This builder.
-      */
-    public ch.dvbern.kibon.exchange.commons.institution.KontaktAngabenDTO.Builder setAlternativeEmail(java.lang.String value) {
-      validate(fields()[9], value);
-      this.alternativeEmail = value;
-      fieldSetFlags()[9] = true;
-      return this;
-    }
-
-    /**
-      * Checks whether the 'alternativeEmail' field has been set.
-      * @return True if the 'alternativeEmail' field has been set, false otherwise.
-      */
-    public boolean hasAlternativeEmail() {
-      return fieldSetFlags()[9];
-    }
-
-
-    /**
-      * Clears the value of the 'alternativeEmail' field.
-      * @return This builder.
-      */
-    public ch.dvbern.kibon.exchange.commons.institution.KontaktAngabenDTO.Builder clearAlternativeEmail() {
-      alternativeEmail = null;
-      fieldSetFlags()[9] = false;
-      return this;
-    }
-
-    /**
       * Gets the value of the 'telefon' field.
       * @return The value.
       */
@@ -992,9 +921,9 @@ public class KontaktAngabenDTO extends org.apache.avro.specific.SpecificRecordBa
       * @return This builder.
       */
     public ch.dvbern.kibon.exchange.commons.institution.KontaktAngabenDTO.Builder setTelefon(java.lang.String value) {
-      validate(fields()[10], value);
+      validate(fields()[9], value);
       this.telefon = value;
-      fieldSetFlags()[10] = true;
+      fieldSetFlags()[9] = true;
       return this;
     }
 
@@ -1003,7 +932,7 @@ public class KontaktAngabenDTO extends org.apache.avro.specific.SpecificRecordBa
       * @return True if the 'telefon' field has been set, false otherwise.
       */
     public boolean hasTelefon() {
-      return fieldSetFlags()[10];
+      return fieldSetFlags()[9];
     }
 
 
@@ -1013,7 +942,7 @@ public class KontaktAngabenDTO extends org.apache.avro.specific.SpecificRecordBa
       */
     public ch.dvbern.kibon.exchange.commons.institution.KontaktAngabenDTO.Builder clearTelefon() {
       telefon = null;
-      fieldSetFlags()[10] = false;
+      fieldSetFlags()[9] = false;
       return this;
     }
 
@@ -1032,9 +961,9 @@ public class KontaktAngabenDTO extends org.apache.avro.specific.SpecificRecordBa
       * @return This builder.
       */
     public ch.dvbern.kibon.exchange.commons.institution.KontaktAngabenDTO.Builder setWebseite(java.lang.String value) {
-      validate(fields()[11], value);
+      validate(fields()[10], value);
       this.webseite = value;
-      fieldSetFlags()[11] = true;
+      fieldSetFlags()[10] = true;
       return this;
     }
 
@@ -1043,7 +972,7 @@ public class KontaktAngabenDTO extends org.apache.avro.specific.SpecificRecordBa
       * @return True if the 'webseite' field has been set, false otherwise.
       */
     public boolean hasWebseite() {
-      return fieldSetFlags()[11];
+      return fieldSetFlags()[10];
     }
 
 
@@ -1053,7 +982,7 @@ public class KontaktAngabenDTO extends org.apache.avro.specific.SpecificRecordBa
       */
     public ch.dvbern.kibon.exchange.commons.institution.KontaktAngabenDTO.Builder clearWebseite() {
       webseite = null;
-      fieldSetFlags()[11] = false;
+      fieldSetFlags()[10] = false;
       return this;
     }
 
@@ -1080,9 +1009,8 @@ public class KontaktAngabenDTO extends org.apache.avro.specific.SpecificRecordBa
           record.gemeinde = fieldSetFlags()[7] ? this.gemeinde : (ch.dvbern.kibon.exchange.commons.institution.GemeindeDTO) defaultValue(fields()[7]);
         }
         record.email = fieldSetFlags()[8] ? this.email : (java.lang.String) defaultValue(fields()[8]);
-        record.alternativeEmail = fieldSetFlags()[9] ? this.alternativeEmail : (java.lang.String) defaultValue(fields()[9]);
-        record.telefon = fieldSetFlags()[10] ? this.telefon : (java.lang.String) defaultValue(fields()[10]);
-        record.webseite = fieldSetFlags()[11] ? this.webseite : (java.lang.String) defaultValue(fields()[11]);
+        record.telefon = fieldSetFlags()[9] ? this.telefon : (java.lang.String) defaultValue(fields()[9]);
+        record.webseite = fieldSetFlags()[10] ? this.webseite : (java.lang.String) defaultValue(fields()[10]);
         return record;
       } catch (org.apache.avro.AvroMissingFieldException e) {
         throw e;
@@ -1157,14 +1085,6 @@ public class KontaktAngabenDTO extends org.apache.avro.specific.SpecificRecordBa
       out.writeString(this.email);
     }
 
-    if (this.alternativeEmail == null) {
-      out.writeIndex(0);
-      out.writeNull();
-    } else {
-      out.writeIndex(1);
-      out.writeString(this.alternativeEmail);
-    }
-
     if (this.telefon == null) {
       out.writeIndex(0);
       out.writeNull();
@@ -1231,13 +1151,6 @@ public class KontaktAngabenDTO extends org.apache.avro.specific.SpecificRecordBa
 
       if (in.readIndex() != 1) {
         in.readNull();
-        this.alternativeEmail = null;
-      } else {
-        this.alternativeEmail = in.readString();
-      }
-
-      if (in.readIndex() != 1) {
-        in.readNull();
         this.telefon = null;
       } else {
         this.telefon = in.readString();
@@ -1251,7 +1164,7 @@ public class KontaktAngabenDTO extends org.apache.avro.specific.SpecificRecordBa
       }
 
     } else {
-      for (int i = 0; i < 12; i++) {
+      for (int i = 0; i < 11; i++) {
         switch (fieldOrder[i].pos()) {
         case 0:
           if (in.readIndex() != 1) {
@@ -1315,22 +1228,13 @@ public class KontaktAngabenDTO extends org.apache.avro.specific.SpecificRecordBa
         case 9:
           if (in.readIndex() != 1) {
             in.readNull();
-            this.alternativeEmail = null;
-          } else {
-            this.alternativeEmail = in.readString();
-          }
-          break;
-
-        case 10:
-          if (in.readIndex() != 1) {
-            in.readNull();
             this.telefon = null;
           } else {
             this.telefon = in.readString();
           }
           break;
 
-        case 11:
+        case 10:
           if (in.readIndex() != 1) {
             in.readNull();
             this.webseite = null;
