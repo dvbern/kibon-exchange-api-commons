@@ -162,6 +162,7 @@
                                 <import>${project.basedir}/src/main/avro/ch/dvbern/kibon/exchange/commons/verfuegung/KindDTOv2.avsc</import>
                                 <import>${project.basedir}/src/main/avro/ch/dvbern/kibon/exchange/commons/verfuegung/GesuchstellerDTOv2.avsc</import>
                                 <import>${project.basedir}/src/main/avro/ch/dvbern/kibon/exchange/commons/tagesschulen/ModulAuswahlDTO.avsc</import>
+                                <import>${project.basedir}/src/main/avro/ch/dvbern/kibon/exchange/commons/tagesschulen/ModulDTO.avsc</import>
                             </imports>
                         </configuration>
                     </execution>
@@ -183,7 +184,7 @@
                         <VerfuegungEvents-value>src/main/avro/ch/dvbern/kibon/exchange/commons/verfuegung/VerfuegungEventDTOv2.avsc</VerfuegungEvents-value>
                         <BetreuungAnfrageEvents-value>src/main/avro/ch/dvbern/kibon/exchange/commons/platzbestaetigung/BetreuungAnfrageEventDTO.avsc</BetreuungAnfrageEvents-value>
                         <BetreuungEvents-value>src/main/avro/ch/dvbern/kibon/exchange/commons/platzbestaetigung/BetreuungEventDTO.avsc</BetreuungEvents-value>
-                        <BetreuungEvents-value>src/main/avro/ch/dvbern/kibon/exchange/commons/tagesschulen/TagesschuleAnmeldungEventDTO.avsc</BetreuungEvents-value>
+                        <TagesschuleAnmeldungEventDTO-value>src/main/avro/ch/dvbern/kibon/exchange/commons/tagesschulen/TagesschuleAnmeldungEventDTO.avsc</TagesschuleAnmeldungEventDTO-value>
                     </subjects>
                 </configuration>
                 <goals>
