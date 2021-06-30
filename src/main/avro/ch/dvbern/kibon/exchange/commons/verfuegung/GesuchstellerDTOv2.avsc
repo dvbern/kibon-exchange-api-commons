@@ -1,6 +1,6 @@
 {
 	"type": "record",
-	"name": "GesuchstellerDTOv1",
+	"name": "GesuchstellerDTO",
 	"namespace": "ch.dvbern.kibon.exchange.commons.verfuegung",
 	"fields": [
 		{
@@ -16,6 +16,33 @@
 			"type": [
 				"null",
 				"string"
+			],
+			"default": null
+		},
+		{
+			"name": "geschlecht",
+			"type": [
+				"null",
+				"string"
+			],
+			"default": null
+		},
+		{
+			"name": "geburtsdatum",
+			"type": [
+				"null",
+				{
+					"type": "int",
+					"logicalType": "date"
+				}
+			],
+			"default": null
+		},
+		{
+			"name": "adresse",
+			"type": [
+				"null",
+				"ch.dvbern.kibon.exchange.commons.types.AdresseDTO"
 			],
 			"default": null
 		}
