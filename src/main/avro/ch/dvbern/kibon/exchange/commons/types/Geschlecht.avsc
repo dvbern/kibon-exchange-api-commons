@@ -1,0 +1,9 @@
+{
+	"type": "enum",
+	"name": "Geschlecht",
+	"namespace": "ch.dvbern.kibon.exchange.commons.types",
+	"symbols": [
+		"WEIBLICH",
+		"MAENNLICH"
+	]
+}

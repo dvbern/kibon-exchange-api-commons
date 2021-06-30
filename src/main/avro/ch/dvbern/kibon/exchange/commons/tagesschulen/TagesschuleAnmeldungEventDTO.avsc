@@ -59,6 +59,10 @@
 		{
 			"name": "bemerkung",
 			"type": "string"
+		},
+		{
+			"name": "kind",
+			"type": "ch.dvbern.kibon.exchange.commons.verfuegung.KindDTO"
 		}
 	]
 }
