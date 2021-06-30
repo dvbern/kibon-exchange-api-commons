@@ -1,0 +1,21 @@
+{
+	"type": "record",
+	"name": "Gesuchsperiode",
+	"namespace": "ch.dvbern.kibon.exchange.commons.types",
+	"fields": [
+		{
+			"name": "gueltigAb",
+			"type": {
+				"type": "int",
+				"logicalType": "date"
+			}
+		},
+		{
+			"name": "gueltigBis",
+			"type": {
+				"type": "int",
+				"logicalType": "date"
+			}
+		}
+	]
+}
