@@ -14,8 +14,8 @@ import org.apache.avro.message.SchemaStore;
 
 @org.apache.avro.specific.AvroGenerated
 public class KindDTO extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = 9136460141268773488L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"KindDTO\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.verfuegung\",\"fields\":[{\"name\":\"vorname\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"nachname\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"geburtsdatum\",\"type\":{\"type\":\"int\",\"logicalType\":\"date\"}}]}");
+  private static final long serialVersionUID = 1510065426949859726L;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"KindDTO\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.verfuegung\",\"fields\":[{\"name\":\"vorname\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"nachname\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"geburtsdatum\",\"type\":{\"type\":\"int\",\"logicalType\":\"date\"}},{\"name\":\"geschlecht\",\"type\":[\"null\",{\"type\":\"enum\",\"name\":\"Geschlecht\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.types\",\"symbols\":[\"WEIBLICH\",\"MAENNLICH\"]}],\"default\":null}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static SpecificData MODEL$ = new SpecificData();
@@ -77,6 +77,7 @@ static {
    private java.lang.String vorname;
    private java.lang.String nachname;
    private java.time.LocalDate geburtsdatum;
+   private ch.dvbern.kibon.exchange.commons.types.Geschlecht geschlecht;
 
   /**
    * Default constructor.  Note that this does not initialize fields
@@ -90,11 +91,13 @@ static {
    * @param vorname The new value for vorname
    * @param nachname The new value for nachname
    * @param geburtsdatum The new value for geburtsdatum
+   * @param geschlecht The new value for geschlecht
    */
-  public KindDTO(java.lang.String vorname, java.lang.String nachname, java.time.LocalDate geburtsdatum) {
+  public KindDTO(java.lang.String vorname, java.lang.String nachname, java.time.LocalDate geburtsdatum, ch.dvbern.kibon.exchange.commons.types.Geschlecht geschlecht) {
     this.vorname = vorname;
     this.nachname = nachname;
     this.geburtsdatum = geburtsdatum;
+    this.geschlecht = geschlecht;
   }
 
   public org.apache.avro.specific.SpecificData getSpecificData() { return MODEL$; }
@@ -105,6 +108,7 @@ static {
     case 0: return vorname;
     case 1: return nachname;
     case 2: return geburtsdatum;
+    case 3: return geschlecht;
     default: throw new IndexOutOfBoundsException("Invalid index: " + field$);
     }
   }
@@ -114,6 +118,7 @@ static {
       null,
       null,
       new org.apache.avro.data.TimeConversions.DateConversion(),
+      null,
       null
   };
 
@@ -129,6 +134,7 @@ static {
     case 0: vorname = value$ != null ? value$.toString() : null; break;
     case 1: nachname = value$ != null ? value$.toString() : null; break;
     case 2: geburtsdatum = (java.time.LocalDate)value$; break;
+    case 3: geschlecht = (ch.dvbern.kibon.exchange.commons.types.Geschlecht)value$; break;
     default: throw new IndexOutOfBoundsException("Invalid index: " + field$);
     }
   }
@@ -185,6 +191,23 @@ static {
   }
 
   /**
+   * Gets the value of the 'geschlecht' field.
+   * @return The value of the 'geschlecht' field.
+   */
+  public ch.dvbern.kibon.exchange.commons.types.Geschlecht getGeschlecht() {
+    return geschlecht;
+  }
+
+
+  /**
+   * Sets the value of the 'geschlecht' field.
+   * @param value the value to set.
+   */
+  public void setGeschlecht(ch.dvbern.kibon.exchange.commons.types.Geschlecht value) {
+    this.geschlecht = value;
+  }
+
+  /**
    * Creates a new KindDTO RecordBuilder.
    * @return A new KindDTO RecordBuilder
    */
@@ -228,6 +251,7 @@ static {
     private java.lang.String vorname;
     private java.lang.String nachname;
     private java.time.LocalDate geburtsdatum;
+    private ch.dvbern.kibon.exchange.commons.types.Geschlecht geschlecht;
 
     /** Creates a new Builder */
     private Builder() {
@@ -252,6 +276,10 @@ static {
         this.geburtsdatum = data().deepCopy(fields()[2].schema(), other.geburtsdatum);
         fieldSetFlags()[2] = other.fieldSetFlags()[2];
       }
+      if (isValidValue(fields()[3], other.geschlecht)) {
+        this.geschlecht = data().deepCopy(fields()[3].schema(), other.geschlecht);
+        fieldSetFlags()[3] = other.fieldSetFlags()[3];
+      }
     }
 
     /**
@@ -271,6 +299,10 @@ static {
       if (isValidValue(fields()[2], other.geburtsdatum)) {
         this.geburtsdatum = data().deepCopy(fields()[2].schema(), other.geburtsdatum);
         fieldSetFlags()[2] = true;
+      }
+      if (isValidValue(fields()[3], other.geschlecht)) {
+        this.geschlecht = data().deepCopy(fields()[3].schema(), other.geschlecht);
+        fieldSetFlags()[3] = true;
       }
     }
 
@@ -393,6 +425,46 @@ static {
       return this;
     }
 
+    /**
+      * Gets the value of the 'geschlecht' field.
+      * @return The value.
+      */
+    public ch.dvbern.kibon.exchange.commons.types.Geschlecht getGeschlecht() {
+      return geschlecht;
+    }
+
+
+    /**
+      * Sets the value of the 'geschlecht' field.
+      * @param value The value of 'geschlecht'.
+      * @return This builder.
+      */
+    public ch.dvbern.kibon.exchange.commons.verfuegung.KindDTO.Builder setGeschlecht(ch.dvbern.kibon.exchange.commons.types.Geschlecht value) {
+      validate(fields()[3], value);
+      this.geschlecht = value;
+      fieldSetFlags()[3] = true;
+      return this;
+    }
+
+    /**
+      * Checks whether the 'geschlecht' field has been set.
+      * @return True if the 'geschlecht' field has been set, false otherwise.
+      */
+    public boolean hasGeschlecht() {
+      return fieldSetFlags()[3];
+    }
+
+
+    /**
+      * Clears the value of the 'geschlecht' field.
+      * @return This builder.
+      */
+    public ch.dvbern.kibon.exchange.commons.verfuegung.KindDTO.Builder clearGeschlecht() {
+      geschlecht = null;
+      fieldSetFlags()[3] = false;
+      return this;
+    }
+
     @Override
     @SuppressWarnings("unchecked")
     public KindDTO build() {
@@ -401,6 +473,7 @@ static {
         record.vorname = fieldSetFlags()[0] ? this.vorname : (java.lang.String) defaultValue(fields()[0]);
         record.nachname = fieldSetFlags()[1] ? this.nachname : (java.lang.String) defaultValue(fields()[1]);
         record.geburtsdatum = fieldSetFlags()[2] ? this.geburtsdatum : (java.time.LocalDate) defaultValue(fields()[2]);
+        record.geschlecht = fieldSetFlags()[3] ? this.geschlecht : (ch.dvbern.kibon.exchange.commons.types.Geschlecht) defaultValue(fields()[3]);
         return record;
       } catch (org.apache.avro.AvroMissingFieldException e) {
         throw e;

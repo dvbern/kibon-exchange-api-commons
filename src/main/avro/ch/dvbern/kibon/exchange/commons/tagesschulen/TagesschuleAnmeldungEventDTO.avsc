@@ -63,6 +63,18 @@
 		{
 			"name": "kind",
 			"type": "ch.dvbern.kibon.exchange.commons.verfuegung.KindDTO"
+		},
+		{
+			"name": "antragstellendePerson",
+			"type": "ch.dvbern.kibon.exchange.commons.verfuegung.GesuchstellerDTO"
+		},
+		{
+			"name": "modulSelection",
+			"type": {
+				"type": "array",
+				"items": "ch.dvbern.kibon.exchange.commons.tagesschulen.ModulAuswahlDTO",
+				"java-class": "java.util.List"
+			}
 		}
 	]
 }
