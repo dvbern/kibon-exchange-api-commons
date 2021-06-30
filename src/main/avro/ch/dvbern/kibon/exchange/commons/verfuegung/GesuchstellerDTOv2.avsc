@@ -1,0 +1,23 @@
+{
+	"type": "record",
+	"name": "GesuchstellerDTOv1",
+	"namespace": "ch.dvbern.kibon.exchange.commons.verfuegung",
+	"fields": [
+		{
+			"name": "vorname",
+			"type": "string"
+		},
+		{
+			"name": "nachname",
+			"type": "string"
+		},
+		{
+			"name": "email",
+			"type": [
+				"null",
+				"string"
+			],
+			"default": null
+		}
+	]
+}
