@@ -1,0 +1,46 @@
+{
+	"type": "record",
+	"name": "TagesschuleAnmeldungEventDTO",
+	"namespace": "ch.dvbern.kibon.exchange.commons.tagesschulen",
+	"fields": [
+		{
+			"name": "institutionId",
+			"type": "string"
+		},
+		{
+			"name": "version",
+			"type": "int"
+		},
+		{
+			"name": "freigegebenAm",
+			"type": {
+				"type": "int",
+				"logicalType": "date"
+			}
+		},
+		{
+			"name": "gesuchsperiode",
+			"type": "ch.dvbern.kibon.exchange.commons.types.Gesuchsperiode"
+		},
+		{
+			"name": "kind",
+			"type": "ch.dvbern.kibon.exchange.commons.verfuegung.KindDTO"
+		},
+		{
+			"name": "antragstellendePerson",
+			"type": "ch.dvbern.kibon.exchange.commons.verfuegung.GesuchstellerDTO"
+		},
+		{
+			"name": "anmeldungsDetails",
+			"type": "ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleAnmeldungDetailsDTO"
+		},
+		{
+			"name": "tarife",
+			"type": [
+				"null",
+				"ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleAnmeldungTarifeDTO"
+			],
+			"default": null
+		}
+	]
+}

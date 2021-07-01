@@ -164,6 +164,8 @@
                                 <import>${project.basedir}/src/main/avro/ch/dvbern/kibon/exchange/commons/tagesschulen/ModulAuswahlDTO.avsc</import>
                                 <import>${project.basedir}/src/main/avro/ch/dvbern/kibon/exchange/commons/tagesschulen/ModulDTO.avsc</import>
                                 <import>${project.basedir}/src/main/avro/ch/dvbern/kibon/exchange/commons/tagesschulen/TarifDTO.avsc</import>
+                                <import>${project.basedir}/src/main/avro/ch/dvbern/kibon/exchange/commons/tagesschulen/TagesschuleAnmeldungTarifeDTO.avsc</import>
+                                <import>${project.basedir}/src/main/avro/ch/dvbern/kibon/exchange/commons/tagesschulen/TagesschuleAnmeldungDetailsDTO.avsc</import>
                             </imports>
                         </configuration>
                     </execution>
@@ -185,7 +187,8 @@
                         <VerfuegungEvents-value>src/main/avro/ch/dvbern/kibon/exchange/commons/verfuegung/VerfuegungEventDTOv2.avsc</VerfuegungEvents-value>
                         <BetreuungAnfrageEvents-value>src/main/avro/ch/dvbern/kibon/exchange/commons/platzbestaetigung/BetreuungAnfrageEventDTO.avsc</BetreuungAnfrageEvents-value>
                         <BetreuungEvents-value>src/main/avro/ch/dvbern/kibon/exchange/commons/platzbestaetigung/BetreuungEventDTO.avsc</BetreuungEvents-value>
-                        <TagesschuleAnmeldungEventDTO-value>src/main/avro/ch/dvbern/kibon/exchange/commons/tagesschulen/TagesschuleAnmeldungDTO.avsc</TagesschuleAnmeldungEventDTO-value>
+                        <TagesschuleAnmeldungDetailsDTO-value>src/main/avro/ch/dvbern/kibon/exchange/commons/tagesschulen/TagesschuleAnmeldungDetailsDTO.avsc</TagesschuleAnmeldungDetailsDTO-value>
+                        <TagesschuleAnmeldungEventDTO-value>src/main/avro/ch/dvbern/kibon/exchange/commons/tagesschulen/TagesschuleAnmeldungEventDTO.avsc</TagesschuleAnmeldungEventDTO-value>
                     </subjects>
                 </configuration>
                 <goals>
