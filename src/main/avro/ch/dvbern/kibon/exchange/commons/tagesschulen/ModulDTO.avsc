@@ -57,6 +57,10 @@
 				"precision": 19,
 				"scale": 2
 			}
+		},
+		{
+			"name": "gesuchsperiode",
+			"type": "ch.dvbern.kibon.exchange.commons.types.Gesuchsperiode"
 		}
 	]
 }

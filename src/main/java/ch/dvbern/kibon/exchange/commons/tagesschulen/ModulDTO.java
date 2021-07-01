@@ -14,12 +14,13 @@ import org.apache.avro.message.SchemaStore;
 
 @org.apache.avro.specific.AvroGenerated
 public class ModulDTO extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = 1163283478432381163L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"ModulDTO\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.tagesschulen\",\"fields\":[{\"name\":\"id\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"bezeichnungDE\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"bezeichnungFR\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"zeitVon\",\"type\":{\"type\":\"int\",\"logicalType\":\"time-millis\"}},{\"name\":\"zeitBis\",\"type\":{\"type\":\"int\",\"logicalType\":\"time-millis\"}},{\"name\":\"wochentage\",\"type\":{\"type\":\"array\",\"items\":\"int\",\"java-class\":\"java.util.List\"}},{\"name\":\"intervalle\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"enum\",\"name\":\"Intervall\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.types\",\"symbols\":[\"WOECHENTLICH\",\"ALLE_ZWEI_WOCHEN\"]},\"java-class\":\"java.util.List\"}},{\"name\":\"padaegogischBetreut\",\"type\":\"boolean\"},{\"name\":\"verpflegungsKosten\",\"type\":{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}}]}");
+  private static final long serialVersionUID = -966892447779671864L;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"ModulDTO\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.tagesschulen\",\"fields\":[{\"name\":\"id\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"bezeichnungDE\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"bezeichnungFR\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"zeitVon\",\"type\":{\"type\":\"int\",\"logicalType\":\"time-millis\"}},{\"name\":\"zeitBis\",\"type\":{\"type\":\"int\",\"logicalType\":\"time-millis\"}},{\"name\":\"wochentage\",\"type\":{\"type\":\"array\",\"items\":\"int\",\"java-class\":\"java.util.List\"}},{\"name\":\"intervalle\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"enum\",\"name\":\"Intervall\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.types\",\"symbols\":[\"WOECHENTLICH\",\"ALLE_ZWEI_WOCHEN\"]},\"java-class\":\"java.util.List\"}},{\"name\":\"padaegogischBetreut\",\"type\":\"boolean\"},{\"name\":\"verpflegungsKosten\",\"type\":{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}},{\"name\":\"gesuchsperiode\",\"type\":{\"type\":\"record\",\"name\":\"Gesuchsperiode\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.types\",\"fields\":[{\"name\":\"gueltigAb\",\"type\":{\"type\":\"int\",\"logicalType\":\"date\"}},{\"name\":\"gueltigBis\",\"type\":{\"type\":\"int\",\"logicalType\":\"date\"}}]}}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static SpecificData MODEL$ = new SpecificData();
 static {
+    MODEL$.addLogicalTypeConversion(new org.apache.avro.data.TimeConversions.DateConversion());
     MODEL$.addLogicalTypeConversion(new org.apache.avro.Conversions.DecimalConversion());
     MODEL$.addLogicalTypeConversion(new org.apache.avro.data.TimeConversions.TimeMillisConversion());
   }
@@ -84,6 +85,7 @@ static {
    private java.util.List<ch.dvbern.kibon.exchange.commons.types.Intervall> intervalle;
    private boolean padaegogischBetreut;
    private java.math.BigDecimal verpflegungsKosten;
+   private ch.dvbern.kibon.exchange.commons.types.Gesuchsperiode gesuchsperiode;
 
   /**
    * Default constructor.  Note that this does not initialize fields
@@ -103,8 +105,9 @@ static {
    * @param intervalle The new value for intervalle
    * @param padaegogischBetreut The new value for padaegogischBetreut
    * @param verpflegungsKosten The new value for verpflegungsKosten
+   * @param gesuchsperiode The new value for gesuchsperiode
    */
-  public ModulDTO(java.lang.String id, java.lang.String bezeichnungDE, java.lang.String bezeichnungFR, java.time.LocalTime zeitVon, java.time.LocalTime zeitBis, java.util.List<java.lang.Integer> wochentage, java.util.List<ch.dvbern.kibon.exchange.commons.types.Intervall> intervalle, java.lang.Boolean padaegogischBetreut, java.math.BigDecimal verpflegungsKosten) {
+  public ModulDTO(java.lang.String id, java.lang.String bezeichnungDE, java.lang.String bezeichnungFR, java.time.LocalTime zeitVon, java.time.LocalTime zeitBis, java.util.List<java.lang.Integer> wochentage, java.util.List<ch.dvbern.kibon.exchange.commons.types.Intervall> intervalle, java.lang.Boolean padaegogischBetreut, java.math.BigDecimal verpflegungsKosten, ch.dvbern.kibon.exchange.commons.types.Gesuchsperiode gesuchsperiode) {
     this.id = id;
     this.bezeichnungDE = bezeichnungDE;
     this.bezeichnungFR = bezeichnungFR;
@@ -114,6 +117,7 @@ static {
     this.intervalle = intervalle;
     this.padaegogischBetreut = padaegogischBetreut;
     this.verpflegungsKosten = verpflegungsKosten;
+    this.gesuchsperiode = gesuchsperiode;
   }
 
   public org.apache.avro.specific.SpecificData getSpecificData() { return MODEL$; }
@@ -130,6 +134,7 @@ static {
     case 6: return intervalle;
     case 7: return padaegogischBetreut;
     case 8: return verpflegungsKosten;
+    case 9: return gesuchsperiode;
     default: throw new IndexOutOfBoundsException("Invalid index: " + field$);
     }
   }
@@ -145,6 +150,7 @@ static {
       null,
       null,
       new org.apache.avro.Conversions.DecimalConversion(),
+      null,
       null
   };
 
@@ -166,6 +172,7 @@ static {
     case 6: intervalle = (java.util.List<ch.dvbern.kibon.exchange.commons.types.Intervall>)value$; break;
     case 7: padaegogischBetreut = (java.lang.Boolean)value$; break;
     case 8: verpflegungsKosten = (java.math.BigDecimal)value$; break;
+    case 9: gesuchsperiode = (ch.dvbern.kibon.exchange.commons.types.Gesuchsperiode)value$; break;
     default: throw new IndexOutOfBoundsException("Invalid index: " + field$);
     }
   }
@@ -324,6 +331,23 @@ static {
   }
 
   /**
+   * Gets the value of the 'gesuchsperiode' field.
+   * @return The value of the 'gesuchsperiode' field.
+   */
+  public ch.dvbern.kibon.exchange.commons.types.Gesuchsperiode getGesuchsperiode() {
+    return gesuchsperiode;
+  }
+
+
+  /**
+   * Sets the value of the 'gesuchsperiode' field.
+   * @param value the value to set.
+   */
+  public void setGesuchsperiode(ch.dvbern.kibon.exchange.commons.types.Gesuchsperiode value) {
+    this.gesuchsperiode = value;
+  }
+
+  /**
    * Creates a new ModulDTO RecordBuilder.
    * @return A new ModulDTO RecordBuilder
    */
@@ -373,6 +397,8 @@ static {
     private java.util.List<ch.dvbern.kibon.exchange.commons.types.Intervall> intervalle;
     private boolean padaegogischBetreut;
     private java.math.BigDecimal verpflegungsKosten;
+    private ch.dvbern.kibon.exchange.commons.types.Gesuchsperiode gesuchsperiode;
+    private ch.dvbern.kibon.exchange.commons.types.Gesuchsperiode.Builder gesuchsperiodeBuilder;
 
     /** Creates a new Builder */
     private Builder() {
@@ -421,6 +447,13 @@ static {
         this.verpflegungsKosten = data().deepCopy(fields()[8].schema(), other.verpflegungsKosten);
         fieldSetFlags()[8] = other.fieldSetFlags()[8];
       }
+      if (isValidValue(fields()[9], other.gesuchsperiode)) {
+        this.gesuchsperiode = data().deepCopy(fields()[9].schema(), other.gesuchsperiode);
+        fieldSetFlags()[9] = other.fieldSetFlags()[9];
+      }
+      if (other.hasGesuchsperiodeBuilder()) {
+        this.gesuchsperiodeBuilder = ch.dvbern.kibon.exchange.commons.types.Gesuchsperiode.newBuilder(other.getGesuchsperiodeBuilder());
+      }
     }
 
     /**
@@ -465,6 +498,11 @@ static {
         this.verpflegungsKosten = data().deepCopy(fields()[8].schema(), other.verpflegungsKosten);
         fieldSetFlags()[8] = true;
       }
+      if (isValidValue(fields()[9], other.gesuchsperiode)) {
+        this.gesuchsperiode = data().deepCopy(fields()[9].schema(), other.gesuchsperiode);
+        fieldSetFlags()[9] = true;
+      }
+      this.gesuchsperiodeBuilder = null;
     }
 
     /**
@@ -824,6 +862,81 @@ static {
       return this;
     }
 
+    /**
+      * Gets the value of the 'gesuchsperiode' field.
+      * @return The value.
+      */
+    public ch.dvbern.kibon.exchange.commons.types.Gesuchsperiode getGesuchsperiode() {
+      return gesuchsperiode;
+    }
+
+
+    /**
+      * Sets the value of the 'gesuchsperiode' field.
+      * @param value The value of 'gesuchsperiode'.
+      * @return This builder.
+      */
+    public ch.dvbern.kibon.exchange.commons.tagesschulen.ModulDTO.Builder setGesuchsperiode(ch.dvbern.kibon.exchange.commons.types.Gesuchsperiode value) {
+      validate(fields()[9], value);
+      this.gesuchsperiodeBuilder = null;
+      this.gesuchsperiode = value;
+      fieldSetFlags()[9] = true;
+      return this;
+    }
+
+    /**
+      * Checks whether the 'gesuchsperiode' field has been set.
+      * @return True if the 'gesuchsperiode' field has been set, false otherwise.
+      */
+    public boolean hasGesuchsperiode() {
+      return fieldSetFlags()[9];
+    }
+
+    /**
+     * Gets the Builder instance for the 'gesuchsperiode' field and creates one if it doesn't exist yet.
+     * @return This builder.
+     */
+    public ch.dvbern.kibon.exchange.commons.types.Gesuchsperiode.Builder getGesuchsperiodeBuilder() {
+      if (gesuchsperiodeBuilder == null) {
+        if (hasGesuchsperiode()) {
+          setGesuchsperiodeBuilder(ch.dvbern.kibon.exchange.commons.types.Gesuchsperiode.newBuilder(gesuchsperiode));
+        } else {
+          setGesuchsperiodeBuilder(ch.dvbern.kibon.exchange.commons.types.Gesuchsperiode.newBuilder());
+        }
+      }
+      return gesuchsperiodeBuilder;
+    }
+
+    /**
+     * Sets the Builder instance for the 'gesuchsperiode' field
+     * @param value The builder instance that must be set.
+     * @return This builder.
+     */
+    public ch.dvbern.kibon.exchange.commons.tagesschulen.ModulDTO.Builder setGesuchsperiodeBuilder(ch.dvbern.kibon.exchange.commons.types.Gesuchsperiode.Builder value) {
+      clearGesuchsperiode();
+      gesuchsperiodeBuilder = value;
+      return this;
+    }
+
+    /**
+     * Checks whether the 'gesuchsperiode' field has an active Builder instance
+     * @return True if the 'gesuchsperiode' field has an active Builder instance
+     */
+    public boolean hasGesuchsperiodeBuilder() {
+      return gesuchsperiodeBuilder != null;
+    }
+
+    /**
+      * Clears the value of the 'gesuchsperiode' field.
+      * @return This builder.
+      */
+    public ch.dvbern.kibon.exchange.commons.tagesschulen.ModulDTO.Builder clearGesuchsperiode() {
+      gesuchsperiode = null;
+      gesuchsperiodeBuilder = null;
+      fieldSetFlags()[9] = false;
+      return this;
+    }
+
     @Override
     @SuppressWarnings("unchecked")
     public ModulDTO build() {
@@ -838,6 +951,16 @@ static {
         record.intervalle = fieldSetFlags()[6] ? this.intervalle : (java.util.List<ch.dvbern.kibon.exchange.commons.types.Intervall>) defaultValue(fields()[6]);
         record.padaegogischBetreut = fieldSetFlags()[7] ? this.padaegogischBetreut : (java.lang.Boolean) defaultValue(fields()[7]);
         record.verpflegungsKosten = fieldSetFlags()[8] ? this.verpflegungsKosten : (java.math.BigDecimal) defaultValue(fields()[8]);
+        if (gesuchsperiodeBuilder != null) {
+          try {
+            record.gesuchsperiode = this.gesuchsperiodeBuilder.build();
+          } catch (org.apache.avro.AvroMissingFieldException e) {
+            e.addParentField(record.getSchema().getField("gesuchsperiode"));
+            throw e;
+          }
+        } else {
+          record.gesuchsperiode = fieldSetFlags()[9] ? this.gesuchsperiode : (ch.dvbern.kibon.exchange.commons.types.Gesuchsperiode) defaultValue(fields()[9]);
+        }
         return record;
       } catch (org.apache.avro.AvroMissingFieldException e) {
         throw e;
