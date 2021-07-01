@@ -1,0 +1,61 @@
+{
+	"type": "record",
+	"name": "TarifDTO",
+	"namespace": "ch.dvbern.kibon.exchange.commons.tagesschulen",
+	"fields": [
+		{
+			"name": "von",
+			"type": {
+				"type": "int",
+				"logicalType": "date"
+			}
+		},
+		{
+			"name": "bis",
+			"type": {
+				"type": "int",
+				"logicalType": "date"
+			}
+		},
+		{
+			"name": "betreuungsMinutenPerWeek",
+			"type": "int"
+		},
+		{
+			"name": "betreuungsKostenPerHour",
+			"type": {
+				"type": "bytes",
+				"logicalType": "decimal",
+				"precision": 19,
+				"scale": 2
+			}
+		},
+		{
+			"name": "verpflegungsKostenPerWeek",
+			"type": {
+				"type": "bytes",
+				"logicalType": "decimal",
+				"precision": 19,
+				"scale": 2
+			}
+		},
+		{
+			"name": "verpflegungsKostenVerguenstigung",
+			"type": {
+				"type": "bytes",
+				"logicalType": "decimal",
+				"precision": 19,
+				"scale": 2
+			}
+		},
+		{
+			"name": "totalCostsPerWeek",
+			"type": {
+				"type": "bytes",
+				"logicalType": "decimal",
+				"precision": 19,
+				"scale": 2
+			}
+		}
+	]
+}

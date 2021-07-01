@@ -163,6 +163,7 @@
                                 <import>${project.basedir}/src/main/avro/ch/dvbern/kibon/exchange/commons/verfuegung/GesuchstellerDTOv2.avsc</import>
                                 <import>${project.basedir}/src/main/avro/ch/dvbern/kibon/exchange/commons/tagesschulen/ModulAuswahlDTO.avsc</import>
                                 <import>${project.basedir}/src/main/avro/ch/dvbern/kibon/exchange/commons/tagesschulen/ModulDTO.avsc</import>
+                                <import>${project.basedir}/src/main/avro/ch/dvbern/kibon/exchange/commons/tagesschulen/TarifDTO.avsc</import>
                             </imports>
                         </configuration>
                     </execution>
