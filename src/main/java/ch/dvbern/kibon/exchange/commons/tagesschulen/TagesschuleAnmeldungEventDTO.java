@@ -14,8 +14,8 @@ import org.apache.avro.message.SchemaStore;
 
 @org.apache.avro.specific.AvroGenerated
 public class TagesschuleAnmeldungEventDTO extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = 7013713523666969159L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"TagesschuleAnmeldungEventDTO\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.tagesschulen\",\"fields\":[{\"name\":\"institutionId\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"version\",\"type\":\"int\"},{\"name\":\"freigegebenAm\",\"type\":{\"type\":\"int\",\"logicalType\":\"date\"}},{\"name\":\"gesuchsperiode\",\"type\":{\"type\":\"record\",\"name\":\"Gesuchsperiode\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.types\",\"fields\":[{\"name\":\"gueltigAb\",\"type\":{\"type\":\"int\",\"logicalType\":\"date\"}},{\"name\":\"gueltigBis\",\"type\":{\"type\":\"int\",\"logicalType\":\"date\"}}]}},{\"name\":\"kind\",\"type\":{\"type\":\"record\",\"name\":\"KindDTO\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.verfuegung\",\"fields\":[{\"name\":\"vorname\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"nachname\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"geburtsdatum\",\"type\":{\"type\":\"int\",\"logicalType\":\"date\"}},{\"name\":\"geschlecht\",\"type\":[\"null\",{\"type\":\"enum\",\"name\":\"Geschlecht\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.types\",\"symbols\":[\"WEIBLICH\",\"MAENNLICH\"]}],\"default\":null}]}},{\"name\":\"antragstellendePerson\",\"type\":{\"type\":\"record\",\"name\":\"GesuchstellerDTO\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.verfuegung\",\"fields\":[{\"name\":\"vorname\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"nachname\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"email\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"geschlecht\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"geburtsdatum\",\"type\":[\"null\",{\"type\":\"int\",\"logicalType\":\"date\"}],\"default\":null},{\"name\":\"adresse\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"AdresseDTO\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.types\",\"fields\":[{\"name\":\"anschrift\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"strasse\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"hausnummer\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"adresszusatz\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"plz\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"ort\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"land\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"gemeinde\",\"type\":{\"type\":\"record\",\"name\":\"GemeindeDTO\",\"fields\":[{\"name\":\"name\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"bfsNummer\",\"type\":[\"null\",\"long\"],\"default\":null}]},\"default\":{\"name\":null,\"bfsNummer\":null}},{\"name\":\"email\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"telefon\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"webseite\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null}]}],\"default\":null}]}},{\"name\":\"anmeldungsDetails\",\"type\":{\"type\":\"record\",\"name\":\"TagesschuleAnmeldungDetailsDTO\",\"fields\":[{\"name\":\"refnr\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"eintrittsdatum\",\"type\":{\"type\":\"int\",\"logicalType\":\"date\"}},{\"name\":\"planKlasse\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"abholung\",\"type\":{\"type\":\"enum\",\"name\":\"AbholungTagesschule\",\"symbols\":[\"ABHOLUNG\",\"ALLEINE_NACH_HAUSE\"]}},{\"name\":\"abweichungZweitesSemester\",\"type\":\"boolean\"},{\"name\":\"bemerkung\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"modulSelection\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"ModulAuswahlDTO\",\"fields\":[{\"name\":\"modulId\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"weekday\",\"type\":\"int\"},{\"name\":\"intervall\",\"type\":{\"type\":\"enum\",\"name\":\"Intervall\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.types\",\"symbols\":[\"WOECHENTLICH\",\"ALLE_ZWEI_WOCHEN\"]}}]},\"java-class\":\"java.util.List\"}}]}},{\"name\":\"tarife\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"TagesschuleAnmeldungTarifeDTO\",\"fields\":[{\"name\":\"tarifePaedagogisch\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"TarifDTO\",\"fields\":[{\"name\":\"von\",\"type\":{\"type\":\"int\",\"logicalType\":\"date\"}},{\"name\":\"bis\",\"type\":{\"type\":\"int\",\"logicalType\":\"date\"}},{\"name\":\"betreuungsMinutenPerWeek\",\"type\":\"int\"},{\"name\":\"betreuungsKostenPerHour\",\"type\":{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}},{\"name\":\"verpflegungsKostenPerWeek\",\"type\":{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}},{\"name\":\"verpflegungsKostenVerguenstigung\",\"type\":{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}},{\"name\":\"totalCostsPerWeek\",\"type\":{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}}]},\"java-class\":\"java.util.List\"}},{\"name\":\"tarifeNichtPaedagogisch\",\"type\":{\"type\":\"array\",\"items\":\"TarifDTO\",\"java-class\":\"java.util.List\"}},{\"name\":\"finSitAkzeptiert\",\"type\":\"boolean\"},{\"name\":\"timestampAbgeschlossen\",\"type\":{\"type\":\"int\",\"logicalType\":\"date\"}}]}],\"default\":null}]}");
+  private static final long serialVersionUID = -8522532297380445628L;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"TagesschuleAnmeldungEventDTO\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.tagesschulen\",\"fields\":[{\"name\":\"institutionId\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"version\",\"type\":\"int\"},{\"name\":\"freigegebenAm\",\"type\":{\"type\":\"int\",\"logicalType\":\"date\"}},{\"name\":\"gesuchsperiode\",\"type\":{\"type\":\"record\",\"name\":\"Gesuchsperiode\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.types\",\"fields\":[{\"name\":\"gueltigAb\",\"type\":{\"type\":\"int\",\"logicalType\":\"date\"}},{\"name\":\"gueltigBis\",\"type\":{\"type\":\"int\",\"logicalType\":\"date\"}}]}},{\"name\":\"kind\",\"type\":{\"type\":\"record\",\"name\":\"KindDTO\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.verfuegung\",\"fields\":[{\"name\":\"vorname\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"nachname\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"geburtsdatum\",\"type\":{\"type\":\"int\",\"logicalType\":\"date\"}},{\"name\":\"geschlecht\",\"type\":[\"null\",{\"type\":\"enum\",\"name\":\"Geschlecht\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.types\",\"symbols\":[\"WEIBLICH\",\"MAENNLICH\"]}],\"default\":null}]}},{\"name\":\"antragstellendePerson\",\"type\":{\"type\":\"record\",\"name\":\"GesuchstellerDTO\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.verfuegung\",\"fields\":[{\"name\":\"vorname\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"nachname\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"email\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"geschlecht\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"geburtsdatum\",\"type\":[\"null\",{\"type\":\"int\",\"logicalType\":\"date\"}],\"default\":null},{\"name\":\"adresse\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"AdresseDTO\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.types\",\"fields\":[{\"name\":\"anschrift\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"strasse\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"hausnummer\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"adresszusatz\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"plz\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"ort\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"land\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"gemeinde\",\"type\":{\"type\":\"record\",\"name\":\"GemeindeDTO\",\"fields\":[{\"name\":\"name\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"bfsNummer\",\"type\":[\"null\",\"long\"],\"default\":null}]},\"default\":{\"name\":null,\"bfsNummer\":null}},{\"name\":\"email\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"telefon\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"webseite\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null}]}],\"default\":null}]}},{\"name\":\"anmeldungsDetails\",\"type\":{\"type\":\"record\",\"name\":\"TagesschuleAnmeldungDetailsDTO\",\"fields\":[{\"name\":\"refnr\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"eintrittsdatum\",\"type\":{\"type\":\"int\",\"logicalType\":\"date\"}},{\"name\":\"planKlasse\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"abholung\",\"type\":{\"type\":\"enum\",\"name\":\"AbholungTagesschule\",\"symbols\":[\"ABHOLUNG\",\"ALLEINE_NACH_HAUSE\"]}},{\"name\":\"abweichungZweitesSemester\",\"type\":\"boolean\"},{\"name\":\"bemerkung\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"modulSelection\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"ModulAuswahlDTO\",\"fields\":[{\"name\":\"modulId\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"weekday\",\"type\":\"int\"},{\"name\":\"intervall\",\"type\":{\"type\":\"enum\",\"name\":\"Intervall\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.types\",\"symbols\":[\"WOECHENTLICH\",\"ALLE_ZWEI_WOCHEN\"]}}]},\"java-class\":\"java.util.List\"}}]}},{\"name\":\"tarife\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"TagesschuleAnmeldungTarifeDTO\",\"fields\":[{\"name\":\"tarifePaedagogisch\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"TarifDTO\",\"fields\":[{\"name\":\"von\",\"type\":{\"type\":\"int\",\"logicalType\":\"date\"}},{\"name\":\"bis\",\"type\":{\"type\":\"int\",\"logicalType\":\"date\"}},{\"name\":\"betreuungsMinutenPerWeek\",\"type\":\"int\"},{\"name\":\"betreuungsKostenPerHour\",\"type\":{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}},{\"name\":\"verpflegungsKostenPerWeek\",\"type\":{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}},{\"name\":\"verpflegungsKostenVerguenstigung\",\"type\":{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}},{\"name\":\"totalCostsPerWeek\",\"type\":{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}}]},\"java-class\":\"java.util.List\"}},{\"name\":\"tarifeNichtPaedagogisch\",\"type\":{\"type\":\"array\",\"items\":\"TarifDTO\",\"java-class\":\"java.util.List\"}},{\"name\":\"finSitAkzeptiert\",\"type\":\"boolean\"},{\"name\":\"timestampAbgeschlossen\",\"type\":{\"type\":\"int\",\"logicalType\":\"date\"}}]}],\"default\":null},{\"name\":\"status\",\"type\":{\"type\":\"enum\",\"name\":\"TagesschuleAnmeldungStatus\",\"symbols\":[\"SCHULAMT_ANMELDUNG_ERFASST\",\"SCHULAMT_ANMELDUNG_AUSGELOEST\",\"SCHULAMT_MODULE_AKZEPTIERT\",\"SCHULAMT_ANMELDUNG_UEBERNOMMEN\",\"SCHULAMT_ANMELDUNG_ABGELEHNT\",\"SCHULAMT_FALSCHE_INSTITUTION\",\"SCHULAMT_ANMELDUNG_STORNIERT\"]}}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static SpecificData MODEL$ = new SpecificData();
@@ -83,6 +83,7 @@ static {
    private ch.dvbern.kibon.exchange.commons.verfuegung.GesuchstellerDTO antragstellendePerson;
    private ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleAnmeldungDetailsDTO anmeldungsDetails;
    private ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleAnmeldungTarifeDTO tarife;
+   private ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleAnmeldungStatus status;
 
   /**
    * Default constructor.  Note that this does not initialize fields
@@ -101,8 +102,9 @@ static {
    * @param antragstellendePerson The new value for antragstellendePerson
    * @param anmeldungsDetails The new value for anmeldungsDetails
    * @param tarife The new value for tarife
+   * @param status The new value for status
    */
-  public TagesschuleAnmeldungEventDTO(java.lang.String institutionId, java.lang.Integer version, java.time.LocalDate freigegebenAm, ch.dvbern.kibon.exchange.commons.types.Gesuchsperiode gesuchsperiode, ch.dvbern.kibon.exchange.commons.verfuegung.KindDTO kind, ch.dvbern.kibon.exchange.commons.verfuegung.GesuchstellerDTO antragstellendePerson, ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleAnmeldungDetailsDTO anmeldungsDetails, ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleAnmeldungTarifeDTO tarife) {
+  public TagesschuleAnmeldungEventDTO(java.lang.String institutionId, java.lang.Integer version, java.time.LocalDate freigegebenAm, ch.dvbern.kibon.exchange.commons.types.Gesuchsperiode gesuchsperiode, ch.dvbern.kibon.exchange.commons.verfuegung.KindDTO kind, ch.dvbern.kibon.exchange.commons.verfuegung.GesuchstellerDTO antragstellendePerson, ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleAnmeldungDetailsDTO anmeldungsDetails, ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleAnmeldungTarifeDTO tarife, ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleAnmeldungStatus status) {
     this.institutionId = institutionId;
     this.version = version;
     this.freigegebenAm = freigegebenAm;
@@ -111,6 +113,7 @@ static {
     this.antragstellendePerson = antragstellendePerson;
     this.anmeldungsDetails = anmeldungsDetails;
     this.tarife = tarife;
+    this.status = status;
   }
 
   public org.apache.avro.specific.SpecificData getSpecificData() { return MODEL$; }
@@ -126,6 +129,7 @@ static {
     case 5: return antragstellendePerson;
     case 6: return anmeldungsDetails;
     case 7: return tarife;
+    case 8: return status;
     default: throw new IndexOutOfBoundsException("Invalid index: " + field$);
     }
   }
@@ -135,6 +139,7 @@ static {
       null,
       null,
       new org.apache.avro.data.TimeConversions.DateConversion(),
+      null,
       null,
       null,
       null,
@@ -160,6 +165,7 @@ static {
     case 5: antragstellendePerson = (ch.dvbern.kibon.exchange.commons.verfuegung.GesuchstellerDTO)value$; break;
     case 6: anmeldungsDetails = (ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleAnmeldungDetailsDTO)value$; break;
     case 7: tarife = (ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleAnmeldungTarifeDTO)value$; break;
+    case 8: status = (ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleAnmeldungStatus)value$; break;
     default: throw new IndexOutOfBoundsException("Invalid index: " + field$);
     }
   }
@@ -301,6 +307,23 @@ static {
   }
 
   /**
+   * Gets the value of the 'status' field.
+   * @return The value of the 'status' field.
+   */
+  public ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleAnmeldungStatus getStatus() {
+    return status;
+  }
+
+
+  /**
+   * Sets the value of the 'status' field.
+   * @param value the value to set.
+   */
+  public void setStatus(ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleAnmeldungStatus value) {
+    this.status = value;
+  }
+
+  /**
    * Creates a new TagesschuleAnmeldungEventDTO RecordBuilder.
    * @return A new TagesschuleAnmeldungEventDTO RecordBuilder
    */
@@ -354,6 +377,7 @@ static {
     private ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleAnmeldungDetailsDTO.Builder anmeldungsDetailsBuilder;
     private ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleAnmeldungTarifeDTO tarife;
     private ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleAnmeldungTarifeDTO.Builder tarifeBuilder;
+    private ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleAnmeldungStatus status;
 
     /** Creates a new Builder */
     private Builder() {
@@ -413,6 +437,10 @@ static {
       if (other.hasTarifeBuilder()) {
         this.tarifeBuilder = ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleAnmeldungTarifeDTO.newBuilder(other.getTarifeBuilder());
       }
+      if (isValidValue(fields()[8], other.status)) {
+        this.status = data().deepCopy(fields()[8].schema(), other.status);
+        fieldSetFlags()[8] = other.fieldSetFlags()[8];
+      }
     }
 
     /**
@@ -458,6 +486,10 @@ static {
         fieldSetFlags()[7] = true;
       }
       this.tarifeBuilder = null;
+      if (isValidValue(fields()[8], other.status)) {
+        this.status = data().deepCopy(fields()[8].schema(), other.status);
+        fieldSetFlags()[8] = true;
+      }
     }
 
     /**
@@ -953,6 +985,46 @@ static {
       return this;
     }
 
+    /**
+      * Gets the value of the 'status' field.
+      * @return The value.
+      */
+    public ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleAnmeldungStatus getStatus() {
+      return status;
+    }
+
+
+    /**
+      * Sets the value of the 'status' field.
+      * @param value The value of 'status'.
+      * @return This builder.
+      */
+    public ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleAnmeldungEventDTO.Builder setStatus(ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleAnmeldungStatus value) {
+      validate(fields()[8], value);
+      this.status = value;
+      fieldSetFlags()[8] = true;
+      return this;
+    }
+
+    /**
+      * Checks whether the 'status' field has been set.
+      * @return True if the 'status' field has been set, false otherwise.
+      */
+    public boolean hasStatus() {
+      return fieldSetFlags()[8];
+    }
+
+
+    /**
+      * Clears the value of the 'status' field.
+      * @return This builder.
+      */
+    public ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleAnmeldungEventDTO.Builder clearStatus() {
+      status = null;
+      fieldSetFlags()[8] = false;
+      return this;
+    }
+
     @Override
     @SuppressWarnings("unchecked")
     public TagesschuleAnmeldungEventDTO build() {
@@ -1011,6 +1083,7 @@ static {
         } else {
           record.tarife = fieldSetFlags()[7] ? this.tarife : (ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleAnmeldungTarifeDTO) defaultValue(fields()[7]);
         }
+        record.status = fieldSetFlags()[8] ? this.status : (ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleAnmeldungStatus) defaultValue(fields()[8]);
         return record;
       } catch (org.apache.avro.AvroMissingFieldException e) {
         throw e;

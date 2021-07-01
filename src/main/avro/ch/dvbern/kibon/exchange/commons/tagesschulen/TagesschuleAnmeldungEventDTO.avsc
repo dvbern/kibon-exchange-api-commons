@@ -41,6 +41,10 @@
 				"ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleAnmeldungTarifeDTO"
 			],
 			"default": null
+		},
+		{
+			"name": "status",
+			"type": "ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleAnmeldungStatus"
 		}
 	]
 }

@@ -166,6 +166,7 @@
                                 <import>${project.basedir}/src/main/avro/ch/dvbern/kibon/exchange/commons/tagesschulen/TarifDTO.avsc</import>
                                 <import>${project.basedir}/src/main/avro/ch/dvbern/kibon/exchange/commons/tagesschulen/TagesschuleAnmeldungTarifeDTO.avsc</import>
                                 <import>${project.basedir}/src/main/avro/ch/dvbern/kibon/exchange/commons/tagesschulen/TagesschuleAnmeldungDetailsDTO.avsc</import>
+                                <import>${project.basedir}/src/main/avro/ch/dvbern/kibon/exchange/commons/tagesschulen/TagesschuleAnmeldungStatus.avsc</import>
                             </imports>
                         </configuration>
                     </execution>
