@@ -184,7 +184,7 @@
                         <VerfuegungEvents-value>src/main/avro/ch/dvbern/kibon/exchange/commons/verfuegung/VerfuegungEventDTOv2.avsc</VerfuegungEvents-value>
                         <BetreuungAnfrageEvents-value>src/main/avro/ch/dvbern/kibon/exchange/commons/platzbestaetigung/BetreuungAnfrageEventDTO.avsc</BetreuungAnfrageEvents-value>
                         <BetreuungEvents-value>src/main/avro/ch/dvbern/kibon/exchange/commons/platzbestaetigung/BetreuungEventDTO.avsc</BetreuungEvents-value>
-                        <TagesschuleAnmeldungEventDTO-value>src/main/avro/ch/dvbern/kibon/exchange/commons/tagesschulen/TagesschuleAnmeldungEventDTO.avsc</TagesschuleAnmeldungEventDTO-value>
+                        <TagesschuleAnmeldungEventDTO-value>src/main/avro/ch/dvbern/kibon/exchange/commons/tagesschulen/TagesschuleAnmeldungDTO.avsc</TagesschuleAnmeldungEventDTO-value>
                     </subjects>
                 </configuration>
                 <goals>
