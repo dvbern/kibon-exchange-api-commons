@@ -18,11 +18,11 @@
 			}
 		},
 		{
-			"name": "betreuungsMinutenPerWeek",
+			"name": "betreuungsMinutenProWoche",
 			"type": "int"
 		},
 		{
-			"name": "betreuungsKostenPerHour",
+			"name": "betreuungsKostenProStunde",
 			"type": {
 				"type": "bytes",
 				"logicalType": "decimal",
@@ -31,7 +31,7 @@
 			}
 		},
 		{
-			"name": "verpflegungsKostenPerWeek",
+			"name": "verpflegungsKostenProWoche",
 			"type": {
 				"type": "bytes",
 				"logicalType": "decimal",
@@ -49,7 +49,7 @@
 			}
 		},
 		{
-			"name": "totalCostsPerWeek",
+			"name": "totalKostenProWoche",
 			"type": {
 				"type": "bytes",
 				"logicalType": "decimal",
