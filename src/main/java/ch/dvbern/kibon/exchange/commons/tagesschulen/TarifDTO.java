@@ -14,8 +14,8 @@ import org.apache.avro.message.SchemaStore;
 
 @org.apache.avro.specific.AvroGenerated
 public class TarifDTO extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = 350776613315590732L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"TarifDTO\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.tagesschulen\",\"fields\":[{\"name\":\"von\",\"type\":{\"type\":\"int\",\"logicalType\":\"date\"}},{\"name\":\"bis\",\"type\":{\"type\":\"int\",\"logicalType\":\"date\"}},{\"name\":\"betreuungsMinutenPerWeek\",\"type\":\"int\"},{\"name\":\"betreuungsKostenPerHour\",\"type\":{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}},{\"name\":\"verpflegungsKostenPerWeek\",\"type\":{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}},{\"name\":\"verpflegungsKostenVerguenstigung\",\"type\":{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}},{\"name\":\"totalCostsPerWeek\",\"type\":{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}}]}");
+  private static final long serialVersionUID = 4154097500323403261L;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"TarifDTO\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.tagesschulen\",\"fields\":[{\"name\":\"von\",\"type\":{\"type\":\"int\",\"logicalType\":\"date\"}},{\"name\":\"bis\",\"type\":{\"type\":\"int\",\"logicalType\":\"date\"}},{\"name\":\"betreuungsMinutenProWoche\",\"type\":\"int\"},{\"name\":\"betreuungsKostenProStunde\",\"type\":{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}},{\"name\":\"verpflegungsKostenProWoche\",\"type\":{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}},{\"name\":\"verpflegungsKostenVerguenstigung\",\"type\":{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}},{\"name\":\"totalKostenProWoche\",\"type\":{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static SpecificData MODEL$ = new SpecificData();
@@ -77,11 +77,11 @@ static {
 
    private java.time.LocalDate von;
    private java.time.LocalDate bis;
-   private int betreuungsMinutenPerWeek;
-   private java.math.BigDecimal betreuungsKostenPerHour;
-   private java.math.BigDecimal verpflegungsKostenPerWeek;
+   private int betreuungsMinutenProWoche;
+   private java.math.BigDecimal betreuungsKostenProStunde;
+   private java.math.BigDecimal verpflegungsKostenProWoche;
    private java.math.BigDecimal verpflegungsKostenVerguenstigung;
-   private java.math.BigDecimal totalCostsPerWeek;
+   private java.math.BigDecimal totalKostenProWoche;
 
   /**
    * Default constructor.  Note that this does not initialize fields
@@ -94,20 +94,20 @@ static {
    * All-args constructor.
    * @param von The new value for von
    * @param bis The new value for bis
-   * @param betreuungsMinutenPerWeek The new value for betreuungsMinutenPerWeek
-   * @param betreuungsKostenPerHour The new value for betreuungsKostenPerHour
-   * @param verpflegungsKostenPerWeek The new value for verpflegungsKostenPerWeek
+   * @param betreuungsMinutenProWoche The new value for betreuungsMinutenProWoche
+   * @param betreuungsKostenProStunde The new value for betreuungsKostenProStunde
+   * @param verpflegungsKostenProWoche The new value for verpflegungsKostenProWoche
    * @param verpflegungsKostenVerguenstigung The new value for verpflegungsKostenVerguenstigung
-   * @param totalCostsPerWeek The new value for totalCostsPerWeek
+   * @param totalKostenProWoche The new value for totalKostenProWoche
    */
-  public TarifDTO(java.time.LocalDate von, java.time.LocalDate bis, java.lang.Integer betreuungsMinutenPerWeek, java.math.BigDecimal betreuungsKostenPerHour, java.math.BigDecimal verpflegungsKostenPerWeek, java.math.BigDecimal verpflegungsKostenVerguenstigung, java.math.BigDecimal totalCostsPerWeek) {
+  public TarifDTO(java.time.LocalDate von, java.time.LocalDate bis, java.lang.Integer betreuungsMinutenProWoche, java.math.BigDecimal betreuungsKostenProStunde, java.math.BigDecimal verpflegungsKostenProWoche, java.math.BigDecimal verpflegungsKostenVerguenstigung, java.math.BigDecimal totalKostenProWoche) {
     this.von = von;
     this.bis = bis;
-    this.betreuungsMinutenPerWeek = betreuungsMinutenPerWeek;
-    this.betreuungsKostenPerHour = betreuungsKostenPerHour;
-    this.verpflegungsKostenPerWeek = verpflegungsKostenPerWeek;
+    this.betreuungsMinutenProWoche = betreuungsMinutenProWoche;
+    this.betreuungsKostenProStunde = betreuungsKostenProStunde;
+    this.verpflegungsKostenProWoche = verpflegungsKostenProWoche;
     this.verpflegungsKostenVerguenstigung = verpflegungsKostenVerguenstigung;
-    this.totalCostsPerWeek = totalCostsPerWeek;
+    this.totalKostenProWoche = totalKostenProWoche;
   }
 
   public org.apache.avro.specific.SpecificData getSpecificData() { return MODEL$; }
@@ -117,11 +117,11 @@ static {
     switch (field$) {
     case 0: return von;
     case 1: return bis;
-    case 2: return betreuungsMinutenPerWeek;
-    case 3: return betreuungsKostenPerHour;
-    case 4: return verpflegungsKostenPerWeek;
+    case 2: return betreuungsMinutenProWoche;
+    case 3: return betreuungsKostenProStunde;
+    case 4: return verpflegungsKostenProWoche;
     case 5: return verpflegungsKostenVerguenstigung;
-    case 6: return totalCostsPerWeek;
+    case 6: return totalKostenProWoche;
     default: throw new IndexOutOfBoundsException("Invalid index: " + field$);
     }
   }
@@ -149,11 +149,11 @@ static {
     switch (field$) {
     case 0: von = (java.time.LocalDate)value$; break;
     case 1: bis = (java.time.LocalDate)value$; break;
-    case 2: betreuungsMinutenPerWeek = (java.lang.Integer)value$; break;
-    case 3: betreuungsKostenPerHour = (java.math.BigDecimal)value$; break;
-    case 4: verpflegungsKostenPerWeek = (java.math.BigDecimal)value$; break;
+    case 2: betreuungsMinutenProWoche = (java.lang.Integer)value$; break;
+    case 3: betreuungsKostenProStunde = (java.math.BigDecimal)value$; break;
+    case 4: verpflegungsKostenProWoche = (java.math.BigDecimal)value$; break;
     case 5: verpflegungsKostenVerguenstigung = (java.math.BigDecimal)value$; break;
-    case 6: totalCostsPerWeek = (java.math.BigDecimal)value$; break;
+    case 6: totalKostenProWoche = (java.math.BigDecimal)value$; break;
     default: throw new IndexOutOfBoundsException("Invalid index: " + field$);
     }
   }
@@ -193,54 +193,54 @@ static {
   }
 
   /**
-   * Gets the value of the 'betreuungsMinutenPerWeek' field.
-   * @return The value of the 'betreuungsMinutenPerWeek' field.
+   * Gets the value of the 'betreuungsMinutenProWoche' field.
+   * @return The value of the 'betreuungsMinutenProWoche' field.
    */
-  public int getBetreuungsMinutenPerWeek() {
-    return betreuungsMinutenPerWeek;
+  public int getBetreuungsMinutenProWoche() {
+    return betreuungsMinutenProWoche;
   }
 
 
   /**
-   * Sets the value of the 'betreuungsMinutenPerWeek' field.
+   * Sets the value of the 'betreuungsMinutenProWoche' field.
    * @param value the value to set.
    */
-  public void setBetreuungsMinutenPerWeek(int value) {
-    this.betreuungsMinutenPerWeek = value;
+  public void setBetreuungsMinutenProWoche(int value) {
+    this.betreuungsMinutenProWoche = value;
   }
 
   /**
-   * Gets the value of the 'betreuungsKostenPerHour' field.
-   * @return The value of the 'betreuungsKostenPerHour' field.
+   * Gets the value of the 'betreuungsKostenProStunde' field.
+   * @return The value of the 'betreuungsKostenProStunde' field.
    */
-  public java.math.BigDecimal getBetreuungsKostenPerHour() {
-    return betreuungsKostenPerHour;
+  public java.math.BigDecimal getBetreuungsKostenProStunde() {
+    return betreuungsKostenProStunde;
   }
 
 
   /**
-   * Sets the value of the 'betreuungsKostenPerHour' field.
+   * Sets the value of the 'betreuungsKostenProStunde' field.
    * @param value the value to set.
    */
-  public void setBetreuungsKostenPerHour(java.math.BigDecimal value) {
-    this.betreuungsKostenPerHour = value;
+  public void setBetreuungsKostenProStunde(java.math.BigDecimal value) {
+    this.betreuungsKostenProStunde = value;
   }
 
   /**
-   * Gets the value of the 'verpflegungsKostenPerWeek' field.
-   * @return The value of the 'verpflegungsKostenPerWeek' field.
+   * Gets the value of the 'verpflegungsKostenProWoche' field.
+   * @return The value of the 'verpflegungsKostenProWoche' field.
    */
-  public java.math.BigDecimal getVerpflegungsKostenPerWeek() {
-    return verpflegungsKostenPerWeek;
+  public java.math.BigDecimal getVerpflegungsKostenProWoche() {
+    return verpflegungsKostenProWoche;
   }
 
 
   /**
-   * Sets the value of the 'verpflegungsKostenPerWeek' field.
+   * Sets the value of the 'verpflegungsKostenProWoche' field.
    * @param value the value to set.
    */
-  public void setVerpflegungsKostenPerWeek(java.math.BigDecimal value) {
-    this.verpflegungsKostenPerWeek = value;
+  public void setVerpflegungsKostenProWoche(java.math.BigDecimal value) {
+    this.verpflegungsKostenProWoche = value;
   }
 
   /**
@@ -261,20 +261,20 @@ static {
   }
 
   /**
-   * Gets the value of the 'totalCostsPerWeek' field.
-   * @return The value of the 'totalCostsPerWeek' field.
+   * Gets the value of the 'totalKostenProWoche' field.
+   * @return The value of the 'totalKostenProWoche' field.
    */
-  public java.math.BigDecimal getTotalCostsPerWeek() {
-    return totalCostsPerWeek;
+  public java.math.BigDecimal getTotalKostenProWoche() {
+    return totalKostenProWoche;
   }
 
 
   /**
-   * Sets the value of the 'totalCostsPerWeek' field.
+   * Sets the value of the 'totalKostenProWoche' field.
    * @param value the value to set.
    */
-  public void setTotalCostsPerWeek(java.math.BigDecimal value) {
-    this.totalCostsPerWeek = value;
+  public void setTotalKostenProWoche(java.math.BigDecimal value) {
+    this.totalKostenProWoche = value;
   }
 
   /**
@@ -320,11 +320,11 @@ static {
 
     private java.time.LocalDate von;
     private java.time.LocalDate bis;
-    private int betreuungsMinutenPerWeek;
-    private java.math.BigDecimal betreuungsKostenPerHour;
-    private java.math.BigDecimal verpflegungsKostenPerWeek;
+    private int betreuungsMinutenProWoche;
+    private java.math.BigDecimal betreuungsKostenProStunde;
+    private java.math.BigDecimal verpflegungsKostenProWoche;
     private java.math.BigDecimal verpflegungsKostenVerguenstigung;
-    private java.math.BigDecimal totalCostsPerWeek;
+    private java.math.BigDecimal totalKostenProWoche;
 
     /** Creates a new Builder */
     private Builder() {
@@ -345,24 +345,24 @@ static {
         this.bis = data().deepCopy(fields()[1].schema(), other.bis);
         fieldSetFlags()[1] = other.fieldSetFlags()[1];
       }
-      if (isValidValue(fields()[2], other.betreuungsMinutenPerWeek)) {
-        this.betreuungsMinutenPerWeek = data().deepCopy(fields()[2].schema(), other.betreuungsMinutenPerWeek);
+      if (isValidValue(fields()[2], other.betreuungsMinutenProWoche)) {
+        this.betreuungsMinutenProWoche = data().deepCopy(fields()[2].schema(), other.betreuungsMinutenProWoche);
         fieldSetFlags()[2] = other.fieldSetFlags()[2];
       }
-      if (isValidValue(fields()[3], other.betreuungsKostenPerHour)) {
-        this.betreuungsKostenPerHour = data().deepCopy(fields()[3].schema(), other.betreuungsKostenPerHour);
+      if (isValidValue(fields()[3], other.betreuungsKostenProStunde)) {
+        this.betreuungsKostenProStunde = data().deepCopy(fields()[3].schema(), other.betreuungsKostenProStunde);
         fieldSetFlags()[3] = other.fieldSetFlags()[3];
       }
-      if (isValidValue(fields()[4], other.verpflegungsKostenPerWeek)) {
-        this.verpflegungsKostenPerWeek = data().deepCopy(fields()[4].schema(), other.verpflegungsKostenPerWeek);
+      if (isValidValue(fields()[4], other.verpflegungsKostenProWoche)) {
+        this.verpflegungsKostenProWoche = data().deepCopy(fields()[4].schema(), other.verpflegungsKostenProWoche);
         fieldSetFlags()[4] = other.fieldSetFlags()[4];
       }
       if (isValidValue(fields()[5], other.verpflegungsKostenVerguenstigung)) {
         this.verpflegungsKostenVerguenstigung = data().deepCopy(fields()[5].schema(), other.verpflegungsKostenVerguenstigung);
         fieldSetFlags()[5] = other.fieldSetFlags()[5];
       }
-      if (isValidValue(fields()[6], other.totalCostsPerWeek)) {
-        this.totalCostsPerWeek = data().deepCopy(fields()[6].schema(), other.totalCostsPerWeek);
+      if (isValidValue(fields()[6], other.totalKostenProWoche)) {
+        this.totalKostenProWoche = data().deepCopy(fields()[6].schema(), other.totalKostenProWoche);
         fieldSetFlags()[6] = other.fieldSetFlags()[6];
       }
     }
@@ -381,24 +381,24 @@ static {
         this.bis = data().deepCopy(fields()[1].schema(), other.bis);
         fieldSetFlags()[1] = true;
       }
-      if (isValidValue(fields()[2], other.betreuungsMinutenPerWeek)) {
-        this.betreuungsMinutenPerWeek = data().deepCopy(fields()[2].schema(), other.betreuungsMinutenPerWeek);
+      if (isValidValue(fields()[2], other.betreuungsMinutenProWoche)) {
+        this.betreuungsMinutenProWoche = data().deepCopy(fields()[2].schema(), other.betreuungsMinutenProWoche);
         fieldSetFlags()[2] = true;
       }
-      if (isValidValue(fields()[3], other.betreuungsKostenPerHour)) {
-        this.betreuungsKostenPerHour = data().deepCopy(fields()[3].schema(), other.betreuungsKostenPerHour);
+      if (isValidValue(fields()[3], other.betreuungsKostenProStunde)) {
+        this.betreuungsKostenProStunde = data().deepCopy(fields()[3].schema(), other.betreuungsKostenProStunde);
         fieldSetFlags()[3] = true;
       }
-      if (isValidValue(fields()[4], other.verpflegungsKostenPerWeek)) {
-        this.verpflegungsKostenPerWeek = data().deepCopy(fields()[4].schema(), other.verpflegungsKostenPerWeek);
+      if (isValidValue(fields()[4], other.verpflegungsKostenProWoche)) {
+        this.verpflegungsKostenProWoche = data().deepCopy(fields()[4].schema(), other.verpflegungsKostenProWoche);
         fieldSetFlags()[4] = true;
       }
       if (isValidValue(fields()[5], other.verpflegungsKostenVerguenstigung)) {
         this.verpflegungsKostenVerguenstigung = data().deepCopy(fields()[5].schema(), other.verpflegungsKostenVerguenstigung);
         fieldSetFlags()[5] = true;
       }
-      if (isValidValue(fields()[6], other.totalCostsPerWeek)) {
-        this.totalCostsPerWeek = data().deepCopy(fields()[6].schema(), other.totalCostsPerWeek);
+      if (isValidValue(fields()[6], other.totalKostenProWoche)) {
+        this.totalKostenProWoche = data().deepCopy(fields()[6].schema(), other.totalKostenProWoche);
         fieldSetFlags()[6] = true;
       }
     }
@@ -482,120 +482,120 @@ static {
     }
 
     /**
-      * Gets the value of the 'betreuungsMinutenPerWeek' field.
+      * Gets the value of the 'betreuungsMinutenProWoche' field.
       * @return The value.
       */
-    public int getBetreuungsMinutenPerWeek() {
-      return betreuungsMinutenPerWeek;
+    public int getBetreuungsMinutenProWoche() {
+      return betreuungsMinutenProWoche;
     }
 
 
     /**
-      * Sets the value of the 'betreuungsMinutenPerWeek' field.
-      * @param value The value of 'betreuungsMinutenPerWeek'.
+      * Sets the value of the 'betreuungsMinutenProWoche' field.
+      * @param value The value of 'betreuungsMinutenProWoche'.
       * @return This builder.
       */
-    public ch.dvbern.kibon.exchange.commons.tagesschulen.TarifDTO.Builder setBetreuungsMinutenPerWeek(int value) {
+    public ch.dvbern.kibon.exchange.commons.tagesschulen.TarifDTO.Builder setBetreuungsMinutenProWoche(int value) {
       validate(fields()[2], value);
-      this.betreuungsMinutenPerWeek = value;
+      this.betreuungsMinutenProWoche = value;
       fieldSetFlags()[2] = true;
       return this;
     }
 
     /**
-      * Checks whether the 'betreuungsMinutenPerWeek' field has been set.
-      * @return True if the 'betreuungsMinutenPerWeek' field has been set, false otherwise.
+      * Checks whether the 'betreuungsMinutenProWoche' field has been set.
+      * @return True if the 'betreuungsMinutenProWoche' field has been set, false otherwise.
       */
-    public boolean hasBetreuungsMinutenPerWeek() {
+    public boolean hasBetreuungsMinutenProWoche() {
       return fieldSetFlags()[2];
     }
 
 
     /**
-      * Clears the value of the 'betreuungsMinutenPerWeek' field.
+      * Clears the value of the 'betreuungsMinutenProWoche' field.
       * @return This builder.
       */
-    public ch.dvbern.kibon.exchange.commons.tagesschulen.TarifDTO.Builder clearBetreuungsMinutenPerWeek() {
+    public ch.dvbern.kibon.exchange.commons.tagesschulen.TarifDTO.Builder clearBetreuungsMinutenProWoche() {
       fieldSetFlags()[2] = false;
       return this;
     }
 
     /**
-      * Gets the value of the 'betreuungsKostenPerHour' field.
+      * Gets the value of the 'betreuungsKostenProStunde' field.
       * @return The value.
       */
-    public java.math.BigDecimal getBetreuungsKostenPerHour() {
-      return betreuungsKostenPerHour;
+    public java.math.BigDecimal getBetreuungsKostenProStunde() {
+      return betreuungsKostenProStunde;
     }
 
 
     /**
-      * Sets the value of the 'betreuungsKostenPerHour' field.
-      * @param value The value of 'betreuungsKostenPerHour'.
+      * Sets the value of the 'betreuungsKostenProStunde' field.
+      * @param value The value of 'betreuungsKostenProStunde'.
       * @return This builder.
       */
-    public ch.dvbern.kibon.exchange.commons.tagesschulen.TarifDTO.Builder setBetreuungsKostenPerHour(java.math.BigDecimal value) {
+    public ch.dvbern.kibon.exchange.commons.tagesschulen.TarifDTO.Builder setBetreuungsKostenProStunde(java.math.BigDecimal value) {
       validate(fields()[3], value);
-      this.betreuungsKostenPerHour = value;
+      this.betreuungsKostenProStunde = value;
       fieldSetFlags()[3] = true;
       return this;
     }
 
     /**
-      * Checks whether the 'betreuungsKostenPerHour' field has been set.
-      * @return True if the 'betreuungsKostenPerHour' field has been set, false otherwise.
+      * Checks whether the 'betreuungsKostenProStunde' field has been set.
+      * @return True if the 'betreuungsKostenProStunde' field has been set, false otherwise.
       */
-    public boolean hasBetreuungsKostenPerHour() {
+    public boolean hasBetreuungsKostenProStunde() {
       return fieldSetFlags()[3];
     }
 
 
     /**
-      * Clears the value of the 'betreuungsKostenPerHour' field.
+      * Clears the value of the 'betreuungsKostenProStunde' field.
       * @return This builder.
       */
-    public ch.dvbern.kibon.exchange.commons.tagesschulen.TarifDTO.Builder clearBetreuungsKostenPerHour() {
-      betreuungsKostenPerHour = null;
+    public ch.dvbern.kibon.exchange.commons.tagesschulen.TarifDTO.Builder clearBetreuungsKostenProStunde() {
+      betreuungsKostenProStunde = null;
       fieldSetFlags()[3] = false;
       return this;
     }
 
     /**
-      * Gets the value of the 'verpflegungsKostenPerWeek' field.
+      * Gets the value of the 'verpflegungsKostenProWoche' field.
       * @return The value.
       */
-    public java.math.BigDecimal getVerpflegungsKostenPerWeek() {
-      return verpflegungsKostenPerWeek;
+    public java.math.BigDecimal getVerpflegungsKostenProWoche() {
+      return verpflegungsKostenProWoche;
     }
 
 
     /**
-      * Sets the value of the 'verpflegungsKostenPerWeek' field.
-      * @param value The value of 'verpflegungsKostenPerWeek'.
+      * Sets the value of the 'verpflegungsKostenProWoche' field.
+      * @param value The value of 'verpflegungsKostenProWoche'.
       * @return This builder.
       */
-    public ch.dvbern.kibon.exchange.commons.tagesschulen.TarifDTO.Builder setVerpflegungsKostenPerWeek(java.math.BigDecimal value) {
+    public ch.dvbern.kibon.exchange.commons.tagesschulen.TarifDTO.Builder setVerpflegungsKostenProWoche(java.math.BigDecimal value) {
       validate(fields()[4], value);
-      this.verpflegungsKostenPerWeek = value;
+      this.verpflegungsKostenProWoche = value;
       fieldSetFlags()[4] = true;
       return this;
     }
 
     /**
-      * Checks whether the 'verpflegungsKostenPerWeek' field has been set.
-      * @return True if the 'verpflegungsKostenPerWeek' field has been set, false otherwise.
+      * Checks whether the 'verpflegungsKostenProWoche' field has been set.
+      * @return True if the 'verpflegungsKostenProWoche' field has been set, false otherwise.
       */
-    public boolean hasVerpflegungsKostenPerWeek() {
+    public boolean hasVerpflegungsKostenProWoche() {
       return fieldSetFlags()[4];
     }
 
 
     /**
-      * Clears the value of the 'verpflegungsKostenPerWeek' field.
+      * Clears the value of the 'verpflegungsKostenProWoche' field.
       * @return This builder.
       */
-    public ch.dvbern.kibon.exchange.commons.tagesschulen.TarifDTO.Builder clearVerpflegungsKostenPerWeek() {
-      verpflegungsKostenPerWeek = null;
+    public ch.dvbern.kibon.exchange.commons.tagesschulen.TarifDTO.Builder clearVerpflegungsKostenProWoche() {
+      verpflegungsKostenProWoche = null;
       fieldSetFlags()[4] = false;
       return this;
     }
@@ -641,41 +641,41 @@ static {
     }
 
     /**
-      * Gets the value of the 'totalCostsPerWeek' field.
+      * Gets the value of the 'totalKostenProWoche' field.
       * @return The value.
       */
-    public java.math.BigDecimal getTotalCostsPerWeek() {
-      return totalCostsPerWeek;
+    public java.math.BigDecimal getTotalKostenProWoche() {
+      return totalKostenProWoche;
     }
 
 
     /**
-      * Sets the value of the 'totalCostsPerWeek' field.
-      * @param value The value of 'totalCostsPerWeek'.
+      * Sets the value of the 'totalKostenProWoche' field.
+      * @param value The value of 'totalKostenProWoche'.
       * @return This builder.
       */
-    public ch.dvbern.kibon.exchange.commons.tagesschulen.TarifDTO.Builder setTotalCostsPerWeek(java.math.BigDecimal value) {
+    public ch.dvbern.kibon.exchange.commons.tagesschulen.TarifDTO.Builder setTotalKostenProWoche(java.math.BigDecimal value) {
       validate(fields()[6], value);
-      this.totalCostsPerWeek = value;
+      this.totalKostenProWoche = value;
       fieldSetFlags()[6] = true;
       return this;
     }
 
     /**
-      * Checks whether the 'totalCostsPerWeek' field has been set.
-      * @return True if the 'totalCostsPerWeek' field has been set, false otherwise.
+      * Checks whether the 'totalKostenProWoche' field has been set.
+      * @return True if the 'totalKostenProWoche' field has been set, false otherwise.
       */
-    public boolean hasTotalCostsPerWeek() {
+    public boolean hasTotalKostenProWoche() {
       return fieldSetFlags()[6];
     }
 
 
     /**
-      * Clears the value of the 'totalCostsPerWeek' field.
+      * Clears the value of the 'totalKostenProWoche' field.
       * @return This builder.
       */
-    public ch.dvbern.kibon.exchange.commons.tagesschulen.TarifDTO.Builder clearTotalCostsPerWeek() {
-      totalCostsPerWeek = null;
+    public ch.dvbern.kibon.exchange.commons.tagesschulen.TarifDTO.Builder clearTotalKostenProWoche() {
+      totalKostenProWoche = null;
       fieldSetFlags()[6] = false;
       return this;
     }
@@ -687,11 +687,11 @@ static {
         TarifDTO record = new TarifDTO();
         record.von = fieldSetFlags()[0] ? this.von : (java.time.LocalDate) defaultValue(fields()[0]);
         record.bis = fieldSetFlags()[1] ? this.bis : (java.time.LocalDate) defaultValue(fields()[1]);
-        record.betreuungsMinutenPerWeek = fieldSetFlags()[2] ? this.betreuungsMinutenPerWeek : (java.lang.Integer) defaultValue(fields()[2]);
-        record.betreuungsKostenPerHour = fieldSetFlags()[3] ? this.betreuungsKostenPerHour : (java.math.BigDecimal) defaultValue(fields()[3]);
-        record.verpflegungsKostenPerWeek = fieldSetFlags()[4] ? this.verpflegungsKostenPerWeek : (java.math.BigDecimal) defaultValue(fields()[4]);
+        record.betreuungsMinutenProWoche = fieldSetFlags()[2] ? this.betreuungsMinutenProWoche : (java.lang.Integer) defaultValue(fields()[2]);
+        record.betreuungsKostenProStunde = fieldSetFlags()[3] ? this.betreuungsKostenProStunde : (java.math.BigDecimal) defaultValue(fields()[3]);
+        record.verpflegungsKostenProWoche = fieldSetFlags()[4] ? this.verpflegungsKostenProWoche : (java.math.BigDecimal) defaultValue(fields()[4]);
         record.verpflegungsKostenVerguenstigung = fieldSetFlags()[5] ? this.verpflegungsKostenVerguenstigung : (java.math.BigDecimal) defaultValue(fields()[5]);
-        record.totalCostsPerWeek = fieldSetFlags()[6] ? this.totalCostsPerWeek : (java.math.BigDecimal) defaultValue(fields()[6]);
+        record.totalKostenProWoche = fieldSetFlags()[6] ? this.totalKostenProWoche : (java.math.BigDecimal) defaultValue(fields()[6]);
         return record;
       } catch (org.apache.avro.AvroMissingFieldException e) {
         throw e;
