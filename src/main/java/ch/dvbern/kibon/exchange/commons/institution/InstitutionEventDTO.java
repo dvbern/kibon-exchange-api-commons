@@ -14,8 +14,8 @@ import org.apache.avro.message.SchemaStore;
 
 @org.apache.avro.specific.AvroGenerated
 public class InstitutionEventDTO extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = -8025825977140244485L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"InstitutionEventDTO\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.institution\",\"fields\":[{\"name\":\"id\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"name\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"traegerschaft\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"betreuungsArt\",\"type\":[\"null\",{\"type\":\"enum\",\"name\":\"BetreuungsangebotTyp\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.types\",\"symbols\":[\"KITA\",\"TAGESSCHULE\",\"TAGESFAMILIEN\",\"FERIENINSEL\"]}],\"default\":null},{\"name\":\"adresse\",\"type\":{\"type\":\"record\",\"name\":\"KontaktAngabenDTO\",\"fields\":[{\"name\":\"anschrift\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"strasse\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"hausnummer\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"adresszusatz\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"plz\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"ort\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"land\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"gemeinde\",\"type\":{\"type\":\"record\",\"name\":\"GemeindeDTO\",\"fields\":[{\"name\":\"name\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"bfsNummer\",\"type\":[\"null\",\"long\"],\"default\":null}]},\"default\":{\"name\":null,\"bfsNummer\":null}},{\"name\":\"email\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"telefon\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"webseite\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null}],\"aliases\":[\"AdresseDTO\"]}},{\"name\":\"betreuungsAdressen\",\"type\":{\"type\":\"array\",\"items\":\"KontaktAngabenDTO\"},\"default\":[]},{\"name\":\"status\",\"type\":{\"type\":\"enum\",\"name\":\"InstitutionStatus\",\"symbols\":[\"AKTIV\",\"KONFIGURATION\",\"EINGELADEN\",\"DELETED\"]},\"default\":\"AKTIV\"},{\"name\":\"betreuungsGutscheineAb\",\"type\":[\"null\",{\"type\":\"int\",\"logicalType\":\"date\"}],\"default\":null},{\"name\":\"betreuungsGutscheineBis\",\"type\":[\"null\",{\"type\":\"int\",\"logicalType\":\"date\"}],\"default\":null},{\"name\":\"oeffnungsTage\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"enum\",\"name\":\"Wochentag\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.types\",\"symbols\":[\"MONDAY\",\"TUESDAY\",\"WEDNESDAY\",\"THURSDAY\",\"FRIDAY\",\"SATURDAY\",\"SUNDAY\"]}},\"default\":[]},{\"name\":\"offenVon\",\"type\":[\"null\",\"long\"],\"default\":null},{\"name\":\"offenBis\",\"type\":[\"null\",\"long\"],\"default\":null},{\"name\":\"oeffnungsAbweichungen\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"altersKategorien\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"enum\",\"name\":\"AltersKategorie\",\"symbols\":[\"BABY\",\"VORSCHULE\",\"KINDERGARTEN\",\"SCHULE\"]}},\"default\":[]},{\"name\":\"subventioniertePlaetze\",\"type\":\"boolean\",\"default\":false},{\"name\":\"anzahlPlaetze\",\"type\":[\"null\",{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}],\"default\":null},{\"name\":\"anzahlPlaetzeFirmen\",\"type\":[\"null\",{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}],\"default\":null},{\"name\":\"timestampMutiert\",\"type\":[\"null\",\"long\"],\"default\":null},{\"name\":\"module\",\"type\":[\"null\",{\"type\":\"array\",\"items\":[{\"type\":\"record\",\"name\":\"ModulDTO\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.tagesschulen\",\"fields\":[{\"name\":\"id\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"bezeichnungDE\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"bezeichnungFR\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"zeitVon\",\"type\":{\"type\":\"int\",\"logicalType\":\"time-millis\"}},{\"name\":\"zeitBis\",\"type\":{\"type\":\"int\",\"logicalType\":\"time-millis\"}},{\"name\":\"wochentage\",\"type\":{\"type\":\"array\",\"items\":\"int\",\"java-class\":\"java.util.List\"}},{\"name\":\"intervalle\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"enum\",\"name\":\"Intervall\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.types\",\"symbols\":[\"WOECHENTLICH\",\"ALLE_ZWEI_WOCHEN\"]},\"java-class\":\"java.util.List\"}},{\"name\":\"padaegogischBetreut\",\"type\":\"boolean\"},{\"name\":\"verpflegungsKosten\",\"type\":{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}}]}]}],\"default\":null}]}");
+  private static final long serialVersionUID = 5086853219620593082L;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"InstitutionEventDTO\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.institution\",\"fields\":[{\"name\":\"id\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"name\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"traegerschaft\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"betreuungsArt\",\"type\":[\"null\",{\"type\":\"enum\",\"name\":\"BetreuungsangebotTyp\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.types\",\"symbols\":[\"KITA\",\"TAGESSCHULE\",\"TAGESFAMILIEN\",\"FERIENINSEL\"]}],\"default\":null},{\"name\":\"adresse\",\"type\":{\"type\":\"record\",\"name\":\"KontaktAngabenDTO\",\"fields\":[{\"name\":\"anschrift\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"strasse\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"hausnummer\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"adresszusatz\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"plz\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"ort\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"land\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"gemeinde\",\"type\":{\"type\":\"record\",\"name\":\"GemeindeDTO\",\"fields\":[{\"name\":\"name\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"bfsNummer\",\"type\":[\"null\",\"long\"],\"default\":null}]},\"default\":{\"name\":null,\"bfsNummer\":null}},{\"name\":\"email\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"telefon\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"webseite\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null}],\"aliases\":[\"AdresseDTO\"]}},{\"name\":\"betreuungsAdressen\",\"type\":{\"type\":\"array\",\"items\":\"KontaktAngabenDTO\"},\"default\":[]},{\"name\":\"status\",\"type\":{\"type\":\"enum\",\"name\":\"InstitutionStatus\",\"symbols\":[\"AKTIV\",\"KONFIGURATION\",\"EINGELADEN\",\"DELETED\"]},\"default\":\"AKTIV\"},{\"name\":\"betreuungsGutscheineAb\",\"type\":[\"null\",{\"type\":\"int\",\"logicalType\":\"date\"}],\"default\":null},{\"name\":\"betreuungsGutscheineBis\",\"type\":[\"null\",{\"type\":\"int\",\"logicalType\":\"date\"}],\"default\":null},{\"name\":\"oeffnungsTage\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"enum\",\"name\":\"Wochentag\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.types\",\"symbols\":[\"MONDAY\",\"TUESDAY\",\"WEDNESDAY\",\"THURSDAY\",\"FRIDAY\",\"SATURDAY\",\"SUNDAY\"]}},\"default\":[]},{\"name\":\"offenVon\",\"type\":[\"null\",\"long\"],\"default\":null},{\"name\":\"offenBis\",\"type\":[\"null\",\"long\"],\"default\":null},{\"name\":\"oeffnungsAbweichungen\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"altersKategorien\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"enum\",\"name\":\"AltersKategorie\",\"symbols\":[\"BABY\",\"VORSCHULE\",\"KINDERGARTEN\",\"SCHULE\"]}},\"default\":[]},{\"name\":\"subventioniertePlaetze\",\"type\":\"boolean\",\"default\":false},{\"name\":\"anzahlPlaetze\",\"type\":[\"null\",{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}],\"default\":null},{\"name\":\"anzahlPlaetzeFirmen\",\"type\":[\"null\",{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}],\"default\":null},{\"name\":\"timestampMutiert\",\"type\":[\"null\",\"long\"],\"default\":null},{\"name\":\"module\",\"type\":[\"null\",{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"ModulDTO\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.tagesschulen\",\"fields\":[{\"name\":\"id\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"bezeichnungDE\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"bezeichnungFR\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"zeitVon\",\"type\":{\"type\":\"int\",\"logicalType\":\"time-millis\"}},{\"name\":\"zeitBis\",\"type\":{\"type\":\"int\",\"logicalType\":\"time-millis\"}},{\"name\":\"wochentage\",\"type\":{\"type\":\"array\",\"items\":\"int\",\"java-class\":\"java.util.List\"}},{\"name\":\"intervall\",\"type\":{\"type\":\"enum\",\"name\":\"Intervall\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.types\",\"symbols\":[\"WOECHENTLICH\",\"ALLE_ZWEI_WOCHEN\"]}},{\"name\":\"padaegogischBetreut\",\"type\":\"boolean\"},{\"name\":\"verpflegungsKosten\",\"type\":{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}},{\"name\":\"gesuchsperiode\",\"type\":{\"type\":\"record\",\"name\":\"Gesuchsperiode\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.types\",\"fields\":[{\"name\":\"id\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"gueltigAb\",\"type\":{\"type\":\"int\",\"logicalType\":\"date\"}},{\"name\":\"gueltigBis\",\"type\":{\"type\":\"int\",\"logicalType\":\"date\"}}]}}]}}],\"default\":null}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static SpecificData MODEL$ = new SpecificData();
@@ -94,7 +94,7 @@ static {
    private java.math.BigDecimal anzahlPlaetze;
    private java.math.BigDecimal anzahlPlaetzeFirmen;
    private java.lang.Long timestampMutiert;
-   private java.util.List<java.lang.Object> module;
+   private java.util.List<ch.dvbern.kibon.exchange.commons.tagesschulen.ModulDTO> module;
 
   /**
    * Default constructor.  Note that this does not initialize fields
@@ -125,7 +125,7 @@ static {
    * @param timestampMutiert The new value for timestampMutiert
    * @param module The new value for module
    */
-  public InstitutionEventDTO(java.lang.String id, java.lang.String name, java.lang.String traegerschaft, ch.dvbern.kibon.exchange.commons.types.BetreuungsangebotTyp betreuungsArt, ch.dvbern.kibon.exchange.commons.institution.KontaktAngabenDTO adresse, java.util.List<ch.dvbern.kibon.exchange.commons.institution.KontaktAngabenDTO> betreuungsAdressen, ch.dvbern.kibon.exchange.commons.institution.InstitutionStatus status, java.time.LocalDate betreuungsGutscheineAb, java.time.LocalDate betreuungsGutscheineBis, java.util.List<ch.dvbern.kibon.exchange.commons.types.Wochentag> oeffnungsTage, java.lang.Long offenVon, java.lang.Long offenBis, java.lang.String oeffnungsAbweichungen, java.util.List<ch.dvbern.kibon.exchange.commons.institution.AltersKategorie> altersKategorien, java.lang.Boolean subventioniertePlaetze, java.math.BigDecimal anzahlPlaetze, java.math.BigDecimal anzahlPlaetzeFirmen, java.lang.Long timestampMutiert, java.util.List<java.lang.Object> module) {
+  public InstitutionEventDTO(java.lang.String id, java.lang.String name, java.lang.String traegerschaft, ch.dvbern.kibon.exchange.commons.types.BetreuungsangebotTyp betreuungsArt, ch.dvbern.kibon.exchange.commons.institution.KontaktAngabenDTO adresse, java.util.List<ch.dvbern.kibon.exchange.commons.institution.KontaktAngabenDTO> betreuungsAdressen, ch.dvbern.kibon.exchange.commons.institution.InstitutionStatus status, java.time.LocalDate betreuungsGutscheineAb, java.time.LocalDate betreuungsGutscheineBis, java.util.List<ch.dvbern.kibon.exchange.commons.types.Wochentag> oeffnungsTage, java.lang.Long offenVon, java.lang.Long offenBis, java.lang.String oeffnungsAbweichungen, java.util.List<ch.dvbern.kibon.exchange.commons.institution.AltersKategorie> altersKategorien, java.lang.Boolean subventioniertePlaetze, java.math.BigDecimal anzahlPlaetze, java.math.BigDecimal anzahlPlaetzeFirmen, java.lang.Long timestampMutiert, java.util.List<ch.dvbern.kibon.exchange.commons.tagesschulen.ModulDTO> module) {
     this.id = id;
     this.name = name;
     this.traegerschaft = traegerschaft;
@@ -197,7 +197,7 @@ static {
     case 15: anzahlPlaetze = (java.math.BigDecimal)value$; break;
     case 16: anzahlPlaetzeFirmen = (java.math.BigDecimal)value$; break;
     case 17: timestampMutiert = (java.lang.Long)value$; break;
-    case 18: module = (java.util.List<java.lang.Object>)value$; break;
+    case 18: module = (java.util.List<ch.dvbern.kibon.exchange.commons.tagesschulen.ModulDTO>)value$; break;
     default: throw new IndexOutOfBoundsException("Invalid index: " + field$);
     }
   }
@@ -512,7 +512,7 @@ static {
    * Gets the value of the 'module' field.
    * @return The value of the 'module' field.
    */
-  public java.util.List<java.lang.Object> getModule() {
+  public java.util.List<ch.dvbern.kibon.exchange.commons.tagesschulen.ModulDTO> getModule() {
     return module;
   }
 
@@ -521,7 +521,7 @@ static {
    * Sets the value of the 'module' field.
    * @param value the value to set.
    */
-  public void setModule(java.util.List<java.lang.Object> value) {
+  public void setModule(java.util.List<ch.dvbern.kibon.exchange.commons.tagesschulen.ModulDTO> value) {
     this.module = value;
   }
 
@@ -585,7 +585,7 @@ static {
     private java.math.BigDecimal anzahlPlaetze;
     private java.math.BigDecimal anzahlPlaetzeFirmen;
     private java.lang.Long timestampMutiert;
-    private java.util.List<java.lang.Object> module;
+    private java.util.List<ch.dvbern.kibon.exchange.commons.tagesschulen.ModulDTO> module;
 
     /** Creates a new Builder */
     private Builder() {
@@ -1522,7 +1522,7 @@ static {
       * Gets the value of the 'module' field.
       * @return The value.
       */
-    public java.util.List<java.lang.Object> getModule() {
+    public java.util.List<ch.dvbern.kibon.exchange.commons.tagesschulen.ModulDTO> getModule() {
       return module;
     }
 
@@ -1532,7 +1532,7 @@ static {
       * @param value The value of 'module'.
       * @return This builder.
       */
-    public ch.dvbern.kibon.exchange.commons.institution.InstitutionEventDTO.Builder setModule(java.util.List<java.lang.Object> value) {
+    public ch.dvbern.kibon.exchange.commons.institution.InstitutionEventDTO.Builder setModule(java.util.List<ch.dvbern.kibon.exchange.commons.tagesschulen.ModulDTO> value) {
       validate(fields()[18], value);
       this.module = value;
       fieldSetFlags()[18] = true;
@@ -1590,7 +1590,7 @@ static {
         record.anzahlPlaetze = fieldSetFlags()[15] ? this.anzahlPlaetze : (java.math.BigDecimal) defaultValue(fields()[15]);
         record.anzahlPlaetzeFirmen = fieldSetFlags()[16] ? this.anzahlPlaetzeFirmen : (java.math.BigDecimal) defaultValue(fields()[16]);
         record.timestampMutiert = fieldSetFlags()[17] ? this.timestampMutiert : (java.lang.Long) defaultValue(fields()[17]);
-        record.module = fieldSetFlags()[18] ? this.module : (java.util.List<java.lang.Object>) defaultValue(fields()[18]);
+        record.module = fieldSetFlags()[18] ? this.module : (java.util.List<ch.dvbern.kibon.exchange.commons.tagesschulen.ModulDTO>) defaultValue(fields()[18]);
         return record;
       } catch (org.apache.avro.AvroMissingFieldException e) {
         throw e;

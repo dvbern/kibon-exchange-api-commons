@@ -283,9 +283,7 @@
 				"null",
 				{
 					"type": "array",
-					"items": [
-						"ch.dvbern.kibon.exchange.commons.tagesschulen.ModulDTO"
-					]
+					"items": "ch.dvbern.kibon.exchange.commons.tagesschulen.ModulDTO"
 				}
 			],
 			"default": null
