@@ -14,8 +14,8 @@ import org.apache.avro.message.SchemaStore;
 
 @org.apache.avro.specific.AvroGenerated
 public class Gesuchsperiode extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = -2492602715335740724L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Gesuchsperiode\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.types\",\"fields\":[{\"name\":\"gueltigAb\",\"type\":{\"type\":\"int\",\"logicalType\":\"date\"}},{\"name\":\"gueltigBis\",\"type\":{\"type\":\"int\",\"logicalType\":\"date\"}}]}");
+  private static final long serialVersionUID = 3737883968108530341L;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Gesuchsperiode\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.types\",\"fields\":[{\"name\":\"id\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"gueltigAb\",\"type\":{\"type\":\"int\",\"logicalType\":\"date\"}},{\"name\":\"gueltigBis\",\"type\":{\"type\":\"int\",\"logicalType\":\"date\"}}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static SpecificData MODEL$ = new SpecificData();
@@ -74,6 +74,7 @@ static {
     return DECODER.decode(b);
   }
 
+   private java.lang.String id;
    private java.time.LocalDate gueltigAb;
    private java.time.LocalDate gueltigBis;
 
@@ -86,10 +87,12 @@ static {
 
   /**
    * All-args constructor.
+   * @param id The new value for id
    * @param gueltigAb The new value for gueltigAb
    * @param gueltigBis The new value for gueltigBis
    */
-  public Gesuchsperiode(java.time.LocalDate gueltigAb, java.time.LocalDate gueltigBis) {
+  public Gesuchsperiode(java.lang.String id, java.time.LocalDate gueltigAb, java.time.LocalDate gueltigBis) {
+    this.id = id;
     this.gueltigAb = gueltigAb;
     this.gueltigBis = gueltigBis;
   }
@@ -99,14 +102,16 @@ static {
   // Used by DatumWriter.  Applications should not call.
   public java.lang.Object get(int field$) {
     switch (field$) {
-    case 0: return gueltigAb;
-    case 1: return gueltigBis;
+    case 0: return id;
+    case 1: return gueltigAb;
+    case 2: return gueltigBis;
     default: throw new IndexOutOfBoundsException("Invalid index: " + field$);
     }
   }
 
   private static final org.apache.avro.Conversion<?>[] conversions =
       new org.apache.avro.Conversion<?>[] {
+      null,
       new org.apache.avro.data.TimeConversions.DateConversion(),
       new org.apache.avro.data.TimeConversions.DateConversion(),
       null
@@ -121,10 +126,28 @@ static {
   @SuppressWarnings(value="unchecked")
   public void put(int field$, java.lang.Object value$) {
     switch (field$) {
-    case 0: gueltigAb = (java.time.LocalDate)value$; break;
-    case 1: gueltigBis = (java.time.LocalDate)value$; break;
+    case 0: id = value$ != null ? value$.toString() : null; break;
+    case 1: gueltigAb = (java.time.LocalDate)value$; break;
+    case 2: gueltigBis = (java.time.LocalDate)value$; break;
     default: throw new IndexOutOfBoundsException("Invalid index: " + field$);
     }
+  }
+
+  /**
+   * Gets the value of the 'id' field.
+   * @return The value of the 'id' field.
+   */
+  public java.lang.String getId() {
+    return id;
+  }
+
+
+  /**
+   * Sets the value of the 'id' field.
+   * @param value the value to set.
+   */
+  public void setId(java.lang.String value) {
+    this.id = value;
   }
 
   /**
@@ -202,6 +225,7 @@ static {
   public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<Gesuchsperiode>
     implements org.apache.avro.data.RecordBuilder<Gesuchsperiode> {
 
+    private java.lang.String id;
     private java.time.LocalDate gueltigAb;
     private java.time.LocalDate gueltigBis;
 
@@ -216,13 +240,17 @@ static {
      */
     private Builder(ch.dvbern.kibon.exchange.commons.types.Gesuchsperiode.Builder other) {
       super(other);
-      if (isValidValue(fields()[0], other.gueltigAb)) {
-        this.gueltigAb = data().deepCopy(fields()[0].schema(), other.gueltigAb);
+      if (isValidValue(fields()[0], other.id)) {
+        this.id = data().deepCopy(fields()[0].schema(), other.id);
         fieldSetFlags()[0] = other.fieldSetFlags()[0];
       }
-      if (isValidValue(fields()[1], other.gueltigBis)) {
-        this.gueltigBis = data().deepCopy(fields()[1].schema(), other.gueltigBis);
+      if (isValidValue(fields()[1], other.gueltigAb)) {
+        this.gueltigAb = data().deepCopy(fields()[1].schema(), other.gueltigAb);
         fieldSetFlags()[1] = other.fieldSetFlags()[1];
+      }
+      if (isValidValue(fields()[2], other.gueltigBis)) {
+        this.gueltigBis = data().deepCopy(fields()[2].schema(), other.gueltigBis);
+        fieldSetFlags()[2] = other.fieldSetFlags()[2];
       }
     }
 
@@ -232,14 +260,58 @@ static {
      */
     private Builder(ch.dvbern.kibon.exchange.commons.types.Gesuchsperiode other) {
       super(SCHEMA$);
-      if (isValidValue(fields()[0], other.gueltigAb)) {
-        this.gueltigAb = data().deepCopy(fields()[0].schema(), other.gueltigAb);
+      if (isValidValue(fields()[0], other.id)) {
+        this.id = data().deepCopy(fields()[0].schema(), other.id);
         fieldSetFlags()[0] = true;
       }
-      if (isValidValue(fields()[1], other.gueltigBis)) {
-        this.gueltigBis = data().deepCopy(fields()[1].schema(), other.gueltigBis);
+      if (isValidValue(fields()[1], other.gueltigAb)) {
+        this.gueltigAb = data().deepCopy(fields()[1].schema(), other.gueltigAb);
         fieldSetFlags()[1] = true;
       }
+      if (isValidValue(fields()[2], other.gueltigBis)) {
+        this.gueltigBis = data().deepCopy(fields()[2].schema(), other.gueltigBis);
+        fieldSetFlags()[2] = true;
+      }
+    }
+
+    /**
+      * Gets the value of the 'id' field.
+      * @return The value.
+      */
+    public java.lang.String getId() {
+      return id;
+    }
+
+
+    /**
+      * Sets the value of the 'id' field.
+      * @param value The value of 'id'.
+      * @return This builder.
+      */
+    public ch.dvbern.kibon.exchange.commons.types.Gesuchsperiode.Builder setId(java.lang.String value) {
+      validate(fields()[0], value);
+      this.id = value;
+      fieldSetFlags()[0] = true;
+      return this;
+    }
+
+    /**
+      * Checks whether the 'id' field has been set.
+      * @return True if the 'id' field has been set, false otherwise.
+      */
+    public boolean hasId() {
+      return fieldSetFlags()[0];
+    }
+
+
+    /**
+      * Clears the value of the 'id' field.
+      * @return This builder.
+      */
+    public ch.dvbern.kibon.exchange.commons.types.Gesuchsperiode.Builder clearId() {
+      id = null;
+      fieldSetFlags()[0] = false;
+      return this;
     }
 
     /**
@@ -257,9 +329,9 @@ static {
       * @return This builder.
       */
     public ch.dvbern.kibon.exchange.commons.types.Gesuchsperiode.Builder setGueltigAb(java.time.LocalDate value) {
-      validate(fields()[0], value);
+      validate(fields()[1], value);
       this.gueltigAb = value;
-      fieldSetFlags()[0] = true;
+      fieldSetFlags()[1] = true;
       return this;
     }
 
@@ -268,7 +340,7 @@ static {
       * @return True if the 'gueltigAb' field has been set, false otherwise.
       */
     public boolean hasGueltigAb() {
-      return fieldSetFlags()[0];
+      return fieldSetFlags()[1];
     }
 
 
@@ -277,7 +349,7 @@ static {
       * @return This builder.
       */
     public ch.dvbern.kibon.exchange.commons.types.Gesuchsperiode.Builder clearGueltigAb() {
-      fieldSetFlags()[0] = false;
+      fieldSetFlags()[1] = false;
       return this;
     }
 
@@ -296,9 +368,9 @@ static {
       * @return This builder.
       */
     public ch.dvbern.kibon.exchange.commons.types.Gesuchsperiode.Builder setGueltigBis(java.time.LocalDate value) {
-      validate(fields()[1], value);
+      validate(fields()[2], value);
       this.gueltigBis = value;
-      fieldSetFlags()[1] = true;
+      fieldSetFlags()[2] = true;
       return this;
     }
 
@@ -307,7 +379,7 @@ static {
       * @return True if the 'gueltigBis' field has been set, false otherwise.
       */
     public boolean hasGueltigBis() {
-      return fieldSetFlags()[1];
+      return fieldSetFlags()[2];
     }
 
 
@@ -316,7 +388,7 @@ static {
       * @return This builder.
       */
     public ch.dvbern.kibon.exchange.commons.types.Gesuchsperiode.Builder clearGueltigBis() {
-      fieldSetFlags()[1] = false;
+      fieldSetFlags()[2] = false;
       return this;
     }
 
@@ -325,8 +397,9 @@ static {
     public Gesuchsperiode build() {
       try {
         Gesuchsperiode record = new Gesuchsperiode();
-        record.gueltigAb = fieldSetFlags()[0] ? this.gueltigAb : (java.time.LocalDate) defaultValue(fields()[0]);
-        record.gueltigBis = fieldSetFlags()[1] ? this.gueltigBis : (java.time.LocalDate) defaultValue(fields()[1]);
+        record.id = fieldSetFlags()[0] ? this.id : (java.lang.String) defaultValue(fields()[0]);
+        record.gueltigAb = fieldSetFlags()[1] ? this.gueltigAb : (java.time.LocalDate) defaultValue(fields()[1]);
+        record.gueltigBis = fieldSetFlags()[2] ? this.gueltigBis : (java.time.LocalDate) defaultValue(fields()[2]);
         return record;
       } catch (org.apache.avro.AvroMissingFieldException e) {
         throw e;

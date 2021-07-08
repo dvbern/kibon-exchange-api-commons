@@ -4,6 +4,10 @@
 	"namespace": "ch.dvbern.kibon.exchange.commons.types",
 	"fields": [
 		{
+    			"name": "id",
+    			"type": "string"
+    		},
+		{
 			"name": "gueltigAb",
 			"type": {
 				"type": "int",
