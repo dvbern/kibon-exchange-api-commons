@@ -13,9 +13,9 @@ import org.apache.avro.message.BinaryMessageDecoder;
 import org.apache.avro.message.SchemaStore;
 
 @org.apache.avro.specific.AvroGenerated
-public class KindDTO extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = 1510065426949859726L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"KindDTO\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.verfuegung\",\"fields\":[{\"name\":\"vorname\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"nachname\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"geburtsdatum\",\"type\":{\"type\":\"int\",\"logicalType\":\"date\"}},{\"name\":\"geschlecht\",\"type\":[\"null\",{\"type\":\"enum\",\"name\":\"Geschlecht\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.types\",\"symbols\":[\"WEIBLICH\",\"MAENNLICH\"]}],\"default\":null}]}");
+public class KindDTOv1 extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
+  private static final long serialVersionUID = -814259711392428983L;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"KindDTOv1\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.verfuegung\",\"fields\":[{\"name\":\"vorname\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"nachname\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"geburtsdatum\",\"type\":{\"type\":\"int\",\"logicalType\":\"date\"}}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static SpecificData MODEL$ = new SpecificData();
@@ -23,17 +23,17 @@ static {
     MODEL$.addLogicalTypeConversion(new org.apache.avro.data.TimeConversions.DateConversion());
   }
 
-  private static final BinaryMessageEncoder<KindDTO> ENCODER =
-      new BinaryMessageEncoder<KindDTO>(MODEL$, SCHEMA$);
+  private static final BinaryMessageEncoder<KindDTOv1> ENCODER =
+      new BinaryMessageEncoder<KindDTOv1>(MODEL$, SCHEMA$);
 
-  private static final BinaryMessageDecoder<KindDTO> DECODER =
-      new BinaryMessageDecoder<KindDTO>(MODEL$, SCHEMA$);
+  private static final BinaryMessageDecoder<KindDTOv1> DECODER =
+      new BinaryMessageDecoder<KindDTOv1>(MODEL$, SCHEMA$);
 
   /**
    * Return the BinaryMessageEncoder instance used by this class.
    * @return the message encoder used by this class
    */
-  public static BinaryMessageEncoder<KindDTO> getEncoder() {
+  public static BinaryMessageEncoder<KindDTOv1> getEncoder() {
     return ENCODER;
   }
 
@@ -41,7 +41,7 @@ static {
    * Return the BinaryMessageDecoder instance used by this class.
    * @return the message decoder used by this class
    */
-  public static BinaryMessageDecoder<KindDTO> getDecoder() {
+  public static BinaryMessageDecoder<KindDTOv1> getDecoder() {
     return DECODER;
   }
 
@@ -50,12 +50,12 @@ static {
    * @param resolver a {@link SchemaStore} used to find schemas by fingerprint
    * @return a BinaryMessageDecoder instance for this class backed by the given SchemaStore
    */
-  public static BinaryMessageDecoder<KindDTO> createDecoder(SchemaStore resolver) {
-    return new BinaryMessageDecoder<KindDTO>(MODEL$, SCHEMA$, resolver);
+  public static BinaryMessageDecoder<KindDTOv1> createDecoder(SchemaStore resolver) {
+    return new BinaryMessageDecoder<KindDTOv1>(MODEL$, SCHEMA$, resolver);
   }
 
   /**
-   * Serializes this KindDTO to a ByteBuffer.
+   * Serializes this KindDTOv1 to a ByteBuffer.
    * @return a buffer holding the serialized data for this instance
    * @throws java.io.IOException if this instance could not be serialized
    */
@@ -64,12 +64,12 @@ static {
   }
 
   /**
-   * Deserializes a KindDTO from a ByteBuffer.
+   * Deserializes a KindDTOv1 from a ByteBuffer.
    * @param b a byte buffer holding serialized data for an instance of this class
-   * @return a KindDTO instance decoded from the given buffer
+   * @return a KindDTOv1 instance decoded from the given buffer
    * @throws java.io.IOException if the given bytes could not be deserialized into an instance of this class
    */
-  public static KindDTO fromByteBuffer(
+  public static KindDTOv1 fromByteBuffer(
       java.nio.ByteBuffer b) throws java.io.IOException {
     return DECODER.decode(b);
   }
@@ -77,27 +77,24 @@ static {
    private java.lang.String vorname;
    private java.lang.String nachname;
    private java.time.LocalDate geburtsdatum;
-   private ch.dvbern.kibon.exchange.commons.types.Geschlecht geschlecht;
 
   /**
    * Default constructor.  Note that this does not initialize fields
    * to their default values from the schema.  If that is desired then
    * one should use <code>newBuilder()</code>.
    */
-  public KindDTO() {}
+  public KindDTOv1() {}
 
   /**
    * All-args constructor.
    * @param vorname The new value for vorname
    * @param nachname The new value for nachname
    * @param geburtsdatum The new value for geburtsdatum
-   * @param geschlecht The new value for geschlecht
    */
-  public KindDTO(java.lang.String vorname, java.lang.String nachname, java.time.LocalDate geburtsdatum, ch.dvbern.kibon.exchange.commons.types.Geschlecht geschlecht) {
+  public KindDTOv1(java.lang.String vorname, java.lang.String nachname, java.time.LocalDate geburtsdatum) {
     this.vorname = vorname;
     this.nachname = nachname;
     this.geburtsdatum = geburtsdatum;
-    this.geschlecht = geschlecht;
   }
 
   public org.apache.avro.specific.SpecificData getSpecificData() { return MODEL$; }
@@ -108,7 +105,6 @@ static {
     case 0: return vorname;
     case 1: return nachname;
     case 2: return geburtsdatum;
-    case 3: return geschlecht;
     default: throw new IndexOutOfBoundsException("Invalid index: " + field$);
     }
   }
@@ -118,7 +114,6 @@ static {
       null,
       null,
       new org.apache.avro.data.TimeConversions.DateConversion(),
-      null,
       null
   };
 
@@ -134,7 +129,6 @@ static {
     case 0: vorname = value$ != null ? value$.toString() : null; break;
     case 1: nachname = value$ != null ? value$.toString() : null; break;
     case 2: geburtsdatum = (java.time.LocalDate)value$; break;
-    case 3: geschlecht = (ch.dvbern.kibon.exchange.commons.types.Geschlecht)value$; break;
     default: throw new IndexOutOfBoundsException("Invalid index: " + field$);
     }
   }
@@ -191,67 +185,49 @@ static {
   }
 
   /**
-   * Gets the value of the 'geschlecht' field.
-   * @return The value of the 'geschlecht' field.
+   * Creates a new KindDTOv1 RecordBuilder.
+   * @return A new KindDTOv1 RecordBuilder
    */
-  public ch.dvbern.kibon.exchange.commons.types.Geschlecht getGeschlecht() {
-    return geschlecht;
-  }
-
-
-  /**
-   * Sets the value of the 'geschlecht' field.
-   * @param value the value to set.
-   */
-  public void setGeschlecht(ch.dvbern.kibon.exchange.commons.types.Geschlecht value) {
-    this.geschlecht = value;
+  public static ch.dvbern.kibon.exchange.commons.verfuegung.KindDTOv1.Builder newBuilder() {
+    return new ch.dvbern.kibon.exchange.commons.verfuegung.KindDTOv1.Builder();
   }
 
   /**
-   * Creates a new KindDTO RecordBuilder.
-   * @return A new KindDTO RecordBuilder
-   */
-  public static ch.dvbern.kibon.exchange.commons.verfuegung.KindDTO.Builder newBuilder() {
-    return new ch.dvbern.kibon.exchange.commons.verfuegung.KindDTO.Builder();
-  }
-
-  /**
-   * Creates a new KindDTO RecordBuilder by copying an existing Builder.
+   * Creates a new KindDTOv1 RecordBuilder by copying an existing Builder.
    * @param other The existing builder to copy.
-   * @return A new KindDTO RecordBuilder
+   * @return A new KindDTOv1 RecordBuilder
    */
-  public static ch.dvbern.kibon.exchange.commons.verfuegung.KindDTO.Builder newBuilder(ch.dvbern.kibon.exchange.commons.verfuegung.KindDTO.Builder other) {
+  public static ch.dvbern.kibon.exchange.commons.verfuegung.KindDTOv1.Builder newBuilder(ch.dvbern.kibon.exchange.commons.verfuegung.KindDTOv1.Builder other) {
     if (other == null) {
-      return new ch.dvbern.kibon.exchange.commons.verfuegung.KindDTO.Builder();
+      return new ch.dvbern.kibon.exchange.commons.verfuegung.KindDTOv1.Builder();
     } else {
-      return new ch.dvbern.kibon.exchange.commons.verfuegung.KindDTO.Builder(other);
+      return new ch.dvbern.kibon.exchange.commons.verfuegung.KindDTOv1.Builder(other);
     }
   }
 
   /**
-   * Creates a new KindDTO RecordBuilder by copying an existing KindDTO instance.
+   * Creates a new KindDTOv1 RecordBuilder by copying an existing KindDTOv1 instance.
    * @param other The existing instance to copy.
-   * @return A new KindDTO RecordBuilder
+   * @return A new KindDTOv1 RecordBuilder
    */
-  public static ch.dvbern.kibon.exchange.commons.verfuegung.KindDTO.Builder newBuilder(ch.dvbern.kibon.exchange.commons.verfuegung.KindDTO other) {
+  public static ch.dvbern.kibon.exchange.commons.verfuegung.KindDTOv1.Builder newBuilder(ch.dvbern.kibon.exchange.commons.verfuegung.KindDTOv1 other) {
     if (other == null) {
-      return new ch.dvbern.kibon.exchange.commons.verfuegung.KindDTO.Builder();
+      return new ch.dvbern.kibon.exchange.commons.verfuegung.KindDTOv1.Builder();
     } else {
-      return new ch.dvbern.kibon.exchange.commons.verfuegung.KindDTO.Builder(other);
+      return new ch.dvbern.kibon.exchange.commons.verfuegung.KindDTOv1.Builder(other);
     }
   }
 
   /**
-   * RecordBuilder for KindDTO instances.
+   * RecordBuilder for KindDTOv1 instances.
    */
   @org.apache.avro.specific.AvroGenerated
-  public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<KindDTO>
-    implements org.apache.avro.data.RecordBuilder<KindDTO> {
+  public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<KindDTOv1>
+    implements org.apache.avro.data.RecordBuilder<KindDTOv1> {
 
     private java.lang.String vorname;
     private java.lang.String nachname;
     private java.time.LocalDate geburtsdatum;
-    private ch.dvbern.kibon.exchange.commons.types.Geschlecht geschlecht;
 
     /** Creates a new Builder */
     private Builder() {
@@ -262,7 +238,7 @@ static {
      * Creates a Builder by copying an existing Builder.
      * @param other The existing Builder to copy.
      */
-    private Builder(ch.dvbern.kibon.exchange.commons.verfuegung.KindDTO.Builder other) {
+    private Builder(ch.dvbern.kibon.exchange.commons.verfuegung.KindDTOv1.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.vorname)) {
         this.vorname = data().deepCopy(fields()[0].schema(), other.vorname);
@@ -276,17 +252,13 @@ static {
         this.geburtsdatum = data().deepCopy(fields()[2].schema(), other.geburtsdatum);
         fieldSetFlags()[2] = other.fieldSetFlags()[2];
       }
-      if (isValidValue(fields()[3], other.geschlecht)) {
-        this.geschlecht = data().deepCopy(fields()[3].schema(), other.geschlecht);
-        fieldSetFlags()[3] = other.fieldSetFlags()[3];
-      }
     }
 
     /**
-     * Creates a Builder by copying an existing KindDTO instance
+     * Creates a Builder by copying an existing KindDTOv1 instance
      * @param other The existing instance to copy.
      */
-    private Builder(ch.dvbern.kibon.exchange.commons.verfuegung.KindDTO other) {
+    private Builder(ch.dvbern.kibon.exchange.commons.verfuegung.KindDTOv1 other) {
       super(SCHEMA$);
       if (isValidValue(fields()[0], other.vorname)) {
         this.vorname = data().deepCopy(fields()[0].schema(), other.vorname);
@@ -299,10 +271,6 @@ static {
       if (isValidValue(fields()[2], other.geburtsdatum)) {
         this.geburtsdatum = data().deepCopy(fields()[2].schema(), other.geburtsdatum);
         fieldSetFlags()[2] = true;
-      }
-      if (isValidValue(fields()[3], other.geschlecht)) {
-        this.geschlecht = data().deepCopy(fields()[3].schema(), other.geschlecht);
-        fieldSetFlags()[3] = true;
       }
     }
 
@@ -320,7 +288,7 @@ static {
       * @param value The value of 'vorname'.
       * @return This builder.
       */
-    public ch.dvbern.kibon.exchange.commons.verfuegung.KindDTO.Builder setVorname(java.lang.String value) {
+    public ch.dvbern.kibon.exchange.commons.verfuegung.KindDTOv1.Builder setVorname(java.lang.String value) {
       validate(fields()[0], value);
       this.vorname = value;
       fieldSetFlags()[0] = true;
@@ -340,7 +308,7 @@ static {
       * Clears the value of the 'vorname' field.
       * @return This builder.
       */
-    public ch.dvbern.kibon.exchange.commons.verfuegung.KindDTO.Builder clearVorname() {
+    public ch.dvbern.kibon.exchange.commons.verfuegung.KindDTOv1.Builder clearVorname() {
       vorname = null;
       fieldSetFlags()[0] = false;
       return this;
@@ -360,7 +328,7 @@ static {
       * @param value The value of 'nachname'.
       * @return This builder.
       */
-    public ch.dvbern.kibon.exchange.commons.verfuegung.KindDTO.Builder setNachname(java.lang.String value) {
+    public ch.dvbern.kibon.exchange.commons.verfuegung.KindDTOv1.Builder setNachname(java.lang.String value) {
       validate(fields()[1], value);
       this.nachname = value;
       fieldSetFlags()[1] = true;
@@ -380,7 +348,7 @@ static {
       * Clears the value of the 'nachname' field.
       * @return This builder.
       */
-    public ch.dvbern.kibon.exchange.commons.verfuegung.KindDTO.Builder clearNachname() {
+    public ch.dvbern.kibon.exchange.commons.verfuegung.KindDTOv1.Builder clearNachname() {
       nachname = null;
       fieldSetFlags()[1] = false;
       return this;
@@ -400,7 +368,7 @@ static {
       * @param value The value of 'geburtsdatum'.
       * @return This builder.
       */
-    public ch.dvbern.kibon.exchange.commons.verfuegung.KindDTO.Builder setGeburtsdatum(java.time.LocalDate value) {
+    public ch.dvbern.kibon.exchange.commons.verfuegung.KindDTOv1.Builder setGeburtsdatum(java.time.LocalDate value) {
       validate(fields()[2], value);
       this.geburtsdatum = value;
       fieldSetFlags()[2] = true;
@@ -420,60 +388,19 @@ static {
       * Clears the value of the 'geburtsdatum' field.
       * @return This builder.
       */
-    public ch.dvbern.kibon.exchange.commons.verfuegung.KindDTO.Builder clearGeburtsdatum() {
+    public ch.dvbern.kibon.exchange.commons.verfuegung.KindDTOv1.Builder clearGeburtsdatum() {
       fieldSetFlags()[2] = false;
-      return this;
-    }
-
-    /**
-      * Gets the value of the 'geschlecht' field.
-      * @return The value.
-      */
-    public ch.dvbern.kibon.exchange.commons.types.Geschlecht getGeschlecht() {
-      return geschlecht;
-    }
-
-
-    /**
-      * Sets the value of the 'geschlecht' field.
-      * @param value The value of 'geschlecht'.
-      * @return This builder.
-      */
-    public ch.dvbern.kibon.exchange.commons.verfuegung.KindDTO.Builder setGeschlecht(ch.dvbern.kibon.exchange.commons.types.Geschlecht value) {
-      validate(fields()[3], value);
-      this.geschlecht = value;
-      fieldSetFlags()[3] = true;
-      return this;
-    }
-
-    /**
-      * Checks whether the 'geschlecht' field has been set.
-      * @return True if the 'geschlecht' field has been set, false otherwise.
-      */
-    public boolean hasGeschlecht() {
-      return fieldSetFlags()[3];
-    }
-
-
-    /**
-      * Clears the value of the 'geschlecht' field.
-      * @return This builder.
-      */
-    public ch.dvbern.kibon.exchange.commons.verfuegung.KindDTO.Builder clearGeschlecht() {
-      geschlecht = null;
-      fieldSetFlags()[3] = false;
       return this;
     }
 
     @Override
     @SuppressWarnings("unchecked")
-    public KindDTO build() {
+    public KindDTOv1 build() {
       try {
-        KindDTO record = new KindDTO();
+        KindDTOv1 record = new KindDTOv1();
         record.vorname = fieldSetFlags()[0] ? this.vorname : (java.lang.String) defaultValue(fields()[0]);
         record.nachname = fieldSetFlags()[1] ? this.nachname : (java.lang.String) defaultValue(fields()[1]);
         record.geburtsdatum = fieldSetFlags()[2] ? this.geburtsdatum : (java.time.LocalDate) defaultValue(fields()[2]);
-        record.geschlecht = fieldSetFlags()[3] ? this.geschlecht : (ch.dvbern.kibon.exchange.commons.types.Geschlecht) defaultValue(fields()[3]);
         return record;
       } catch (org.apache.avro.AvroMissingFieldException e) {
         throw e;
@@ -484,8 +411,8 @@ static {
   }
 
   @SuppressWarnings("unchecked")
-  private static final org.apache.avro.io.DatumWriter<KindDTO>
-    WRITER$ = (org.apache.avro.io.DatumWriter<KindDTO>)MODEL$.createDatumWriter(SCHEMA$);
+  private static final org.apache.avro.io.DatumWriter<KindDTOv1>
+    WRITER$ = (org.apache.avro.io.DatumWriter<KindDTOv1>)MODEL$.createDatumWriter(SCHEMA$);
 
   @Override public void writeExternal(java.io.ObjectOutput out)
     throws java.io.IOException {
@@ -493,8 +420,8 @@ static {
   }
 
   @SuppressWarnings("unchecked")
-  private static final org.apache.avro.io.DatumReader<KindDTO>
-    READER$ = (org.apache.avro.io.DatumReader<KindDTO>)MODEL$.createDatumReader(SCHEMA$);
+  private static final org.apache.avro.io.DatumReader<KindDTOv1>
+    READER$ = (org.apache.avro.io.DatumReader<KindDTOv1>)MODEL$.createDatumReader(SCHEMA$);
 
   @Override public void readExternal(java.io.ObjectInput in)
     throws java.io.IOException {

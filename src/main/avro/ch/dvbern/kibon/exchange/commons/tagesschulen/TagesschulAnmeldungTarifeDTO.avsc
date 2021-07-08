@@ -1,0 +1,34 @@
+{
+	"type": "record",
+	"name": "TagesschuleAnmeldungTarifeDTO",
+	"namespace": "ch.dvbern.kibon.exchange.commons.tagesschulen",
+	"fields": [
+		{
+			"name": "tarifePaedagogisch",
+			"type": {
+				"type": "array",
+				"items": "ch.dvbern.kibon.exchange.commons.tagesschulen.TarifDTO",
+				"java-class": "java.util.List"
+			}
+		},
+		{
+			"name": "tarifeNichtPaedagogisch",
+			"type": {
+				"type": "array",
+				"items": "ch.dvbern.kibon.exchange.commons.tagesschulen.TarifDTO",
+				"java-class": "java.util.List"
+			}
+		},
+		{
+			"name": "finSitAkzeptiert",
+			"type": "boolean"
+		},
+		{
+			"name": "timestampAbgeschlossen",
+			"type": {
+				"type": "int",
+				"logicalType": "date"
+			}
+		}
+	]
+}

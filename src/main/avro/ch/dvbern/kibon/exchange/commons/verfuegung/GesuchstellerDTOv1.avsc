@@ -1,6 +1,6 @@
 {
 	"type": "record",
-	"name": "KindDTO",
+	"name": "GesuchstellerDTOv1",
 	"namespace": "ch.dvbern.kibon.exchange.commons.verfuegung",
 	"fields": [
 		{
@@ -12,11 +12,12 @@
 			"type": "string"
 		},
 		{
-			"name": "geburtsdatum",
-			"type": {
-				"type": "int",
-				"logicalType": "date"
-			}
+			"name": "email",
+			"type": [
+				"null",
+				"string"
+			],
+			"default": null
 		}
 	]
 }

@@ -1,0 +1,66 @@
+{
+	"type": "record",
+	"name": "ModulDTO",
+	"namespace": "ch.dvbern.kibon.exchange.commons.tagesschulen",
+	"fields": [
+		{
+			"name": "id",
+			"type": "string"
+		},
+		{
+			"name": "bezeichnungDE",
+			"type": "string"
+		},
+		{
+			"name": "bezeichnungFR",
+			"type": "string"
+		},
+		{
+			"name": "zeitVon",
+			"type": {
+				"type": "int",
+				"logicalType": "time-millis"
+			}
+		},
+		{
+			"name": "zeitBis",
+			"type": {
+				"type": "int",
+				"logicalType": "time-millis"
+			}
+		},
+		{
+			"name": "wochentage",
+			"type": {
+				"type": "array",
+				"items": "int",
+				"java-class": "java.util.List"
+			}
+		},
+		{
+			"name": "intervalle",
+			"type": {
+				"type": "array",
+				"items": "ch.dvbern.kibon.exchange.commons.types.Intervall",
+				"java-class": "java.util.List"
+			}
+		},
+		{
+			"name": "padaegogischBetreut",
+			"type": "boolean"
+		},
+		{
+			"name": "verpflegungsKosten",
+			"type": {
+				"type": "bytes",
+				"logicalType": "decimal",
+				"precision": 19,
+				"scale": 2
+			}
+		},
+		{
+			"name": "gesuchsperiode",
+			"type": "ch.dvbern.kibon.exchange.commons.types.Gesuchsperiode"
+		}
+	]
+}

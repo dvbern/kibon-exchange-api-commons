@@ -1,0 +1,49 @@
+{
+	"type": "record",
+	"name": "TagesschuleAnmeldungDetailsDTO",
+	"namespace": "ch.dvbern.kibon.exchange.commons.tagesschulen",
+	"fields": [
+		{
+			"name": "refnr",
+			"type": "string"
+		},
+		{
+			"name": "eintrittsdatum",
+			"type": {
+				"type": "int",
+				"logicalType": "date"
+			}
+		},
+		{
+			"name": "planKlasse",
+			"type": "string"
+		},
+		{
+			"name": "abholung",
+			"type": {
+				"type": "enum",
+				"name": "AbholungTagesschule",
+				"symbols": [
+					"ABHOLUNG",
+					"ALLEINE_NACH_HAUSE"
+				]
+			}
+		},
+		{
+			"name": "abweichungZweitesSemester",
+			"type": "boolean"
+		},
+		{
+			"name": "bemerkung",
+			"type": "string"
+		},
+		{
+			"name": "modulSelection",
+			"type": {
+				"type": "array",
+				"items": "ch.dvbern.kibon.exchange.commons.tagesschulen.ModulAuswahlDTO",
+				"java-class": "java.util.List"
+			}
+		}
+	]
+}

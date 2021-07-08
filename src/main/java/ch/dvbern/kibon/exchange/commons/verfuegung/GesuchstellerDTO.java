@@ -14,11 +14,14 @@ import org.apache.avro.message.SchemaStore;
 
 @org.apache.avro.specific.AvroGenerated
 public class GesuchstellerDTO extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = -7892043558713903780L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"GesuchstellerDTO\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.verfuegung\",\"fields\":[{\"name\":\"vorname\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"nachname\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"email\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null}]}");
+  private static final long serialVersionUID = -1306192433134170573L;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"GesuchstellerDTO\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.verfuegung\",\"fields\":[{\"name\":\"vorname\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"nachname\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"email\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"geschlecht\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"geburtsdatum\",\"type\":[\"null\",{\"type\":\"int\",\"logicalType\":\"date\"}],\"default\":null},{\"name\":\"adresse\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"AdresseDTO\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.types\",\"fields\":[{\"name\":\"anschrift\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"strasse\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"hausnummer\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"adresszusatz\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"plz\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"ort\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"land\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"gemeinde\",\"type\":{\"type\":\"record\",\"name\":\"GemeindeDTO\",\"fields\":[{\"name\":\"name\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"bfsNummer\",\"type\":[\"null\",\"long\"],\"default\":null}]},\"default\":{\"name\":null,\"bfsNummer\":null}},{\"name\":\"email\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"telefon\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"webseite\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null}]}],\"default\":null}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static SpecificData MODEL$ = new SpecificData();
+static {
+    MODEL$.addLogicalTypeConversion(new org.apache.avro.data.TimeConversions.DateConversion());
+  }
 
   private static final BinaryMessageEncoder<GesuchstellerDTO> ENCODER =
       new BinaryMessageEncoder<GesuchstellerDTO>(MODEL$, SCHEMA$);
@@ -74,6 +77,9 @@ public class GesuchstellerDTO extends org.apache.avro.specific.SpecificRecordBas
    private java.lang.String vorname;
    private java.lang.String nachname;
    private java.lang.String email;
+   private java.lang.String geschlecht;
+   private java.time.LocalDate geburtsdatum;
+   private ch.dvbern.kibon.exchange.commons.types.AdresseDTO adresse;
 
   /**
    * Default constructor.  Note that this does not initialize fields
@@ -87,11 +93,17 @@ public class GesuchstellerDTO extends org.apache.avro.specific.SpecificRecordBas
    * @param vorname The new value for vorname
    * @param nachname The new value for nachname
    * @param email The new value for email
+   * @param geschlecht The new value for geschlecht
+   * @param geburtsdatum The new value for geburtsdatum
+   * @param adresse The new value for adresse
    */
-  public GesuchstellerDTO(java.lang.String vorname, java.lang.String nachname, java.lang.String email) {
+  public GesuchstellerDTO(java.lang.String vorname, java.lang.String nachname, java.lang.String email, java.lang.String geschlecht, java.time.LocalDate geburtsdatum, ch.dvbern.kibon.exchange.commons.types.AdresseDTO adresse) {
     this.vorname = vorname;
     this.nachname = nachname;
     this.email = email;
+    this.geschlecht = geschlecht;
+    this.geburtsdatum = geburtsdatum;
+    this.adresse = adresse;
   }
 
   public org.apache.avro.specific.SpecificData getSpecificData() { return MODEL$; }
@@ -102,6 +114,9 @@ public class GesuchstellerDTO extends org.apache.avro.specific.SpecificRecordBas
     case 0: return vorname;
     case 1: return nachname;
     case 2: return email;
+    case 3: return geschlecht;
+    case 4: return geburtsdatum;
+    case 5: return adresse;
     default: throw new IndexOutOfBoundsException("Invalid index: " + field$);
     }
   }
@@ -113,6 +128,9 @@ public class GesuchstellerDTO extends org.apache.avro.specific.SpecificRecordBas
     case 0: vorname = value$ != null ? value$.toString() : null; break;
     case 1: nachname = value$ != null ? value$.toString() : null; break;
     case 2: email = value$ != null ? value$.toString() : null; break;
+    case 3: geschlecht = value$ != null ? value$.toString() : null; break;
+    case 4: geburtsdatum = (java.time.LocalDate)value$; break;
+    case 5: adresse = (ch.dvbern.kibon.exchange.commons.types.AdresseDTO)value$; break;
     default: throw new IndexOutOfBoundsException("Invalid index: " + field$);
     }
   }
@@ -169,6 +187,57 @@ public class GesuchstellerDTO extends org.apache.avro.specific.SpecificRecordBas
   }
 
   /**
+   * Gets the value of the 'geschlecht' field.
+   * @return The value of the 'geschlecht' field.
+   */
+  public java.lang.String getGeschlecht() {
+    return geschlecht;
+  }
+
+
+  /**
+   * Sets the value of the 'geschlecht' field.
+   * @param value the value to set.
+   */
+  public void setGeschlecht(java.lang.String value) {
+    this.geschlecht = value;
+  }
+
+  /**
+   * Gets the value of the 'geburtsdatum' field.
+   * @return The value of the 'geburtsdatum' field.
+   */
+  public java.time.LocalDate getGeburtsdatum() {
+    return geburtsdatum;
+  }
+
+
+  /**
+   * Sets the value of the 'geburtsdatum' field.
+   * @param value the value to set.
+   */
+  public void setGeburtsdatum(java.time.LocalDate value) {
+    this.geburtsdatum = value;
+  }
+
+  /**
+   * Gets the value of the 'adresse' field.
+   * @return The value of the 'adresse' field.
+   */
+  public ch.dvbern.kibon.exchange.commons.types.AdresseDTO getAdresse() {
+    return adresse;
+  }
+
+
+  /**
+   * Sets the value of the 'adresse' field.
+   * @param value the value to set.
+   */
+  public void setAdresse(ch.dvbern.kibon.exchange.commons.types.AdresseDTO value) {
+    this.adresse = value;
+  }
+
+  /**
    * Creates a new GesuchstellerDTO RecordBuilder.
    * @return A new GesuchstellerDTO RecordBuilder
    */
@@ -212,6 +281,10 @@ public class GesuchstellerDTO extends org.apache.avro.specific.SpecificRecordBas
     private java.lang.String vorname;
     private java.lang.String nachname;
     private java.lang.String email;
+    private java.lang.String geschlecht;
+    private java.time.LocalDate geburtsdatum;
+    private ch.dvbern.kibon.exchange.commons.types.AdresseDTO adresse;
+    private ch.dvbern.kibon.exchange.commons.types.AdresseDTO.Builder adresseBuilder;
 
     /** Creates a new Builder */
     private Builder() {
@@ -236,6 +309,21 @@ public class GesuchstellerDTO extends org.apache.avro.specific.SpecificRecordBas
         this.email = data().deepCopy(fields()[2].schema(), other.email);
         fieldSetFlags()[2] = other.fieldSetFlags()[2];
       }
+      if (isValidValue(fields()[3], other.geschlecht)) {
+        this.geschlecht = data().deepCopy(fields()[3].schema(), other.geschlecht);
+        fieldSetFlags()[3] = other.fieldSetFlags()[3];
+      }
+      if (isValidValue(fields()[4], other.geburtsdatum)) {
+        this.geburtsdatum = data().deepCopy(fields()[4].schema(), other.geburtsdatum);
+        fieldSetFlags()[4] = other.fieldSetFlags()[4];
+      }
+      if (isValidValue(fields()[5], other.adresse)) {
+        this.adresse = data().deepCopy(fields()[5].schema(), other.adresse);
+        fieldSetFlags()[5] = other.fieldSetFlags()[5];
+      }
+      if (other.hasAdresseBuilder()) {
+        this.adresseBuilder = ch.dvbern.kibon.exchange.commons.types.AdresseDTO.newBuilder(other.getAdresseBuilder());
+      }
     }
 
     /**
@@ -256,6 +344,19 @@ public class GesuchstellerDTO extends org.apache.avro.specific.SpecificRecordBas
         this.email = data().deepCopy(fields()[2].schema(), other.email);
         fieldSetFlags()[2] = true;
       }
+      if (isValidValue(fields()[3], other.geschlecht)) {
+        this.geschlecht = data().deepCopy(fields()[3].schema(), other.geschlecht);
+        fieldSetFlags()[3] = true;
+      }
+      if (isValidValue(fields()[4], other.geburtsdatum)) {
+        this.geburtsdatum = data().deepCopy(fields()[4].schema(), other.geburtsdatum);
+        fieldSetFlags()[4] = true;
+      }
+      if (isValidValue(fields()[5], other.adresse)) {
+        this.adresse = data().deepCopy(fields()[5].schema(), other.adresse);
+        fieldSetFlags()[5] = true;
+      }
+      this.adresseBuilder = null;
     }
 
     /**
@@ -378,6 +479,161 @@ public class GesuchstellerDTO extends org.apache.avro.specific.SpecificRecordBas
       return this;
     }
 
+    /**
+      * Gets the value of the 'geschlecht' field.
+      * @return The value.
+      */
+    public java.lang.String getGeschlecht() {
+      return geschlecht;
+    }
+
+
+    /**
+      * Sets the value of the 'geschlecht' field.
+      * @param value The value of 'geschlecht'.
+      * @return This builder.
+      */
+    public ch.dvbern.kibon.exchange.commons.verfuegung.GesuchstellerDTO.Builder setGeschlecht(java.lang.String value) {
+      validate(fields()[3], value);
+      this.geschlecht = value;
+      fieldSetFlags()[3] = true;
+      return this;
+    }
+
+    /**
+      * Checks whether the 'geschlecht' field has been set.
+      * @return True if the 'geschlecht' field has been set, false otherwise.
+      */
+    public boolean hasGeschlecht() {
+      return fieldSetFlags()[3];
+    }
+
+
+    /**
+      * Clears the value of the 'geschlecht' field.
+      * @return This builder.
+      */
+    public ch.dvbern.kibon.exchange.commons.verfuegung.GesuchstellerDTO.Builder clearGeschlecht() {
+      geschlecht = null;
+      fieldSetFlags()[3] = false;
+      return this;
+    }
+
+    /**
+      * Gets the value of the 'geburtsdatum' field.
+      * @return The value.
+      */
+    public java.time.LocalDate getGeburtsdatum() {
+      return geburtsdatum;
+    }
+
+
+    /**
+      * Sets the value of the 'geburtsdatum' field.
+      * @param value The value of 'geburtsdatum'.
+      * @return This builder.
+      */
+    public ch.dvbern.kibon.exchange.commons.verfuegung.GesuchstellerDTO.Builder setGeburtsdatum(java.time.LocalDate value) {
+      validate(fields()[4], value);
+      this.geburtsdatum = value;
+      fieldSetFlags()[4] = true;
+      return this;
+    }
+
+    /**
+      * Checks whether the 'geburtsdatum' field has been set.
+      * @return True if the 'geburtsdatum' field has been set, false otherwise.
+      */
+    public boolean hasGeburtsdatum() {
+      return fieldSetFlags()[4];
+    }
+
+
+    /**
+      * Clears the value of the 'geburtsdatum' field.
+      * @return This builder.
+      */
+    public ch.dvbern.kibon.exchange.commons.verfuegung.GesuchstellerDTO.Builder clearGeburtsdatum() {
+      geburtsdatum = null;
+      fieldSetFlags()[4] = false;
+      return this;
+    }
+
+    /**
+      * Gets the value of the 'adresse' field.
+      * @return The value.
+      */
+    public ch.dvbern.kibon.exchange.commons.types.AdresseDTO getAdresse() {
+      return adresse;
+    }
+
+
+    /**
+      * Sets the value of the 'adresse' field.
+      * @param value The value of 'adresse'.
+      * @return This builder.
+      */
+    public ch.dvbern.kibon.exchange.commons.verfuegung.GesuchstellerDTO.Builder setAdresse(ch.dvbern.kibon.exchange.commons.types.AdresseDTO value) {
+      validate(fields()[5], value);
+      this.adresseBuilder = null;
+      this.adresse = value;
+      fieldSetFlags()[5] = true;
+      return this;
+    }
+
+    /**
+      * Checks whether the 'adresse' field has been set.
+      * @return True if the 'adresse' field has been set, false otherwise.
+      */
+    public boolean hasAdresse() {
+      return fieldSetFlags()[5];
+    }
+
+    /**
+     * Gets the Builder instance for the 'adresse' field and creates one if it doesn't exist yet.
+     * @return This builder.
+     */
+    public ch.dvbern.kibon.exchange.commons.types.AdresseDTO.Builder getAdresseBuilder() {
+      if (adresseBuilder == null) {
+        if (hasAdresse()) {
+          setAdresseBuilder(ch.dvbern.kibon.exchange.commons.types.AdresseDTO.newBuilder(adresse));
+        } else {
+          setAdresseBuilder(ch.dvbern.kibon.exchange.commons.types.AdresseDTO.newBuilder());
+        }
+      }
+      return adresseBuilder;
+    }
+
+    /**
+     * Sets the Builder instance for the 'adresse' field
+     * @param value The builder instance that must be set.
+     * @return This builder.
+     */
+    public ch.dvbern.kibon.exchange.commons.verfuegung.GesuchstellerDTO.Builder setAdresseBuilder(ch.dvbern.kibon.exchange.commons.types.AdresseDTO.Builder value) {
+      clearAdresse();
+      adresseBuilder = value;
+      return this;
+    }
+
+    /**
+     * Checks whether the 'adresse' field has an active Builder instance
+     * @return True if the 'adresse' field has an active Builder instance
+     */
+    public boolean hasAdresseBuilder() {
+      return adresseBuilder != null;
+    }
+
+    /**
+      * Clears the value of the 'adresse' field.
+      * @return This builder.
+      */
+    public ch.dvbern.kibon.exchange.commons.verfuegung.GesuchstellerDTO.Builder clearAdresse() {
+      adresse = null;
+      adresseBuilder = null;
+      fieldSetFlags()[5] = false;
+      return this;
+    }
+
     @Override
     @SuppressWarnings("unchecked")
     public GesuchstellerDTO build() {
@@ -386,6 +642,18 @@ public class GesuchstellerDTO extends org.apache.avro.specific.SpecificRecordBas
         record.vorname = fieldSetFlags()[0] ? this.vorname : (java.lang.String) defaultValue(fields()[0]);
         record.nachname = fieldSetFlags()[1] ? this.nachname : (java.lang.String) defaultValue(fields()[1]);
         record.email = fieldSetFlags()[2] ? this.email : (java.lang.String) defaultValue(fields()[2]);
+        record.geschlecht = fieldSetFlags()[3] ? this.geschlecht : (java.lang.String) defaultValue(fields()[3]);
+        record.geburtsdatum = fieldSetFlags()[4] ? this.geburtsdatum : (java.time.LocalDate) defaultValue(fields()[4]);
+        if (adresseBuilder != null) {
+          try {
+            record.adresse = this.adresseBuilder.build();
+          } catch (org.apache.avro.AvroMissingFieldException e) {
+            e.addParentField(record.getSchema().getField("adresse"));
+            throw e;
+          }
+        } else {
+          record.adresse = fieldSetFlags()[5] ? this.adresse : (ch.dvbern.kibon.exchange.commons.types.AdresseDTO) defaultValue(fields()[5]);
+        }
         return record;
       } catch (org.apache.avro.AvroMissingFieldException e) {
         throw e;
@@ -413,67 +681,6 @@ public class GesuchstellerDTO extends org.apache.avro.specific.SpecificRecordBas
     READER$.read(this, SpecificData.getDecoder(in));
   }
 
-  @Override protected boolean hasCustomCoders() { return true; }
-
-  @Override public void customEncode(org.apache.avro.io.Encoder out)
-    throws java.io.IOException
-  {
-    out.writeString(this.vorname);
-
-    out.writeString(this.nachname);
-
-    if (this.email == null) {
-      out.writeIndex(0);
-      out.writeNull();
-    } else {
-      out.writeIndex(1);
-      out.writeString(this.email);
-    }
-
-  }
-
-  @Override public void customDecode(org.apache.avro.io.ResolvingDecoder in)
-    throws java.io.IOException
-  {
-    org.apache.avro.Schema.Field[] fieldOrder = in.readFieldOrderIfDiff();
-    if (fieldOrder == null) {
-      this.vorname = in.readString();
-
-      this.nachname = in.readString();
-
-      if (in.readIndex() != 1) {
-        in.readNull();
-        this.email = null;
-      } else {
-        this.email = in.readString();
-      }
-
-    } else {
-      for (int i = 0; i < 3; i++) {
-        switch (fieldOrder[i].pos()) {
-        case 0:
-          this.vorname = in.readString();
-          break;
-
-        case 1:
-          this.nachname = in.readString();
-          break;
-
-        case 2:
-          if (in.readIndex() != 1) {
-            in.readNull();
-            this.email = null;
-          } else {
-            this.email = in.readString();
-          }
-          break;
-
-        default:
-          throw new java.io.IOException("Corrupt ResolvingDecoder.");
-        }
-      }
-    }
-  }
 }
 
 
