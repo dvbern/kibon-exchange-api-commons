@@ -26,8 +26,7 @@
 		{
 			"name": "timestampAbgeschlossen",
 			"type": {
-				"type": "int",
-				"logicalType": "date"
+				"type": "long"
 			}
 		}
 	]

@@ -14,8 +14,8 @@ import org.apache.avro.message.SchemaStore;
 
 @org.apache.avro.specific.AvroGenerated
 public class TagesschuleAnmeldungTarifeDTO extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = -969287219749425147L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"TagesschuleAnmeldungTarifeDTO\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.tagesschulen\",\"fields\":[{\"name\":\"tarifePaedagogisch\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"TarifDTO\",\"fields\":[{\"name\":\"von\",\"type\":{\"type\":\"int\",\"logicalType\":\"date\"}},{\"name\":\"bis\",\"type\":{\"type\":\"int\",\"logicalType\":\"date\"}},{\"name\":\"betreuungsMinutenPerWeek\",\"type\":\"int\"},{\"name\":\"betreuungsKostenPerHour\",\"type\":{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}},{\"name\":\"verpflegungsKostenPerWeek\",\"type\":{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}},{\"name\":\"verpflegungsKostenVerguenstigung\",\"type\":{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}},{\"name\":\"totalCostsPerWeek\",\"type\":{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}}]},\"java-class\":\"java.util.List\"}},{\"name\":\"tarifeNichtPaedagogisch\",\"type\":{\"type\":\"array\",\"items\":\"TarifDTO\",\"java-class\":\"java.util.List\"}},{\"name\":\"finSitAkzeptiert\",\"type\":\"boolean\"},{\"name\":\"timestampAbgeschlossen\",\"type\":{\"type\":\"int\",\"logicalType\":\"date\"}}]}");
+  private static final long serialVersionUID = 7442921941055337525L;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"TagesschuleAnmeldungTarifeDTO\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.tagesschulen\",\"fields\":[{\"name\":\"tarifePaedagogisch\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"TarifDTO\",\"fields\":[{\"name\":\"von\",\"type\":{\"type\":\"int\",\"logicalType\":\"date\"}},{\"name\":\"bis\",\"type\":{\"type\":\"int\",\"logicalType\":\"date\"}},{\"name\":\"betreuungsMinutenProWoche\",\"type\":\"int\"},{\"name\":\"betreuungsKostenProStunde\",\"type\":{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}},{\"name\":\"verpflegungsKostenProWoche\",\"type\":{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}},{\"name\":\"verpflegungsKostenVerguenstigung\",\"type\":{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}},{\"name\":\"totalKostenProWoche\",\"type\":{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}}]},\"java-class\":\"java.util.List\"}},{\"name\":\"tarifeNichtPaedagogisch\",\"type\":{\"type\":\"array\",\"items\":\"TarifDTO\",\"java-class\":\"java.util.List\"}},{\"name\":\"finSitAkzeptiert\",\"type\":\"boolean\"},{\"name\":\"timestampAbgeschlossen\",\"type\":\"long\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static SpecificData MODEL$ = new SpecificData();
@@ -78,7 +78,7 @@ static {
    private java.util.List<ch.dvbern.kibon.exchange.commons.tagesschulen.TarifDTO> tarifePaedagogisch;
    private java.util.List<ch.dvbern.kibon.exchange.commons.tagesschulen.TarifDTO> tarifeNichtPaedagogisch;
    private boolean finSitAkzeptiert;
-   private java.time.LocalDate timestampAbgeschlossen;
+   private long timestampAbgeschlossen;
 
   /**
    * Default constructor.  Note that this does not initialize fields
@@ -94,7 +94,7 @@ static {
    * @param finSitAkzeptiert The new value for finSitAkzeptiert
    * @param timestampAbgeschlossen The new value for timestampAbgeschlossen
    */
-  public TagesschuleAnmeldungTarifeDTO(java.util.List<ch.dvbern.kibon.exchange.commons.tagesschulen.TarifDTO> tarifePaedagogisch, java.util.List<ch.dvbern.kibon.exchange.commons.tagesschulen.TarifDTO> tarifeNichtPaedagogisch, java.lang.Boolean finSitAkzeptiert, java.time.LocalDate timestampAbgeschlossen) {
+  public TagesschuleAnmeldungTarifeDTO(java.util.List<ch.dvbern.kibon.exchange.commons.tagesschulen.TarifDTO> tarifePaedagogisch, java.util.List<ch.dvbern.kibon.exchange.commons.tagesschulen.TarifDTO> tarifeNichtPaedagogisch, java.lang.Boolean finSitAkzeptiert, java.lang.Long timestampAbgeschlossen) {
     this.tarifePaedagogisch = tarifePaedagogisch;
     this.tarifeNichtPaedagogisch = tarifeNichtPaedagogisch;
     this.finSitAkzeptiert = finSitAkzeptiert;
@@ -114,20 +114,6 @@ static {
     }
   }
 
-  private static final org.apache.avro.Conversion<?>[] conversions =
-      new org.apache.avro.Conversion<?>[] {
-      null,
-      null,
-      null,
-      new org.apache.avro.data.TimeConversions.DateConversion(),
-      null
-  };
-
-  @Override
-  public org.apache.avro.Conversion<?> getConversion(int field) {
-    return conversions[field];
-  }
-
   // Used by DatumReader.  Applications should not call.
   @SuppressWarnings(value="unchecked")
   public void put(int field$, java.lang.Object value$) {
@@ -135,7 +121,7 @@ static {
     case 0: tarifePaedagogisch = (java.util.List<ch.dvbern.kibon.exchange.commons.tagesschulen.TarifDTO>)value$; break;
     case 1: tarifeNichtPaedagogisch = (java.util.List<ch.dvbern.kibon.exchange.commons.tagesschulen.TarifDTO>)value$; break;
     case 2: finSitAkzeptiert = (java.lang.Boolean)value$; break;
-    case 3: timestampAbgeschlossen = (java.time.LocalDate)value$; break;
+    case 3: timestampAbgeschlossen = (java.lang.Long)value$; break;
     default: throw new IndexOutOfBoundsException("Invalid index: " + field$);
     }
   }
@@ -195,7 +181,7 @@ static {
    * Gets the value of the 'timestampAbgeschlossen' field.
    * @return The value of the 'timestampAbgeschlossen' field.
    */
-  public java.time.LocalDate getTimestampAbgeschlossen() {
+  public long getTimestampAbgeschlossen() {
     return timestampAbgeschlossen;
   }
 
@@ -204,7 +190,7 @@ static {
    * Sets the value of the 'timestampAbgeschlossen' field.
    * @param value the value to set.
    */
-  public void setTimestampAbgeschlossen(java.time.LocalDate value) {
+  public void setTimestampAbgeschlossen(long value) {
     this.timestampAbgeschlossen = value;
   }
 
@@ -252,7 +238,7 @@ static {
     private java.util.List<ch.dvbern.kibon.exchange.commons.tagesschulen.TarifDTO> tarifePaedagogisch;
     private java.util.List<ch.dvbern.kibon.exchange.commons.tagesschulen.TarifDTO> tarifeNichtPaedagogisch;
     private boolean finSitAkzeptiert;
-    private java.time.LocalDate timestampAbgeschlossen;
+    private long timestampAbgeschlossen;
 
     /** Creates a new Builder */
     private Builder() {
@@ -430,7 +416,7 @@ static {
       * Gets the value of the 'timestampAbgeschlossen' field.
       * @return The value.
       */
-    public java.time.LocalDate getTimestampAbgeschlossen() {
+    public long getTimestampAbgeschlossen() {
       return timestampAbgeschlossen;
     }
 
@@ -440,7 +426,7 @@ static {
       * @param value The value of 'timestampAbgeschlossen'.
       * @return This builder.
       */
-    public ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleAnmeldungTarifeDTO.Builder setTimestampAbgeschlossen(java.time.LocalDate value) {
+    public ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleAnmeldungTarifeDTO.Builder setTimestampAbgeschlossen(long value) {
       validate(fields()[3], value);
       this.timestampAbgeschlossen = value;
       fieldSetFlags()[3] = true;
@@ -473,7 +459,7 @@ static {
         record.tarifePaedagogisch = fieldSetFlags()[0] ? this.tarifePaedagogisch : (java.util.List<ch.dvbern.kibon.exchange.commons.tagesschulen.TarifDTO>) defaultValue(fields()[0]);
         record.tarifeNichtPaedagogisch = fieldSetFlags()[1] ? this.tarifeNichtPaedagogisch : (java.util.List<ch.dvbern.kibon.exchange.commons.tagesschulen.TarifDTO>) defaultValue(fields()[1]);
         record.finSitAkzeptiert = fieldSetFlags()[2] ? this.finSitAkzeptiert : (java.lang.Boolean) defaultValue(fields()[2]);
-        record.timestampAbgeschlossen = fieldSetFlags()[3] ? this.timestampAbgeschlossen : (java.time.LocalDate) defaultValue(fields()[3]);
+        record.timestampAbgeschlossen = fieldSetFlags()[3] ? this.timestampAbgeschlossen : (java.lang.Long) defaultValue(fields()[3]);
         return record;
       } catch (org.apache.avro.AvroMissingFieldException e) {
         throw e;

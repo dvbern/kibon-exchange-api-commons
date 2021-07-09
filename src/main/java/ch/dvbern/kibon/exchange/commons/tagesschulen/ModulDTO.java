@@ -14,15 +14,14 @@ import org.apache.avro.message.SchemaStore;
 
 @org.apache.avro.specific.AvroGenerated
 public class ModulDTO extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = 942292033277345721L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"ModulDTO\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.tagesschulen\",\"fields\":[{\"name\":\"id\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"bezeichnungDE\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"bezeichnungFR\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"zeitVon\",\"type\":{\"type\":\"int\",\"logicalType\":\"time-millis\"}},{\"name\":\"zeitBis\",\"type\":{\"type\":\"int\",\"logicalType\":\"time-millis\"}},{\"name\":\"wochentage\",\"type\":{\"type\":\"array\",\"items\":\"int\",\"java-class\":\"java.util.List\"}},{\"name\":\"intervall\",\"type\":{\"type\":\"enum\",\"name\":\"Intervall\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.types\",\"symbols\":[\"WOECHENTLICH\",\"ALLE_ZWEI_WOCHEN\"]}},{\"name\":\"padaegogischBetreut\",\"type\":\"boolean\"},{\"name\":\"verpflegungsKosten\",\"type\":{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}},{\"name\":\"gesuchsperiode\",\"type\":{\"type\":\"record\",\"name\":\"Gesuchsperiode\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.types\",\"fields\":[{\"name\":\"id\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"gueltigAb\",\"type\":{\"type\":\"int\",\"logicalType\":\"date\"}},{\"name\":\"gueltigBis\",\"type\":{\"type\":\"int\",\"logicalType\":\"date\"}}]}}]}");
+  private static final long serialVersionUID = 3423667257194718413L;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"ModulDTO\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.tagesschulen\",\"fields\":[{\"name\":\"id\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"bezeichnungDE\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"bezeichnungFR\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"zeitVon\",\"type\":\"long\"},{\"name\":\"zeitBis\",\"type\":\"long\"},{\"name\":\"wochentage\",\"type\":{\"type\":\"array\",\"items\":\"int\",\"java-class\":\"java.util.List\"}},{\"name\":\"intervall\",\"type\":{\"type\":\"enum\",\"name\":\"Intervall\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.types\",\"symbols\":[\"WOECHENTLICH\",\"ALLE_ZWEI_WOCHEN\"]}},{\"name\":\"padaegogischBetreut\",\"type\":\"boolean\"},{\"name\":\"verpflegungsKosten\",\"type\":{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}},{\"name\":\"gesuchsperiode\",\"type\":{\"type\":\"record\",\"name\":\"Gesuchsperiode\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.types\",\"fields\":[{\"name\":\"id\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"gueltigAb\",\"type\":{\"type\":\"int\",\"logicalType\":\"date\"}},{\"name\":\"gueltigBis\",\"type\":{\"type\":\"int\",\"logicalType\":\"date\"}}]}}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static SpecificData MODEL$ = new SpecificData();
 static {
     MODEL$.addLogicalTypeConversion(new org.apache.avro.data.TimeConversions.DateConversion());
     MODEL$.addLogicalTypeConversion(new org.apache.avro.Conversions.DecimalConversion());
-    MODEL$.addLogicalTypeConversion(new org.apache.avro.data.TimeConversions.TimeMillisConversion());
   }
 
   private static final BinaryMessageEncoder<ModulDTO> ENCODER =
@@ -79,8 +78,8 @@ static {
    private java.lang.String id;
    private java.lang.String bezeichnungDE;
    private java.lang.String bezeichnungFR;
-   private java.time.LocalTime zeitVon;
-   private java.time.LocalTime zeitBis;
+   private long zeitVon;
+   private long zeitBis;
    private java.util.List<java.lang.Integer> wochentage;
    private ch.dvbern.kibon.exchange.commons.types.Intervall intervall;
    private boolean padaegogischBetreut;
@@ -107,12 +106,12 @@ static {
    * @param verpflegungsKosten The new value for verpflegungsKosten
    * @param gesuchsperiode The new value for gesuchsperiode
    */
-  public ModulDTO(java.lang.String id, java.lang.String bezeichnungDE, java.lang.String bezeichnungFR, java.time.LocalTime zeitVon, java.time.LocalTime zeitBis, java.util.List<java.lang.Integer> wochentage, ch.dvbern.kibon.exchange.commons.types.Intervall intervall, java.lang.Boolean padaegogischBetreut, java.math.BigDecimal verpflegungsKosten, ch.dvbern.kibon.exchange.commons.types.Gesuchsperiode gesuchsperiode) {
+  public ModulDTO(java.lang.String id, java.lang.String bezeichnungDE, java.lang.String bezeichnungFR, java.lang.Long zeitVon, java.lang.Long zeitBis, java.util.List<java.lang.Integer> wochentage, ch.dvbern.kibon.exchange.commons.types.Intervall intervall, java.lang.Boolean padaegogischBetreut, java.math.BigDecimal verpflegungsKosten, ch.dvbern.kibon.exchange.commons.types.Gesuchsperiode gesuchsperiode) {
     this.id = id;
     this.bezeichnungDE = bezeichnungDE;
     this.bezeichnungFR = bezeichnungFR;
-    this.zeitVon = zeitVon.truncatedTo(java.time.temporal.ChronoUnit.MILLIS);
-    this.zeitBis = zeitBis.truncatedTo(java.time.temporal.ChronoUnit.MILLIS);
+    this.zeitVon = zeitVon;
+    this.zeitBis = zeitBis;
     this.wochentage = wochentage;
     this.intervall = intervall;
     this.padaegogischBetreut = padaegogischBetreut;
@@ -144,8 +143,8 @@ static {
       null,
       null,
       null,
-      new org.apache.avro.data.TimeConversions.TimeMillisConversion(),
-      new org.apache.avro.data.TimeConversions.TimeMillisConversion(),
+      null,
+      null,
       null,
       null,
       null,
@@ -166,8 +165,8 @@ static {
     case 0: id = value$ != null ? value$.toString() : null; break;
     case 1: bezeichnungDE = value$ != null ? value$.toString() : null; break;
     case 2: bezeichnungFR = value$ != null ? value$.toString() : null; break;
-    case 3: zeitVon = (java.time.LocalTime)value$; break;
-    case 4: zeitBis = (java.time.LocalTime)value$; break;
+    case 3: zeitVon = (java.lang.Long)value$; break;
+    case 4: zeitBis = (java.lang.Long)value$; break;
     case 5: wochentage = (java.util.List<java.lang.Integer>)value$; break;
     case 6: intervall = (ch.dvbern.kibon.exchange.commons.types.Intervall)value$; break;
     case 7: padaegogischBetreut = (java.lang.Boolean)value$; break;
@@ -232,7 +231,7 @@ static {
    * Gets the value of the 'zeitVon' field.
    * @return The value of the 'zeitVon' field.
    */
-  public java.time.LocalTime getZeitVon() {
+  public long getZeitVon() {
     return zeitVon;
   }
 
@@ -241,15 +240,15 @@ static {
    * Sets the value of the 'zeitVon' field.
    * @param value the value to set.
    */
-  public void setZeitVon(java.time.LocalTime value) {
-    this.zeitVon = value.truncatedTo(java.time.temporal.ChronoUnit.MILLIS);
+  public void setZeitVon(long value) {
+    this.zeitVon = value;
   }
 
   /**
    * Gets the value of the 'zeitBis' field.
    * @return The value of the 'zeitBis' field.
    */
-  public java.time.LocalTime getZeitBis() {
+  public long getZeitBis() {
     return zeitBis;
   }
 
@@ -258,8 +257,8 @@ static {
    * Sets the value of the 'zeitBis' field.
    * @param value the value to set.
    */
-  public void setZeitBis(java.time.LocalTime value) {
-    this.zeitBis = value.truncatedTo(java.time.temporal.ChronoUnit.MILLIS);
+  public void setZeitBis(long value) {
+    this.zeitBis = value;
   }
 
   /**
@@ -391,8 +390,8 @@ static {
     private java.lang.String id;
     private java.lang.String bezeichnungDE;
     private java.lang.String bezeichnungFR;
-    private java.time.LocalTime zeitVon;
-    private java.time.LocalTime zeitBis;
+    private long zeitVon;
+    private long zeitBis;
     private java.util.List<java.lang.Integer> wochentage;
     private ch.dvbern.kibon.exchange.commons.types.Intervall intervall;
     private boolean padaegogischBetreut;
@@ -629,7 +628,7 @@ static {
       * Gets the value of the 'zeitVon' field.
       * @return The value.
       */
-    public java.time.LocalTime getZeitVon() {
+    public long getZeitVon() {
       return zeitVon;
     }
 
@@ -639,9 +638,9 @@ static {
       * @param value The value of 'zeitVon'.
       * @return This builder.
       */
-    public ch.dvbern.kibon.exchange.commons.tagesschulen.ModulDTO.Builder setZeitVon(java.time.LocalTime value) {
+    public ch.dvbern.kibon.exchange.commons.tagesschulen.ModulDTO.Builder setZeitVon(long value) {
       validate(fields()[3], value);
-      this.zeitVon = value.truncatedTo(java.time.temporal.ChronoUnit.MILLIS);
+      this.zeitVon = value;
       fieldSetFlags()[3] = true;
       return this;
     }
@@ -668,7 +667,7 @@ static {
       * Gets the value of the 'zeitBis' field.
       * @return The value.
       */
-    public java.time.LocalTime getZeitBis() {
+    public long getZeitBis() {
       return zeitBis;
     }
 
@@ -678,9 +677,9 @@ static {
       * @param value The value of 'zeitBis'.
       * @return This builder.
       */
-    public ch.dvbern.kibon.exchange.commons.tagesschulen.ModulDTO.Builder setZeitBis(java.time.LocalTime value) {
+    public ch.dvbern.kibon.exchange.commons.tagesschulen.ModulDTO.Builder setZeitBis(long value) {
       validate(fields()[4], value);
-      this.zeitBis = value.truncatedTo(java.time.temporal.ChronoUnit.MILLIS);
+      this.zeitBis = value;
       fieldSetFlags()[4] = true;
       return this;
     }
@@ -945,8 +944,8 @@ static {
         record.id = fieldSetFlags()[0] ? this.id : (java.lang.String) defaultValue(fields()[0]);
         record.bezeichnungDE = fieldSetFlags()[1] ? this.bezeichnungDE : (java.lang.String) defaultValue(fields()[1]);
         record.bezeichnungFR = fieldSetFlags()[2] ? this.bezeichnungFR : (java.lang.String) defaultValue(fields()[2]);
-        record.zeitVon = fieldSetFlags()[3] ? this.zeitVon : (java.time.LocalTime) defaultValue(fields()[3]);
-        record.zeitBis = fieldSetFlags()[4] ? this.zeitBis : (java.time.LocalTime) defaultValue(fields()[4]);
+        record.zeitVon = fieldSetFlags()[3] ? this.zeitVon : (java.lang.Long) defaultValue(fields()[3]);
+        record.zeitBis = fieldSetFlags()[4] ? this.zeitBis : (java.lang.Long) defaultValue(fields()[4]);
         record.wochentage = fieldSetFlags()[5] ? this.wochentage : (java.util.List<java.lang.Integer>) defaultValue(fields()[5]);
         record.intervall = fieldSetFlags()[6] ? this.intervall : (ch.dvbern.kibon.exchange.commons.types.Intervall) defaultValue(fields()[6]);
         record.padaegogischBetreut = fieldSetFlags()[7] ? this.padaegogischBetreut : (java.lang.Boolean) defaultValue(fields()[7]);
