@@ -17,17 +17,11 @@
 		},
 		{
 			"name": "zeitVon",
-			"type": {
-            	"type": "long",
-            	"logicalType": "time-millis"
-            }
+            "type": "long"
         },
 		{
 			"name": "zeitBis",
-			"type": {
-                "type": "long",
-                "logicalType": "time-millis"
-            }
+            "type": "long"
 		},
 		{
 			"name": "wochentage",
