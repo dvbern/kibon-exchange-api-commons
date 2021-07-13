@@ -14,8 +14,8 @@ import org.apache.avro.message.SchemaStore;
 
 @org.apache.avro.specific.AvroGenerated
 public class ModulDTO extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = 3423667257194718413L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"ModulDTO\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.tagesschulen\",\"fields\":[{\"name\":\"id\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"bezeichnungDE\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"bezeichnungFR\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"zeitVon\",\"type\":\"long\"},{\"name\":\"zeitBis\",\"type\":\"long\"},{\"name\":\"wochentage\",\"type\":{\"type\":\"array\",\"items\":\"int\",\"java-class\":\"java.util.List\"}},{\"name\":\"intervall\",\"type\":{\"type\":\"enum\",\"name\":\"Intervall\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.types\",\"symbols\":[\"WOECHENTLICH\",\"ALLE_ZWEI_WOCHEN\"]}},{\"name\":\"padaegogischBetreut\",\"type\":\"boolean\"},{\"name\":\"verpflegungsKosten\",\"type\":{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}},{\"name\":\"gesuchsperiode\",\"type\":{\"type\":\"record\",\"name\":\"Gesuchsperiode\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.types\",\"fields\":[{\"name\":\"id\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"gueltigAb\",\"type\":{\"type\":\"int\",\"logicalType\":\"date\"}},{\"name\":\"gueltigBis\",\"type\":{\"type\":\"int\",\"logicalType\":\"date\"}}]}}]}");
+  private static final long serialVersionUID = -620823225577330157L;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"ModulDTO\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.tagesschulen\",\"fields\":[{\"name\":\"id\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"bezeichnungDE\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"bezeichnungFR\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"zeitVon\",\"type\":\"long\"},{\"name\":\"zeitBis\",\"type\":\"long\"},{\"name\":\"wochentage\",\"type\":{\"type\":\"array\",\"items\":\"int\",\"java-class\":\"java.util.List\"}},{\"name\":\"intervall\",\"type\":{\"type\":\"enum\",\"name\":\"ModulIntervall\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.types\",\"symbols\":[\"WOECHENTLICH\",\"WOECHENTLICH_ODER_ALLE_ZWEI_WOCHEN\"]}},{\"name\":\"padaegogischBetreut\",\"type\":\"boolean\"},{\"name\":\"verpflegungsKosten\",\"type\":{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}},{\"name\":\"gesuchsperiode\",\"type\":{\"type\":\"record\",\"name\":\"Gesuchsperiode\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.types\",\"fields\":[{\"name\":\"id\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"gueltigAb\",\"type\":{\"type\":\"int\",\"logicalType\":\"date\"}},{\"name\":\"gueltigBis\",\"type\":{\"type\":\"int\",\"logicalType\":\"date\"}}]}}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static SpecificData MODEL$ = new SpecificData();
@@ -81,7 +81,7 @@ static {
    private long zeitVon;
    private long zeitBis;
    private java.util.List<java.lang.Integer> wochentage;
-   private ch.dvbern.kibon.exchange.commons.types.Intervall intervall;
+   private ch.dvbern.kibon.exchange.commons.types.ModulIntervall intervall;
    private boolean padaegogischBetreut;
    private java.math.BigDecimal verpflegungsKosten;
    private ch.dvbern.kibon.exchange.commons.types.Gesuchsperiode gesuchsperiode;
@@ -106,7 +106,7 @@ static {
    * @param verpflegungsKosten The new value for verpflegungsKosten
    * @param gesuchsperiode The new value for gesuchsperiode
    */
-  public ModulDTO(java.lang.String id, java.lang.String bezeichnungDE, java.lang.String bezeichnungFR, java.lang.Long zeitVon, java.lang.Long zeitBis, java.util.List<java.lang.Integer> wochentage, ch.dvbern.kibon.exchange.commons.types.Intervall intervall, java.lang.Boolean padaegogischBetreut, java.math.BigDecimal verpflegungsKosten, ch.dvbern.kibon.exchange.commons.types.Gesuchsperiode gesuchsperiode) {
+  public ModulDTO(java.lang.String id, java.lang.String bezeichnungDE, java.lang.String bezeichnungFR, java.lang.Long zeitVon, java.lang.Long zeitBis, java.util.List<java.lang.Integer> wochentage, ch.dvbern.kibon.exchange.commons.types.ModulIntervall intervall, java.lang.Boolean padaegogischBetreut, java.math.BigDecimal verpflegungsKosten, ch.dvbern.kibon.exchange.commons.types.Gesuchsperiode gesuchsperiode) {
     this.id = id;
     this.bezeichnungDE = bezeichnungDE;
     this.bezeichnungFR = bezeichnungFR;
@@ -168,7 +168,7 @@ static {
     case 3: zeitVon = (java.lang.Long)value$; break;
     case 4: zeitBis = (java.lang.Long)value$; break;
     case 5: wochentage = (java.util.List<java.lang.Integer>)value$; break;
-    case 6: intervall = (ch.dvbern.kibon.exchange.commons.types.Intervall)value$; break;
+    case 6: intervall = (ch.dvbern.kibon.exchange.commons.types.ModulIntervall)value$; break;
     case 7: padaegogischBetreut = (java.lang.Boolean)value$; break;
     case 8: verpflegungsKosten = (java.math.BigDecimal)value$; break;
     case 9: gesuchsperiode = (ch.dvbern.kibon.exchange.commons.types.Gesuchsperiode)value$; break;
@@ -282,7 +282,7 @@ static {
    * Gets the value of the 'intervall' field.
    * @return The value of the 'intervall' field.
    */
-  public ch.dvbern.kibon.exchange.commons.types.Intervall getIntervall() {
+  public ch.dvbern.kibon.exchange.commons.types.ModulIntervall getIntervall() {
     return intervall;
   }
 
@@ -291,7 +291,7 @@ static {
    * Sets the value of the 'intervall' field.
    * @param value the value to set.
    */
-  public void setIntervall(ch.dvbern.kibon.exchange.commons.types.Intervall value) {
+  public void setIntervall(ch.dvbern.kibon.exchange.commons.types.ModulIntervall value) {
     this.intervall = value;
   }
 
@@ -393,7 +393,7 @@ static {
     private long zeitVon;
     private long zeitBis;
     private java.util.List<java.lang.Integer> wochentage;
-    private ch.dvbern.kibon.exchange.commons.types.Intervall intervall;
+    private ch.dvbern.kibon.exchange.commons.types.ModulIntervall intervall;
     private boolean padaegogischBetreut;
     private java.math.BigDecimal verpflegungsKosten;
     private ch.dvbern.kibon.exchange.commons.types.Gesuchsperiode gesuchsperiode;
@@ -746,7 +746,7 @@ static {
       * Gets the value of the 'intervall' field.
       * @return The value.
       */
-    public ch.dvbern.kibon.exchange.commons.types.Intervall getIntervall() {
+    public ch.dvbern.kibon.exchange.commons.types.ModulIntervall getIntervall() {
       return intervall;
     }
 
@@ -756,7 +756,7 @@ static {
       * @param value The value of 'intervall'.
       * @return This builder.
       */
-    public ch.dvbern.kibon.exchange.commons.tagesschulen.ModulDTO.Builder setIntervall(ch.dvbern.kibon.exchange.commons.types.Intervall value) {
+    public ch.dvbern.kibon.exchange.commons.tagesschulen.ModulDTO.Builder setIntervall(ch.dvbern.kibon.exchange.commons.types.ModulIntervall value) {
       validate(fields()[6], value);
       this.intervall = value;
       fieldSetFlags()[6] = true;
@@ -947,7 +947,7 @@ static {
         record.zeitVon = fieldSetFlags()[3] ? this.zeitVon : (java.lang.Long) defaultValue(fields()[3]);
         record.zeitBis = fieldSetFlags()[4] ? this.zeitBis : (java.lang.Long) defaultValue(fields()[4]);
         record.wochentage = fieldSetFlags()[5] ? this.wochentage : (java.util.List<java.lang.Integer>) defaultValue(fields()[5]);
-        record.intervall = fieldSetFlags()[6] ? this.intervall : (ch.dvbern.kibon.exchange.commons.types.Intervall) defaultValue(fields()[6]);
+        record.intervall = fieldSetFlags()[6] ? this.intervall : (ch.dvbern.kibon.exchange.commons.types.ModulIntervall) defaultValue(fields()[6]);
         record.padaegogischBetreut = fieldSetFlags()[7] ? this.padaegogischBetreut : (java.lang.Boolean) defaultValue(fields()[7]);
         record.verpflegungsKosten = fieldSetFlags()[8] ? this.verpflegungsKosten : (java.math.BigDecimal) defaultValue(fields()[8]);
         if (gesuchsperiodeBuilder != null) {
