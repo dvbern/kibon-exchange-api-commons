@@ -16,18 +16,26 @@
 		},
 		{
 			"name": "planKlasse",
-			"type": "string"
+			"type": [
+            	"null",
+            	"string"
+            ],
+            "default": null
 		},
 		{
 			"name": "abholung",
-			"type": {
-				"type": "enum",
-				"name": "AbholungTagesschule",
-				"symbols": [
-					"ABHOLUNG",
-					"ALLEINE_NACH_HAUSE"
-				]
-			}
+			"type": [
+				"null",
+				{
+					"type": "enum",
+					"name": "AbholungTagesschule",
+					"symbols": [
+						"ABHOLUNG",
+						"ALLEINE_NACH_HAUSE"
+					]
+				}
+			],
+			"default": null
 		},
 		{
 			"name": "abweichungZweitesSemester",
@@ -35,7 +43,11 @@
 		},
 		{
 			"name": "bemerkung",
-			"type": "string"
+			"type": [
+            	"null",
+                "string"
+            ],
+            "default": null
 		},
 		{
 			"name": "modulSelection",
