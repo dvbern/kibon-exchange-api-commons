@@ -160,8 +160,10 @@
                                 <import>${project.basedir}/src/main/avro/ch/dvbern/kibon/exchange/commons/types/Geschlecht.avsc</import>
                                 <import>${project.basedir}/src/main/avro/ch/dvbern/kibon/exchange/commons/types/Intervall.avsc</import>
                                 <import>${project.basedir}/src/main/avro/ch/dvbern/kibon/exchange/commons/types/ModulIntervall.avsc</import>
-                                <import>${project.basedir}/src/main/avro/ch/dvbern/kibon/exchange/commons/verfuegung/KindDTOv2.avsc</import>
-                                <import>${project.basedir}/src/main/avro/ch/dvbern/kibon/exchange/commons/verfuegung/GesuchstellerDTOv2.avsc</import>
+                                <import>${project.basedir}/src/main/avro/ch/dvbern/kibon/exchange/commons/types/KindDTO.avsc</import>
+                                <import>${project.basedir}/src/main/avro/ch/dvbern/kibon/exchange/commons/types/GesuchstellerDTO.avsc</import>
+                                <import>${project.basedir}/src/main/avro/ch/dvbern/kibon/exchange/commons/verfuegung/KindDTO.avsc</import>
+                                <import>${project.basedir}/src/main/avro/ch/dvbern/kibon/exchange/commons/verfuegung/GesuchstellerDTO.avsc</import>
                                 <import>${project.basedir}/src/main/avro/ch/dvbern/kibon/exchange/commons/tagesschulen/ModulAuswahlDTO.avsc</import>
                                 <import>${project.basedir}/src/main/avro/ch/dvbern/kibon/exchange/commons/tagesschulen/ModulDTO.avsc</import>
                                 <import>${project.basedir}/src/main/avro/ch/dvbern/kibon/exchange/commons/tagesschulen/TarifDTO.avsc</import>

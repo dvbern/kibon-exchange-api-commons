@@ -1,7 +1,7 @@
 {
 	"type": "record",
 	"name": "GesuchstellerDTO",
-	"namespace": "ch.dvbern.kibon.exchange.commons.verfuegung",
+	"namespace": "ch.dvbern.kibon.exchange.commons.types",
 	"fields": [
 		{
 			"name": "vorname",
