@@ -22,10 +22,10 @@
 		{
 			"name": "geschlecht",
 			"type": [
-				"null",
-				"string"
-			],
-			"default": null
+            	"null",
+            	"ch.dvbern.kibon.exchange.commons.types.Geschlecht"
+            ],
+            "default": null
 		},
 		{
 			"name": "geburtsdatum",

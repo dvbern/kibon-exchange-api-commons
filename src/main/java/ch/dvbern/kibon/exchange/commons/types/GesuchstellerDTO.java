@@ -14,8 +14,8 @@ import org.apache.avro.message.SchemaStore;
 
 @org.apache.avro.specific.AvroGenerated
 public class GesuchstellerDTO extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = -1161442839785216695L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"GesuchstellerDTO\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.types\",\"fields\":[{\"name\":\"vorname\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"nachname\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"email\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"geschlecht\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"geburtsdatum\",\"type\":[\"null\",{\"type\":\"int\",\"logicalType\":\"date\"}],\"default\":null},{\"name\":\"adresse\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"AdresseDTO\",\"fields\":[{\"name\":\"anschrift\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"strasse\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"hausnummer\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"adresszusatz\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"plz\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"ort\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"land\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"gemeinde\",\"type\":{\"type\":\"record\",\"name\":\"GemeindeDTO\",\"fields\":[{\"name\":\"name\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"bfsNummer\",\"type\":[\"null\",\"long\"],\"default\":null}]},\"default\":{\"name\":null,\"bfsNummer\":null}},{\"name\":\"email\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"telefon\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"webseite\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null}]}],\"default\":null}]}");
+  private static final long serialVersionUID = -7457856852479725165L;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"GesuchstellerDTO\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.types\",\"fields\":[{\"name\":\"vorname\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"nachname\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"email\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"geschlecht\",\"type\":[\"null\",{\"type\":\"enum\",\"name\":\"Geschlecht\",\"symbols\":[\"WEIBLICH\",\"MAENNLICH\"]}],\"default\":null},{\"name\":\"geburtsdatum\",\"type\":[\"null\",{\"type\":\"int\",\"logicalType\":\"date\"}],\"default\":null},{\"name\":\"adresse\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"AdresseDTO\",\"fields\":[{\"name\":\"anschrift\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"strasse\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"hausnummer\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"adresszusatz\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"plz\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"ort\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"land\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"gemeinde\",\"type\":{\"type\":\"record\",\"name\":\"GemeindeDTO\",\"fields\":[{\"name\":\"name\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"bfsNummer\",\"type\":[\"null\",\"long\"],\"default\":null}]},\"default\":{\"name\":null,\"bfsNummer\":null}},{\"name\":\"email\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"telefon\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"webseite\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null}]}],\"default\":null}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static SpecificData MODEL$ = new SpecificData();
@@ -77,7 +77,7 @@ static {
    private java.lang.String vorname;
    private java.lang.String nachname;
    private java.lang.String email;
-   private java.lang.String geschlecht;
+   private ch.dvbern.kibon.exchange.commons.types.Geschlecht geschlecht;
    private java.time.LocalDate geburtsdatum;
    private ch.dvbern.kibon.exchange.commons.types.AdresseDTO adresse;
 
@@ -97,7 +97,7 @@ static {
    * @param geburtsdatum The new value for geburtsdatum
    * @param adresse The new value for adresse
    */
-  public GesuchstellerDTO(java.lang.String vorname, java.lang.String nachname, java.lang.String email, java.lang.String geschlecht, java.time.LocalDate geburtsdatum, ch.dvbern.kibon.exchange.commons.types.AdresseDTO adresse) {
+  public GesuchstellerDTO(java.lang.String vorname, java.lang.String nachname, java.lang.String email, ch.dvbern.kibon.exchange.commons.types.Geschlecht geschlecht, java.time.LocalDate geburtsdatum, ch.dvbern.kibon.exchange.commons.types.AdresseDTO adresse) {
     this.vorname = vorname;
     this.nachname = nachname;
     this.email = email;
@@ -128,7 +128,7 @@ static {
     case 0: vorname = value$ != null ? value$.toString() : null; break;
     case 1: nachname = value$ != null ? value$.toString() : null; break;
     case 2: email = value$ != null ? value$.toString() : null; break;
-    case 3: geschlecht = value$ != null ? value$.toString() : null; break;
+    case 3: geschlecht = (ch.dvbern.kibon.exchange.commons.types.Geschlecht)value$; break;
     case 4: geburtsdatum = (java.time.LocalDate)value$; break;
     case 5: adresse = (ch.dvbern.kibon.exchange.commons.types.AdresseDTO)value$; break;
     default: throw new IndexOutOfBoundsException("Invalid index: " + field$);
@@ -190,7 +190,7 @@ static {
    * Gets the value of the 'geschlecht' field.
    * @return The value of the 'geschlecht' field.
    */
-  public java.lang.String getGeschlecht() {
+  public ch.dvbern.kibon.exchange.commons.types.Geschlecht getGeschlecht() {
     return geschlecht;
   }
 
@@ -199,7 +199,7 @@ static {
    * Sets the value of the 'geschlecht' field.
    * @param value the value to set.
    */
-  public void setGeschlecht(java.lang.String value) {
+  public void setGeschlecht(ch.dvbern.kibon.exchange.commons.types.Geschlecht value) {
     this.geschlecht = value;
   }
 
@@ -281,7 +281,7 @@ static {
     private java.lang.String vorname;
     private java.lang.String nachname;
     private java.lang.String email;
-    private java.lang.String geschlecht;
+    private ch.dvbern.kibon.exchange.commons.types.Geschlecht geschlecht;
     private java.time.LocalDate geburtsdatum;
     private ch.dvbern.kibon.exchange.commons.types.AdresseDTO adresse;
     private ch.dvbern.kibon.exchange.commons.types.AdresseDTO.Builder adresseBuilder;
@@ -483,7 +483,7 @@ static {
       * Gets the value of the 'geschlecht' field.
       * @return The value.
       */
-    public java.lang.String getGeschlecht() {
+    public ch.dvbern.kibon.exchange.commons.types.Geschlecht getGeschlecht() {
       return geschlecht;
     }
 
@@ -493,7 +493,7 @@ static {
       * @param value The value of 'geschlecht'.
       * @return This builder.
       */
-    public ch.dvbern.kibon.exchange.commons.types.GesuchstellerDTO.Builder setGeschlecht(java.lang.String value) {
+    public ch.dvbern.kibon.exchange.commons.types.GesuchstellerDTO.Builder setGeschlecht(ch.dvbern.kibon.exchange.commons.types.Geschlecht value) {
       validate(fields()[3], value);
       this.geschlecht = value;
       fieldSetFlags()[3] = true;
@@ -642,7 +642,7 @@ static {
         record.vorname = fieldSetFlags()[0] ? this.vorname : (java.lang.String) defaultValue(fields()[0]);
         record.nachname = fieldSetFlags()[1] ? this.nachname : (java.lang.String) defaultValue(fields()[1]);
         record.email = fieldSetFlags()[2] ? this.email : (java.lang.String) defaultValue(fields()[2]);
-        record.geschlecht = fieldSetFlags()[3] ? this.geschlecht : (java.lang.String) defaultValue(fields()[3]);
+        record.geschlecht = fieldSetFlags()[3] ? this.geschlecht : (ch.dvbern.kibon.exchange.commons.types.Geschlecht) defaultValue(fields()[3]);
         record.geburtsdatum = fieldSetFlags()[4] ? this.geburtsdatum : (java.time.LocalDate) defaultValue(fields()[4]);
         if (adresseBuilder != null) {
           try {
