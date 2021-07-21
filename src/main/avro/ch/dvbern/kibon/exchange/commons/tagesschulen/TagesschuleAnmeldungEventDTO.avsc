@@ -19,6 +19,11 @@
 			}
 		},
 		{
+            "name": "anmeldungZurueckgezogen",
+            "type": "boolean",
+            "default": false
+        },
+		{
 			"name": "gesuchsperiode",
 			"type": "ch.dvbern.kibon.exchange.commons.types.Gesuchsperiode"
 		},

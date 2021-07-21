@@ -14,8 +14,8 @@ import org.apache.avro.message.SchemaStore;
 
 @org.apache.avro.specific.AvroGenerated
 public class TagesschuleAnmeldungEventDTO extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = 8533607858461436085L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"TagesschuleAnmeldungEventDTO\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.tagesschulen\",\"fields\":[{\"name\":\"institutionId\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"version\",\"type\":\"int\"},{\"name\":\"freigegebenAm\",\"type\":{\"type\":\"int\",\"logicalType\":\"date\"}},{\"name\":\"gesuchsperiode\",\"type\":{\"type\":\"record\",\"name\":\"Gesuchsperiode\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.types\",\"fields\":[{\"name\":\"id\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"gueltigAb\",\"type\":{\"type\":\"int\",\"logicalType\":\"date\"}},{\"name\":\"gueltigBis\",\"type\":{\"type\":\"int\",\"logicalType\":\"date\"}}]}},{\"name\":\"kind\",\"type\":{\"type\":\"record\",\"name\":\"KindDTO\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.types\",\"fields\":[{\"name\":\"vorname\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"nachname\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"geburtsdatum\",\"type\":{\"type\":\"int\",\"logicalType\":\"date\"}},{\"name\":\"geschlecht\",\"type\":[\"null\",{\"type\":\"enum\",\"name\":\"Geschlecht\",\"symbols\":[\"WEIBLICH\",\"MAENNLICH\"]}],\"default\":null}]}},{\"name\":\"antragstellendePerson\",\"type\":{\"type\":\"record\",\"name\":\"GesuchstellerDTO\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.types\",\"fields\":[{\"name\":\"vorname\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"nachname\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"email\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"geschlecht\",\"type\":[\"null\",\"Geschlecht\"],\"default\":null},{\"name\":\"geburtsdatum\",\"type\":[\"null\",{\"type\":\"int\",\"logicalType\":\"date\"}],\"default\":null},{\"name\":\"adresse\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"AdresseDTO\",\"fields\":[{\"name\":\"anschrift\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"strasse\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"hausnummer\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"adresszusatz\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"plz\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"ort\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"land\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"gemeinde\",\"type\":{\"type\":\"record\",\"name\":\"GemeindeDTO\",\"fields\":[{\"name\":\"name\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"bfsNummer\",\"type\":[\"null\",\"long\"],\"default\":null}]},\"default\":{\"name\":null,\"bfsNummer\":null}},{\"name\":\"email\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"telefon\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"webseite\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null}]}],\"default\":null}]}},{\"name\":\"anmeldungsDetails\",\"type\":{\"type\":\"record\",\"name\":\"TagesschuleAnmeldungDetailsDTO\",\"fields\":[{\"name\":\"refnr\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"eintrittsdatum\",\"type\":{\"type\":\"int\",\"logicalType\":\"date\"}},{\"name\":\"planKlasse\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"abholung\",\"type\":[\"null\",{\"type\":\"enum\",\"name\":\"AbholungTagesschule\",\"symbols\":[\"ABHOLUNG\",\"ALLEINE_NACH_HAUSE\"]}],\"default\":null},{\"name\":\"abweichungZweitesSemester\",\"type\":\"boolean\"},{\"name\":\"bemerkung\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"modulSelection\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"ModulAuswahlDTO\",\"fields\":[{\"name\":\"modulId\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"weekday\",\"type\":\"int\"},{\"name\":\"intervall\",\"type\":{\"type\":\"enum\",\"name\":\"Intervall\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.types\",\"symbols\":[\"WOECHENTLICH\",\"ALLE_ZWEI_WOCHEN\"]}}]},\"java-class\":\"java.util.List\"}}]}},{\"name\":\"tarife\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"TagesschuleAnmeldungTarifeDTO\",\"fields\":[{\"name\":\"tarifePaedagogisch\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"TarifDTO\",\"fields\":[{\"name\":\"von\",\"type\":{\"type\":\"int\",\"logicalType\":\"date\"}},{\"name\":\"bis\",\"type\":{\"type\":\"int\",\"logicalType\":\"date\"}},{\"name\":\"betreuungsMinutenProWoche\",\"type\":\"int\"},{\"name\":\"betreuungsKostenProStunde\",\"type\":{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}},{\"name\":\"verpflegungsKostenProWoche\",\"type\":{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}},{\"name\":\"verpflegungsKostenVerguenstigung\",\"type\":{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}},{\"name\":\"totalKostenProWoche\",\"type\":{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}}]},\"java-class\":\"java.util.List\"}},{\"name\":\"tarifeNichtPaedagogisch\",\"type\":{\"type\":\"array\",\"items\":\"TarifDTO\",\"java-class\":\"java.util.List\"}},{\"name\":\"finSitAkzeptiert\",\"type\":\"boolean\"},{\"name\":\"timestampAbgeschlossen\",\"type\":\"long\"}]}],\"default\":null},{\"name\":\"status\",\"type\":{\"type\":\"enum\",\"name\":\"TagesschuleAnmeldungStatus\",\"symbols\":[\"SCHULAMT_ANMELDUNG_ERFASST\",\"SCHULAMT_ANMELDUNG_AUSGELOEST\",\"SCHULAMT_MODULE_AKZEPTIERT\",\"SCHULAMT_ANMELDUNG_UEBERNOMMEN\",\"SCHULAMT_ANMELDUNG_ABGELEHNT\",\"SCHULAMT_FALSCHE_INSTITUTION\",\"SCHULAMT_ANMELDUNG_STORNIERT\"]}}]}");
+  private static final long serialVersionUID = -4748816852762960565L;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"TagesschuleAnmeldungEventDTO\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.tagesschulen\",\"fields\":[{\"name\":\"institutionId\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"version\",\"type\":\"int\"},{\"name\":\"freigegebenAm\",\"type\":{\"type\":\"int\",\"logicalType\":\"date\"}},{\"name\":\"anmeldungZurueckgezogen\",\"type\":\"boolean\",\"default\":false},{\"name\":\"gesuchsperiode\",\"type\":{\"type\":\"record\",\"name\":\"Gesuchsperiode\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.types\",\"fields\":[{\"name\":\"id\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"gueltigAb\",\"type\":{\"type\":\"int\",\"logicalType\":\"date\"}},{\"name\":\"gueltigBis\",\"type\":{\"type\":\"int\",\"logicalType\":\"date\"}}]}},{\"name\":\"kind\",\"type\":{\"type\":\"record\",\"name\":\"KindDTO\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.types\",\"fields\":[{\"name\":\"vorname\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"nachname\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"geburtsdatum\",\"type\":{\"type\":\"int\",\"logicalType\":\"date\"}},{\"name\":\"geschlecht\",\"type\":[\"null\",{\"type\":\"enum\",\"name\":\"Geschlecht\",\"symbols\":[\"WEIBLICH\",\"MAENNLICH\"]}],\"default\":null}]}},{\"name\":\"antragstellendePerson\",\"type\":{\"type\":\"record\",\"name\":\"GesuchstellerDTO\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.types\",\"fields\":[{\"name\":\"vorname\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"nachname\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"email\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"geschlecht\",\"type\":[\"null\",\"Geschlecht\"],\"default\":null},{\"name\":\"geburtsdatum\",\"type\":[\"null\",{\"type\":\"int\",\"logicalType\":\"date\"}],\"default\":null},{\"name\":\"adresse\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"AdresseDTO\",\"fields\":[{\"name\":\"anschrift\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"strasse\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"hausnummer\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"adresszusatz\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"plz\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"ort\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"land\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"gemeinde\",\"type\":{\"type\":\"record\",\"name\":\"GemeindeDTO\",\"fields\":[{\"name\":\"name\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"bfsNummer\",\"type\":[\"null\",\"long\"],\"default\":null}]},\"default\":{\"name\":null,\"bfsNummer\":null}},{\"name\":\"email\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"telefon\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"webseite\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null}]}],\"default\":null}]}},{\"name\":\"anmeldungsDetails\",\"type\":{\"type\":\"record\",\"name\":\"TagesschuleAnmeldungDetailsDTO\",\"fields\":[{\"name\":\"refnr\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"eintrittsdatum\",\"type\":{\"type\":\"int\",\"logicalType\":\"date\"}},{\"name\":\"planKlasse\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"abholung\",\"type\":[\"null\",{\"type\":\"enum\",\"name\":\"AbholungTagesschule\",\"symbols\":[\"ABHOLUNG\",\"ALLEINE_NACH_HAUSE\"]}],\"default\":null},{\"name\":\"abweichungZweitesSemester\",\"type\":\"boolean\"},{\"name\":\"bemerkung\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"modulSelection\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"ModulAuswahlDTO\",\"fields\":[{\"name\":\"modulId\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"weekday\",\"type\":\"int\"},{\"name\":\"intervall\",\"type\":{\"type\":\"enum\",\"name\":\"Intervall\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.types\",\"symbols\":[\"WOECHENTLICH\",\"ALLE_ZWEI_WOCHEN\"]}}]},\"java-class\":\"java.util.List\"}}]}},{\"name\":\"tarife\",\"type\":[\"null\",{\"type\":\"record\",\"name\":\"TagesschuleAnmeldungTarifeDTO\",\"fields\":[{\"name\":\"tarifePaedagogisch\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"TarifDTO\",\"fields\":[{\"name\":\"von\",\"type\":{\"type\":\"int\",\"logicalType\":\"date\"}},{\"name\":\"bis\",\"type\":{\"type\":\"int\",\"logicalType\":\"date\"}},{\"name\":\"betreuungsMinutenProWoche\",\"type\":\"int\"},{\"name\":\"betreuungsKostenProStunde\",\"type\":{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}},{\"name\":\"verpflegungsKostenProWoche\",\"type\":{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}},{\"name\":\"verpflegungsKostenVerguenstigung\",\"type\":{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}},{\"name\":\"totalKostenProWoche\",\"type\":{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":19,\"scale\":2}}]},\"java-class\":\"java.util.List\"}},{\"name\":\"tarifeNichtPaedagogisch\",\"type\":{\"type\":\"array\",\"items\":\"TarifDTO\",\"java-class\":\"java.util.List\"}},{\"name\":\"finSitAkzeptiert\",\"type\":\"boolean\"},{\"name\":\"timestampAbgeschlossen\",\"type\":\"long\"}]}],\"default\":null},{\"name\":\"status\",\"type\":{\"type\":\"enum\",\"name\":\"TagesschuleAnmeldungStatus\",\"symbols\":[\"SCHULAMT_ANMELDUNG_ERFASST\",\"SCHULAMT_ANMELDUNG_AUSGELOEST\",\"SCHULAMT_MODULE_AKZEPTIERT\",\"SCHULAMT_ANMELDUNG_UEBERNOMMEN\",\"SCHULAMT_ANMELDUNG_ABGELEHNT\",\"SCHULAMT_FALSCHE_INSTITUTION\",\"SCHULAMT_ANMELDUNG_STORNIERT\"]}}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static SpecificData MODEL$ = new SpecificData();
@@ -78,6 +78,7 @@ static {
    private java.lang.String institutionId;
    private int version;
    private java.time.LocalDate freigegebenAm;
+   private boolean anmeldungZurueckgezogen;
    private ch.dvbern.kibon.exchange.commons.types.Gesuchsperiode gesuchsperiode;
    private ch.dvbern.kibon.exchange.commons.types.KindDTO kind;
    private ch.dvbern.kibon.exchange.commons.types.GesuchstellerDTO antragstellendePerson;
@@ -97,6 +98,7 @@ static {
    * @param institutionId The new value for institutionId
    * @param version The new value for version
    * @param freigegebenAm The new value for freigegebenAm
+   * @param anmeldungZurueckgezogen The new value for anmeldungZurueckgezogen
    * @param gesuchsperiode The new value for gesuchsperiode
    * @param kind The new value for kind
    * @param antragstellendePerson The new value for antragstellendePerson
@@ -104,10 +106,11 @@ static {
    * @param tarife The new value for tarife
    * @param status The new value for status
    */
-  public TagesschuleAnmeldungEventDTO(java.lang.String institutionId, java.lang.Integer version, java.time.LocalDate freigegebenAm, ch.dvbern.kibon.exchange.commons.types.Gesuchsperiode gesuchsperiode, ch.dvbern.kibon.exchange.commons.types.KindDTO kind, ch.dvbern.kibon.exchange.commons.types.GesuchstellerDTO antragstellendePerson, ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleAnmeldungDetailsDTO anmeldungsDetails, ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleAnmeldungTarifeDTO tarife, ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleAnmeldungStatus status) {
+  public TagesschuleAnmeldungEventDTO(java.lang.String institutionId, java.lang.Integer version, java.time.LocalDate freigegebenAm, java.lang.Boolean anmeldungZurueckgezogen, ch.dvbern.kibon.exchange.commons.types.Gesuchsperiode gesuchsperiode, ch.dvbern.kibon.exchange.commons.types.KindDTO kind, ch.dvbern.kibon.exchange.commons.types.GesuchstellerDTO antragstellendePerson, ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleAnmeldungDetailsDTO anmeldungsDetails, ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleAnmeldungTarifeDTO tarife, ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleAnmeldungStatus status) {
     this.institutionId = institutionId;
     this.version = version;
     this.freigegebenAm = freigegebenAm;
+    this.anmeldungZurueckgezogen = anmeldungZurueckgezogen;
     this.gesuchsperiode = gesuchsperiode;
     this.kind = kind;
     this.antragstellendePerson = antragstellendePerson;
@@ -124,12 +127,13 @@ static {
     case 0: return institutionId;
     case 1: return version;
     case 2: return freigegebenAm;
-    case 3: return gesuchsperiode;
-    case 4: return kind;
-    case 5: return antragstellendePerson;
-    case 6: return anmeldungsDetails;
-    case 7: return tarife;
-    case 8: return status;
+    case 3: return anmeldungZurueckgezogen;
+    case 4: return gesuchsperiode;
+    case 5: return kind;
+    case 6: return antragstellendePerson;
+    case 7: return anmeldungsDetails;
+    case 8: return tarife;
+    case 9: return status;
     default: throw new IndexOutOfBoundsException("Invalid index: " + field$);
     }
   }
@@ -139,6 +143,7 @@ static {
       null,
       null,
       new org.apache.avro.data.TimeConversions.DateConversion(),
+      null,
       null,
       null,
       null,
@@ -160,12 +165,13 @@ static {
     case 0: institutionId = value$ != null ? value$.toString() : null; break;
     case 1: version = (java.lang.Integer)value$; break;
     case 2: freigegebenAm = (java.time.LocalDate)value$; break;
-    case 3: gesuchsperiode = (ch.dvbern.kibon.exchange.commons.types.Gesuchsperiode)value$; break;
-    case 4: kind = (ch.dvbern.kibon.exchange.commons.types.KindDTO)value$; break;
-    case 5: antragstellendePerson = (ch.dvbern.kibon.exchange.commons.types.GesuchstellerDTO)value$; break;
-    case 6: anmeldungsDetails = (ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleAnmeldungDetailsDTO)value$; break;
-    case 7: tarife = (ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleAnmeldungTarifeDTO)value$; break;
-    case 8: status = (ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleAnmeldungStatus)value$; break;
+    case 3: anmeldungZurueckgezogen = (java.lang.Boolean)value$; break;
+    case 4: gesuchsperiode = (ch.dvbern.kibon.exchange.commons.types.Gesuchsperiode)value$; break;
+    case 5: kind = (ch.dvbern.kibon.exchange.commons.types.KindDTO)value$; break;
+    case 6: antragstellendePerson = (ch.dvbern.kibon.exchange.commons.types.GesuchstellerDTO)value$; break;
+    case 7: anmeldungsDetails = (ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleAnmeldungDetailsDTO)value$; break;
+    case 8: tarife = (ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleAnmeldungTarifeDTO)value$; break;
+    case 9: status = (ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleAnmeldungStatus)value$; break;
     default: throw new IndexOutOfBoundsException("Invalid index: " + field$);
     }
   }
@@ -219,6 +225,23 @@ static {
    */
   public void setFreigegebenAm(java.time.LocalDate value) {
     this.freigegebenAm = value;
+  }
+
+  /**
+   * Gets the value of the 'anmeldungZurueckgezogen' field.
+   * @return The value of the 'anmeldungZurueckgezogen' field.
+   */
+  public boolean getAnmeldungZurueckgezogen() {
+    return anmeldungZurueckgezogen;
+  }
+
+
+  /**
+   * Sets the value of the 'anmeldungZurueckgezogen' field.
+   * @param value the value to set.
+   */
+  public void setAnmeldungZurueckgezogen(boolean value) {
+    this.anmeldungZurueckgezogen = value;
   }
 
   /**
@@ -367,6 +390,7 @@ static {
     private java.lang.String institutionId;
     private int version;
     private java.time.LocalDate freigegebenAm;
+    private boolean anmeldungZurueckgezogen;
     private ch.dvbern.kibon.exchange.commons.types.Gesuchsperiode gesuchsperiode;
     private ch.dvbern.kibon.exchange.commons.types.Gesuchsperiode.Builder gesuchsperiodeBuilder;
     private ch.dvbern.kibon.exchange.commons.types.KindDTO kind;
@@ -402,44 +426,48 @@ static {
         this.freigegebenAm = data().deepCopy(fields()[2].schema(), other.freigegebenAm);
         fieldSetFlags()[2] = other.fieldSetFlags()[2];
       }
-      if (isValidValue(fields()[3], other.gesuchsperiode)) {
-        this.gesuchsperiode = data().deepCopy(fields()[3].schema(), other.gesuchsperiode);
+      if (isValidValue(fields()[3], other.anmeldungZurueckgezogen)) {
+        this.anmeldungZurueckgezogen = data().deepCopy(fields()[3].schema(), other.anmeldungZurueckgezogen);
         fieldSetFlags()[3] = other.fieldSetFlags()[3];
+      }
+      if (isValidValue(fields()[4], other.gesuchsperiode)) {
+        this.gesuchsperiode = data().deepCopy(fields()[4].schema(), other.gesuchsperiode);
+        fieldSetFlags()[4] = other.fieldSetFlags()[4];
       }
       if (other.hasGesuchsperiodeBuilder()) {
         this.gesuchsperiodeBuilder = ch.dvbern.kibon.exchange.commons.types.Gesuchsperiode.newBuilder(other.getGesuchsperiodeBuilder());
       }
-      if (isValidValue(fields()[4], other.kind)) {
-        this.kind = data().deepCopy(fields()[4].schema(), other.kind);
-        fieldSetFlags()[4] = other.fieldSetFlags()[4];
+      if (isValidValue(fields()[5], other.kind)) {
+        this.kind = data().deepCopy(fields()[5].schema(), other.kind);
+        fieldSetFlags()[5] = other.fieldSetFlags()[5];
       }
       if (other.hasKindBuilder()) {
         this.kindBuilder = ch.dvbern.kibon.exchange.commons.types.KindDTO.newBuilder(other.getKindBuilder());
       }
-      if (isValidValue(fields()[5], other.antragstellendePerson)) {
-        this.antragstellendePerson = data().deepCopy(fields()[5].schema(), other.antragstellendePerson);
-        fieldSetFlags()[5] = other.fieldSetFlags()[5];
+      if (isValidValue(fields()[6], other.antragstellendePerson)) {
+        this.antragstellendePerson = data().deepCopy(fields()[6].schema(), other.antragstellendePerson);
+        fieldSetFlags()[6] = other.fieldSetFlags()[6];
       }
       if (other.hasAntragstellendePersonBuilder()) {
         this.antragstellendePersonBuilder = ch.dvbern.kibon.exchange.commons.types.GesuchstellerDTO.newBuilder(other.getAntragstellendePersonBuilder());
       }
-      if (isValidValue(fields()[6], other.anmeldungsDetails)) {
-        this.anmeldungsDetails = data().deepCopy(fields()[6].schema(), other.anmeldungsDetails);
-        fieldSetFlags()[6] = other.fieldSetFlags()[6];
+      if (isValidValue(fields()[7], other.anmeldungsDetails)) {
+        this.anmeldungsDetails = data().deepCopy(fields()[7].schema(), other.anmeldungsDetails);
+        fieldSetFlags()[7] = other.fieldSetFlags()[7];
       }
       if (other.hasAnmeldungsDetailsBuilder()) {
         this.anmeldungsDetailsBuilder = ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleAnmeldungDetailsDTO.newBuilder(other.getAnmeldungsDetailsBuilder());
       }
-      if (isValidValue(fields()[7], other.tarife)) {
-        this.tarife = data().deepCopy(fields()[7].schema(), other.tarife);
-        fieldSetFlags()[7] = other.fieldSetFlags()[7];
+      if (isValidValue(fields()[8], other.tarife)) {
+        this.tarife = data().deepCopy(fields()[8].schema(), other.tarife);
+        fieldSetFlags()[8] = other.fieldSetFlags()[8];
       }
       if (other.hasTarifeBuilder()) {
         this.tarifeBuilder = ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleAnmeldungTarifeDTO.newBuilder(other.getTarifeBuilder());
       }
-      if (isValidValue(fields()[8], other.status)) {
-        this.status = data().deepCopy(fields()[8].schema(), other.status);
-        fieldSetFlags()[8] = other.fieldSetFlags()[8];
+      if (isValidValue(fields()[9], other.status)) {
+        this.status = data().deepCopy(fields()[9].schema(), other.status);
+        fieldSetFlags()[9] = other.fieldSetFlags()[9];
       }
     }
 
@@ -461,34 +489,38 @@ static {
         this.freigegebenAm = data().deepCopy(fields()[2].schema(), other.freigegebenAm);
         fieldSetFlags()[2] = true;
       }
-      if (isValidValue(fields()[3], other.gesuchsperiode)) {
-        this.gesuchsperiode = data().deepCopy(fields()[3].schema(), other.gesuchsperiode);
+      if (isValidValue(fields()[3], other.anmeldungZurueckgezogen)) {
+        this.anmeldungZurueckgezogen = data().deepCopy(fields()[3].schema(), other.anmeldungZurueckgezogen);
         fieldSetFlags()[3] = true;
       }
-      this.gesuchsperiodeBuilder = null;
-      if (isValidValue(fields()[4], other.kind)) {
-        this.kind = data().deepCopy(fields()[4].schema(), other.kind);
+      if (isValidValue(fields()[4], other.gesuchsperiode)) {
+        this.gesuchsperiode = data().deepCopy(fields()[4].schema(), other.gesuchsperiode);
         fieldSetFlags()[4] = true;
       }
-      this.kindBuilder = null;
-      if (isValidValue(fields()[5], other.antragstellendePerson)) {
-        this.antragstellendePerson = data().deepCopy(fields()[5].schema(), other.antragstellendePerson);
+      this.gesuchsperiodeBuilder = null;
+      if (isValidValue(fields()[5], other.kind)) {
+        this.kind = data().deepCopy(fields()[5].schema(), other.kind);
         fieldSetFlags()[5] = true;
       }
-      this.antragstellendePersonBuilder = null;
-      if (isValidValue(fields()[6], other.anmeldungsDetails)) {
-        this.anmeldungsDetails = data().deepCopy(fields()[6].schema(), other.anmeldungsDetails);
+      this.kindBuilder = null;
+      if (isValidValue(fields()[6], other.antragstellendePerson)) {
+        this.antragstellendePerson = data().deepCopy(fields()[6].schema(), other.antragstellendePerson);
         fieldSetFlags()[6] = true;
       }
-      this.anmeldungsDetailsBuilder = null;
-      if (isValidValue(fields()[7], other.tarife)) {
-        this.tarife = data().deepCopy(fields()[7].schema(), other.tarife);
+      this.antragstellendePersonBuilder = null;
+      if (isValidValue(fields()[7], other.anmeldungsDetails)) {
+        this.anmeldungsDetails = data().deepCopy(fields()[7].schema(), other.anmeldungsDetails);
         fieldSetFlags()[7] = true;
       }
-      this.tarifeBuilder = null;
-      if (isValidValue(fields()[8], other.status)) {
-        this.status = data().deepCopy(fields()[8].schema(), other.status);
+      this.anmeldungsDetailsBuilder = null;
+      if (isValidValue(fields()[8], other.tarife)) {
+        this.tarife = data().deepCopy(fields()[8].schema(), other.tarife);
         fieldSetFlags()[8] = true;
+      }
+      this.tarifeBuilder = null;
+      if (isValidValue(fields()[9], other.status)) {
+        this.status = data().deepCopy(fields()[9].schema(), other.status);
+        fieldSetFlags()[9] = true;
       }
     }
 
@@ -611,6 +643,45 @@ static {
     }
 
     /**
+      * Gets the value of the 'anmeldungZurueckgezogen' field.
+      * @return The value.
+      */
+    public boolean getAnmeldungZurueckgezogen() {
+      return anmeldungZurueckgezogen;
+    }
+
+
+    /**
+      * Sets the value of the 'anmeldungZurueckgezogen' field.
+      * @param value The value of 'anmeldungZurueckgezogen'.
+      * @return This builder.
+      */
+    public ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleAnmeldungEventDTO.Builder setAnmeldungZurueckgezogen(boolean value) {
+      validate(fields()[3], value);
+      this.anmeldungZurueckgezogen = value;
+      fieldSetFlags()[3] = true;
+      return this;
+    }
+
+    /**
+      * Checks whether the 'anmeldungZurueckgezogen' field has been set.
+      * @return True if the 'anmeldungZurueckgezogen' field has been set, false otherwise.
+      */
+    public boolean hasAnmeldungZurueckgezogen() {
+      return fieldSetFlags()[3];
+    }
+
+
+    /**
+      * Clears the value of the 'anmeldungZurueckgezogen' field.
+      * @return This builder.
+      */
+    public ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleAnmeldungEventDTO.Builder clearAnmeldungZurueckgezogen() {
+      fieldSetFlags()[3] = false;
+      return this;
+    }
+
+    /**
       * Gets the value of the 'gesuchsperiode' field.
       * @return The value.
       */
@@ -625,10 +696,10 @@ static {
       * @return This builder.
       */
     public ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleAnmeldungEventDTO.Builder setGesuchsperiode(ch.dvbern.kibon.exchange.commons.types.Gesuchsperiode value) {
-      validate(fields()[3], value);
+      validate(fields()[4], value);
       this.gesuchsperiodeBuilder = null;
       this.gesuchsperiode = value;
-      fieldSetFlags()[3] = true;
+      fieldSetFlags()[4] = true;
       return this;
     }
 
@@ -637,7 +708,7 @@ static {
       * @return True if the 'gesuchsperiode' field has been set, false otherwise.
       */
     public boolean hasGesuchsperiode() {
-      return fieldSetFlags()[3];
+      return fieldSetFlags()[4];
     }
 
     /**
@@ -681,7 +752,7 @@ static {
     public ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleAnmeldungEventDTO.Builder clearGesuchsperiode() {
       gesuchsperiode = null;
       gesuchsperiodeBuilder = null;
-      fieldSetFlags()[3] = false;
+      fieldSetFlags()[4] = false;
       return this;
     }
 
@@ -700,10 +771,10 @@ static {
       * @return This builder.
       */
     public ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleAnmeldungEventDTO.Builder setKind(ch.dvbern.kibon.exchange.commons.types.KindDTO value) {
-      validate(fields()[4], value);
+      validate(fields()[5], value);
       this.kindBuilder = null;
       this.kind = value;
-      fieldSetFlags()[4] = true;
+      fieldSetFlags()[5] = true;
       return this;
     }
 
@@ -712,7 +783,7 @@ static {
       * @return True if the 'kind' field has been set, false otherwise.
       */
     public boolean hasKind() {
-      return fieldSetFlags()[4];
+      return fieldSetFlags()[5];
     }
 
     /**
@@ -756,7 +827,7 @@ static {
     public ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleAnmeldungEventDTO.Builder clearKind() {
       kind = null;
       kindBuilder = null;
-      fieldSetFlags()[4] = false;
+      fieldSetFlags()[5] = false;
       return this;
     }
 
@@ -775,10 +846,10 @@ static {
       * @return This builder.
       */
     public ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleAnmeldungEventDTO.Builder setAntragstellendePerson(ch.dvbern.kibon.exchange.commons.types.GesuchstellerDTO value) {
-      validate(fields()[5], value);
+      validate(fields()[6], value);
       this.antragstellendePersonBuilder = null;
       this.antragstellendePerson = value;
-      fieldSetFlags()[5] = true;
+      fieldSetFlags()[6] = true;
       return this;
     }
 
@@ -787,7 +858,7 @@ static {
       * @return True if the 'antragstellendePerson' field has been set, false otherwise.
       */
     public boolean hasAntragstellendePerson() {
-      return fieldSetFlags()[5];
+      return fieldSetFlags()[6];
     }
 
     /**
@@ -831,7 +902,7 @@ static {
     public ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleAnmeldungEventDTO.Builder clearAntragstellendePerson() {
       antragstellendePerson = null;
       antragstellendePersonBuilder = null;
-      fieldSetFlags()[5] = false;
+      fieldSetFlags()[6] = false;
       return this;
     }
 
@@ -850,10 +921,10 @@ static {
       * @return This builder.
       */
     public ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleAnmeldungEventDTO.Builder setAnmeldungsDetails(ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleAnmeldungDetailsDTO value) {
-      validate(fields()[6], value);
+      validate(fields()[7], value);
       this.anmeldungsDetailsBuilder = null;
       this.anmeldungsDetails = value;
-      fieldSetFlags()[6] = true;
+      fieldSetFlags()[7] = true;
       return this;
     }
 
@@ -862,7 +933,7 @@ static {
       * @return True if the 'anmeldungsDetails' field has been set, false otherwise.
       */
     public boolean hasAnmeldungsDetails() {
-      return fieldSetFlags()[6];
+      return fieldSetFlags()[7];
     }
 
     /**
@@ -906,7 +977,7 @@ static {
     public ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleAnmeldungEventDTO.Builder clearAnmeldungsDetails() {
       anmeldungsDetails = null;
       anmeldungsDetailsBuilder = null;
-      fieldSetFlags()[6] = false;
+      fieldSetFlags()[7] = false;
       return this;
     }
 
@@ -925,10 +996,10 @@ static {
       * @return This builder.
       */
     public ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleAnmeldungEventDTO.Builder setTarife(ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleAnmeldungTarifeDTO value) {
-      validate(fields()[7], value);
+      validate(fields()[8], value);
       this.tarifeBuilder = null;
       this.tarife = value;
-      fieldSetFlags()[7] = true;
+      fieldSetFlags()[8] = true;
       return this;
     }
 
@@ -937,7 +1008,7 @@ static {
       * @return True if the 'tarife' field has been set, false otherwise.
       */
     public boolean hasTarife() {
-      return fieldSetFlags()[7];
+      return fieldSetFlags()[8];
     }
 
     /**
@@ -981,7 +1052,7 @@ static {
     public ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleAnmeldungEventDTO.Builder clearTarife() {
       tarife = null;
       tarifeBuilder = null;
-      fieldSetFlags()[7] = false;
+      fieldSetFlags()[8] = false;
       return this;
     }
 
@@ -1000,9 +1071,9 @@ static {
       * @return This builder.
       */
     public ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleAnmeldungEventDTO.Builder setStatus(ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleAnmeldungStatus value) {
-      validate(fields()[8], value);
+      validate(fields()[9], value);
       this.status = value;
-      fieldSetFlags()[8] = true;
+      fieldSetFlags()[9] = true;
       return this;
     }
 
@@ -1011,7 +1082,7 @@ static {
       * @return True if the 'status' field has been set, false otherwise.
       */
     public boolean hasStatus() {
-      return fieldSetFlags()[8];
+      return fieldSetFlags()[9];
     }
 
 
@@ -1021,7 +1092,7 @@ static {
       */
     public ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleAnmeldungEventDTO.Builder clearStatus() {
       status = null;
-      fieldSetFlags()[8] = false;
+      fieldSetFlags()[9] = false;
       return this;
     }
 
@@ -1033,6 +1104,7 @@ static {
         record.institutionId = fieldSetFlags()[0] ? this.institutionId : (java.lang.String) defaultValue(fields()[0]);
         record.version = fieldSetFlags()[1] ? this.version : (java.lang.Integer) defaultValue(fields()[1]);
         record.freigegebenAm = fieldSetFlags()[2] ? this.freigegebenAm : (java.time.LocalDate) defaultValue(fields()[2]);
+        record.anmeldungZurueckgezogen = fieldSetFlags()[3] ? this.anmeldungZurueckgezogen : (java.lang.Boolean) defaultValue(fields()[3]);
         if (gesuchsperiodeBuilder != null) {
           try {
             record.gesuchsperiode = this.gesuchsperiodeBuilder.build();
@@ -1041,7 +1113,7 @@ static {
             throw e;
           }
         } else {
-          record.gesuchsperiode = fieldSetFlags()[3] ? this.gesuchsperiode : (ch.dvbern.kibon.exchange.commons.types.Gesuchsperiode) defaultValue(fields()[3]);
+          record.gesuchsperiode = fieldSetFlags()[4] ? this.gesuchsperiode : (ch.dvbern.kibon.exchange.commons.types.Gesuchsperiode) defaultValue(fields()[4]);
         }
         if (kindBuilder != null) {
           try {
@@ -1051,7 +1123,7 @@ static {
             throw e;
           }
         } else {
-          record.kind = fieldSetFlags()[4] ? this.kind : (ch.dvbern.kibon.exchange.commons.types.KindDTO) defaultValue(fields()[4]);
+          record.kind = fieldSetFlags()[5] ? this.kind : (ch.dvbern.kibon.exchange.commons.types.KindDTO) defaultValue(fields()[5]);
         }
         if (antragstellendePersonBuilder != null) {
           try {
@@ -1061,7 +1133,7 @@ static {
             throw e;
           }
         } else {
-          record.antragstellendePerson = fieldSetFlags()[5] ? this.antragstellendePerson : (ch.dvbern.kibon.exchange.commons.types.GesuchstellerDTO) defaultValue(fields()[5]);
+          record.antragstellendePerson = fieldSetFlags()[6] ? this.antragstellendePerson : (ch.dvbern.kibon.exchange.commons.types.GesuchstellerDTO) defaultValue(fields()[6]);
         }
         if (anmeldungsDetailsBuilder != null) {
           try {
@@ -1071,7 +1143,7 @@ static {
             throw e;
           }
         } else {
-          record.anmeldungsDetails = fieldSetFlags()[6] ? this.anmeldungsDetails : (ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleAnmeldungDetailsDTO) defaultValue(fields()[6]);
+          record.anmeldungsDetails = fieldSetFlags()[7] ? this.anmeldungsDetails : (ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleAnmeldungDetailsDTO) defaultValue(fields()[7]);
         }
         if (tarifeBuilder != null) {
           try {
@@ -1081,9 +1153,9 @@ static {
             throw e;
           }
         } else {
-          record.tarife = fieldSetFlags()[7] ? this.tarife : (ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleAnmeldungTarifeDTO) defaultValue(fields()[7]);
+          record.tarife = fieldSetFlags()[8] ? this.tarife : (ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleAnmeldungTarifeDTO) defaultValue(fields()[8]);
         }
-        record.status = fieldSetFlags()[8] ? this.status : (ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleAnmeldungStatus) defaultValue(fields()[8]);
+        record.status = fieldSetFlags()[9] ? this.status : (ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleAnmeldungStatus) defaultValue(fields()[9]);
         return record;
       } catch (org.apache.avro.AvroMissingFieldException e) {
         throw e;
