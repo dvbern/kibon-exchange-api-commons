@@ -13,9 +13,9 @@ import org.apache.avro.message.BinaryMessageDecoder;
 import org.apache.avro.message.SchemaStore;
 
 @org.apache.avro.specific.AvroGenerated
-public class TagesschuleAnmeldungDetailsDTO extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = -735103492505701753L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"TagesschuleAnmeldungDetailsDTO\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.tagesschulen\",\"fields\":[{\"name\":\"refnr\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"eintrittsdatum\",\"type\":{\"type\":\"int\",\"logicalType\":\"date\"}},{\"name\":\"planKlasse\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"abholung\",\"type\":[\"null\",{\"type\":\"enum\",\"name\":\"ModulIntervall\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.types\",\"symbols\":[\"WOECHENTLICH\",\"WOECHENTLICH_ODER_ALLE_ZWEI_WOCHEN\"]}],\"default\":null},{\"name\":\"abweichungZweitesSemester\",\"type\":\"boolean\"},{\"name\":\"bemerkung\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"modulSelection\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"ModulAuswahlDTO\",\"fields\":[{\"name\":\"modulId\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"weekday\",\"type\":\"int\"},{\"name\":\"intervall\",\"type\":{\"type\":\"enum\",\"name\":\"Intervall\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.types\",\"symbols\":[\"WOECHENTLICH\",\"ALLE_ZWEI_WOCHEN\"]}}]},\"java-class\":\"java.util.List\"}}]}");
+public class TagesschuleBestaetigungEventDTO extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
+  private static final long serialVersionUID = 1706284928072086955L;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"TagesschuleBestaetigungEventDTO\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.tagesschulen\",\"fields\":[{\"name\":\"refnr\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"eintrittsdatum\",\"type\":{\"type\":\"int\",\"logicalType\":\"date\"}},{\"name\":\"planKlasse\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"abholung\",\"type\":[\"null\",{\"type\":\"enum\",\"name\":\"ModulIntervall\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.types\",\"symbols\":[\"WOECHENTLICH\",\"WOECHENTLICH_ODER_ALLE_ZWEI_WOCHEN\"]}],\"default\":null},{\"name\":\"abweichungZweitesSemester\",\"type\":\"boolean\"},{\"name\":\"bemerkung\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"module\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"ModulAuswahlDTO\",\"fields\":[{\"name\":\"modulId\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"weekday\",\"type\":\"int\"},{\"name\":\"intervall\",\"type\":{\"type\":\"enum\",\"name\":\"Intervall\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.types\",\"symbols\":[\"WOECHENTLICH\",\"ALLE_ZWEI_WOCHEN\"]}}]},\"java-class\":\"java.util.List\"}}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static SpecificData MODEL$ = new SpecificData();
@@ -23,17 +23,17 @@ static {
     MODEL$.addLogicalTypeConversion(new org.apache.avro.data.TimeConversions.DateConversion());
   }
 
-  private static final BinaryMessageEncoder<TagesschuleAnmeldungDetailsDTO> ENCODER =
-      new BinaryMessageEncoder<TagesschuleAnmeldungDetailsDTO>(MODEL$, SCHEMA$);
+  private static final BinaryMessageEncoder<TagesschuleBestaetigungEventDTO> ENCODER =
+      new BinaryMessageEncoder<TagesschuleBestaetigungEventDTO>(MODEL$, SCHEMA$);
 
-  private static final BinaryMessageDecoder<TagesschuleAnmeldungDetailsDTO> DECODER =
-      new BinaryMessageDecoder<TagesschuleAnmeldungDetailsDTO>(MODEL$, SCHEMA$);
+  private static final BinaryMessageDecoder<TagesschuleBestaetigungEventDTO> DECODER =
+      new BinaryMessageDecoder<TagesschuleBestaetigungEventDTO>(MODEL$, SCHEMA$);
 
   /**
    * Return the BinaryMessageEncoder instance used by this class.
    * @return the message encoder used by this class
    */
-  public static BinaryMessageEncoder<TagesschuleAnmeldungDetailsDTO> getEncoder() {
+  public static BinaryMessageEncoder<TagesschuleBestaetigungEventDTO> getEncoder() {
     return ENCODER;
   }
 
@@ -41,7 +41,7 @@ static {
    * Return the BinaryMessageDecoder instance used by this class.
    * @return the message decoder used by this class
    */
-  public static BinaryMessageDecoder<TagesschuleAnmeldungDetailsDTO> getDecoder() {
+  public static BinaryMessageDecoder<TagesschuleBestaetigungEventDTO> getDecoder() {
     return DECODER;
   }
 
@@ -50,12 +50,12 @@ static {
    * @param resolver a {@link SchemaStore} used to find schemas by fingerprint
    * @return a BinaryMessageDecoder instance for this class backed by the given SchemaStore
    */
-  public static BinaryMessageDecoder<TagesschuleAnmeldungDetailsDTO> createDecoder(SchemaStore resolver) {
-    return new BinaryMessageDecoder<TagesschuleAnmeldungDetailsDTO>(MODEL$, SCHEMA$, resolver);
+  public static BinaryMessageDecoder<TagesschuleBestaetigungEventDTO> createDecoder(SchemaStore resolver) {
+    return new BinaryMessageDecoder<TagesschuleBestaetigungEventDTO>(MODEL$, SCHEMA$, resolver);
   }
 
   /**
-   * Serializes this TagesschuleAnmeldungDetailsDTO to a ByteBuffer.
+   * Serializes this TagesschuleBestaetigungEventDTO to a ByteBuffer.
    * @return a buffer holding the serialized data for this instance
    * @throws java.io.IOException if this instance could not be serialized
    */
@@ -64,12 +64,12 @@ static {
   }
 
   /**
-   * Deserializes a TagesschuleAnmeldungDetailsDTO from a ByteBuffer.
+   * Deserializes a TagesschuleBestaetigungEventDTO from a ByteBuffer.
    * @param b a byte buffer holding serialized data for an instance of this class
-   * @return a TagesschuleAnmeldungDetailsDTO instance decoded from the given buffer
+   * @return a TagesschuleBestaetigungEventDTO instance decoded from the given buffer
    * @throws java.io.IOException if the given bytes could not be deserialized into an instance of this class
    */
-  public static TagesschuleAnmeldungDetailsDTO fromByteBuffer(
+  public static TagesschuleBestaetigungEventDTO fromByteBuffer(
       java.nio.ByteBuffer b) throws java.io.IOException {
     return DECODER.decode(b);
   }
@@ -80,14 +80,14 @@ static {
    private ch.dvbern.kibon.exchange.commons.types.ModulIntervall abholung;
    private boolean abweichungZweitesSemester;
    private java.lang.String bemerkung;
-   private java.util.List<ch.dvbern.kibon.exchange.commons.tagesschulen.ModulAuswahlDTO> modulSelection;
+   private java.util.List<ch.dvbern.kibon.exchange.commons.tagesschulen.ModulAuswahlDTO> module;
 
   /**
    * Default constructor.  Note that this does not initialize fields
    * to their default values from the schema.  If that is desired then
    * one should use <code>newBuilder()</code>.
    */
-  public TagesschuleAnmeldungDetailsDTO() {}
+  public TagesschuleBestaetigungEventDTO() {}
 
   /**
    * All-args constructor.
@@ -97,16 +97,16 @@ static {
    * @param abholung The new value for abholung
    * @param abweichungZweitesSemester The new value for abweichungZweitesSemester
    * @param bemerkung The new value for bemerkung
-   * @param modulSelection The new value for modulSelection
+   * @param module The new value for module
    */
-  public TagesschuleAnmeldungDetailsDTO(java.lang.String refnr, java.time.LocalDate eintrittsdatum, java.lang.String planKlasse, ch.dvbern.kibon.exchange.commons.types.ModulIntervall abholung, java.lang.Boolean abweichungZweitesSemester, java.lang.String bemerkung, java.util.List<ch.dvbern.kibon.exchange.commons.tagesschulen.ModulAuswahlDTO> modulSelection) {
+  public TagesschuleBestaetigungEventDTO(java.lang.String refnr, java.time.LocalDate eintrittsdatum, java.lang.String planKlasse, ch.dvbern.kibon.exchange.commons.types.ModulIntervall abholung, java.lang.Boolean abweichungZweitesSemester, java.lang.String bemerkung, java.util.List<ch.dvbern.kibon.exchange.commons.tagesschulen.ModulAuswahlDTO> module) {
     this.refnr = refnr;
     this.eintrittsdatum = eintrittsdatum;
     this.planKlasse = planKlasse;
     this.abholung = abholung;
     this.abweichungZweitesSemester = abweichungZweitesSemester;
     this.bemerkung = bemerkung;
-    this.modulSelection = modulSelection;
+    this.module = module;
   }
 
   public org.apache.avro.specific.SpecificData getSpecificData() { return MODEL$; }
@@ -120,7 +120,7 @@ static {
     case 3: return abholung;
     case 4: return abweichungZweitesSemester;
     case 5: return bemerkung;
-    case 6: return modulSelection;
+    case 6: return module;
     default: throw new IndexOutOfBoundsException("Invalid index: " + field$);
     }
   }
@@ -152,7 +152,7 @@ static {
     case 3: abholung = (ch.dvbern.kibon.exchange.commons.types.ModulIntervall)value$; break;
     case 4: abweichungZweitesSemester = (java.lang.Boolean)value$; break;
     case 5: bemerkung = value$ != null ? value$.toString() : null; break;
-    case 6: modulSelection = (java.util.List<ch.dvbern.kibon.exchange.commons.tagesschulen.ModulAuswahlDTO>)value$; break;
+    case 6: module = (java.util.List<ch.dvbern.kibon.exchange.commons.tagesschulen.ModulAuswahlDTO>)value$; break;
     default: throw new IndexOutOfBoundsException("Invalid index: " + field$);
     }
   }
@@ -260,62 +260,62 @@ static {
   }
 
   /**
-   * Gets the value of the 'modulSelection' field.
-   * @return The value of the 'modulSelection' field.
+   * Gets the value of the 'module' field.
+   * @return The value of the 'module' field.
    */
-  public java.util.List<ch.dvbern.kibon.exchange.commons.tagesschulen.ModulAuswahlDTO> getModulSelection() {
-    return modulSelection;
+  public java.util.List<ch.dvbern.kibon.exchange.commons.tagesschulen.ModulAuswahlDTO> getModule() {
+    return module;
   }
 
 
   /**
-   * Sets the value of the 'modulSelection' field.
+   * Sets the value of the 'module' field.
    * @param value the value to set.
    */
-  public void setModulSelection(java.util.List<ch.dvbern.kibon.exchange.commons.tagesschulen.ModulAuswahlDTO> value) {
-    this.modulSelection = value;
+  public void setModule(java.util.List<ch.dvbern.kibon.exchange.commons.tagesschulen.ModulAuswahlDTO> value) {
+    this.module = value;
   }
 
   /**
-   * Creates a new TagesschuleAnmeldungDetailsDTO RecordBuilder.
-   * @return A new TagesschuleAnmeldungDetailsDTO RecordBuilder
+   * Creates a new TagesschuleBestaetigungEventDTO RecordBuilder.
+   * @return A new TagesschuleBestaetigungEventDTO RecordBuilder
    */
-  public static ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleAnmeldungDetailsDTO.Builder newBuilder() {
-    return new ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleAnmeldungDetailsDTO.Builder();
+  public static ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleBestaetigungEventDTO.Builder newBuilder() {
+    return new ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleBestaetigungEventDTO.Builder();
   }
 
   /**
-   * Creates a new TagesschuleAnmeldungDetailsDTO RecordBuilder by copying an existing Builder.
+   * Creates a new TagesschuleBestaetigungEventDTO RecordBuilder by copying an existing Builder.
    * @param other The existing builder to copy.
-   * @return A new TagesschuleAnmeldungDetailsDTO RecordBuilder
+   * @return A new TagesschuleBestaetigungEventDTO RecordBuilder
    */
-  public static ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleAnmeldungDetailsDTO.Builder newBuilder(ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleAnmeldungDetailsDTO.Builder other) {
+  public static ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleBestaetigungEventDTO.Builder newBuilder(ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleBestaetigungEventDTO.Builder other) {
     if (other == null) {
-      return new ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleAnmeldungDetailsDTO.Builder();
+      return new ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleBestaetigungEventDTO.Builder();
     } else {
-      return new ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleAnmeldungDetailsDTO.Builder(other);
+      return new ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleBestaetigungEventDTO.Builder(other);
     }
   }
 
   /**
-   * Creates a new TagesschuleAnmeldungDetailsDTO RecordBuilder by copying an existing TagesschuleAnmeldungDetailsDTO instance.
+   * Creates a new TagesschuleBestaetigungEventDTO RecordBuilder by copying an existing TagesschuleBestaetigungEventDTO instance.
    * @param other The existing instance to copy.
-   * @return A new TagesschuleAnmeldungDetailsDTO RecordBuilder
+   * @return A new TagesschuleBestaetigungEventDTO RecordBuilder
    */
-  public static ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleAnmeldungDetailsDTO.Builder newBuilder(ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleAnmeldungDetailsDTO other) {
+  public static ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleBestaetigungEventDTO.Builder newBuilder(ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleBestaetigungEventDTO other) {
     if (other == null) {
-      return new ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleAnmeldungDetailsDTO.Builder();
+      return new ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleBestaetigungEventDTO.Builder();
     } else {
-      return new ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleAnmeldungDetailsDTO.Builder(other);
+      return new ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleBestaetigungEventDTO.Builder(other);
     }
   }
 
   /**
-   * RecordBuilder for TagesschuleAnmeldungDetailsDTO instances.
+   * RecordBuilder for TagesschuleBestaetigungEventDTO instances.
    */
   @org.apache.avro.specific.AvroGenerated
-  public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<TagesschuleAnmeldungDetailsDTO>
-    implements org.apache.avro.data.RecordBuilder<TagesschuleAnmeldungDetailsDTO> {
+  public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<TagesschuleBestaetigungEventDTO>
+    implements org.apache.avro.data.RecordBuilder<TagesschuleBestaetigungEventDTO> {
 
     private java.lang.String refnr;
     private java.time.LocalDate eintrittsdatum;
@@ -323,7 +323,7 @@ static {
     private ch.dvbern.kibon.exchange.commons.types.ModulIntervall abholung;
     private boolean abweichungZweitesSemester;
     private java.lang.String bemerkung;
-    private java.util.List<ch.dvbern.kibon.exchange.commons.tagesschulen.ModulAuswahlDTO> modulSelection;
+    private java.util.List<ch.dvbern.kibon.exchange.commons.tagesschulen.ModulAuswahlDTO> module;
 
     /** Creates a new Builder */
     private Builder() {
@@ -334,7 +334,7 @@ static {
      * Creates a Builder by copying an existing Builder.
      * @param other The existing Builder to copy.
      */
-    private Builder(ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleAnmeldungDetailsDTO.Builder other) {
+    private Builder(ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleBestaetigungEventDTO.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.refnr)) {
         this.refnr = data().deepCopy(fields()[0].schema(), other.refnr);
@@ -360,17 +360,17 @@ static {
         this.bemerkung = data().deepCopy(fields()[5].schema(), other.bemerkung);
         fieldSetFlags()[5] = other.fieldSetFlags()[5];
       }
-      if (isValidValue(fields()[6], other.modulSelection)) {
-        this.modulSelection = data().deepCopy(fields()[6].schema(), other.modulSelection);
+      if (isValidValue(fields()[6], other.module)) {
+        this.module = data().deepCopy(fields()[6].schema(), other.module);
         fieldSetFlags()[6] = other.fieldSetFlags()[6];
       }
     }
 
     /**
-     * Creates a Builder by copying an existing TagesschuleAnmeldungDetailsDTO instance
+     * Creates a Builder by copying an existing TagesschuleBestaetigungEventDTO instance
      * @param other The existing instance to copy.
      */
-    private Builder(ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleAnmeldungDetailsDTO other) {
+    private Builder(ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleBestaetigungEventDTO other) {
       super(SCHEMA$);
       if (isValidValue(fields()[0], other.refnr)) {
         this.refnr = data().deepCopy(fields()[0].schema(), other.refnr);
@@ -396,8 +396,8 @@ static {
         this.bemerkung = data().deepCopy(fields()[5].schema(), other.bemerkung);
         fieldSetFlags()[5] = true;
       }
-      if (isValidValue(fields()[6], other.modulSelection)) {
-        this.modulSelection = data().deepCopy(fields()[6].schema(), other.modulSelection);
+      if (isValidValue(fields()[6], other.module)) {
+        this.module = data().deepCopy(fields()[6].schema(), other.module);
         fieldSetFlags()[6] = true;
       }
     }
@@ -416,7 +416,7 @@ static {
       * @param value The value of 'refnr'.
       * @return This builder.
       */
-    public ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleAnmeldungDetailsDTO.Builder setRefnr(java.lang.String value) {
+    public ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleBestaetigungEventDTO.Builder setRefnr(java.lang.String value) {
       validate(fields()[0], value);
       this.refnr = value;
       fieldSetFlags()[0] = true;
@@ -436,7 +436,7 @@ static {
       * Clears the value of the 'refnr' field.
       * @return This builder.
       */
-    public ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleAnmeldungDetailsDTO.Builder clearRefnr() {
+    public ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleBestaetigungEventDTO.Builder clearRefnr() {
       refnr = null;
       fieldSetFlags()[0] = false;
       return this;
@@ -456,7 +456,7 @@ static {
       * @param value The value of 'eintrittsdatum'.
       * @return This builder.
       */
-    public ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleAnmeldungDetailsDTO.Builder setEintrittsdatum(java.time.LocalDate value) {
+    public ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleBestaetigungEventDTO.Builder setEintrittsdatum(java.time.LocalDate value) {
       validate(fields()[1], value);
       this.eintrittsdatum = value;
       fieldSetFlags()[1] = true;
@@ -476,7 +476,7 @@ static {
       * Clears the value of the 'eintrittsdatum' field.
       * @return This builder.
       */
-    public ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleAnmeldungDetailsDTO.Builder clearEintrittsdatum() {
+    public ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleBestaetigungEventDTO.Builder clearEintrittsdatum() {
       fieldSetFlags()[1] = false;
       return this;
     }
@@ -495,7 +495,7 @@ static {
       * @param value The value of 'planKlasse'.
       * @return This builder.
       */
-    public ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleAnmeldungDetailsDTO.Builder setPlanKlasse(java.lang.String value) {
+    public ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleBestaetigungEventDTO.Builder setPlanKlasse(java.lang.String value) {
       validate(fields()[2], value);
       this.planKlasse = value;
       fieldSetFlags()[2] = true;
@@ -515,7 +515,7 @@ static {
       * Clears the value of the 'planKlasse' field.
       * @return This builder.
       */
-    public ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleAnmeldungDetailsDTO.Builder clearPlanKlasse() {
+    public ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleBestaetigungEventDTO.Builder clearPlanKlasse() {
       planKlasse = null;
       fieldSetFlags()[2] = false;
       return this;
@@ -535,7 +535,7 @@ static {
       * @param value The value of 'abholung'.
       * @return This builder.
       */
-    public ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleAnmeldungDetailsDTO.Builder setAbholung(ch.dvbern.kibon.exchange.commons.types.ModulIntervall value) {
+    public ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleBestaetigungEventDTO.Builder setAbholung(ch.dvbern.kibon.exchange.commons.types.ModulIntervall value) {
       validate(fields()[3], value);
       this.abholung = value;
       fieldSetFlags()[3] = true;
@@ -555,7 +555,7 @@ static {
       * Clears the value of the 'abholung' field.
       * @return This builder.
       */
-    public ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleAnmeldungDetailsDTO.Builder clearAbholung() {
+    public ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleBestaetigungEventDTO.Builder clearAbholung() {
       abholung = null;
       fieldSetFlags()[3] = false;
       return this;
@@ -575,7 +575,7 @@ static {
       * @param value The value of 'abweichungZweitesSemester'.
       * @return This builder.
       */
-    public ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleAnmeldungDetailsDTO.Builder setAbweichungZweitesSemester(boolean value) {
+    public ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleBestaetigungEventDTO.Builder setAbweichungZweitesSemester(boolean value) {
       validate(fields()[4], value);
       this.abweichungZweitesSemester = value;
       fieldSetFlags()[4] = true;
@@ -595,7 +595,7 @@ static {
       * Clears the value of the 'abweichungZweitesSemester' field.
       * @return This builder.
       */
-    public ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleAnmeldungDetailsDTO.Builder clearAbweichungZweitesSemester() {
+    public ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleBestaetigungEventDTO.Builder clearAbweichungZweitesSemester() {
       fieldSetFlags()[4] = false;
       return this;
     }
@@ -614,7 +614,7 @@ static {
       * @param value The value of 'bemerkung'.
       * @return This builder.
       */
-    public ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleAnmeldungDetailsDTO.Builder setBemerkung(java.lang.String value) {
+    public ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleBestaetigungEventDTO.Builder setBemerkung(java.lang.String value) {
       validate(fields()[5], value);
       this.bemerkung = value;
       fieldSetFlags()[5] = true;
@@ -634,64 +634,64 @@ static {
       * Clears the value of the 'bemerkung' field.
       * @return This builder.
       */
-    public ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleAnmeldungDetailsDTO.Builder clearBemerkung() {
+    public ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleBestaetigungEventDTO.Builder clearBemerkung() {
       bemerkung = null;
       fieldSetFlags()[5] = false;
       return this;
     }
 
     /**
-      * Gets the value of the 'modulSelection' field.
+      * Gets the value of the 'module' field.
       * @return The value.
       */
-    public java.util.List<ch.dvbern.kibon.exchange.commons.tagesschulen.ModulAuswahlDTO> getModulSelection() {
-      return modulSelection;
+    public java.util.List<ch.dvbern.kibon.exchange.commons.tagesschulen.ModulAuswahlDTO> getModule() {
+      return module;
     }
 
 
     /**
-      * Sets the value of the 'modulSelection' field.
-      * @param value The value of 'modulSelection'.
+      * Sets the value of the 'module' field.
+      * @param value The value of 'module'.
       * @return This builder.
       */
-    public ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleAnmeldungDetailsDTO.Builder setModulSelection(java.util.List<ch.dvbern.kibon.exchange.commons.tagesschulen.ModulAuswahlDTO> value) {
+    public ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleBestaetigungEventDTO.Builder setModule(java.util.List<ch.dvbern.kibon.exchange.commons.tagesschulen.ModulAuswahlDTO> value) {
       validate(fields()[6], value);
-      this.modulSelection = value;
+      this.module = value;
       fieldSetFlags()[6] = true;
       return this;
     }
 
     /**
-      * Checks whether the 'modulSelection' field has been set.
-      * @return True if the 'modulSelection' field has been set, false otherwise.
+      * Checks whether the 'module' field has been set.
+      * @return True if the 'module' field has been set, false otherwise.
       */
-    public boolean hasModulSelection() {
+    public boolean hasModule() {
       return fieldSetFlags()[6];
     }
 
 
     /**
-      * Clears the value of the 'modulSelection' field.
+      * Clears the value of the 'module' field.
       * @return This builder.
       */
-    public ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleAnmeldungDetailsDTO.Builder clearModulSelection() {
-      modulSelection = null;
+    public ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleBestaetigungEventDTO.Builder clearModule() {
+      module = null;
       fieldSetFlags()[6] = false;
       return this;
     }
 
     @Override
     @SuppressWarnings("unchecked")
-    public TagesschuleAnmeldungDetailsDTO build() {
+    public TagesschuleBestaetigungEventDTO build() {
       try {
-        TagesschuleAnmeldungDetailsDTO record = new TagesschuleAnmeldungDetailsDTO();
+        TagesschuleBestaetigungEventDTO record = new TagesschuleBestaetigungEventDTO();
         record.refnr = fieldSetFlags()[0] ? this.refnr : (java.lang.String) defaultValue(fields()[0]);
         record.eintrittsdatum = fieldSetFlags()[1] ? this.eintrittsdatum : (java.time.LocalDate) defaultValue(fields()[1]);
         record.planKlasse = fieldSetFlags()[2] ? this.planKlasse : (java.lang.String) defaultValue(fields()[2]);
         record.abholung = fieldSetFlags()[3] ? this.abholung : (ch.dvbern.kibon.exchange.commons.types.ModulIntervall) defaultValue(fields()[3]);
         record.abweichungZweitesSemester = fieldSetFlags()[4] ? this.abweichungZweitesSemester : (java.lang.Boolean) defaultValue(fields()[4]);
         record.bemerkung = fieldSetFlags()[5] ? this.bemerkung : (java.lang.String) defaultValue(fields()[5]);
-        record.modulSelection = fieldSetFlags()[6] ? this.modulSelection : (java.util.List<ch.dvbern.kibon.exchange.commons.tagesschulen.ModulAuswahlDTO>) defaultValue(fields()[6]);
+        record.module = fieldSetFlags()[6] ? this.module : (java.util.List<ch.dvbern.kibon.exchange.commons.tagesschulen.ModulAuswahlDTO>) defaultValue(fields()[6]);
         return record;
       } catch (org.apache.avro.AvroMissingFieldException e) {
         throw e;
@@ -702,8 +702,8 @@ static {
   }
 
   @SuppressWarnings("unchecked")
-  private static final org.apache.avro.io.DatumWriter<TagesschuleAnmeldungDetailsDTO>
-    WRITER$ = (org.apache.avro.io.DatumWriter<TagesschuleAnmeldungDetailsDTO>)MODEL$.createDatumWriter(SCHEMA$);
+  private static final org.apache.avro.io.DatumWriter<TagesschuleBestaetigungEventDTO>
+    WRITER$ = (org.apache.avro.io.DatumWriter<TagesschuleBestaetigungEventDTO>)MODEL$.createDatumWriter(SCHEMA$);
 
   @Override public void writeExternal(java.io.ObjectOutput out)
     throws java.io.IOException {
@@ -711,8 +711,8 @@ static {
   }
 
   @SuppressWarnings("unchecked")
-  private static final org.apache.avro.io.DatumReader<TagesschuleAnmeldungDetailsDTO>
-    READER$ = (org.apache.avro.io.DatumReader<TagesschuleAnmeldungDetailsDTO>)MODEL$.createDatumReader(SCHEMA$);
+  private static final org.apache.avro.io.DatumReader<TagesschuleBestaetigungEventDTO>
+    READER$ = (org.apache.avro.io.DatumReader<TagesschuleBestaetigungEventDTO>)MODEL$.createDatumReader(SCHEMA$);
 
   @Override public void readExternal(java.io.ObjectInput in)
     throws java.io.IOException {

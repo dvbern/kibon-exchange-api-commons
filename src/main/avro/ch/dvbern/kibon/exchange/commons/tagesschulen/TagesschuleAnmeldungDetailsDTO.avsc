@@ -26,14 +26,7 @@
 			"name": "abholung",
 			"type": [
 				"null",
-				{
-					"type": "enum",
-					"name": "AbholungTagesschule",
-					"symbols": [
-						"ABHOLUNG",
-						"ALLEINE_NACH_HAUSE"
-					]
-				}
+				"ch.dvbern.kibon.exchange.commons.types.ModulIntervall"
 			],
 			"default": null
 		},
