@@ -14,8 +14,8 @@ import org.apache.avro.message.SchemaStore;
 
 @org.apache.avro.specific.AvroGenerated
 public class TagesschuleBestaetigungEventDTO extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = 1706284928072086955L;
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"TagesschuleBestaetigungEventDTO\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.tagesschulen\",\"fields\":[{\"name\":\"refnr\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"eintrittsdatum\",\"type\":{\"type\":\"int\",\"logicalType\":\"date\"}},{\"name\":\"planKlasse\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"abholung\",\"type\":[\"null\",{\"type\":\"enum\",\"name\":\"ModulIntervall\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.types\",\"symbols\":[\"WOECHENTLICH\",\"WOECHENTLICH_ODER_ALLE_ZWEI_WOCHEN\"]}],\"default\":null},{\"name\":\"abweichungZweitesSemester\",\"type\":\"boolean\"},{\"name\":\"bemerkung\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"module\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"ModulAuswahlDTO\",\"fields\":[{\"name\":\"modulId\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"weekday\",\"type\":\"int\"},{\"name\":\"intervall\",\"type\":{\"type\":\"enum\",\"name\":\"Intervall\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.types\",\"symbols\":[\"WOECHENTLICH\",\"ALLE_ZWEI_WOCHEN\"]}}]},\"java-class\":\"java.util.List\"}}]}");
+  private static final long serialVersionUID = 7131440745083506517L;
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"TagesschuleBestaetigungEventDTO\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.tagesschulen\",\"fields\":[{\"name\":\"refnr\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"eintrittsdatum\",\"type\":{\"type\":\"int\",\"logicalType\":\"date\"}},{\"name\":\"planKlasse\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"abholung\",\"type\":[\"null\",{\"type\":\"enum\",\"name\":\"AbholungTagesschule\",\"symbols\":[\"ABHOLUNG\",\"ALLEINE_NACH_HAUSE\"]}],\"default\":null},{\"name\":\"abweichungZweitesSemester\",\"type\":\"boolean\"},{\"name\":\"bemerkung\",\"type\":[\"null\",{\"type\":\"string\",\"avro.java.string\":\"String\"}],\"default\":null},{\"name\":\"module\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"ModulAuswahlDTO\",\"fields\":[{\"name\":\"modulId\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"weekday\",\"type\":\"int\"},{\"name\":\"intervall\",\"type\":{\"type\":\"enum\",\"name\":\"Intervall\",\"namespace\":\"ch.dvbern.kibon.exchange.commons.types\",\"symbols\":[\"WOECHENTLICH\",\"ALLE_ZWEI_WOCHEN\"]}}]},\"java-class\":\"java.util.List\"}}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static SpecificData MODEL$ = new SpecificData();
@@ -77,7 +77,7 @@ static {
    private java.lang.String refnr;
    private java.time.LocalDate eintrittsdatum;
    private java.lang.String planKlasse;
-   private ch.dvbern.kibon.exchange.commons.types.ModulIntervall abholung;
+   private ch.dvbern.kibon.exchange.commons.tagesschulen.AbholungTagesschule abholung;
    private boolean abweichungZweitesSemester;
    private java.lang.String bemerkung;
    private java.util.List<ch.dvbern.kibon.exchange.commons.tagesschulen.ModulAuswahlDTO> module;
@@ -99,7 +99,7 @@ static {
    * @param bemerkung The new value for bemerkung
    * @param module The new value for module
    */
-  public TagesschuleBestaetigungEventDTO(java.lang.String refnr, java.time.LocalDate eintrittsdatum, java.lang.String planKlasse, ch.dvbern.kibon.exchange.commons.types.ModulIntervall abholung, java.lang.Boolean abweichungZweitesSemester, java.lang.String bemerkung, java.util.List<ch.dvbern.kibon.exchange.commons.tagesschulen.ModulAuswahlDTO> module) {
+  public TagesschuleBestaetigungEventDTO(java.lang.String refnr, java.time.LocalDate eintrittsdatum, java.lang.String planKlasse, ch.dvbern.kibon.exchange.commons.tagesschulen.AbholungTagesschule abholung, java.lang.Boolean abweichungZweitesSemester, java.lang.String bemerkung, java.util.List<ch.dvbern.kibon.exchange.commons.tagesschulen.ModulAuswahlDTO> module) {
     this.refnr = refnr;
     this.eintrittsdatum = eintrittsdatum;
     this.planKlasse = planKlasse;
@@ -149,7 +149,7 @@ static {
     case 0: refnr = value$ != null ? value$.toString() : null; break;
     case 1: eintrittsdatum = (java.time.LocalDate)value$; break;
     case 2: planKlasse = value$ != null ? value$.toString() : null; break;
-    case 3: abholung = (ch.dvbern.kibon.exchange.commons.types.ModulIntervall)value$; break;
+    case 3: abholung = (ch.dvbern.kibon.exchange.commons.tagesschulen.AbholungTagesschule)value$; break;
     case 4: abweichungZweitesSemester = (java.lang.Boolean)value$; break;
     case 5: bemerkung = value$ != null ? value$.toString() : null; break;
     case 6: module = (java.util.List<ch.dvbern.kibon.exchange.commons.tagesschulen.ModulAuswahlDTO>)value$; break;
@@ -212,7 +212,7 @@ static {
    * Gets the value of the 'abholung' field.
    * @return The value of the 'abholung' field.
    */
-  public ch.dvbern.kibon.exchange.commons.types.ModulIntervall getAbholung() {
+  public ch.dvbern.kibon.exchange.commons.tagesschulen.AbholungTagesschule getAbholung() {
     return abholung;
   }
 
@@ -221,7 +221,7 @@ static {
    * Sets the value of the 'abholung' field.
    * @param value the value to set.
    */
-  public void setAbholung(ch.dvbern.kibon.exchange.commons.types.ModulIntervall value) {
+  public void setAbholung(ch.dvbern.kibon.exchange.commons.tagesschulen.AbholungTagesschule value) {
     this.abholung = value;
   }
 
@@ -320,7 +320,7 @@ static {
     private java.lang.String refnr;
     private java.time.LocalDate eintrittsdatum;
     private java.lang.String planKlasse;
-    private ch.dvbern.kibon.exchange.commons.types.ModulIntervall abholung;
+    private ch.dvbern.kibon.exchange.commons.tagesschulen.AbholungTagesschule abholung;
     private boolean abweichungZweitesSemester;
     private java.lang.String bemerkung;
     private java.util.List<ch.dvbern.kibon.exchange.commons.tagesschulen.ModulAuswahlDTO> module;
@@ -525,7 +525,7 @@ static {
       * Gets the value of the 'abholung' field.
       * @return The value.
       */
-    public ch.dvbern.kibon.exchange.commons.types.ModulIntervall getAbholung() {
+    public ch.dvbern.kibon.exchange.commons.tagesschulen.AbholungTagesschule getAbholung() {
       return abholung;
     }
 
@@ -535,7 +535,7 @@ static {
       * @param value The value of 'abholung'.
       * @return This builder.
       */
-    public ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleBestaetigungEventDTO.Builder setAbholung(ch.dvbern.kibon.exchange.commons.types.ModulIntervall value) {
+    public ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleBestaetigungEventDTO.Builder setAbholung(ch.dvbern.kibon.exchange.commons.tagesschulen.AbholungTagesschule value) {
       validate(fields()[3], value);
       this.abholung = value;
       fieldSetFlags()[3] = true;
@@ -688,7 +688,7 @@ static {
         record.refnr = fieldSetFlags()[0] ? this.refnr : (java.lang.String) defaultValue(fields()[0]);
         record.eintrittsdatum = fieldSetFlags()[1] ? this.eintrittsdatum : (java.time.LocalDate) defaultValue(fields()[1]);
         record.planKlasse = fieldSetFlags()[2] ? this.planKlasse : (java.lang.String) defaultValue(fields()[2]);
-        record.abholung = fieldSetFlags()[3] ? this.abholung : (ch.dvbern.kibon.exchange.commons.types.ModulIntervall) defaultValue(fields()[3]);
+        record.abholung = fieldSetFlags()[3] ? this.abholung : (ch.dvbern.kibon.exchange.commons.tagesschulen.AbholungTagesschule) defaultValue(fields()[3]);
         record.abweichungZweitesSemester = fieldSetFlags()[4] ? this.abweichungZweitesSemester : (java.lang.Boolean) defaultValue(fields()[4]);
         record.bemerkung = fieldSetFlags()[5] ? this.bemerkung : (java.lang.String) defaultValue(fields()[5]);
         record.module = fieldSetFlags()[6] ? this.module : (java.util.List<ch.dvbern.kibon.exchange.commons.tagesschulen.ModulAuswahlDTO>) defaultValue(fields()[6]);

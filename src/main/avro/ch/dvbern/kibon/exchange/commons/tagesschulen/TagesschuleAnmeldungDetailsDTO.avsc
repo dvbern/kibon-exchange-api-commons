@@ -24,11 +24,18 @@
 		},
 		{
 			"name": "abholung",
-			"type": [
-				"null",
-				"ch.dvbern.kibon.exchange.commons.types.ModulIntervall"
-			],
-			"default": null
+        	"type": [
+                "null",
+                {
+                    "type": "enum",
+                   	"name": "AbholungTagesschule",
+                 	"symbols": [
+                    	"ABHOLUNG",
+                    	"ALLEINE_NACH_HAUSE"
+                    ]
+                }
+            ],
+            "default": null
 		},
 		{
 			"name": "abweichungZweitesSemester",

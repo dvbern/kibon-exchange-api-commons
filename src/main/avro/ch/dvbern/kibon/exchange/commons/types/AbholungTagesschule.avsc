@@ -1,9 +1,0 @@
-{
-	"type": "enum",
-	"namespace": "ch.dvbern.kibon.exchange.commons.types",
-    "name": "AbholungTagesschule",
-    "symbols": [
-    	"ABHOLUNG",
-    	"ALLEINE_NACH_HAUSE"
-    ]
-}

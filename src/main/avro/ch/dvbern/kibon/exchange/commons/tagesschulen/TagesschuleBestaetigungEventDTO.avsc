@@ -25,10 +25,10 @@
 		{
 			"name": "abholung",
 			"type": [
-				"null",
-				"ch.dvbern.kibon.exchange.commons.types.ModulIntervall"
-			],
-			"default": null
+            	"null",
+            	"ch.dvbern.kibon.exchange.commons.tagesschulen.AbholungTagesschule"
+            ],
+            "default": null
 		},
 		{
 			"name": "abweichungZweitesSemester",
