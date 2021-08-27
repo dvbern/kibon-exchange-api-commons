@@ -155,11 +155,12 @@
                                 <!-- types can be referenced by other (multiple!) *.avsc files, but that requires them to be imported first -->
                                 <import>${project.basedir}/src/main/avro/ch/dvbern/kibon/exchange/commons/types/Zeiteinheit.avsc</import>
                                 <import>${project.basedir}/src/main/avro/ch/dvbern/kibon/exchange/commons/types/BetreuungsangebotType.avsc</import>
-                                <import>${project.basedir}/src/main/avro/ch/dvbern/kibon/exchange/commons/types/Gesuchsperiode.avsc</import>
-                                <import>${project.basedir}/src/main/avro/ch/dvbern/kibon/exchange/commons/types/AdresseDTO.avsc</import>
+                                <import>${project.basedir}/src/main/avro/ch/dvbern/kibon/exchange/commons/types/Wochentag.avsc</import>
                                 <import>${project.basedir}/src/main/avro/ch/dvbern/kibon/exchange/commons/types/Geschlecht.avsc</import>
                                 <import>${project.basedir}/src/main/avro/ch/dvbern/kibon/exchange/commons/types/Intervall.avsc</import>
                                 <import>${project.basedir}/src/main/avro/ch/dvbern/kibon/exchange/commons/types/ModulIntervall.avsc</import>
+                                <import>${project.basedir}/src/main/avro/ch/dvbern/kibon/exchange/commons/types/Gesuchsperiode.avsc</import>
+                                <import>${project.basedir}/src/main/avro/ch/dvbern/kibon/exchange/commons/types/AdresseDTO.avsc</import>
                                 <import>${project.basedir}/src/main/avro/ch/dvbern/kibon/exchange/commons/types/KindDTO.avsc</import>
                                 <import>${project.basedir}/src/main/avro/ch/dvbern/kibon/exchange/commons/types/GesuchstellerDTO.avsc</import>
                                 <import>${project.basedir}/src/main/avro/ch/dvbern/kibon/exchange/commons/verfuegung/KindDTO.avsc</import>
