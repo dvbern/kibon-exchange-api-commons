@@ -9,10 +9,14 @@
 		},
 		{
 			"name": "eintrittsdatum",
-			"type": {
-				"type": "int",
-				"logicalType": "date"
-			}
+			"type": [
+				"null",
+				{
+					"type": "int",
+					"logicalType": "date"
+				}
+			],
+			"default": null
 		},
 		{
 			"name": "planKlasse",
@@ -32,7 +36,11 @@
 		},
 		{
 			"name": "abweichungZweitesSemester",
-			"type": "boolean"
+			"type": [
+				"null",
+				"boolean"
+			],
+			"default": null
 		},
 		{
 			"name": "bemerkung",
@@ -46,9 +54,9 @@
 			"name": "module",
 			"type": {
 				"type": "array",
-				"items": "ch.dvbern.kibon.exchange.commons.tagesschulen.ModulAuswahlDTO",
-				"java-class": "java.util.List"
-			}
+				"items": "ch.dvbern.kibon.exchange.commons.tagesschulen.ModulAuswahlDTO"
+			},
+			"default": []
 		}
 	]
 }

@@ -265,12 +265,12 @@
 			"default": null
 		},
 		{
-			"name": "module",
+			"name": "tagesschuleModule",
 			"type": [
 				"null",
 				{
 					"type": "array",
-					"items": "ch.dvbern.kibon.exchange.commons.tagesschulen.ModulDTO"
+					"items": "ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleModuleDTO"
 				}
 			],
 			"default": null

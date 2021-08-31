@@ -7,25 +7,28 @@
 			"name": "tarifePaedagogisch",
 			"type": {
 				"type": "array",
-				"items": "ch.dvbern.kibon.exchange.commons.tagesschulen.TarifDTO",
-				"java-class": "java.util.List"
-			}
+				"items": "ch.dvbern.kibon.exchange.commons.tagesschulen.TarifDTO"
+			},
+			"default": []
 		},
 		{
 			"name": "tarifeNichtPaedagogisch",
 			"type": {
 				"type": "array",
-				"items": "ch.dvbern.kibon.exchange.commons.tagesschulen.TarifDTO",
-				"java-class": "java.util.List"
-			}
+				"items": "ch.dvbern.kibon.exchange.commons.tagesschulen.TarifDTO"
+			},
+			"default": []
 		},
 		{
-			"name": "finSitAkzeptiert",
+			"name": "finanzielleSituationAkzeptiert",
 			"type": "boolean"
 		},
 		{
 			"name": "timestampAbgeschlossen",
-			"type": "long"
+			"type": {
+				"type": "long",
+				"logicalType": "timestamp-micros"
+			}
 		}
 	]
 }
