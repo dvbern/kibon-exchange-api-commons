@@ -157,7 +157,6 @@
                                 <import>${project.basedir}/src/main/avro/ch/dvbern/kibon/exchange/commons/types/Wochentag.avsc</import>
                                 <import>${project.basedir}/src/main/avro/ch/dvbern/kibon/exchange/commons/types/Geschlecht.avsc</import>
                                 <import>${project.basedir}/src/main/avro/ch/dvbern/kibon/exchange/commons/types/Intervall.avsc</import>
-                                <import>${project.basedir}/src/main/avro/ch/dvbern/kibon/exchange/commons/types/Gesuchsperiode.avsc</import>
                                 <import>${project.basedir}/src/main/avro/ch/dvbern/kibon/exchange/commons/types/AdresseDTO.avsc</import>
                                 <import>${project.basedir}/src/main/avro/ch/dvbern/kibon/exchange/commons/types/KindDTO.avsc</import>
                                 <import>${project.basedir}/src/main/avro/ch/dvbern/kibon/exchange/commons/types/GesuchstellerDTO.avsc</import>

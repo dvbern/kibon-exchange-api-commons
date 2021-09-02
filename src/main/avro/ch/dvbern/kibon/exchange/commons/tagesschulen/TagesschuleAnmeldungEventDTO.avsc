@@ -24,9 +24,19 @@
             "default": false
         },
 		{
-			"name": "gesuchsperiode",
-			"type": "ch.dvbern.kibon.exchange.commons.types.Gesuchsperiode"
+			"name": "periodeVon",
+			"type": {
+            	"type": "int",
+            	"logicalType": "date"
+            }
 		},
+		{
+        	"name": "periodeBis",
+        	"type": {
+            	"type": "int",
+            	"logicalType": "date"
+            }
+        },
 		{
 			"name": "kind",
 			"type": "ch.dvbern.kibon.exchange.commons.types.KindDTO"
