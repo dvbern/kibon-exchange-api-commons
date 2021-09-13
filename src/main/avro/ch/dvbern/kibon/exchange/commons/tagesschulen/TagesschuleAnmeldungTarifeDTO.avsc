@@ -18,17 +18,6 @@
 				"items": "ch.dvbern.kibon.exchange.commons.tagesschulen.TarifDTO"
 			},
 			"default": []
-		},
-		{
-			"name": "finanzielleSituationAkzeptiert",
-			"type": "boolean"
-		},
-		{
-			"name": "timestampAbgeschlossen",
-			"type": {
-				"type": "long",
-				"logicalType": "timestamp-micros"
-			}
 		}
 	]
 }
