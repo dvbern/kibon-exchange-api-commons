@@ -180,20 +180,7 @@
 			"name": "oeffnungsTage",
 			"type": {
 				"type": "array",
-				"items": {
-					"type": "enum",
-					"name": "Wochentag",
-					"namespace": "ch.dvbern.kibon.exchange.commons.types",
-					"symbols": [
-						"MONDAY",
-						"TUESDAY",
-						"WEDNESDAY",
-						"THURSDAY",
-						"FRIDAY",
-						"SATURDAY",
-						"SUNDAY"
-					]
-				}
+				"items": "ch.dvbern.kibon.exchange.commons.types.Wochentag"
 			},
 			"default": []
 		},
@@ -274,6 +261,17 @@
 			"type": [
 				"null",
 				"long"
+			],
+			"default": null
+		},
+		{
+			"name": "tagesschuleModule",
+			"type": [
+				"null",
+				{
+					"type": "array",
+					"items": "ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleModuleDTO"
+				}
 			],
 			"default": null
 		}

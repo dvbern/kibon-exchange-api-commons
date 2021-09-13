@@ -1,0 +1,14 @@
+{
+	"type": "enum",
+	"name": "Wochentag",
+	"namespace": "ch.dvbern.kibon.exchange.commons.types",
+	"symbols": [
+		"MONDAY",
+		"TUESDAY",
+		"WEDNESDAY",
+		"THURSDAY",
+		"FRIDAY",
+		"SATURDAY",
+		"SUNDAY"
+	]
+}

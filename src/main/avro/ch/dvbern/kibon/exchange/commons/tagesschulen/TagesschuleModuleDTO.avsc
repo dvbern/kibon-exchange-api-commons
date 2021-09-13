@@ -1,0 +1,29 @@
+{
+	"type": "record",
+	"name": "TagesschuleModuleDTO",
+	"namespace": "ch.dvbern.kibon.exchange.commons.tagesschulen",
+	"fields": [
+		{
+			"name": "periodeVon",
+			"type": {
+				"type": "int",
+				"logicalType": "date"
+			}
+		},
+		{
+			"name": "periodeBis",
+			"type": {
+				"type": "int",
+				"logicalType": "date"
+			}
+		},
+		{
+			"name": "module",
+			"type": {
+				"type": "array",
+				"items": "ch.dvbern.kibon.exchange.commons.tagesschulen.ModulDTO"
+			},
+			"default": []
+		}
+	]
+}

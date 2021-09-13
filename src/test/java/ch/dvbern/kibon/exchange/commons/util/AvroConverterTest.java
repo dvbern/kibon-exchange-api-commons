@@ -25,13 +25,12 @@ import org.apache.avro.generic.GenericRecord;
 import org.apache.avro.specific.SpecificRecordBase;
 import org.junit.jupiter.api.Test;
 
-import static com.googlecode.catchexception.CatchException.catchException;
-import static com.googlecode.catchexception.CatchException.caughtException;
-import static com.googlecode.catchexception.apis.CatchExceptionHamcrestMatchers.hasMessage;
-import static com.googlecode.catchexception.apis.CatchExceptionHamcrestMatchers.hasMessageThat;
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.*;
+import static org.hamcrest.Matchers.containsString;
 import static org.hamcrest.Matchers.instanceOf;
+import static org.hamcrest.Matchers.is;
+import static org.hamcrest.Matchers.notNullValue;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class AvroConverterTest {
 
@@ -138,12 +137,11 @@ class AvroConverterTest {
 	@Test
 	void testGenericRecordCreationMismatch() {
 		//noinspection ResultOfMethodCallIgnored
-		catchException(() -> AvroConverter.fromAvroBinaryGeneric(SCHEMA2, TEST_DATA_SCHEMA1));
+		IllegalStateException ex = assertThrows(
+			IllegalStateException.class,
+			() -> AvroConverter.fromAvroBinaryGeneric(SCHEMA2, TEST_DATA_SCHEMA1));
 
-		assertThat(caughtException(), allOf(
-			instanceOf(IllegalStateException.class),
-			hasMessage("failed converting from avro")
-		));
+		assertThat(ex.getMessage(), containsString("failed converting from avro"));
 	}
 
 	/**
@@ -155,12 +153,11 @@ class AvroConverterTest {
 	@Test
 	void testSpecificRecordWithMismatch() {
 		//noinspection deprecation,ResultOfMethodCallIgnored
-		catchException(() -> AvroConverter.fromAvroBinary(SCHEMA1, TEST_DATA_SCHEMA1));
+		IllegalStateException ex = assertThrows(
+			IllegalStateException.class,
+			() -> AvroConverter.fromAvroBinary(SCHEMA1, TEST_DATA_SCHEMA1));
 
-		assertThat(caughtException(), allOf(
-			instanceOf(IllegalStateException.class),
-			hasMessage("failed converting from avro")
-		));
+		assertThat(ex.getMessage(), containsString("failed converting from avro"));
 	}
 
 	/**
@@ -181,16 +178,15 @@ class AvroConverterTest {
 	void testSpecificRecordWithoutDefaultValues() {
 		Schema classSchema = VerfuegungEventDTO.getClassSchema();
 		//noinspection unused,ResultOfMethodCallIgnored
-		catchException(() -> AvroConverter.fromAvroBinary(SCHEMA1, classSchema, TEST_DATA_SCHEMA1));
+		IllegalStateException ex = assertThrows(
+			IllegalStateException.class,
+			() -> AvroConverter.fromAvroBinary(SCHEMA1, classSchema, TEST_DATA_SCHEMA1));
 
-		assertThat(caughtException(), allOf(
-			instanceOf(IllegalStateException.class),
-			hasMessage("failed converting from avro"),
-			hasProperty(
-				"cause",
-				hasMessageThat(containsString(
-					"Found ch.dvbern.kibon.exchange.commons.verfuegung.VerfuegungEventDTO, expecting ch.dvbern.kibon"
-						+ ".exchange.commons.verfuegung.VerfuegungEventDTO, missing required field gemeinde")))
-		));
+		assertThat(ex.getMessage(), containsString("failed converting from avro"));
+		assertThat(
+			ex.getCause().getMessage(),
+			containsString(
+				"Found ch.dvbern.kibon.exchange.commons.verfuegung.VerfuegungEventDTO, expecting ch.dvbern.kibon"
+					+ ".exchange.commons.verfuegung.VerfuegungEventDTO, missing required field gemeinde"));
 	}
 }

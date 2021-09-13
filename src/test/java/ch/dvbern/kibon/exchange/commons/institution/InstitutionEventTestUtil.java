@@ -18,6 +18,7 @@
 package ch.dvbern.kibon.exchange.commons.institution;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
@@ -28,8 +29,8 @@ import javax.annotation.Nonnull;
 
 import ch.dvbern.kibon.exchange.commons.types.BetreuungsangebotTyp;
 import ch.dvbern.kibon.exchange.commons.types.Wochentag;
-import ch.dvbern.kibon.exchange.commons.util.TimestampConverter;
 import ch.dvbern.kibon.exchange.commons.util.TimeConverter;
+import ch.dvbern.kibon.exchange.commons.util.TimestampConverter;
 import com.github.javafaker.Faker;
 
 public final class InstitutionEventTestUtil {
@@ -116,7 +117,7 @@ public final class InstitutionEventTestUtil {
 	@Nonnull
 	public static BigDecimal getRandomBigDecimal() {
 		return BigDecimal.valueOf(FAKER.number().randomDouble(2, 0, 1000))
-			.setScale(2, BigDecimal.ROUND_HALF_UP);
+			.setScale(2, RoundingMode.HALF_UP);
 	}
 
 	@Nonnull
