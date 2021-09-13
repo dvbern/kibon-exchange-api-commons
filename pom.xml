@@ -30,9 +30,21 @@
     <packaging>jar</packaging>
 
     <properties>
-        <avro.version>1.10.0</avro.version>
+        <avro.version>1.10.2</avro.version>
         <schema.registy.url>http://localhost:8081</schema.registy.url>
     </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.junit</groupId>
+                <artifactId>junit-bom</artifactId>
+                <version>5.7.2</version>
+                <scope>import</scope>
+                <type>pom</type>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
     <dependencies>
         <dependency>
@@ -63,7 +75,6 @@
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-engine</artifactId>
-            <version>5.6.2</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -75,13 +86,7 @@
         <dependency>
             <groupId>com.spotify</groupId>
             <artifactId>hamcrest-pojo</artifactId>
-            <version>1.1.5</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>eu.codearte.catch-exception</groupId>
-            <artifactId>catch-exception</artifactId>
-            <version>2.0</version>
+            <version>1.2.0</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -93,7 +98,7 @@
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-simple</artifactId>
-            <version>1.7.30</version>
+            <version>1.7.32</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -177,7 +182,7 @@
             <plugin>
                 <groupId>io.confluent</groupId>
                 <artifactId>kafka-schema-registry-maven-plugin</artifactId>
-                <version>5.5.1</version>
+                <version>5.5.5</version>
                 <configuration>
                     <outputDirectory>${project.basedir}/src/main/generated-schemas</outputDirectory>
                     <schemaRegistryUrls>
