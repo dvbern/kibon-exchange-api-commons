@@ -46,6 +46,14 @@
 			"type": "ch.dvbern.kibon.exchange.commons.types.GesuchstellerDTO"
 		},
 		{
+        	"name": "antragstellendePerson2",
+        	"type": [
+        		"null",
+        		"ch.dvbern.kibon.exchange.commons.types.GesuchstellerDTO"
+        	],
+        	"default": null
+        },
+		{
 			"name": "anmeldungsDetails",
 			"type": "ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleAnmeldungDetailsDTO"
 		},
