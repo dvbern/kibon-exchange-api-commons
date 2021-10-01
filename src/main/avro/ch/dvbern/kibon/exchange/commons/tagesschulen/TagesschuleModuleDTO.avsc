@@ -5,17 +5,25 @@
 	"fields": [
 		{
 			"name": "periodeVon",
-			"type": {
-				"type": "int",
-				"logicalType": "date"
-			}
+			"type": [
+                "null",
+                {
+                    "type": "int",
+                    "logicalType": "date"
+                }
+            ],
+            "default": null
 		},
 		{
 			"name": "periodeBis",
-			"type": {
-				"type": "int",
-				"logicalType": "date"
-			}
+			"type": [
+                "null",
+                {
+                    "type": "int",
+                    "logicalType": "date"
+                }
+            ],
+            "default": null
 		},
 		{
 			"name": "module",

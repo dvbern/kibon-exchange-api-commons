@@ -13,7 +13,8 @@
 		},
 		{
 			"name": "intervall",
-			"type": "ch.dvbern.kibon.exchange.commons.types.Intervall"
+			"type": "ch.dvbern.kibon.exchange.commons.types.Intervall",
+			"default": "WOECHENTLICH"
 		}
 	]
 }

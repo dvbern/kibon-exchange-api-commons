@@ -5,57 +5,82 @@
 	"fields": [
 		{
 			"name": "von",
-			"type": {
-				"type": "int",
-				"logicalType": "date"
-			}
+			"type": [
+                "null",
+                {
+                    "type": "int",
+                    "logicalType": "date"
+                }
+            ],
+            "default": null
 		},
 		{
 			"name": "bis",
-			"type": {
-				"type": "int",
-				"logicalType": "date"
-			}
+			"type": [
+                "null",
+                {
+                   "type": "int",
+                   "logicalType": "date"
+                }
+            ],
+            "default": null
 		},
 		{
 			"name": "betreuungsMinutenProWoche",
-			"type": "int"
+			"type": "int",
+			"default": 0
 		},
 		{
 			"name": "betreuungsKostenProStunde",
-			"type": {
-				"type": "bytes",
-				"logicalType": "decimal",
-				"precision": 19,
-				"scale": 2
-			}
+			"type": [
+			 	"null",
+                {
+					"type": "bytes",
+					"logicalType": "decimal",
+					"precision": 19,
+					"scale": 2
+				}
+			],
+			"default": null
 		},
 		{
 			"name": "verpflegungsKostenProWoche",
-			"type": {
-				"type": "bytes",
-				"logicalType": "decimal",
-				"precision": 19,
-				"scale": 2
-			}
+			"type": [
+			 	"null",
+                {
+					"type": "bytes",
+					"logicalType": "decimal",
+					"precision": 19,
+					"scale": 2
+				}
+			],
+			"default": null
 		},
 		{
 			"name": "verpflegungsKostenVerguenstigung",
-			"type": {
-				"type": "bytes",
-				"logicalType": "decimal",
-				"precision": 19,
-				"scale": 2
-			}
+			"type": [
+			 	"null",
+                {
+					"type": "bytes",
+					"logicalType": "decimal",
+					"precision": 19,
+					"scale": 2
+				}
+			],
+			"default": null
 		},
 		{
 			"name": "totalKostenProWoche",
-			"type": {
-				"type": "bytes",
-				"logicalType": "decimal",
-				"precision": 19,
-				"scale": 2
-			}
+			"type": [
+			 	"null",
+                {
+					"type": "bytes",
+					"logicalType": "decimal",
+					"precision": 19,
+					"scale": 2
+				}
+			],
+			"default": null
 		}
 	]
 }
