@@ -9,19 +9,14 @@
 		},
 		{
 			"name": "version",
-			"type": "int",
-			"default": 0
+			"type": "int"
 		},
 		{
 			"name": "freigegebenAm",
-			"type": [
-            	"null",
-            	{
-            		"type": "int",
-            		"logicalType": "date"
-            	}
-            ],
-            "default": null
+			"type": {
+				"type": "int",
+				"logicalType": "date"
+			}
 		},
 		{
             "name": "anmeldungZurueckgezogen",
@@ -30,25 +25,17 @@
         },
 		{
 			"name": "periodeVon",
-			"type": [
-                "null",
-                {
-                   "type": "int",
-                   "logicalType": "date"
-                }
-            ],
-            "default": null
+			"type": {
+            	"type": "int",
+            	"logicalType": "date"
+            }
 		},
 		{
         	"name": "periodeBis",
-        	"type": [
-                "null",
-                {
-                    "type": "int",
-                    "logicalType": "date"
-                }
-            ],
-            "default": null
+        	"type": {
+            	"type": "int",
+            	"logicalType": "date"
+            }
         },
 		{
 			"name": "kind",
@@ -56,6 +43,7 @@
 		},
 		{
 			"name": "gesuchsteller",
+			"aliases": ["antragstellendePerson"],
 			"type": "ch.dvbern.kibon.exchange.commons.types.GesuchstellerDTO"
 		},
 		{

@@ -9,14 +9,10 @@
 		},
 		{
 			"name": "eintrittsdatum",
-			"type": [
-                "null",
-                {
-                   "type": "int",
-                   "logicalType": "date"
-                }
-            ],
-            "default": null
+			"type": {
+				"type": "int",
+				"logicalType": "date"
+			}
 		},
 		{
 			"name": "planKlasse",
@@ -43,8 +39,7 @@
 		},
 		{
 			"name": "abweichungZweitesSemester",
-			"type": "boolean",
-			"default": false
+			"type": "boolean"
 		},
 		{
 			"name": "bemerkung",
