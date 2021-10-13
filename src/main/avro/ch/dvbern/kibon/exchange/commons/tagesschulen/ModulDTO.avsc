@@ -19,19 +19,19 @@
 		},
 		{
 			"name": "zeitVon",
-			"type": {
-				"type": "long",
-				"logicalType": "time-micros"
-			},
-			"default" : 0
+			"type": [
+				"null",
+				"long"
+			],
+			"default": null
 		},
 		{
 			"name": "zeitBis",
-			"type": {
-				"type": "long",
-				"logicalType": "time-micros"
-			},
-			"default" : 0
+			"type": [
+				"null",
+				"long"
+			],
+			"default": null
 		},
 		{
 			"name": "wochentage",
