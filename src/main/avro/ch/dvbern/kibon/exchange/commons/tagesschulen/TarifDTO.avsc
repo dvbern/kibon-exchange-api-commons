@@ -4,28 +4,6 @@
 	"namespace": "ch.dvbern.kibon.exchange.commons.tagesschulen",
 	"fields": [
 		{
-			"name": "von",
-			"type": [
-                "null",
-                {
-                    "type": "int",
-                    "logicalType": "date"
-                }
-            ],
-            "default": null
-		},
-		{
-			"name": "bis",
-			"type": [
-                "null",
-                {
-                   "type": "int",
-                   "logicalType": "date"
-                }
-            ],
-            "default": null
-		},
-		{
 			"name": "betreuungsMinutenProWoche",
 			"type": "int",
 			"default": 0
