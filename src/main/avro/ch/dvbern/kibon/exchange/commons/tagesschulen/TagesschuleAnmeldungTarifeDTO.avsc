@@ -4,20 +4,17 @@
 	"namespace": "ch.dvbern.kibon.exchange.commons.tagesschulen",
 	"fields": [
 		{
-			"name": "tarifePaedagogisch",
+			"name": "tarifZeitabschnitte",
 			"type": {
 				"type": "array",
-				"items": "ch.dvbern.kibon.exchange.commons.tagesschulen.TarifDTO"
+				"items": "ch.dvbern.kibon.exchange.commons.tagesschulen.TarifZeitabschnittDTO"
 			},
 			"default": []
 		},
 		{
-			"name": "tarifeNichtPaedagogisch",
-			"type": {
-				"type": "array",
-				"items": "ch.dvbern.kibon.exchange.commons.tagesschulen.TarifDTO"
-			},
-			"default": []
+			"name": "tarifeDefinitivAkzeptiert",
+			"type": "boolean",
+			"default": false
 		}
 	]
 }

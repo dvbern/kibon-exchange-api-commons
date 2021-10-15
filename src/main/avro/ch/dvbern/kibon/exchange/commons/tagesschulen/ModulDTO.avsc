@@ -9,52 +9,63 @@
 		},
 		{
 			"name": "bezeichnungDE",
-			"type": "string"
+			"type": "string",
+			"default": ""
 		},
 		{
 			"name": "bezeichnungFR",
-			"type": "string"
+			"type": "string",
+			"default": ""
 		},
 		{
 			"name": "zeitVon",
-			"type": {
-				"type": "long",
-				"logicalType": "time-micros"
-			}
+			"type": [
+				"null",
+				"long"
+			],
+			"default": null
 		},
 		{
 			"name": "zeitBis",
-			"type": {
-				"type": "long",
-				"logicalType": "time-micros"
-			}
+			"type": [
+				"null",
+				"long"
+			],
+			"default": null
 		},
 		{
 			"name": "wochentage",
 			"type": {
 				"type": "array",
 				"items": "ch.dvbern.kibon.exchange.commons.types.Wochentag"
-			}
+			},
+			"default": []
 		},
 		{
 			"name": "erlaubteIntervalle",
 			"type": {
 				"type": "array",
 				"items": "ch.dvbern.kibon.exchange.commons.types.Intervall"
-			}
+			},
+			"default": ["WOECHENTLICH"]
 		},
 		{
 			"name": "wirdPaedagogischBetreut",
-			"type": "boolean"
+			"type": "boolean",
+			"default": true
 		},
 		{
 			"name": "verpflegungsKosten",
-			"type": {
-				"type": "bytes",
-				"logicalType": "decimal",
-				"precision": 19,
-				"scale": 2
-			}
+			"type": [
+			 	"null",
+                {
+					"type": "bytes",
+					"logicalType": "decimal",
+					"precision": 19,
+					"scale": 2
+				}
+			],
+			"default": null
 		}
 	]
 }
