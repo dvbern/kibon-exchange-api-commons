@@ -45,6 +45,30 @@
 				"ch.dvbern.kibon.exchange.commons.types.AdresseDTO"
 			],
 			"default": null
+		},
+		{
+			"name": "mobile",
+			"type": [
+				"null",
+				"string"
+			],
+			"default": null
+		},
+		{
+			"name": "telefon",
+			"type": [
+				"null",
+				"string"
+			],
+			"default": null
+		},
+		{
+			"name": "telefonAusland",
+			"type": [
+				"null",
+				"string"
+			],
+			"default": null
 		}
 	]
 }

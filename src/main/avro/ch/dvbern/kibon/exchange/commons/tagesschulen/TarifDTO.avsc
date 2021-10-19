@@ -4,58 +4,61 @@
 	"namespace": "ch.dvbern.kibon.exchange.commons.tagesschulen",
 	"fields": [
 		{
-			"name": "von",
-			"type": {
-				"type": "int",
-				"logicalType": "date"
-			}
-		},
-		{
-			"name": "bis",
-			"type": {
-				"type": "int",
-				"logicalType": "date"
-			}
-		},
-		{
 			"name": "betreuungsMinutenProWoche",
-			"type": "int"
+			"type": "int",
+			"default": 0
 		},
 		{
 			"name": "betreuungsKostenProStunde",
-			"type": {
-				"type": "bytes",
-				"logicalType": "decimal",
-				"precision": 19,
-				"scale": 2
-			}
+			"type": [
+			 	"null",
+                {
+					"type": "bytes",
+					"logicalType": "decimal",
+					"precision": 19,
+					"scale": 2
+				}
+			],
+			"default": null
 		},
 		{
 			"name": "verpflegungsKostenProWoche",
-			"type": {
-				"type": "bytes",
-				"logicalType": "decimal",
-				"precision": 19,
-				"scale": 2
-			}
+			"type": [
+			 	"null",
+                {
+					"type": "bytes",
+					"logicalType": "decimal",
+					"precision": 19,
+					"scale": 2
+				}
+			],
+			"default": null
 		},
 		{
 			"name": "verpflegungsKostenVerguenstigung",
-			"type": {
-				"type": "bytes",
-				"logicalType": "decimal",
-				"precision": 19,
-				"scale": 2
-			}
+			"type": [
+			 	"null",
+                {
+					"type": "bytes",
+					"logicalType": "decimal",
+					"precision": 19,
+					"scale": 2
+				}
+			],
+			"default": null
 		},
 		{
 			"name": "totalKostenProWoche",
-			"type": {
-				"type": "bytes",
-				"logicalType": "decimal",
-				"precision": 19,
-				"scale": 2
-			}
+			"type": [
+			 	"null",
+                {
+					"type": "bytes",
+					"logicalType": "decimal",
+					"precision": 19,
+					"scale": 2
+				}
+			],
+			"default": null
 		}
 	]
 }
