@@ -14,6 +14,14 @@
 		{
 			"name": "intervall",
 			"type": "ch.dvbern.kibon.exchange.commons.types.Intervall"
+		},
+		{
+			"name": "fremdId",
+			"type": [
+				"null",
+				"string"
+			],
+			"default": null
 		}
 	]
 }

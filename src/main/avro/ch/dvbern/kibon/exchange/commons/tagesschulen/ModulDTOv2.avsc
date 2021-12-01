@@ -66,6 +66,14 @@
 				}
 			],
 			"default": null
+		},
+		{
+			"name": "fremdId",
+			"type": [
+				"null",
+				"string"
+			],
+			"default": null
 		}
 	]
 }
