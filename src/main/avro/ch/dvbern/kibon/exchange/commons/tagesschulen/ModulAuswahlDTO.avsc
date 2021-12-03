@@ -1,0 +1,39 @@
+{
+	"type": "record",
+	"name": "ModulAuswahlDTO",
+	"namespace": "ch.dvbern.kibon.exchange.commons.tagesschulen",
+	"fields": [
+		{
+			"name": "modulId",
+			"type": [
+            	"null",
+            	"string"
+            ],
+            "default": null
+		},
+		{
+			"name": "wochentag",
+			"type": [
+                "null",
+				"ch.dvbern.kibon.exchange.commons.types.Wochentag"
+			],
+			"default": null
+		},
+		{
+			"name": "intervall",
+				"type": [
+                    "null",
+					"ch.dvbern.kibon.exchange.commons.types.Intervall"
+			],
+            "default": null
+		},
+		{
+			"name": "fremdId",
+			"type": [
+				"null",
+				"string"
+			],
+			"default": null
+		}
+	]
+}
