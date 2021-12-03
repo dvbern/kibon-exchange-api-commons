@@ -6,24 +6,24 @@
 		{
 			"name": "periodeVon",
 			"type": [
-                "null",
-                {
-                    "type": "int",
-                    "logicalType": "date"
-                }
-            ],
-            "default": null
+				"null",
+				{
+					"type": "int",
+					"logicalType": "date"
+				}
+			],
+			"default": null
 		},
 		{
 			"name": "periodeBis",
 			"type": [
-                "null",
-                {
-                    "type": "int",
-                    "logicalType": "date"
-                }
-            ],
-            "default": null
+				"null",
+				{
+					"type": "int",
+					"logicalType": "date"
+				}
+			],
+			"default": null
 		},
 		{
 			"name": "module",

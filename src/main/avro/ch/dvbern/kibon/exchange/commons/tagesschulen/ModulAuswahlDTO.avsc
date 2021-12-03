@@ -6,26 +6,26 @@
 		{
 			"name": "modulId",
 			"type": [
-            	"null",
-            	"string"
-            ],
-            "default": null
+				"null",
+				"string"
+			],
+			"default": null
 		},
 		{
 			"name": "wochentag",
 			"type": [
-                "null",
+				"null",
 				"ch.dvbern.kibon.exchange.commons.types.Wochentag"
 			],
 			"default": null
 		},
 		{
 			"name": "intervall",
-				"type": [
-                    "null",
-					"ch.dvbern.kibon.exchange.commons.types.Intervall"
+			"type": [
+				"null",
+				"ch.dvbern.kibon.exchange.commons.types.Intervall"
 			],
-            "default": null
+			"default": null
 		},
 		{
 			"name": "fremdId",

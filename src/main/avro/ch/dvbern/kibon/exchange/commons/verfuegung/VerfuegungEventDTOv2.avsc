@@ -161,7 +161,7 @@
 						},
 						{
 							"name": "zeiteinheit",
-							"type":  "ch.dvbern.kibon.exchange.commons.types.Zeiteinheit"
+							"type": "ch.dvbern.kibon.exchange.commons.types.Zeiteinheit"
 						},
 						{
 							"name": "regelwerk",

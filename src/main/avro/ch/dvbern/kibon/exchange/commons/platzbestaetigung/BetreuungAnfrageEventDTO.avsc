@@ -10,77 +10,77 @@
 		{
 			"name": "periodeVon",
 			"type": {
-            	"type": "int",
-            	"logicalType": "date"
-            }
+				"type": "int",
+				"logicalType": "date"
+			}
 		},
 		{
-        	"name": "periodeBis",
-        	"type": {
-            	"type": "int",
-            	"logicalType": "date"
-            }
-        },
-        {
-        	"name": "institutionId",
-        	"type": "string"
-        },
-        {
-        	"name": "gesuchsteller",
-        	"type": {
-        		"type": "record",
-        		"name": "GesuchstellerDTO",
-        		"fields": [
-        			{
-        				"name": "vorname",
-        				"type": "string"
-        			},
-        			{
-        				"name": "nachname",
-        				"type": "string"
-        			},
-        			{
-        				"name": "email",
-        				"type": [
-        					"null",
-        					"string"
-        				],
-        				"default": null
-        			}
-        		]
-        	}
-        },
-        {
-       		"name": "kind",
-       		"type": {
-       			"type": "record",
-       			"name": "KindDTO",
-       			"fields": [
-       				{
-       					"name": "vorname",
-       					"type": "string"
-       				},
-       				{
-       					"name": "nachname",
-       					"type": "string"
-       				},
-       				{
-       					"name": "geburtsdatum",
-       					"type": {
-       						"type": "int",
-       						"logicalType": "date"
-       					}
-       				}
-       			]
-       		}
-        },
-        {
-        	"name": "betreuungsArt",
-        	"type": "ch.dvbern.kibon.exchange.commons.types.BetreuungsangebotTyp"
-        },
-        {
-        	"name": "abgelehntVonGesuchsteller",
-        	"type": "boolean"
-        }
-  	]
+			"name": "periodeBis",
+			"type": {
+				"type": "int",
+				"logicalType": "date"
+			}
+		},
+		{
+			"name": "institutionId",
+			"type": "string"
+		},
+		{
+			"name": "gesuchsteller",
+			"type": {
+				"type": "record",
+				"name": "GesuchstellerDTO",
+				"fields": [
+					{
+						"name": "vorname",
+						"type": "string"
+					},
+					{
+						"name": "nachname",
+						"type": "string"
+					},
+					{
+						"name": "email",
+						"type": [
+							"null",
+							"string"
+						],
+						"default": null
+					}
+				]
+			}
+		},
+		{
+			"name": "kind",
+			"type": {
+				"type": "record",
+				"name": "KindDTO",
+				"fields": [
+					{
+						"name": "vorname",
+						"type": "string"
+					},
+					{
+						"name": "nachname",
+						"type": "string"
+					},
+					{
+						"name": "geburtsdatum",
+						"type": {
+							"type": "int",
+							"logicalType": "date"
+						}
+					}
+				]
+			}
+		},
+		{
+			"name": "betreuungsArt",
+			"type": "ch.dvbern.kibon.exchange.commons.types.BetreuungsangebotTyp"
+		},
+		{
+			"name": "abgelehntVonGesuchsteller",
+			"type": "boolean"
+		}
+	]
 }

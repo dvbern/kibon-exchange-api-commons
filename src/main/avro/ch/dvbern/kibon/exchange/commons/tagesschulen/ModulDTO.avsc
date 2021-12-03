@@ -47,7 +47,9 @@
 				"type": "array",
 				"items": "ch.dvbern.kibon.exchange.commons.types.Intervall"
 			},
-			"default": ["WOECHENTLICH"]
+			"default": [
+				"WOECHENTLICH"
+			]
 		},
 		{
 			"name": "wirdPaedagogischBetreut",
@@ -57,8 +59,8 @@
 		{
 			"name": "verpflegungsKosten",
 			"type": [
-			 	"null",
-                {
+				"null",
+				{
 					"type": "bytes",
 					"logicalType": "decimal",
 					"precision": 19,
