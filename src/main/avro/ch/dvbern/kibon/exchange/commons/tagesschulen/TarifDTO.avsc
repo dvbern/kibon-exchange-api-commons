@@ -11,8 +11,8 @@
 		{
 			"name": "betreuungsKostenProStunde",
 			"type": [
-			 	"null",
-                {
+				"null",
+				{
 					"type": "bytes",
 					"logicalType": "decimal",
 					"precision": 19,
@@ -24,8 +24,8 @@
 		{
 			"name": "verpflegungsKostenProWoche",
 			"type": [
-			 	"null",
-                {
+				"null",
+				{
 					"type": "bytes",
 					"logicalType": "decimal",
 					"precision": 19,
@@ -37,8 +37,8 @@
 		{
 			"name": "verpflegungsKostenVerguenstigung",
 			"type": [
-			 	"null",
-                {
+				"null",
+				{
 					"type": "bytes",
 					"logicalType": "decimal",
 					"precision": 19,
@@ -50,8 +50,8 @@
 		{
 			"name": "totalKostenProWoche",
 			"type": [
-			 	"null",
-                {
+				"null",
+				{
 					"type": "bytes",
 					"logicalType": "decimal",
 					"precision": 19,

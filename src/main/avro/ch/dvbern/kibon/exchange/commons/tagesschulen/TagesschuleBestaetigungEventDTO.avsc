@@ -21,18 +21,18 @@
 		{
 			"name": "planKlasse",
 			"type": [
-            	"null",
-            	"string"
-            ],
-            "default": null
+				"null",
+				"string"
+			],
+			"default": null
 		},
 		{
 			"name": "abholung",
 			"type": [
-            	"null",
-            	"ch.dvbern.kibon.exchange.commons.tagesschulen.AbholungTagesschule"
-            ],
-            "default": null
+				"null",
+				"ch.dvbern.kibon.exchange.commons.tagesschulen.AbholungTagesschule"
+			],
+			"default": null
 		},
 		{
 			"name": "abweichungZweitesSemester",
@@ -45,10 +45,10 @@
 		{
 			"name": "bemerkung",
 			"type": [
-            	"null",
-                "string"
-            ],
-            "default": null
+				"null",
+				"string"
+			],
+			"default": null
 		},
 		{
 			"name": "module",
