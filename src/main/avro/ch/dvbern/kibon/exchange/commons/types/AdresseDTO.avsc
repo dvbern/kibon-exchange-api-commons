@@ -2,7 +2,7 @@
 	"type": "record",
 	"name": "AdresseDTO",
 	"namespace": "ch.dvbern.kibon.exchange.commons.types",
-	"fields":  [
+	"fields": [
 		{
 			"name": "anschrift",
 			"type": [

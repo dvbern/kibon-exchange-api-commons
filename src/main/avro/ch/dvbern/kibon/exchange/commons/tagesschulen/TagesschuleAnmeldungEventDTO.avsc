@@ -19,41 +19,43 @@
 			}
 		},
 		{
-            "name": "anmeldungZurueckgezogen",
-            "type": "boolean",
-            "default": false
-        },
+			"name": "anmeldungZurueckgezogen",
+			"type": "boolean",
+			"default": false
+		},
 		{
 			"name": "periodeVon",
 			"type": {
-            	"type": "int",
-            	"logicalType": "date"
-            }
+				"type": "int",
+				"logicalType": "date"
+			}
 		},
 		{
-        	"name": "periodeBis",
-        	"type": {
-            	"type": "int",
-            	"logicalType": "date"
-            }
-        },
+			"name": "periodeBis",
+			"type": {
+				"type": "int",
+				"logicalType": "date"
+			}
+		},
 		{
 			"name": "kind",
 			"type": "ch.dvbern.kibon.exchange.commons.types.KindDTO"
 		},
 		{
 			"name": "gesuchsteller",
-			"aliases": ["antragstellendePerson"],
+			"aliases": [
+				"antragstellendePerson"
+			],
 			"type": "ch.dvbern.kibon.exchange.commons.types.GesuchstellerDTO"
 		},
 		{
-        	"name": "gesuchsteller2",
-        	"type": [
-        		"null",
-        		"ch.dvbern.kibon.exchange.commons.types.GesuchstellerDTO"
-        	],
-        	"default": null
-        },
+			"name": "gesuchsteller2",
+			"type": [
+				"null",
+				"ch.dvbern.kibon.exchange.commons.types.GesuchstellerDTO"
+			],
+			"default": null
+		},
 		{
 			"name": "anmeldungsDetails",
 			"type": "ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleAnmeldungDetailsDTO"

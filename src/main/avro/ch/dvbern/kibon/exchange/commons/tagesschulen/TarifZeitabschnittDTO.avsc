@@ -39,6 +39,19 @@
 			"default": null
 		},
 		{
+			"name": "familienGroesse",
+			"type": [
+				"null",
+				{
+					"type": "bytes",
+					"logicalType": "decimal",
+					"precision": 19,
+					"scale": 2
+				}
+			],
+			"default": null
+		},
+		{
 			"name": "tarifPaedagogisch",
 			"type": [
 				"null",

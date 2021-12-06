@@ -16,26 +16,26 @@
 			"type": "string"
 		},
 		{
-        	"name": "gueltigAb",
-        	"type": [
-            	"null",
-            	{
-        			"type": "int",
-        			"logicalType": "date"
-        		}
-        	],
-        	"default": null
-        },
-        {
-        	"name": "gueltigBis",
-        	"type": [
-            	"null",
-                {
-                	"type": "int",
-                    "logicalType": "date"
-                }
-            ],
-            "default": null
-        }
+			"name": "gueltigAb",
+			"type": [
+				"null",
+				{
+					"type": "int",
+					"logicalType": "date"
+				}
+			],
+			"default": null
+		},
+		{
+			"name": "gueltigBis",
+			"type": [
+				"null",
+				{
+					"type": "int",
+					"logicalType": "date"
+				}
+			],
+			"default": null
+		}
 	]
 }
