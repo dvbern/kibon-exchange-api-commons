@@ -30,7 +30,7 @@
     <packaging>jar</packaging>
 
     <properties>
-        <avro.version>1.10.2</avro.version>
+        <avro.version>1.11.0</avro.version>
         <schema.registy.url>http://localhost:8081</schema.registy.url>
     </properties>
 
@@ -39,7 +39,7 @@
             <dependency>
                 <groupId>org.junit</groupId>
                 <artifactId>junit-bom</artifactId>
-                <version>5.7.2</version>
+                <version>5.8.2</version>
                 <scope>import</scope>
                 <type>pom</type>
             </dependency>
@@ -47,10 +47,17 @@
     </dependencyManagement>
 
     <dependencies>
+        <!-- for Maven -->
         <dependency>
-            <groupId>com.google.code.findbugs</groupId>
-            <artifactId>annotations</artifactId>
-            <version>3.0.1u2</version>
+            <groupId>net.jcip</groupId>
+            <artifactId>jcip-annotations</artifactId>
+            <version>1.0</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>com.github.spotbugs</groupId>
+            <artifactId>spotbugs-annotations</artifactId>
+            <version>4.5.2</version>
             <optional>true</optional>
         </dependency>
         <dependency>
@@ -67,7 +74,7 @@
         <dependency>
             <groupId>org.jetbrains</groupId>
             <artifactId>annotations</artifactId>
-            <version>19.0.0</version>
+            <version>23.0.0</version>
             <optional>true</optional>
         </dependency>
 
