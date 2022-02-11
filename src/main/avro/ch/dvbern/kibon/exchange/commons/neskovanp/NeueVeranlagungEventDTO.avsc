@@ -1,0 +1,26 @@
+{
+	"type": "record",
+	"name": "NeueVeranlagungEventDTO",
+	"namespace": "ch.dvbern.kibon.exchange.commons.neskovanp",
+	"fields": [
+		{
+			"name": "zpvNummer",
+			"type": "int"
+		},
+		{
+        	"name": "geburtsdatum",
+        	"type": {
+            			"type": "int",
+            			"logicalType": "date"
+            		}
+        },
+		{
+			"name": "kibonAntragId",
+			"type": "string"
+		},
+		{
+        	"name": "gesuchsperiodeBeginnJahr",
+        	"type": "int"
+        }
+	]
+}
