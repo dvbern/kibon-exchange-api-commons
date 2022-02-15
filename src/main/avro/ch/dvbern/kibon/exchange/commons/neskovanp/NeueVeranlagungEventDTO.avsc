@@ -8,19 +8,19 @@
 			"type": "int"
 		},
 		{
-        	"name": "geburtsdatum",
-        	"type": {
-            			"type": "int",
-            			"logicalType": "date"
-            		}
-        },
+			"name": "geburtsdatum",
+			"type": {
+				"type": "int",
+				"logicalType": "date"
+			}
+		},
 		{
 			"name": "kibonAntragId",
 			"type": "string"
 		},
 		{
-        	"name": "gesuchsperiodeBeginnJahr",
-        	"type": "int"
-        }
+			"name": "gesuchsperiodeBeginnJahr",
+			"type": "int"
+		}
 	]
 }
