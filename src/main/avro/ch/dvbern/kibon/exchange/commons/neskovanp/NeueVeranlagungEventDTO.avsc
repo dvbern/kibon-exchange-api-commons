@@ -5,22 +5,29 @@
 	"fields": [
 		{
 			"name": "zpvNummer",
-			"type": "int"
+			"type": "int",
+			"default": 0
 		},
 		{
         	"name": "geburtsdatum",
-        	"type": {
-            			"type": "int",
-            			"logicalType": "date"
-            		}
+        	"type": [
+            	"null",
+            	{
+            		"type": "int",
+            		"logicalType": "date"
+            	}
+            ],
+            "default": null
         },
 		{
 			"name": "kibonAntragId",
-			"type": "string"
+			"type": "string",
+            "default": ""
 		},
 		{
         	"name": "gesuchsperiodeBeginnJahr",
-        	"type": "int"
+        	"type": "int",
+        	"default": 0
         }
 	]
 }
