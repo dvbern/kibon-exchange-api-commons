@@ -132,6 +132,11 @@
 			"name": "ausserordentlicherBetreuungsaufwand",
 			"type": "boolean",
 			"default": false
+		},
+		{
+			"name": "eingewoehnungInPeriode",
+			"type": "boolean",
+			"default": false
 		}
 	]
 }
