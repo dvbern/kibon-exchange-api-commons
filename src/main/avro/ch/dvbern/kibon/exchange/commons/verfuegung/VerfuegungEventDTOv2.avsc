@@ -57,6 +57,11 @@
 			"type": "string"
 		},
 		{
+        	"name": "auszahlungAnEltern",
+        	"type": "boolean",
+        	"default": false
+        },
+		{
 			"name": "zeitabschnitte",
 			"type": {
 				"type": "array",
