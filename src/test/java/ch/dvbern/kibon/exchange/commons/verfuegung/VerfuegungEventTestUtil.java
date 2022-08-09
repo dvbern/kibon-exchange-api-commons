@@ -87,7 +87,7 @@ public final class VerfuegungEventTestUtil {
 			.setVerfuegtAm(Instant.now())
 			.setGemeindeBfsNr(FAKER.number().numberBetween(0, 400))
 			.setGemeindeName(FAKER.name().name())
-			.setAuszahlungAnEltern(true)
+			.setAuszahlungAnEltern(false)
 			.setZeitabschnitte(Arrays.asList(createZeitabschnittDTO(von, bis), createZeitabschnittDTO(von, bis)))
 			.setIgnorierteZeitabschnitte(Collections.singletonList(createZeitabschnittDTO(von, bis)))
 			.build();
@@ -148,7 +148,7 @@ public final class VerfuegungEventTestUtil {
 			.setVerfuegteAnzahlZeiteinheiten(getRandomBigDecimal())
 			.setAnspruchsberechtigteAnzahlZeiteinheiten(getRandomBigDecimal())
 			.setZeiteinheit(Zeiteinheit.HOURS)
-			.setAuszahlungAnEltern(true)
+			.setAuszahlungAnEltern(false)
 			.build();
 	}
 
