@@ -180,7 +180,12 @@
 								]
 							},
 							"default": "ASIV"
-						}
+						},
+						{
+                        	"name": "auszahlungAnEltern",
+                            "type": "boolean",
+                            "default": false
+                        }
 					]
 				}
 			},
