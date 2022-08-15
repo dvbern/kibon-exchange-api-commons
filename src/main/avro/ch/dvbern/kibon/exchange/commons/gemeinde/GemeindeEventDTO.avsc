@@ -1,0 +1,39 @@
+{
+	"type": "record",
+	"name": "GemeindeEventDTO",
+	"namespace": "ch.dvbern.kibon.exchange.commons.gemeinde",
+	"fields": [
+		{
+        	"name": "name",
+        	"type": "string",
+        	"default": ""
+        },
+		{
+        	"name": "betreuungsgutscheineAnbietenAb",
+        	"type": [
+                "null",
+                {
+                    "type": "int",
+                    "logicalType": "date"
+                }
+            ],
+            "default": null
+        },
+        {
+            "name": "gueltigBis",
+            "type": [
+                "null",
+                {
+                    "type": "int",
+                    "logicalType": "date"
+                }
+            ],
+            "default": null
+        },
+		{
+        	"name": "bfsNummer",
+        	"type": "long",
+            "default": 0
+        }
+	]
+}
