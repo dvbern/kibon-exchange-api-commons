@@ -34,6 +34,16 @@
         	"name": "bfsNummer",
         	"type": "long",
             "default": 0
+        },
+        {
+            "name": "mandant",
+            "type": [
+                "null",
+                {
+                     "type": "ch.dvbern.kibon.exchange.commons.types.Mandant"
+                }
+            ],
+            "default": null
         }
 	]
 }

@@ -1,0 +1,11 @@
+{
+	"type": "enum",
+	"name": "Mandant",
+	"namespace": "ch.dvbern.kibon.exchange.commons.types",
+	"symbols": [
+		"be",
+		"stadtluzern",
+		"so"
+	]
+}
+

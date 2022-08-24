@@ -172,6 +172,7 @@
                                 <import>${project.basedir}/src/main/avro/ch/dvbern/kibon/exchange/commons/types/KindDTO.avsc</import>
                                 <import>${project.basedir}/src/main/avro/ch/dvbern/kibon/exchange/commons/types/GesuchstellerDTO.avsc</import>
                                 <import>${project.basedir}/src/main/avro/ch/dvbern/kibon/exchange/commons/types/EinschulungTyp.avsc</import>
+                                <import>${project.basedir}/src/main/avro/ch/dvbern/kibon/exchange/commons/types/Mandant.avsc</import>
                                 <import>${project.basedir}/src/main/avro/ch/dvbern/kibon/exchange/commons/verfuegung/KindDTO.avsc</import>
                                 <import>${project.basedir}/src/main/avro/ch/dvbern/kibon/exchange/commons/verfuegung/GesuchstellerDTO.avsc</import>
                                 <import>${project.basedir}/src/main/avro/ch/dvbern/kibon/exchange/commons/tagesschulen/ModulAuswahlDTO.avsc</import>
