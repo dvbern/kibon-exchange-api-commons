@@ -108,6 +108,16 @@
         		}
         	],
             "default": null
+        },
+        {
+            "name": "mandant",
+            "type": [
+                "null",
+                {
+                	"type": "ch.dvbern.kibon.exchange.commons.types.Mandant"
+                }
+            ],
+                    "default": null
         }
 	]
 }
