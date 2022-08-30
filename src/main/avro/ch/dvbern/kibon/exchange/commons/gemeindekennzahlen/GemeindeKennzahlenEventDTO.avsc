@@ -4,9 +4,14 @@
 	"namespace": "ch.dvbern.kibon.exchange.commons.gemeindekennzahlen",
 	"fields": [
 		{
-                	"name": "bfsNummer",
-                	"type": "long",
-                    "default": 0
+            "name": "gemeindeUUID",
+            "type": "string",
+            "default": ""
+        },
+		{
+            "name": "bfsNummer",
+            "type": "long",
+            "default": 0
         },
 		{
         	"name": "gesuchsperiodeStart",
