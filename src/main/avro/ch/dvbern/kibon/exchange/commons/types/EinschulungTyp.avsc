@@ -4,19 +4,19 @@
 	"namespace": "ch.dvbern.kibon.exchange.commons.types",
 	"symbols": [
 		"VORSCHULALTER",
-        "KINDERGARTEN1",
-        "FREIWILLIGER_KINDERGARTEN",
-        "KINDERGARTEN2",
-        "OBLIGATORISCHER_KINDERGARTEN",
-        "PRIMAR_SEKUNDAR_STUFE",
-        "KLASSE1",
-        "KLASSE2",
-        "KLASSE3",
-        "KLASSE4",
-        "KLASSE5",
-        "KLASSE6",
-        "KLASSE7",
-        "KLASSE8",
-        "KLASSE9"
+		"KINDERGARTEN1",
+		"FREIWILLIGER_KINDERGARTEN",
+		"KINDERGARTEN2",
+		"OBLIGATORISCHER_KINDERGARTEN",
+		"PRIMAR_SEKUNDAR_STUFE",
+		"KLASSE1",
+		"KLASSE2",
+		"KLASSE3",
+		"KLASSE4",
+		"KLASSE5",
+		"KLASSE6",
+		"KLASSE7",
+		"KLASSE8",
+		"KLASSE9"
 	]
 }

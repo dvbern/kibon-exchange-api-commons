@@ -276,27 +276,27 @@
 			"default": null
 		},
 		{
-        	"name": "auslastungPct",
-        	"type": [
-        		"null",
-        		{
-        			"type": "bytes",
-        			"logicalType": "decimal",
-        			"precision": 19,
-        			"scale": 2
-        		}
-        	],
-        	"default": null
-        },
-        {
-            "name": "mandant",
-            "type": [
-                "null",
-                {
-                    "type": "ch.dvbern.kibon.exchange.commons.types.Mandant"
-                }
-            ],
-            "default": null
-        }
+			"name": "auslastungPct",
+			"type": [
+				"null",
+				{
+					"type": "bytes",
+					"logicalType": "decimal",
+					"precision": 19,
+					"scale": 2
+				}
+			],
+			"default": null
+		},
+		{
+			"name": "mandant",
+			"type": [
+				"null",
+				{
+					"type": "ch.dvbern.kibon.exchange.commons.types.Mandant"
+				}
+			],
+			"default": null
+		}
 	]
 }
