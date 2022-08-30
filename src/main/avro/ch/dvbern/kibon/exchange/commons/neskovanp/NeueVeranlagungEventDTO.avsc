@@ -9,25 +9,25 @@
 			"default": 0
 		},
 		{
-        	"name": "geburtsdatum",
-        	"type": [
-            	"null",
-            	{
-            		"type": "int",
-            		"logicalType": "date"
-            	}
-            ],
-            "default": null
-        },
+			"name": "geburtsdatum",
+			"type": [
+				"null",
+				{
+					"type": "int",
+					"logicalType": "date"
+				}
+			],
+			"default": null
+		},
 		{
 			"name": "kibonAntragId",
 			"type": "string",
-            "default": ""
+			"default": ""
 		},
 		{
-        	"name": "gesuchsperiodeBeginnJahr",
-        	"type": "int",
-        	"default": 0
-        }
+			"name": "gesuchsperiodeBeginnJahr",
+			"type": "int",
+			"default": 0
+		}
 	]
 }
