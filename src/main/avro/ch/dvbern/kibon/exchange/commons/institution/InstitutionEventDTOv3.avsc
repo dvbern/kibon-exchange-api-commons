@@ -1,6 +1,6 @@
 {
 	"type": "record",
-	"name": "InstitutionEventDTOv2",
+	"name": "InstitutionEventDTO",
 	"namespace": "ch.dvbern.kibon.exchange.commons.institution",
 	"fields": [
 		{
@@ -31,7 +31,7 @@
 			"name": "adresse",
 			"type": {
 				"type": "record",
-				"name": "KontaktAngabenDTOv1",
+				"name": "KontaktAngabenDTO",
 				"aliases": [
 					"AdresseDTO"
 				],
@@ -80,7 +80,7 @@
 						"name": "gemeinde",
 						"type": {
 							"type": "record",
-							"name": "GemeindeDTOv1",
+							"name": "GemeindeDTO",
 							"fields": [
 								{
 									"name": "name",
@@ -136,7 +136,7 @@
 			"name": "betreuungsAdressen",
 			"type": {
 				"type": "array",
-				"items": "KontaktAngabenDTOv1"
+				"items": "KontaktAngabenDTO"
 			},
 			"default": []
 		},
@@ -144,7 +144,7 @@
 			"name": "status",
 			"type": {
 				"type": "enum",
-				"name": "InstitutionStatusv1",
+				"name": "InstitutionStatus",
 				"symbols": [
 					"AKTIV",
 					"KONFIGURATION",
@@ -214,7 +214,7 @@
 				"type": "array",
 				"items": {
 					"type": "enum",
-					"name": "AltersKategoriev1",
+					"name": "AltersKategorie",
 					"symbols": [
 						"BABY",
 						"VORSCHULE",
@@ -271,6 +271,29 @@
 				{
 					"type": "array",
 					"items": "ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleModuleDTO"
+				}
+			],
+			"default": null
+		},
+		{
+			"name": "auslastungPct",
+			"type": [
+				"null",
+				{
+					"type": "bytes",
+					"logicalType": "decimal",
+					"precision": 19,
+					"scale": 2
+				}
+			],
+			"default": null
+		},
+		{
+			"name": "mandant",
+			"type": [
+				"null",
+				{
+					"type": "ch.dvbern.kibon.exchange.commons.types.Mandant"
 				}
 			],
 			"default": null

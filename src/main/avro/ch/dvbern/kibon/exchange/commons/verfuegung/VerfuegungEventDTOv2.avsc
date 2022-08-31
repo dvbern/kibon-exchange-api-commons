@@ -57,10 +57,10 @@
 			"type": "string"
 		},
 		{
-        	"name": "auszahlungAnEltern",
-        	"type": "boolean",
-        	"default": false
-        },
+			"name": "auszahlungAnEltern",
+			"type": "boolean",
+			"default": false
+		},
 		{
 			"name": "zeitabschnitte",
 			"type": {
@@ -182,10 +182,10 @@
 							"default": "ASIV"
 						},
 						{
-                        	"name": "auszahlungAnEltern",
-                            "type": "boolean",
-                            "default": false
-                        }
+							"name": "auszahlungAnEltern",
+							"type": "boolean",
+							"default": false
+						}
 					]
 				}
 			},

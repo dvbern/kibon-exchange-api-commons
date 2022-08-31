@@ -1,0 +1,128 @@
+{
+	"type": "record",
+	"name": "GemeindeKennzahlenEventDTO",
+	"namespace": "ch.dvbern.kibon.exchange.commons.gemeindekennzahlen",
+	"fields": [
+		{
+			"name": "gemeindeUUID",
+			"type": "string",
+			"default": ""
+		},
+		{
+			"name": "bfsNummer",
+			"type": "long",
+			"default": 0
+		},
+		{
+			"name": "gesuchsperiodeStart",
+			"type": [
+				"null",
+				{
+					"type": "int",
+					"logicalType": "date"
+				}
+			],
+			"default": null
+		},
+		{
+			"name": "gesuchsperiodeStop",
+			"type": [
+				"null",
+				{
+					"type": "int",
+					"logicalType": "date"
+				}
+			],
+			"default": null
+		},
+		{
+			"name": "kontingentierung",
+			"type": [
+				"null",
+				{
+					"type": "boolean"
+				}
+			],
+			"default": null
+		},
+		{
+			"name": "kontingentierungAusgeschoepft",
+			"type": [
+				"null",
+				{
+					"type": "boolean"
+				}
+			],
+			"default": null
+		},
+		{
+			"name": "anzahlKinderWarteliste",
+			"type": [
+				"null",
+				{
+					"type": "bytes",
+					"logicalType": "decimal",
+					"precision": 19,
+					"scale": 2
+				}
+			],
+			"default": null
+		},
+		{
+			"name": "dauerWarteliste",
+			"type": [
+				"null",
+				{
+					"type": "bytes",
+					"logicalType": "decimal",
+					"precision": 19,
+					"scale": 2
+				}
+			],
+			"default": null
+		},
+		{
+			"name": "erwerbspensumZuschlag",
+			"type": [
+				"null",
+				{
+					"type": "bytes",
+					"logicalType": "decimal",
+					"precision": 19,
+					"scale": 2
+				}
+			],
+			"default": null
+		},
+		{
+			"name": "limitierungTfo",
+			"type": [
+				"null",
+				{
+					"type": "ch.dvbern.kibon.exchange.commons.types.EinschulungTyp"
+				}
+			],
+			"default": null
+		},
+		{
+			"name": "limitierungKita",
+			"type": [
+				"null",
+				{
+					"type": "ch.dvbern.kibon.exchange.commons.types.EinschulungTyp"
+				}
+			],
+			"default": null
+		},
+		{
+			"name": "mandant",
+			"type": [
+				"null",
+				{
+					"type": "ch.dvbern.kibon.exchange.commons.types.Mandant"
+				}
+			],
+			"default": null
+		}
+	]
+}
