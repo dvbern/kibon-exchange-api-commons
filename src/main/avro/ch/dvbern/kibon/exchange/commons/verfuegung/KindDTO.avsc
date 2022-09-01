@@ -17,6 +17,31 @@
 				"type": "int",
 				"logicalType": "date"
 			}
+		},
+		{
+			"name": "stufe",
+			"type": [
+				"null",
+				{
+					"type": "ch.dvbern.kibon.exchange.commons.types.EinschulungTyp"
+				}
+			],
+			"default": null
+		},
+		{
+			"name": "hatSozialeIndikation",
+			"type": "boolean",
+			"default": false
+		},
+		{
+			"name": "hatSprachlicheIndikation",
+			"type": "boolean",
+			"default": false
+		},
+		{
+			"name": "sprichtMuttersprache",
+			"type": "boolean",
+			"default": false
 		}
 	]
 }

@@ -18,6 +18,7 @@
 package ch.dvbern.kibon.exchange.commons.verfuegung;
 
 import ch.dvbern.kibon.exchange.commons.types.Regelwerk;
+import ch.dvbern.kibon.exchange.commons.types.Regelwerkv1;
 import ch.dvbern.kibon.exchange.commons.util.AvroConverter;
 import org.junit.jupiter.api.Test;
 
@@ -37,10 +38,10 @@ class VerfuegungEventDTOTest {
 		VerfuegungEventDTOv1 otherDTO = VerfuegungEventTestUtil.createDTOv1();
 		byte[] payload = AvroConverter.toAvroBinary(otherDTO);
 
-		VerfuegungEventDTO dto =
-			AvroConverter.fromAvroBinary(otherDTO.getSchema(), VerfuegungEventDTO.getClassSchema(), payload);
+		VerfuegungEventDTOv2 dto =
+			AvroConverter.fromAvroBinary(otherDTO.getSchema(), VerfuegungEventDTOv2.getClassSchema(), payload);
 
-		assertThat(dto.getZeitabschnitte(), everyItem(hasProperty("regelwerk", equalTo(Regelwerk.ASIV))));
+		assertThat(dto.getZeitabschnitte(), everyItem(hasProperty("regelwerk", equalTo(Regelwerkv1.ASIV))));
 	}
 
 	/**
@@ -48,7 +49,7 @@ class VerfuegungEventDTOTest {
 	 */
 	@Test
 	void canConvertToVerfuegungEventDTO() {
-		VerfuegungEventDTO otherDTO = VerfuegungEventTestUtil.createDTO();
+		VerfuegungEventDTOv2 otherDTO = VerfuegungEventTestUtil.createDTOv2();
 		byte[] payload = AvroConverter.toAvroBinary(otherDTO);
 
 		VerfuegungEventDTOv1 dto =

@@ -5,7 +5,7 @@
 	"fields": [
 		{
 			"name": "kind",
-			"type": "KindDTO"
+			"type": "KindDTOv1"
 		},
 		{
 			"name": "gesuchsteller",

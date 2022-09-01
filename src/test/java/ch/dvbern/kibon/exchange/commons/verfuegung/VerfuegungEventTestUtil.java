@@ -42,7 +42,7 @@ public final class VerfuegungEventTestUtil {
 
 	@Nonnull
 	public static VerfuegungEventDTOv1 createDTOv1() {
-		KindDTO kindDTO = createKindDTO();
+		KindDTOv1 kindDTO = createKindDTO();
 		GesuchstellerDTO gesuchstellerDTO = createGesuchstellerDTO();
 
 		LocalDate von = toLocalDate(FAKER.date().past(30, TimeUnit.DAYS));
@@ -68,14 +68,14 @@ public final class VerfuegungEventTestUtil {
 	}
 
 	@Nonnull
-	public static VerfuegungEventDTO createDTO() {
-		KindDTO kindDTO = createKindDTO();
+	public static VerfuegungEventDTOv2 createDTOv2() {
+		KindDTOv1 kindDTO = createKindDTO();
 		GesuchstellerDTO gesuchstellerDTO = createGesuchstellerDTO();
 
 		LocalDate von = toLocalDate(FAKER.date().past(30, TimeUnit.DAYS));
 		LocalDate bis = toLocalDate(FAKER.date().past(20, TimeUnit.DAYS));
 
-		VerfuegungEventDTO dto = VerfuegungEventDTO.newBuilder()
+		VerfuegungEventDTOv2 dto = VerfuegungEventDTOv2.newBuilder()
 			.setKind(kindDTO)
 			.setGesuchsteller(gesuchstellerDTO)
 			.setBetreuungsArt(BetreuungsangebotTyp.TAGESFAMILIEN)
@@ -105,8 +105,8 @@ public final class VerfuegungEventTestUtil {
 	}
 
 	@Nonnull
-	public static KindDTO createKindDTO() {
-		return KindDTO.newBuilder()
+	public static KindDTOv1 createKindDTO() {
+		return KindDTOv1.newBuilder()
 			.setVorname(FAKER.name().firstName())
 			.setNachname(FAKER.name().lastName())
 			.setGeburtsdatum(toLocalDate(FAKER.date().birthday(1, 3)))
@@ -133,8 +133,8 @@ public final class VerfuegungEventTestUtil {
 	}
 
 	@Nonnull
-	public static ZeitabschnittDTO createZeitabschnittDTO(@Nonnull LocalDate von, @Nonnull LocalDate bis) {
-		return ZeitabschnittDTO.newBuilder()
+	public static ZeitabschnittDTOv2 createZeitabschnittDTO(@Nonnull LocalDate von, @Nonnull LocalDate bis) {
+		return ZeitabschnittDTOv2.newBuilder()
 			.setVon(von)
 			.setBis(bis)
 			.setVerfuegungNr(2)
