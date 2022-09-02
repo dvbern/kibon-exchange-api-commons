@@ -42,6 +42,11 @@
 			"name": "sprichtMuttersprache",
 			"type": "boolean",
 			"default": false
+		},
+		{
+			"name": "ausserordentlicherAnspruch",
+			"type": "boolean",
+			"default": false
 		}
 	]
 }

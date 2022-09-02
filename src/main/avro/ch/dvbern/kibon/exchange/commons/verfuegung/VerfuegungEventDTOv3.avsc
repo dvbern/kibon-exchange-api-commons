@@ -190,17 +190,12 @@
 							"default": false
 						},
 						{
-							"name": "ausserordentlicherAnspruch",
-							"type": "boolean",
-							"default": false
-						},
-						{
 							"name": "besondereBeduerfnisse",
 							"type": "boolean",
 							"default": false
 						},
 						{
-							"name": "massgegebendesEinkommen",
+							"name": "massgebendesEinkommen",
 							"type": [
 								"null",
 								{
@@ -213,7 +208,7 @@
 							"default": null
 						},
 						{
-							"name": "gutscheinKanton",
+							"name": "betreuungsgutscheinKanton",
 							"type": [
 								"null",
 								{
