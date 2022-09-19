@@ -32,7 +32,7 @@ import javax.annotation.Nonnull;
 import ch.dvbern.kibon.exchange.commons.types.BetreuungsangebotTyp;
 import ch.dvbern.kibon.exchange.commons.types.Mandant;
 import ch.dvbern.kibon.exchange.commons.types.Zeiteinheit;
-import com.github.javafaker.Faker;
+import net.datafaker.Faker;
 
 public final class VerfuegungEventTestUtil {
 
