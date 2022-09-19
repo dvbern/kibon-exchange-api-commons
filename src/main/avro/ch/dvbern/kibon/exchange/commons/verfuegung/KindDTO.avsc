@@ -47,6 +47,16 @@
 			"name": "ausserordentlicherAnspruch",
 			"type": "boolean",
 			"default": false
+		},
+		{
+			"name": "kindAusAsylwesenAngabeElternGemeinde",
+			"type": "boolean",
+			"default": false
+		},
+		{
+			"name": "keinSelbstbehaltDurchGemeinde",
+			"type": "boolean",
+			"default": false
 		}
 	]
 }
