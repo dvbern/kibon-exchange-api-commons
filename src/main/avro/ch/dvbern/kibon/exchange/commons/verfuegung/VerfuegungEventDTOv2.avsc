@@ -168,17 +168,9 @@
 							"name": "zeiteinheit",
 							"type": "ch.dvbern.kibon.exchange.commons.types.Zeiteinheit"
 						},
-						{
+							{
 							"name": "regelwerk",
-							"type": {
-								"type": "enum",
-								"name": "Regelwerkv1",
-								"namespace": "ch.dvbern.kibon.exchange.commons.types",
-								"symbols": [
-									"ASIV",
-									"FEBR"
-								]
-							},
+							"type": "ch.dvbern.kibon.exchange.commons.types.Regelwerk",
 							"default": "ASIV"
 						},
 						{

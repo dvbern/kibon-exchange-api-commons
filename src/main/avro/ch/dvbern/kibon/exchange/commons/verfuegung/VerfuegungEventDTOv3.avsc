@@ -68,9 +68,6 @@
 				"items": {
 					"type": "record",
 					"name": "ZeitabschnittDTO",
-					"aliases": [
-						"ZeitabschnittDTOv1"
-					],
 					"fields": [
 						{
 							"name": "von",
@@ -173,15 +170,7 @@
 						},
 						{
 							"name": "regelwerk",
-							"type": {
-								"type": "enum",
-								"name": "Regelwerk",
-								"namespace": "ch.dvbern.kibon.exchange.commons.types",
-								"symbols": [
-									"ASIV",
-									"FEBR"
-								]
-							},
+							"type": "ch.dvbern.kibon.exchange.commons.types.Regelwerk",
 							"default": "ASIV"
 						},
 						{
