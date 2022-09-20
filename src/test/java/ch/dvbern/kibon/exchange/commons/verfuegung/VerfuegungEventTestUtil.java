@@ -30,6 +30,7 @@ import java.util.concurrent.TimeUnit;
 import javax.annotation.Nonnull;
 
 import ch.dvbern.kibon.exchange.commons.types.BetreuungsangebotTyp;
+import ch.dvbern.kibon.exchange.commons.types.EinschulungTyp;
 import ch.dvbern.kibon.exchange.commons.types.Mandant;
 import ch.dvbern.kibon.exchange.commons.types.Zeiteinheit;
 import net.datafaker.Faker;
@@ -153,6 +154,7 @@ public final class VerfuegungEventTestUtil {
 			.setSprachlicheIndikation(true)
 			.setAusserordentlicherAnspruch(false)
 			.setSozialeIndikation(false)
+			.setEinschulungTyp(EinschulungTyp.VORSCHULALTER)
 			.build();
 	}
 
