@@ -150,9 +150,9 @@ public final class VerfuegungEventTestUtil {
 			.setNachname(FAKER.name().lastName())
 			.setGeburtsdatum(toLocalDate(FAKER.date().birthday(1, 3)))
 			.setSprichtMuttersprache(true)
-			.setHatSprachlicheIndikation(true)
+			.setSprachlicheIndikation(true)
 			.setAusserordentlicherAnspruch(false)
-			.setHatSozialeIndikation(false)
+			.setSozialeIndikation(false)
 			.build();
 	}
 

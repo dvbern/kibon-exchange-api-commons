@@ -19,7 +19,7 @@
 			}
 		},
 		{
-			"name": "stufe",
+			"name": "einschulungTyp",
 			"type": [
 				"null",
 				{
@@ -29,12 +29,12 @@
 			"default": null
 		},
 		{
-			"name": "hatSozialeIndikation",
+			"name": "sozialeIndikation",
 			"type": "boolean",
 			"default": false
 		},
 		{
-			"name": "hatSprachlicheIndikation",
+			"name": "sprachlicheIndikation",
 			"type": "boolean",
 			"default": false
 		},
