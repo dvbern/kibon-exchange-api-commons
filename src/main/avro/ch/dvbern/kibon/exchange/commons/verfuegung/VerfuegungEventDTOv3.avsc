@@ -1,11 +1,11 @@
 {
 	"type": "record",
-	"name": "VerfuegungEventDTOv1",
+	"name": "VerfuegungEventDTO",
 	"namespace": "ch.dvbern.kibon.exchange.commons.verfuegung",
 	"fields": [
 		{
 			"name": "kind",
-			"type": "KindDTOv1"
+			"type": "KindDTO"
 		},
 		{
 			"name": "gesuchsteller",
@@ -57,12 +57,17 @@
 			"type": "string"
 		},
 		{
+			"name": "auszahlungAnEltern",
+			"type": "boolean",
+			"default": false
+		},
+		{
 			"name": "zeitabschnitte",
 			"type": {
 				"type": "array",
 				"items": {
 					"type": "record",
-					"name": "ZeitabschnittDTOv1",
+					"name": "ZeitabschnittDTO",
 					"fields": [
 						{
 							"name": "von",
@@ -162,6 +167,47 @@
 						{
 							"name": "zeiteinheit",
 							"type": "ch.dvbern.kibon.exchange.commons.types.Zeiteinheit"
+						},
+						{
+							"name": "regelwerk",
+							"type": "ch.dvbern.kibon.exchange.commons.types.Regelwerk",
+							"default": "ASIV"
+						},
+						{
+							"name": "auszahlungAnEltern",
+							"type": "boolean",
+							"default": false
+						},
+						{
+							"name": "besondereBeduerfnisse",
+							"type": "boolean",
+							"default": false
+						},
+						{
+							"name": "massgebendesEinkommen",
+							"type": [
+								"null",
+								{
+									"type": "bytes",
+									"logicalType": "decimal",
+									"precision": 19,
+									"scale": 2
+								}
+							],
+							"default": null
+						},
+						{
+							"name": "betreuungsgutscheinKanton",
+							"type": [
+								"null",
+								{
+									"type": "bytes",
+									"logicalType": "decimal",
+									"precision": 19,
+									"scale": 2
+								}
+							],
+							"default": null
 						}
 					]
 				}
@@ -172,9 +218,19 @@
 			"name": "ignorierteZeitabschnitte",
 			"type": {
 				"type": "array",
-				"items": "ZeitabschnittDTOv1"
+				"items": "ZeitabschnittDTO"
 			},
 			"default": []
+		},
+		{
+			"name": "mandant",
+			"type": [
+				"null",
+				{
+					"type": "ch.dvbern.kibon.exchange.commons.types.Mandant"
+				}
+			],
+			"default": null
 		}
 	]
 }

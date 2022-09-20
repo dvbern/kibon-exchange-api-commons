@@ -17,6 +17,46 @@
 				"type": "int",
 				"logicalType": "date"
 			}
+		},
+		{
+			"name": "einschulungTyp",
+			"type": [
+				"null",
+				{
+					"type": "ch.dvbern.kibon.exchange.commons.types.EinschulungTyp"
+				}
+			],
+			"default": null
+		},
+		{
+			"name": "sozialeIndikation",
+			"type": "boolean",
+			"default": false
+		},
+		{
+			"name": "sprachlicheIndikation",
+			"type": "boolean",
+			"default": false
+		},
+		{
+			"name": "sprichtMuttersprache",
+			"type": "boolean",
+			"default": false
+		},
+		{
+			"name": "ausserordentlicherAnspruch",
+			"type": "boolean",
+			"default": false
+		},
+		{
+			"name": "kindAusAsylwesenAngabeElternGemeinde",
+			"type": "boolean",
+			"default": false
+		},
+		{
+			"name": "keinSelbstbehaltDurchGemeinde",
+			"type": "boolean",
+			"default": false
 		}
 	]
 }

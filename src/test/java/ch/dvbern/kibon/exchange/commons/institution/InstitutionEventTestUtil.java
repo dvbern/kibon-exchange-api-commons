@@ -31,7 +31,7 @@ import ch.dvbern.kibon.exchange.commons.types.BetreuungsangebotTyp;
 import ch.dvbern.kibon.exchange.commons.types.Wochentag;
 import ch.dvbern.kibon.exchange.commons.util.TimeConverter;
 import ch.dvbern.kibon.exchange.commons.util.TimestampConverter;
-import com.github.javafaker.Faker;
+import net.datafaker.Faker;
 
 public final class InstitutionEventTestUtil {
 
