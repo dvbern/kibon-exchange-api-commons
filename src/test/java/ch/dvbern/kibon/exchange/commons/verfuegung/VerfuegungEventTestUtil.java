@@ -30,8 +30,10 @@ import java.util.concurrent.TimeUnit;
 import javax.annotation.Nonnull;
 
 import ch.dvbern.kibon.exchange.commons.types.BetreuungsangebotTyp;
+import ch.dvbern.kibon.exchange.commons.types.EinschulungTyp;
+import ch.dvbern.kibon.exchange.commons.types.Mandant;
 import ch.dvbern.kibon.exchange.commons.types.Zeiteinheit;
-import com.github.javafaker.Faker;
+import net.datafaker.Faker;
 
 public final class VerfuegungEventTestUtil {
 
@@ -42,7 +44,7 @@ public final class VerfuegungEventTestUtil {
 
 	@Nonnull
 	public static VerfuegungEventDTOv1 createDTOv1() {
-		KindDTO kindDTO = createKindDTO();
+		KindDTOv1 kindDTO = createKindDTOv1();
 		GesuchstellerDTO gesuchstellerDTO = createGesuchstellerDTO();
 
 		LocalDate von = toLocalDate(FAKER.date().past(30, TimeUnit.DAYS));
@@ -62,6 +64,34 @@ public final class VerfuegungEventTestUtil {
 			.setGemeindeName(FAKER.name().name())
 			.setZeitabschnitte(Arrays.asList(createZeitabschnittDTOv1(von, bis), createZeitabschnittDTOv1(von, bis)))
 			.setIgnorierteZeitabschnitte(Collections.singletonList(createZeitabschnittDTOv1(von, bis)))
+			.build();
+
+		return dto;
+	}
+
+	@Nonnull
+	public static VerfuegungEventDTOv2 createDTOv2() {
+		KindDTOv1 kindDTO = createKindDTOv1();
+		GesuchstellerDTO gesuchstellerDTO = createGesuchstellerDTO();
+
+		LocalDate von = toLocalDate(FAKER.date().past(30, TimeUnit.DAYS));
+		LocalDate bis = toLocalDate(FAKER.date().past(20, TimeUnit.DAYS));
+
+		VerfuegungEventDTOv2 dto = VerfuegungEventDTOv2.newBuilder()
+			.setKind(kindDTO)
+			.setGesuchsteller(gesuchstellerDTO)
+			.setBetreuungsArt(BetreuungsangebotTyp.TAGESFAMILIEN)
+			.setRefnr("1.1.1")
+			.setInstitutionId(UUID.randomUUID().toString())
+			.setVon(von)
+			.setBis(bis)
+			.setVersion(2)
+			.setVerfuegtAm(Instant.now())
+			.setGemeindeBfsNr(FAKER.number().numberBetween(0, 400))
+			.setGemeindeName(FAKER.name().name())
+			.setAuszahlungAnEltern(false)
+			.setZeitabschnitte(Arrays.asList(createZeitabschnittDTOv2(von, bis), createZeitabschnittDTOv2(von, bis)))
+			.setIgnorierteZeitabschnitte(Collections.singletonList(createZeitabschnittDTOv2(von, bis)))
 			.build();
 
 		return dto;
@@ -90,6 +120,7 @@ public final class VerfuegungEventTestUtil {
 			.setAuszahlungAnEltern(false)
 			.setZeitabschnitte(Arrays.asList(createZeitabschnittDTO(von, bis), createZeitabschnittDTO(von, bis)))
 			.setIgnorierteZeitabschnitte(Collections.singletonList(createZeitabschnittDTO(von, bis)))
+			.setMandant(Mandant.BERN)
 			.build();
 
 		return dto;
@@ -105,11 +136,25 @@ public final class VerfuegungEventTestUtil {
 	}
 
 	@Nonnull
+	public static KindDTOv1 createKindDTOv1() {
+		return KindDTOv1.newBuilder()
+			.setVorname(FAKER.name().firstName())
+			.setNachname(FAKER.name().lastName())
+			.setGeburtsdatum(toLocalDate(FAKER.date().birthday(1, 3)))
+			.build();
+	}
+
+	@Nonnull
 	public static KindDTO createKindDTO() {
 		return KindDTO.newBuilder()
 			.setVorname(FAKER.name().firstName())
 			.setNachname(FAKER.name().lastName())
 			.setGeburtsdatum(toLocalDate(FAKER.date().birthday(1, 3)))
+			.setSprichtMuttersprache(true)
+			.setSprachlicheIndikation(true)
+			.setAusserordentlicherAnspruch(false)
+			.setSozialeIndikation(false)
+			.setEinschulungTyp(EinschulungTyp.VORSCHULALTER)
 			.build();
 	}
 
@@ -133,6 +178,26 @@ public final class VerfuegungEventTestUtil {
 	}
 
 	@Nonnull
+	public static ZeitabschnittDTOv2 createZeitabschnittDTOv2(@Nonnull LocalDate von, @Nonnull LocalDate bis) {
+		return ZeitabschnittDTOv2.newBuilder()
+			.setVon(von)
+			.setBis(bis)
+			.setVerfuegungNr(2)
+			.setEffektiveBetreuungPct(getRandomBigDecimal())
+			.setAnspruchPct(FAKER.number().randomDigit())
+			.setVerguenstigtPct(getRandomBigDecimal())
+			.setVollkosten(getRandomBigDecimal())
+			.setBetreuungsgutschein(getRandomBigDecimal())
+			.setMinimalerElternbeitrag(getRandomBigDecimal())
+			.setVerguenstigung(getRandomBigDecimal())
+			.setVerfuegteAnzahlZeiteinheiten(getRandomBigDecimal())
+			.setAnspruchsberechtigteAnzahlZeiteinheiten(getRandomBigDecimal())
+			.setZeiteinheit(Zeiteinheit.HOURS)
+			.setAuszahlungAnEltern(false)
+			.build();
+	}
+
+	@Nonnull
 	public static ZeitabschnittDTO createZeitabschnittDTO(@Nonnull LocalDate von, @Nonnull LocalDate bis) {
 		return ZeitabschnittDTO.newBuilder()
 			.setVon(von)
@@ -149,6 +214,9 @@ public final class VerfuegungEventTestUtil {
 			.setAnspruchsberechtigteAnzahlZeiteinheiten(getRandomBigDecimal())
 			.setZeiteinheit(Zeiteinheit.HOURS)
 			.setAuszahlungAnEltern(false)
+			.setMassgebendesEinkommen(getRandomBigDecimal())
+			.setBesondereBeduerfnisse(false)
+			.setBetreuungsgutscheinKanton(getRandomBigDecimal())
 			.build();
 	}
 
