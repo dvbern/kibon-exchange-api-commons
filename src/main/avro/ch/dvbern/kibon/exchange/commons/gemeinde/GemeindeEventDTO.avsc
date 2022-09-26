@@ -49,6 +49,21 @@
 				}
 			],
 			"default": null
+		},
+		{
+			"name": "angebotBG",
+			"type": "boolean",
+			"default": false
+		},
+		{
+			"name": "angebotTS",
+			"type": "boolean",
+			"default": false
+		},
+		{
+			"name": "angebotFI",
+			"type": "boolean",
+			"default": false
 		}
 	]
 }
