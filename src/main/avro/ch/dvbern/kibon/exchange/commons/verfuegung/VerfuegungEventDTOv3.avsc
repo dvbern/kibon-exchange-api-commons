@@ -208,6 +208,11 @@
 								}
 							],
 							"default": null
+						},
+						{
+							"name": "babyTarif",
+							"type": "boolean",
+							"default": false
 						}
 					]
 				}
