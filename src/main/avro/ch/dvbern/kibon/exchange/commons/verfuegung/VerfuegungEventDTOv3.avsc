@@ -213,6 +213,32 @@
 							"name": "babyTarif",
 							"type": "boolean",
 							"default": false
+						},
+						{
+							"name": "betreuungspensumZeiteinheit",
+							"type": [
+								"null",
+								{
+									"type": "bytes",
+									"logicalType": "decimal",
+									"precision": 19,
+									"scale": 2
+								}
+							],
+							"default": null
+						},
+						{
+							"name": "elternbeitrag",
+							"type": [
+								"null",
+								{
+									"type": "bytes",
+									"logicalType": "decimal",
+									"precision": 19,
+									"scale": 2
+								}
+							],
+							"default": null
 						}
 					]
 				}
