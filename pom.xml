@@ -26,11 +26,11 @@
 
     <groupId>ch.dvbern.kibon</groupId>
     <artifactId>kibon-exchange-api-commons</artifactId>
-    <version>5.5.3</version>
+    <version>5.5.4</version>
     <packaging>jar</packaging>
 
     <properties>
-        <avro.version>1.11.0</avro.version>
+        <avro.version>1.11.1</avro.version>
         <schema.registy.url>http://localhost:8081</schema.registy.url>
     </properties>
 
@@ -39,7 +39,7 @@
             <dependency>
                 <groupId>org.junit</groupId>
                 <artifactId>junit-bom</artifactId>
-                <version>5.8.2</version>
+                <version>5.9.1</version>
                 <scope>import</scope>
                 <type>pom</type>
             </dependency>
@@ -53,7 +53,7 @@
             <dependency>
                 <groupId>com.fasterxml.jackson</groupId>
                 <artifactId>jackson-bom</artifactId>
-                <version>2.12.7</version>
+                <version>2.14.0</version>
                 <scope>import</scope>
                 <type>pom</type>
             </dependency>
@@ -118,7 +118,7 @@
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-simple</artifactId>
-            <version>1.7.36</version>
+            <version>2.0.4</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -151,7 +151,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
-                <version>3.2.2</version>
+                <version>3.3.0</version>
                 <executions>
                     <execution>
                         <goals>
@@ -207,7 +207,7 @@
             <plugin>
                 <groupId>io.confluent</groupId>
                 <artifactId>kafka-schema-registry-maven-plugin</artifactId>
-                <version>5.5.5</version>
+                <version>5.5.7</version>
                 <configuration>
                     <outputDirectory>${project.basedir}/src/main/generated-schemas</outputDirectory>
                     <schemaRegistryUrls>
