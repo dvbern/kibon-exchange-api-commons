@@ -121,6 +121,7 @@ public final class VerfuegungEventTestUtil {
 			.setZeitabschnitte(Arrays.asList(createZeitabschnittDTO(von, bis), createZeitabschnittDTO(von, bis)))
 			.setIgnorierteZeitabschnitte(Collections.singletonList(createZeitabschnittDTO(von, bis)))
 			.setMandant(Mandant.BERN)
+			.setMandantName(Mandant.BERN.name())
 			.build();
 
 		return dto;
