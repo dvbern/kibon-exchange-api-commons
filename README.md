@@ -19,7 +19,7 @@ These are kiBon-internal DTOs.
 
 ### Simple case: same DTO, new field with default value
 
-Let's assume that only a new field needds to be added, for which a default value can be defined (e.g. NULL). In that
+Let's assume that only a new field needs to be added, for which a default value can be defined (e.g. NULL). In that
 case, modify the avsc file directly. `mvn clean install` will generate a new Java file with the new schema and the AVRO
 deserializer will take care of migrating old events to the new schema (giving them the default value for the undefined
 new field.)
