@@ -23,14 +23,16 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardOpenOption;
 import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Stream;
 
 import javax.annotation.Nonnull;
 
-import ch.dvbern.kibon.exchange.commons.compatibility.api.CompatibilityLevel;
+import ch.dvbern.kibon.exchange.commons.compatibility.api.Compatibility;
 import ch.dvbern.kibon.exchange.commons.compatibility.api.Compatible;
 import ch.dvbern.kibon.exchange.commons.compatibility.api.Schema;
+import ch.dvbern.kibon.exchange.commons.compatibility.api.SchemaId;
 import ch.dvbern.kibon.exchange.commons.compatibility.api.SchemaRegistryService;
 import ch.dvbern.kibon.exchange.commons.compatibility.api.SubjectSchema;
 import ch.dvbern.kibon.exchange.commons.gemeinde.GemeindeEventDTO;
@@ -43,11 +45,18 @@ import ch.dvbern.kibon.exchange.commons.platzbestaetigung.BetreuungEventDTO;
 import ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleAnmeldungEventDTO;
 import ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleBestaetigungEventDTO;
 import ch.dvbern.kibon.exchange.commons.verfuegung.VerfuegungEventDTO;
+import com.google.common.base.MoreObjects;
 import jakarta.ws.rs.WebApplicationException;
 import jakarta.ws.rs.core.Response.Status;
 import org.eclipse.microprofile.config.ConfigProvider;
 import org.eclipse.microprofile.rest.client.RestClientBuilder;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DynamicContainer;
+import org.junit.jupiter.api.DynamicNode;
+import org.junit.jupiter.api.DynamicTest;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestFactory;
+import org.junit.jupiter.api.function.Executable;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
 
@@ -55,6 +64,9 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.empty;
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.not;
+import static org.hamcrest.Matchers.notNullValue;
+import static org.junit.jupiter.api.DynamicContainer.dynamicContainer;
+import static org.junit.jupiter.api.DynamicTest.dynamicTest;
 
 public class SchemaCompatibilityTest {
 
@@ -62,6 +74,52 @@ public class SchemaCompatibilityTest {
 
 	private final SchemaRegistryService service = createService(BASE_URI_DEV);
 
+	@SuppressWarnings("TestMethodWithoutAssertion")
+	@TestFactory
+	Stream<DynamicContainer> testServers() {
+		List<Server> onlineServers = SchemaCompatibilityTest.getOnlineServers();
+
+		return onlineServers.stream()
+			.map(server -> dynamicContainer(server.toString(), Stream.of(
+				dynamicContainer("subjects", server.service.getSubjects().stream()
+					.map(subject -> dynamicContainer(subject, testSubject(server.service, subject)))
+				)
+			)));
+	}
+
+	@Nonnull
+	private static Stream<DynamicNode> testSubject(SchemaRegistryService srv, String subject) {
+		DynamicTest compatibilityLevel = dynamicTest("compatibilityLevel", () -> {
+			var level = srv.getCompatibilityLevel(subject, true);
+
+			assertThat(level.compatibilityLevel(), is("FULL_TRANSITIVE"));
+		});
+
+		return Stream.concat(
+			Stream.of(compatibilityLevel),
+			testCompatibilityAgainstAllversion(srv, subject).stream()
+		);
+	}
+
+	private static Optional<DynamicNode> testCompatibilityAgainstAllversion(
+		SchemaRegistryService srv,
+		String subject
+	) {
+		Stream<String> versions = srv.getVersions(subject).stream()
+			.map(String::valueOf);
+
+		return findSchema(subject)
+			.map(value -> dynamicContainer("compatibility", versions
+				.map(v -> dynamicTest("version " + v, compatibilityCheck(srv, subject, value, v)))
+			));
+	}
+
+	private static Optional<DynamicNode> testCompatibilityAgainstLatest(SchemaRegistryService srv, String subject) {
+		return findSchema(subject)
+			.map(value -> dynamicTest("compatibility", compatibilityCheck(srv, subject, value, "latest")));
+	}
+
+	@Disabled("for manual testing. Already covered by #testServers")
 	@Test
 	void getSubjects() {
 		var subjects = service.getSubjects();
@@ -69,31 +127,17 @@ public class SchemaCompatibilityTest {
 		assertThat(subjects, is(not(empty())));
 	}
 
+	@Disabled("for debugging purposes")
 	@ParameterizedTest
-	@MethodSource("getDevSubjects")
-	void getCompatibilityLevel(String subject) {
-		CompatibilityLevel level = service.getCompatibilityLevel(subject, true);
+	@MethodSource("getOnlineServers")
+	void downloadSchemas(Server server) {
+		List<SubjectSchema> schemas = getAllSchemas(server.service);
+		schemas.forEach(s -> SchemaCompatibilityTest.exportSchema(s, server.uri));
 
-		assertThat(level.compatibilityLevel(), is("FULL_TRANSITIVE"));
+		assertThat(schemas, not(empty()));
 	}
 
-	@Test
-	void downloadSchemas() {
-		var BASE_URI_PROD = ConfigProvider.getConfig().getOptionalValue("base.uri.prod", URI.class);
-
-		Stream.concat(Stream.of(BASE_URI_DEV), BASE_URI_PROD.stream()).forEach(uri -> {
-			var srv = createService(uri);
-			if (isOffline(srv)) {
-				return;
-			}
-
-			List<SubjectSchema> schemas = getAllSchemas(srv);
-			schemas.forEach(s -> SchemaCompatibilityTest.exportSchema(s, uri));
-
-			assertThat(schemas, not(empty()));
-		});
-	}
-
+	@Disabled("for manual testing. Already covered by #testServers")
 	@ParameterizedTest
 	@MethodSource("getAvroSchemas")
 	void testSchemaCompatibility(AvroSchema schema) {
@@ -104,10 +148,50 @@ public class SchemaCompatibilityTest {
 		assertThat(schema.subject() + " should be compatible", compatibility.is_compatible(), is(true));
 	}
 
+	@Disabled("dangerous! Run with care")
+	@ParameterizedTest
+	@MethodSource("getAvroSchemas")
+	void replaceSchema(AvroSchema schema) {
+		// delete all schemas for the following subjects and register the latest schema instead. Make sure you
+		List<String> conflicting = List.of(
+			"GemeindeEvents-value",
+			"InstitutionEvents-value",
+			"GemeindeKennzahlenEvents-value",
+			"VerfuegungEvents-value"
+		);
+		if (!conflicting.contains(schema.subject())) {
+			return;
+		}
+
+		// here, we make sure to only call this against a local schema registry
+		SchemaRegistryService srv = createService(ConfigProvider.getConfig().getValue("base.uri.local", URI.class));
+
+		try (var response = srv.deleteSchemas(schema.subject(), false)) {
+			SchemaId schemaId = srv.registerSchema(schema.subject(), schema.payload());
+
+			assertThat(schemaId.id() + " should be compatible", schemaId.id(), is(notNullValue()));
+		}
+	}
+
+	@Disabled("one-off fix")
+	@Test
+	void updateCompatibilityLevel() {
+		var level = service.updateCompatibilityLevel("VerfuegungEvents-value", new Compatibility("FULL_TRANSITIVE"));
+
+		assertThat(level.compatibility(), is("FULL_TRANSITIVE"));
+	}
+
+	@Nonnull
+	private static Optional<Schema> findSchema(String subject) {
+		return getAvroSchemas().stream()
+			.filter(s -> s.subject().equals(subject))
+			.map(AvroSchema::payload)
+			.findAny();
+	}
+
 	private static List<AvroSchema> getAvroSchemas() {
 		return List.of(
 			new AvroSchema("BetreuungAnfrageEvents-value", BetreuungAnfrageEventDTO.SCHEMA$),
-			//"AnmeldungAblehnenEvents-value", TagesschuleAnmeldungEventDTO.
 			new AvroSchema("NeueVeranlagungEvents-value", NeueVeranlagungEventDTO.SCHEMA$),
 			new AvroSchema("InstitutionClientEvents-value", InstitutionClientEventDTO.SCHEMA$),
 			new AvroSchema("VerfuegungEvents-value", VerfuegungEventDTO.SCHEMA$),
@@ -116,13 +200,8 @@ public class SchemaCompatibilityTest {
 			new AvroSchema("AnmeldungBestaetigungEvents-value", TagesschuleBestaetigungEventDTO.SCHEMA$),
 			new AvroSchema("GemeindeEvents-value", GemeindeEventDTO.SCHEMA$),
 			new AvroSchema("AnmeldungEvents-value", TagesschuleAnmeldungEventDTO.SCHEMA$),
-			//"BetreuungStornierungEvents-value",
 			new AvroSchema("GemeindeKennzahlenEvents-value", GemeindeKennzahlenEventDTO.SCHEMA$)
 		);
-	}
-
-	private static Set<String> getDevSubjects() {
-		return createService(BASE_URI_DEV).getSubjects();
 	}
 
 	@Nonnull
@@ -157,17 +236,6 @@ public class SchemaCompatibilityTest {
 			.build(SchemaRegistryService.class);
 	}
 
-	private static boolean isOffline(SchemaRegistryService srv) {
-		try {
-			var apiFound = srv.getSubjects();
-		} catch (WebApplicationException ex) {
-			if (ex.getResponse().getStatusInfo().toEnum() == Status.NOT_FOUND) {
-				return true;
-			}
-		}
-		return false;
-	}
-
 	private record AvroSchema(String subject, org.apache.avro.Schema schema) {
 		Schema payload() {
 			return new Schema(schema.toString());
@@ -177,6 +245,48 @@ public class SchemaCompatibilityTest {
 		public String toString() {
 			return subject;
 		}
+	}
+
+	private static List<Server> getOnlineServers() {
+		List<URI> uris = ConfigProvider.getConfig().getValues("base.uris", URI.class);
+
+		return uris.stream()
+			.map(uri -> new Server(uri, createService(uri)))
+			.filter(Server::isOnline)
+			.toList();
+	}
+
+	private record Server(URI uri, SchemaRegistryService service) {
+		public boolean isOnline() {
+			try {
+				var apiFound = service.getSubjects();
+			} catch (WebApplicationException ex) {
+				if (ex.getResponse().getStatusInfo().toEnum() == Status.NOT_FOUND) {
+					return false;
+				}
+			}
+			return true;
+		}
+
+		@Override
+		public String toString() {
+			return MoreObjects.toStringHelper(this)
+				.add("uri", uri)
+				.toString();
+		}
+	}
+
+	@Nonnull
+	private static Executable compatibilityCheck(
+		SchemaRegistryService srv,
+		String subject,
+		Schema value,
+		String version) {
+
+		return () -> {
+			var compatibility = srv.compatibility(subject, version, value);
+			assertThat("is compatible", compatibility.is_compatible(), is(true));
+		};
 	}
 }
 

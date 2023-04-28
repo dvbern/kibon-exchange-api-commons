@@ -20,11 +20,14 @@ package ch.dvbern.kibon.exchange.commons.compatibility.api;
 import java.util.Set;
 
 import jakarta.ws.rs.Consumes;
+import jakarta.ws.rs.DELETE;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.POST;
+import jakarta.ws.rs.PUT;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.PathParam;
 import jakarta.ws.rs.QueryParam;
+import jakarta.ws.rs.core.Response;
 import org.eclipse.microprofile.rest.client.inject.RegisterRestClient;
 
 @RegisterRestClient
@@ -42,6 +45,19 @@ public interface SchemaRegistryService {
 	@GET
 	@Path("/subjects/{subject}/versions/{version}")
 	SubjectSchema getSchemaByVersion(@PathParam("subject") String subject, @PathParam("version") int id);
+
+	@DELETE
+	@Path("/subjects/{subject}")
+	Response deleteSchemas(@PathParam("subject") String subject, @QueryParam("permanent") boolean permanent);
+
+	@POST
+	@Path("/subjects/{subject}/versions")
+	@Consumes("application/vnd.schemaregistry.v1+json")
+	SchemaId registerSchema(@PathParam("subject") String subject, Schema schema);
+
+	@PUT
+	@Path("/config/{subject}/")
+	Compatibility updateCompatibilityLevel(@PathParam("subject") String subject, Compatibility compatibility);
 
 	@GET
 	@Path("/schemas/ids/{id}")
