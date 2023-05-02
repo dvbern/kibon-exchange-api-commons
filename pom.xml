@@ -35,6 +35,7 @@
         <avro.version>1.11.1</avro.version>
         <schema.registy.url>http://localhost:8081</schema.registy.url>
         <version.org.jboss.resteasy.microprofile>2.1.1.Final</version.org.jboss.resteasy.microprofile>
+        <slf4j.version>2.0.7</slf4j.version>
     </properties>
 
     <dependencyManagement>
@@ -66,6 +67,17 @@
                 <version>${version.org.jboss.resteasy.microprofile}</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-api</artifactId>
+                <version>${slf4j.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-reload4j</artifactId>
+                <version>${slf4j.version}</version>
+                <scope>test</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -129,10 +141,10 @@
             <version>1.8.1</version>
             <scope>test</scope>
         </dependency>
-        <dependency>
+       <dependency>
             <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-simple</artifactId>
-            <version>2.0.7</version>
+            <artifactId>slf4j-reload4j</artifactId>
+            <version>${slf4j.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
