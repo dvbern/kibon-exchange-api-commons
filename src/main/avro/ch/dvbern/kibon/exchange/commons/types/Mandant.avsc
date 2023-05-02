@@ -6,7 +6,8 @@
 		"BERN",
 		"LUZERN",
 		"SOLOTHURN",
-		"APPENZELL_AUSSERRHODEN"
-	]
+		"APPENZELL_AUSSERRHODEN",
+		"UNKNOWN"
+	],
+	"default": "UNKNOWN"
 }
-
