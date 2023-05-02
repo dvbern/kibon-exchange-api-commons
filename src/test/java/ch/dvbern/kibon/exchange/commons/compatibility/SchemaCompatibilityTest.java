@@ -27,6 +27,7 @@ import java.nio.file.StandardOpenOption;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
+import java.util.concurrent.TimeUnit;
 import java.util.stream.Stream;
 
 import javax.annotation.Nonnull;
@@ -235,6 +236,7 @@ public class SchemaCompatibilityTest {
 	private static SchemaRegistryService createService(URI uri) {
 		return RestClientBuilder.newBuilder()
 			.baseUri(uri)
+			.connectTimeout(5, TimeUnit.SECONDS)
 			.build(SchemaRegistryService.class);
 	}
 
