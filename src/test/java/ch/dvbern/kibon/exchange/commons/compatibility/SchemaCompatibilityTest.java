@@ -17,6 +17,7 @@
 
 package ch.dvbern.kibon.exchange.commons.compatibility;
 
+import java.io.Closeable;
 import java.io.IOException;
 import java.net.SocketException;
 import java.net.URI;
@@ -66,6 +67,7 @@ import static org.hamcrest.Matchers.empty;
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.not;
 import static org.hamcrest.Matchers.notNullValue;
+import static org.junit.jupiter.api.Assertions.fail;
 import static org.junit.jupiter.api.DynamicContainer.dynamicContainer;
 import static org.junit.jupiter.api.DynamicTest.dynamicTest;
 
@@ -78,14 +80,13 @@ public class SchemaCompatibilityTest {
 	@SuppressWarnings("TestMethodWithoutAssertion")
 	@TestFactory
 	Stream<DynamicContainer> testServers() {
-		List<Server> onlineServers = SchemaCompatibilityTest.getOnlineServers();
-
-		return onlineServers.stream()
-			.map(server -> dynamicContainer(server.toString(), Stream.of(
+		try (Stream<Server> onlineServers = SchemaCompatibilityTest.streamOnlineServers()) {
+			return onlineServers.map(server -> dynamicContainer(server.toString(), Stream.of(
 				dynamicContainer("subjects", server.service.getSubjects().stream()
 					.map(subject -> dynamicContainer(subject, testSubject(server.service, subject)))
 				)
 			)));
+		}
 	}
 
 	@Nonnull
@@ -249,15 +250,18 @@ public class SchemaCompatibilityTest {
 	}
 
 	private static List<Server> getOnlineServers() {
+		return streamOnlineServers().toList();
+	}
+
+	private static Stream<Server> streamOnlineServers() {
 		List<URI> uris = ConfigProvider.getConfig().getValues("base.uris", URI.class);
 
 		return uris.stream()
 			.map(uri -> new Server(uri, createService(uri)))
-			.filter(Server::isOnline)
-			.toList();
+			.filter(Server::isOnline);
 	}
 
-	private record Server(URI uri, SchemaRegistryService service) {
+	private record Server(URI uri, SchemaRegistryService service) implements AutoCloseable {
 		public boolean isOnline() {
 			try {
 				var apiFound = service.getSubjects();
@@ -279,6 +283,15 @@ public class SchemaCompatibilityTest {
 			return MoreObjects.toStringHelper(this)
 				.add("uri", uri)
 				.toString();
+		}
+
+		@Override
+		public void close() {
+			try {
+				((Closeable) service).close();
+			} catch (Throwable t) {
+				fail("Caught unexpected exception closing client", t);
+			}
 		}
 	}
 
