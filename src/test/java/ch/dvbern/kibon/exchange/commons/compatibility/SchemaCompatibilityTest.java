@@ -18,6 +18,7 @@
 package ch.dvbern.kibon.exchange.commons.compatibility;
 
 import java.io.IOException;
+import java.net.SocketException;
 import java.net.URI;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -264,6 +265,11 @@ public class SchemaCompatibilityTest {
 				if (ex.getResponse().getStatusInfo().toEnum() == Status.NOT_FOUND) {
 					return false;
 				}
+			} catch (Exception ex) {
+				if (ex.getCause() instanceof SocketException) {
+					return false;
+				}
+				throw ex;
 			}
 			return true;
 		}

@@ -28,10 +28,15 @@ import jakarta.ws.rs.Path;
 import jakarta.ws.rs.PathParam;
 import jakarta.ws.rs.QueryParam;
 import jakarta.ws.rs.core.Response;
+import org.eclipse.microprofile.config.Config;
+import org.eclipse.microprofile.config.ConfigProvider;
+import org.eclipse.microprofile.rest.client.annotation.ClientHeaderParam;
 import org.eclipse.microprofile.rest.client.inject.RegisterRestClient;
+import org.jboss.resteasy.util.BasicAuthHelper;
 
-@RegisterRestClient
 @Path("/")
+@RegisterRestClient
+@ClientHeaderParam(name = "Authorization", value = "{lookupAuth}")
 public interface SchemaRegistryService {
 
 	@GET
@@ -77,4 +82,14 @@ public interface SchemaRegistryService {
 		@PathParam("version") String version,
 		Schema schema
 	);
+
+	// used by ClientHeaderParam
+	@SuppressWarnings("unused")
+	default String lookupAuth() {
+		Config config = ConfigProvider.getConfig();
+		String user = config.getValue("schema.registry.user", String.class);
+		String pw = config.getValue("schema.registry.pw", String.class);
+
+		return BasicAuthHelper.createHeader(user, pw);
+	}
 }
