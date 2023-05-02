@@ -22,28 +22,27 @@ def RELEASE_BUILD = 'release'
 def SECURITY_CHECK_BUILD = 'security-check'
 
 properties([
-		disableConcurrentBuilds(),
-		[
-				$class  : 'BuildDiscarderProperty',
-				strategy: [$class: 'LogRotator', numToKeepStr: '10']
-		],
-		[
-				$class       : 'GithubProjectProperty',
-				displayName  : '',
-				projectUrlStr: 'https://github.com/dvbern/kibon-exchange-api-commons/'
-		],
-		parameters([
-				choice(choices: [DEPLOYMENT_BUILD, RELEASE_BUILD, SECURITY_CHECK_BUILD],
-						description: 'What type of build should the pipeline execute?', name: 'buildType'),
-				string(defaultValue: '', description: 'This release version', name: 'releaseversion', trim:
-						true),
-				string(defaultValue: '', description: 'The next release version', name: 'nextreleaseversion',
-						trim: true)
-		])
+	disableConcurrentBuilds(),
+	[
+		$class  : 'BuildDiscarderProperty',
+		strategy: [$class: 'LogRotator', numToKeepStr: '10']
+	],
+	[
+		$class       : 'GithubProjectProperty',
+		displayName  : '',
+		projectUrlStr: 'https://github.com/dvbern/kibon-exchange-api-commons/'
+	],
+	parameters([
+		choice(choices: [DEPLOYMENT_BUILD, RELEASE_BUILD, SECURITY_CHECK_BUILD],
+			description: 'What type of build should the pipeline execute?', name: 'buildType'),
+		string(defaultValue: '', description: 'This release version', name: 'releaseversion', trim:
+			true),
+		string(defaultValue: '', description: 'The next release version', name: 'nextreleaseversion',
+			trim: true)
+	])
 ])
 
-def mvnVersion = "Maven_3.6.3"
-def jdkVersion = "OpenJDK_1.8_222"
+def jdkVersion = "Temurin_jdk-17.0.1+12"
 // comma separated list of email addresses of all team members (for notification)
 def recipients = "fabio.heer@dvbern.ch"
 
@@ -57,10 +56,10 @@ def doDeploymentBuild = {
 	node {
 		stage('Checkout') {
 			checkout([
-					$class           : 'GitSCM',
-					branches         : scm.branches,
-					extensions       : scm.extensions + [[$class: 'LocalBranch', localBranch: '']],
-					userRemoteConfigs: scm.userRemoteConfigs
+				$class           : 'GitSCM',
+				branches         : scm.branches,
+				extensions       : scm.extensions + [[$class: 'LocalBranch', localBranch: '']],
+				userRemoteConfigs: scm.userRemoteConfigs
 			])
 		}
 
@@ -72,10 +71,10 @@ def doDeploymentBuild = {
 				if (branch.startsWith(featureBranchPrefix)) {
 					// feature branche failures should only notify the feature owner
 					step([
-							$class                  : 'Mailer',
-							notifyEveryUnstableBuild: true,
-							recipients              : emailextrecipients([[$class: 'RequesterRecipientProvider']]),
-							sendToIndividuals       : true])
+						$class                  : 'Mailer',
+						notifyEveryUnstableBuild: true,
+						recipients              : emailextrecipients([[$class: 'RequesterRecipientProvider']]),
+						sendToIndividuals       : true])
 
 				} else {
 					dvbErrorHandling.sendMail(recipients, currentBuild, error)
@@ -84,16 +83,29 @@ def doDeploymentBuild = {
 
 			// in develop and master branches attempt to deploy the artifacts, otherwise only run to the verify phase.
 			def verifyOrDeploy = {
-				return (branch.startsWith(masterBranchName) || branch.startsWith(developBranchName)) ? "deploy" :
-						"verify"
+				return (branch.startsWith(masterBranchName) || branch.startsWith(developBranchName)) ?
+					"deploy" :
+					"verify"
 			}
 
 			try {
-				withMaven(jdk: jdkVersion, maven: mvnVersion) {
-					dvbUtil.genericSh 'mvn -U -Pdvbern.oss -Dmaven.test.failure.ignore=true clean ' + verifyOrDeploy()
-				}
-				if (currentBuild.result == "UNSTABLE") {
-					handleFailures("build is unstable")
+				withCredentials([usernamePassword(
+					credentialsId: 'schema-registry-credentials',
+					passwordVariable: 'SCHEMA_REGISTRY_PW',
+					usernameVariable: 'SCHEMA_REGISTRY_USER')]
+				) {
+					withEnv([
+						'BASE_URI_DEV=https://dev-exchange.kibon.ch/schema',
+						'BASE_URIS=https://dev-exchange.kibon.ch/schema'
+					]) {
+						withMaven(jdk: jdkVersion) {
+							dvbUtil.genericSh './mvnw -U -Pdvbern.oss -Dmaven.test.failure.ignore=true clean ' +
+								verifyOrDeploy()
+						}
+						if (currentBuild.result == "UNSTABLE") {
+							handleFailures("build is unstable")
+						}
+					}
 				}
 			} catch (Exception e) {
 				currentBuild.result = "FAILURE"
@@ -121,10 +133,10 @@ def doSecurityCheck = {
 	node {
 		stage('Checkout') {
 			checkout([
-					$class           : 'GitSCM',
-					branches         : scm.branches,
-					extensions       : scm.extensions + [[$class: 'LocalBranch', localBranch: '']],
-					userRemoteConfigs: scm.userRemoteConfigs
+				$class           : 'GitSCM',
+				branches         : scm.branches,
+				extensions       : scm.extensions + [[$class: 'LocalBranch', localBranch: '']],
+				userRemoteConfigs: scm.userRemoteConfigs
 			])
 		}
 
