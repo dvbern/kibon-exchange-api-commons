@@ -51,14 +51,6 @@
 			"default": null
 		},
 		{
-			"name": "mandantName",
-			"type": [
-				"null",
-				"string"
-			],
-			"default": null
-		},
-		{
 			"name": "angebotBG",
 			"type": "boolean",
 			"default": false

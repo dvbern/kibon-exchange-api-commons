@@ -297,14 +297,6 @@
 				}
 			],
 			"default": null
-		},
-		{
-			"name": "mandantName",
-			"type": [
-				"null",
-				"string"
-			],
-			"default": null
 		}
 	]
 }
