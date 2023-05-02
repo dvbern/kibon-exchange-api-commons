@@ -89,22 +89,22 @@ def doDeploymentBuild = {
 			}
 
 			try {
-				withCredentials([usernamePassword(
-					credentialsId: 'schema-registry-credentials',
-					passwordVariable: 'SCHEMA_REGISTRY_PW',
-					usernameVariable: 'SCHEMA_REGISTRY_USER')]
-				) {
-					withEnv([
-						'BASE_URI_DEV=https://dev-exchange.kibon.ch/schema',
-						'BASE_URIS=https://dev-exchange.kibon.ch/schema'
-					]) {
-						withMaven(jdk: jdkVersion) {
-							dvbUtil.genericSh './mvnw -U -Pdvbern.oss -Dmaven.test.failure.ignore=true clean ' +
-								verifyOrDeploy()
-						}
-						if (currentBuild.result == "UNSTABLE") {
-							handleFailures("build is unstable")
-						}
+				withCredentials([
+					usernamePassword(
+						credentialsId: 'schema-registry-credentials',
+						passwordVariable: 'SCHEMA_REGISTRY_PW',
+						usernameVariable: 'SCHEMA_REGISTRY_USER'),
+					usernamePassword(
+						credentialsId: 'schema-registry-uris',
+						passwordVariable: 'BASE_URIS',
+						usernameVariable: 'BASE_URI_DEV')
+				]) {
+					withMaven(jdk: jdkVersion) {
+						dvbUtil.genericSh './mvnw -U -Pdvbern.oss -Dmaven.test.failure.ignore=true clean ' +
+							verifyOrDeploy()
+					}
+					if (currentBuild.result == "UNSTABLE") {
+						handleFailures("build is unstable")
 					}
 				}
 			} catch (Exception e) {
