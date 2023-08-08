@@ -48,6 +48,7 @@ import ch.dvbern.kibon.exchange.commons.platzbestaetigung.BetreuungEventDTO;
 import ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleAnmeldungEventDTO;
 import ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleBestaetigungEventDTO;
 import ch.dvbern.kibon.exchange.commons.verfuegung.VerfuegungEventDTO;
+import ch.dvbern.kibon.exchange.commons.verfuegungselbstbehaltgemeinde.GemeindeSelbstbehaltEventDTO;
 import com.google.common.base.MoreObjects;
 import jakarta.ws.rs.WebApplicationException;
 import jakarta.ws.rs.core.Response.Status;
@@ -206,7 +207,8 @@ public class SchemaCompatibilityTest {
 			new AvroSchema("AnmeldungBestaetigungEvents-value", TagesschuleBestaetigungEventDTO.SCHEMA$),
 			new AvroSchema("GemeindeEvents-value", GemeindeEventDTO.SCHEMA$),
 			new AvroSchema("AnmeldungEvents-value", TagesschuleAnmeldungEventDTO.SCHEMA$),
-			new AvroSchema("GemeindeKennzahlenEvents-value", GemeindeKennzahlenEventDTO.SCHEMA$)
+			new AvroSchema("GemeindeKennzahlenEvents-value", GemeindeKennzahlenEventDTO.SCHEMA$),
+			new AvroSchema("GemeindeSelbstbehaltEvtens-value", GemeindeSelbstbehaltEventDTO.SCHEMA$)
 		);
 	}
 
