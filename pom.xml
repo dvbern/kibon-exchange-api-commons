@@ -26,7 +26,7 @@
 
     <groupId>ch.dvbern.kibon</groupId>
     <artifactId>kibon-exchange-api-commons</artifactId>
-    <version>6.0.0</version>
+    <version>6.0.1</version>
     <packaging>jar</packaging>
 
     <properties>
@@ -262,6 +262,7 @@
                         <TagesschuleAnmeldungEventDTO-value>src/main/avro/ch/dvbern/kibon/exchange/commons/tagesschulen/TagesschuleAnmeldungEventDTO.avsc</TagesschuleAnmeldungEventDTO-value>
                         <GemeindeEventDTO-values>src/main/avro/ch/dvbern/kibon/exchange/commons/gemeinde/GemeindeEventDTO.avsc</GemeindeEventDTO-values>
                         <GemeindeKennzahlenEventDTO-values>src/main/avro/ch/dvbern/kibon/exchange/commons/gemeindekennzahlen/GemeindeKennzahlenEventDTO.avsc</GemeindeKennzahlenEventDTO-values>
+                        <GemeindeSelbstbehaltEventDTO-values>src/main/avro/ch/dvbern/kibon/exchange/commons/gemeindeselbstbehalt/GemeindeSelbstbehaltEventDTO.avsc</GemeindeSelbstbehaltEventDTO-values>
                     </subjects>
                 </configuration>
                 <goals>

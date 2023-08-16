@@ -1,0 +1,16 @@
+{
+	"type": "record",
+	"name": "GemeindeSelbstbehaltEventDTO",
+	"namespace": "ch.dvbern.kibon.exchange.commons.verfuegungselbstbehaltgemeinde",
+	"fields": [
+		{
+			"name": "refnr",
+			"type": "string"
+		},
+		{
+			"name": "keinSelbstbehaltDurchGemeinde",
+			"type": "boolean",
+			"default": false
+		}
+	]
+}

@@ -48,6 +48,7 @@ import ch.dvbern.kibon.exchange.commons.platzbestaetigung.BetreuungEventDTO;
 import ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleAnmeldungEventDTO;
 import ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleBestaetigungEventDTO;
 import ch.dvbern.kibon.exchange.commons.verfuegung.VerfuegungEventDTO;
+import ch.dvbern.kibon.exchange.commons.verfuegungselbstbehaltgemeinde.GemeindeSelbstbehaltEventDTO;
 import com.google.common.base.MoreObjects;
 import jakarta.ws.rs.WebApplicationException;
 import jakarta.ws.rs.core.Response.Status;
@@ -72,7 +73,6 @@ import static org.junit.jupiter.api.Assertions.fail;
 import static org.junit.jupiter.api.DynamicContainer.dynamicContainer;
 import static org.junit.jupiter.api.DynamicTest.dynamicTest;
 
-@Disabled("disabled until environment fixed")
 public class SchemaCompatibilityTest {
 
 	private static final URI BASE_URI_DEV = ConfigProvider.getConfig().getValue("base.uri.dev", URI.class);
@@ -168,7 +168,7 @@ public class SchemaCompatibilityTest {
 		}
 
 		// here, we make sure to only call this against a local schema registry
-		SchemaRegistryService srv = createService(ConfigProvider.getConfig().getValue("base.uri.local", URI.class));
+		SchemaRegistryService srv = createService(ConfigProvider.getConfig().getValue("base.uri.one-off-fix", URI.class));
 
 		try (var response = srv.deleteSchemas(schema.subject(), false)) {
 			SchemaId schemaId = srv.registerSchema(schema.subject(), schema.payload());
@@ -180,7 +180,10 @@ public class SchemaCompatibilityTest {
 	@Disabled("one-off fix")
 	@Test
 	void updateCompatibilityLevel() {
-		var level = service.updateCompatibilityLevel("VerfuegungEvents-value", new Compatibility("FULL_TRANSITIVE"));
+		// here, we make sure to only call this against a local schema registry
+		SchemaRegistryService srv = createService(ConfigProvider.getConfig().getValue("base.uri.one-off-fix", URI.class));
+
+		var level = srv.updateCompatibilityLevel("VerfuegungEvents-value", new Compatibility("FULL_TRANSITIVE"));
 
 		assertThat(level.compatibility(), is("FULL_TRANSITIVE"));
 	}
@@ -204,7 +207,8 @@ public class SchemaCompatibilityTest {
 			new AvroSchema("AnmeldungBestaetigungEvents-value", TagesschuleBestaetigungEventDTO.SCHEMA$),
 			new AvroSchema("GemeindeEvents-value", GemeindeEventDTO.SCHEMA$),
 			new AvroSchema("AnmeldungEvents-value", TagesschuleAnmeldungEventDTO.SCHEMA$),
-			new AvroSchema("GemeindeKennzahlenEvents-value", GemeindeKennzahlenEventDTO.SCHEMA$)
+			new AvroSchema("GemeindeKennzahlenEvents-value", GemeindeKennzahlenEventDTO.SCHEMA$),
+			new AvroSchema("GemeindeSelbstbehaltEvtens-value", GemeindeSelbstbehaltEventDTO.SCHEMA$)
 		);
 	}
 
