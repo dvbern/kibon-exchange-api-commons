@@ -56,7 +56,6 @@ public final class InstitutionEventTestUtil {
 			.setOffenBis(TimeConverter.serialize(timeBetween(14, 20)))
 			.setOeffnungsAbweichungen(FAKER.lorem().characters(0, 4000))
 			.setAltersKategorien(Arrays.asList(AltersKategorie.BABY, AltersKategorie.KINDERGARTEN))
-			.setSubventioniertePlaetze(FAKER.bool().bool())
 			.setAnzahlPlaetze(getRandomBigDecimal())
 			.setAnzahlPlaetzeFirmen(getRandomBigDecimal())
 			.setTimestampMutiert(TimestampConverter.serialize(TimestampConverter.of(LocalDateTime.now())))
