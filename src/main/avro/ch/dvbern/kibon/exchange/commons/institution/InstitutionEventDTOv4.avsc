@@ -1,6 +1,6 @@
 {
 	"type": "record",
-	"name": "InstitutionEventDTOv3",
+	"name": "InstitutionEventDTO",
 	"namespace": "ch.dvbern.kibon.exchange.commons.institution",
 	"fields": [
 		{
@@ -31,7 +31,7 @@
 			"name": "adresse",
 			"type": {
 				"type": "record",
-				"name": "KontaktAngabenDTOv2",
+				"name": "KontaktAngabenDTO",
 				"aliases": [
 					"AdresseDTO"
 				],
@@ -80,7 +80,7 @@
 						"name": "gemeinde",
 						"type": {
 							"type": "record",
-							"name": "GemeindeDTOv2",
+							"name": "GemeindeDTO",
 							"fields": [
 								{
 									"name": "name",
@@ -136,7 +136,7 @@
 			"name": "betreuungsAdressen",
 			"type": {
 				"type": "array",
-				"items": "KontaktAngabenDTOv2"
+				"items": "KontaktAngabenDTO"
 			},
 			"default": []
 		},
@@ -144,7 +144,7 @@
 			"name": "status",
 			"type": {
 				"type": "enum",
-				"name": "InstitutionStatusv2",
+				"name": "InstitutionStatus",
 				"symbols": [
 					"AKTIV",
 					"KONFIGURATION",
@@ -214,7 +214,7 @@
 				"type": "array",
 				"items": {
 					"type": "enum",
-					"name": "AltersKategoriev2",
+					"name": "AltersKategorie",
 					"symbols": [
 						"BABY",
 						"VORSCHULE",
@@ -224,11 +224,6 @@
 				}
 			},
 			"default": []
-		},
-		{
-			"name": "subventioniertePlaetze",
-			"type": "boolean",
-			"default": false
 		},
 		{
 			"name": "anzahlPlaetze",
