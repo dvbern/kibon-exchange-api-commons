@@ -137,6 +137,11 @@
 			"name": "eingewoehnungInPeriode",
 			"type": "boolean",
 			"default": false
-		}
+		},
+        {
+            "name": "sprachfoerderungBestaetigt",
+            "type": "boolean",
+            "default": false
+        }
 	]
 }
