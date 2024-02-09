@@ -140,8 +140,8 @@
 		},
         {
             "name": "sprachfoerderungBestaetigt",
-            "type": "boolean",
-            "default": false
+            "type": ["null","boolean"],
+            "default": null
         }
 	]
 }
