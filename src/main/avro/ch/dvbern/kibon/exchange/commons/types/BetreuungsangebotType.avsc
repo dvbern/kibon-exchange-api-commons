@@ -6,6 +6,9 @@
 		"KITA",
 		"TAGESSCHULE",
 		"TAGESFAMILIEN",
-		"FERIENINSEL"
-	]
+		"FERIENINSEL",
+		"MITTAGSTISCH",
+		"UNKNOWN"
+	],
+	"default": "UNKNOWN"
 }
