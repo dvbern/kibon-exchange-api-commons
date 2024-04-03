@@ -158,9 +158,8 @@ public class SchemaCompatibilityTest {
 	void replaceSchema(AvroSchema schema) {
 		// delete all schemas for the following subjects and register the latest schema instead. Make sure you
 		List<String> conflicting = List.of(
-			"GemeindeEvents-value",
+			"BetreuungAnfrageEvents-value",
 			"InstitutionEvents-value",
-			"GemeindeKennzahlenEvents-value",
 			"VerfuegungEvents-value"
 		);
 		if (!conflicting.contains(schema.subject())) {
