@@ -1,0 +1,24 @@
+@namespace("ch.dvbern.kibon.exchange.commons.tagesschulen")
+protocol TagesschuleAnmeldungEventProto {
+	import idl "ModulAuswahlDTO.avdl";
+	import idl "TagesschuleAnmeldungDetailsDTO.avdl";
+	import idl "TagesschuleAnmeldungTarifeDTO.avdl";
+	import idl "TagesschuleAnmeldungStatus.avdl";
+	import idl "../types/KindDTO.avdl";
+	import idl "../types/GesuchstellerDTO.avdl";
+
+	record TagesschuleAnmeldungEventDTO {
+		string institutionId;
+		int version;
+		date freigegebenAm;
+		boolean anmeldungZurueckgezogen = false;
+		date periodeVon;
+		date periodeBis;
+		ch.dvbern.kibon.exchange.commons.types.KindDTO kind;
+		ch.dvbern.kibon.exchange.commons.types.GesuchstellerDTO @aliases(["antragstellendePerson"]) gesuchsteller;
+		ch.dvbern.kibon.exchange.commons.types.GesuchstellerDTO? gesuchsteller2 = null;
+		TagesschuleAnmeldungDetailsDTO anmeldungsDetails;
+		TagesschuleAnmeldungTarifeDTO? tarife = null;
+		TagesschuleAnmeldungStatus status;
+	}
+}

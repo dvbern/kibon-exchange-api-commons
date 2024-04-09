@@ -1,0 +1,27 @@
+@namespace("ch.dvbern.kibon.exchange.commons.platzbestaetigung")
+protocol BetreuungAnfrageEventProto {
+	import idl "../types/BetreuungsangebotTyp.avdl";
+
+	record GesuchstellerDTO {
+		string vorname;
+		string nachname;
+		string? email = null;
+	}
+
+	record KindDTO {
+		string vorname;
+		string nachname;
+		date geburtsdatum;
+	}
+
+	record BetreuungAnfrageEventDTO {
+		string refnr;
+		date periodeVon;
+		date periodeBis;
+		string institutionId;
+		GesuchstellerDTO gesuchsteller;
+		KindDTO kind;
+		ch.dvbern.kibon.exchange.commons.types.BetreuungsangebotTyp betreuungsArt;
+		boolean abgelehntVonGesuchsteller;
+	}
+}

@@ -1,0 +1,20 @@
+@namespace("ch.dvbern.kibon.exchange.commons.gemeindekennzahlen")
+protocol GemeindeKennzahlenEventProto {
+	import idl "../types/Mandant.avdl";
+	import idl "../types/EinschulungTyp.avdl";
+
+	record GemeindeKennzahlenEventDTO {
+		string gemeindeUUID = "";
+		long bfsNummer = 0;
+		date? gesuchsperiodeStart = null;
+		date? gesuchsperiodeStop = null;
+		boolean? kontingentierung = null;
+		boolean? kontingentierungAusgeschoepft = null;
+		decimal(19,2)? anzahlKinderWarteliste = null;
+		decimal(19,2)? dauerWarteliste = null;
+		decimal(19,2)? erwerbspensumZuschlag = null;
+		ch.dvbern.kibon.exchange.commons.types.EinschulungTyp? limitierungTfo = null;
+		ch.dvbern.kibon.exchange.commons.types.EinschulungTyp? limitierungKita = null;
+		ch.dvbern.kibon.exchange.commons.types.Mandant? mandant = null;
+	}
+}

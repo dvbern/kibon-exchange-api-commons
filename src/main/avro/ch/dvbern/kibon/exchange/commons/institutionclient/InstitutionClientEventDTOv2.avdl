@@ -1,0 +1,11 @@
+@namespace("ch.dvbern.kibon.exchange.commons.institutionclient")
+protocol InstitutionClientEventProto {
+
+    record InstitutionClientEventDTO {
+        string institutionId;
+        string clientName;
+        string clientType;
+        date? gueltigAb = null;
+        date? gueltigBis = null;
+    }
+}

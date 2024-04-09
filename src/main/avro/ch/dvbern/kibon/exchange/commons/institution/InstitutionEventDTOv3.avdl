@@ -1,0 +1,69 @@
+@namespace("ch.dvbern.kibon.exchange.commons.institution")
+protocol InstitutionEventv3Proto {
+	import idl "../types/BetreuungsangebotTyp.avdl";
+	import idl "../types/Wochentag.avdl";
+	import idl "../types/Mandant.avdl";
+	import idl "../tagesschulen/TagesschuleModuleDTO.avdl";
+
+	record GemeindeDTOv2 {
+		string? name = null;
+		long? bfsNummer = null;
+	}
+
+	enum InstitutionStatusv2 {
+		AKTIV,
+		KONFIGURATION,
+		EINGELADEN,
+		DELETED
+	}
+
+	enum AltersKategoriev2 {
+		BABY,
+		VORSCHULE,
+		KINDERGARTEN,
+		SCHULE
+	}
+
+	@aliases(["AdresseDTO"])
+	record KontaktAngabenDTOv2 {
+		string? anschrift = null;
+		string strasse;
+		string? hausnummer = null;
+		string? adresszusatz = null;
+		string plz;
+		string ort;
+		string land;
+		GemeindeDTOv2 gemeinde = {
+			"name": null,
+			"bfsNummer": null
+			};
+		string? email = null;
+		string? telefon = null;
+		string? webseite = null;
+	}
+
+	record InstitutionEventDTOv3 {
+		string id;
+		string name;
+		string? traegerschaft = null;
+		ch.dvbern.kibon.exchange.commons.types.BetreuungsangebotTyp? betreuungsArt = null;
+		KontaktAngabenDTOv2 adresse;
+		array<KontaktAngabenDTOv2> betreuungsAdressen = [];
+		InstitutionStatusv2 status = "AKTIV";
+
+		date? betreuungsGutscheineAb = null;
+		date? betreuungsGutscheineBis = null;
+		array<ch.dvbern.kibon.exchange.commons.types.Wochentag> oeffnungsTage = [];
+		long? offenVon = null;
+		long? offenBis = null;
+		string? oeffnungsAbweichungen = null;
+		array<AltersKategoriev2> altersKategorien = [];
+		boolean subventioniertePlaetze = false;
+		decimal(19,2)? anzahlPlaetze = null;
+		decimal(19,2)? anzahlPlaetzeFirmen = null;
+		long? timestampMutiert = null;
+		union{null, array<ch.dvbern.kibon.exchange.commons.tagesschulen.TagesschuleModuleDTO>} tagesschuleModule = null;
+		decimal(19,2)? auslastungPct = null;
+		ch.dvbern.kibon.exchange.commons.types.Mandant? mandant = null;
+	}
+}

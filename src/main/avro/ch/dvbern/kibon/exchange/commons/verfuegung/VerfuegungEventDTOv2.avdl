@@ -1,0 +1,44 @@
+@namespace("ch.dvbern.kibon.exchange.commons.verfuegung")
+protocol VerfuegungEventv2Proto {
+	import idl "KindDTOv1.avdl";
+	import idl "GesuchstellerDTO.avdl";
+	import idl "../types/EinschulungTyp.avdl";
+	import idl "../types/BetreuungsangebotTyp.avdl";
+	import idl "../types/Regelwerk.avdl";
+	import idl "../types/Zeiteinheit.avdl";
+
+	record ZeitabschnittDTOv2 {
+		date von;
+		date bis;
+		int verfuegungNr;
+		decimal(19,2) effektiveBetreuungPct;
+		int anspruchPct;
+		decimal(19,2) verguenstigtPct;
+		decimal(19,2) vollkosten;
+		decimal(19,2) betreuungsgutschein;
+		decimal(19,2) minimalerElternbeitrag;
+		decimal(19,2) verguenstigung;
+		decimal(19,2) verfuegteAnzahlZeiteinheiten;
+		decimal(19,2) anspruchsberechtigteAnzahlZeiteinheiten;
+		ch.dvbern.kibon.exchange.commons.types.Zeiteinheit zeiteinheit;
+		ch.dvbern.kibon.exchange.commons.types.Regelwerk regelwerk = "ASIV";
+		boolean auszahlungAnEltern = false;
+	}
+
+	record VerfuegungEventDTOv2 {
+		ch.dvbern.kibon.exchange.commons.verfuegung.KindDTOv1 kind;
+		ch.dvbern.kibon.exchange.commons.verfuegung.GesuchstellerDTO gesuchsteller;
+		ch.dvbern.kibon.exchange.commons.types.BetreuungsangebotTyp betreuungsArt;
+		string refnr;
+		string institutionId;
+		date von;
+		date bis;
+		int version;
+		@logicalType("timestamp-micros") long verfuegtAm;
+		long gemeindeBfsNr;
+		string gemeindeName;
+		boolean auszahlungAnEltern = false;
+		array<ZeitabschnittDTOv2> zeitabschnitte = [];
+		array<ZeitabschnittDTOv2> ignorierteZeitabschnitte = [];
+	}
+}

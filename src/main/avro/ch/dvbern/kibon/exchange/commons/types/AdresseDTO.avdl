@@ -1,0 +1,25 @@
+@namespace("ch.dvbern.kibon.exchange.commons.types")
+protocol AdresseProto {
+
+	record GemeindeDTO {
+		string? name = null;
+		long? bfsNummer = null;
+	}
+
+	record AdresseDTO {
+		string? anschrift = null;
+		string strasse;
+		string? hausnummer = null;
+		string? adresszusatz = null;
+		string plz;
+		string ort;
+		string land;
+		GemeindeDTO gemeinde = {
+			"name": null,
+			"bfsNummer": null
+			};
+		string? email = null;
+		string? telefon = null;
+		string? webseite = null;
+	}
+}

@@ -1,0 +1,10 @@
+@namespace("ch.dvbern.kibon.exchange.commons.neskovanp")
+protocol NeueVeranlagungEventProto {
+
+	record NeueVeranlagungEventDTO {
+		int zpvNummer = 0;
+		date? geburtsdatum = null;
+		string kibonAntragId = "";
+		int gesuchsperiodeBeginnJahr = 0;
+	}
+}

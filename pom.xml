@@ -212,37 +212,14 @@
                         <phase>generate-sources</phase>
                         <goals>
                             <goal>schema</goal>
+                            <goal>protocol</goal>
+                            <goal>idl-protocol</goal>
                         </goals>
                         <configuration>
                             <stringType>String</stringType>
                             <enableDecimalLogicalType>true</enableDecimalLogicalType>
                             <fieldVisibility>PRIVATE</fieldVisibility>
                             <sourceDirectory>${project.basedir}/src/main/avro/</sourceDirectory>
-                            <imports>
-                                <!-- types can be referenced by other (multiple!) *.avsc files, but that requires them to be imported first -->
-                                <import>${project.basedir}/src/main/avro/ch/dvbern/kibon/exchange/commons/types/Zeiteinheit.avsc</import>
-                                <import>${project.basedir}/src/main/avro/ch/dvbern/kibon/exchange/commons/types/BetreuungsangebotType.avsc</import>
-                                <import>${project.basedir}/src/main/avro/ch/dvbern/kibon/exchange/commons/types/Wochentag.avsc</import>
-                                <import>${project.basedir}/src/main/avro/ch/dvbern/kibon/exchange/commons/types/Geschlecht.avsc</import>
-                                <import>${project.basedir}/src/main/avro/ch/dvbern/kibon/exchange/commons/types/Intervall.avsc</import>
-                                <import>${project.basedir}/src/main/avro/ch/dvbern/kibon/exchange/commons/types/AdresseDTO.avsc</import>
-                                <import>${project.basedir}/src/main/avro/ch/dvbern/kibon/exchange/commons/types/KindDTO.avsc</import>
-                                <import>${project.basedir}/src/main/avro/ch/dvbern/kibon/exchange/commons/types/GesuchstellerDTO.avsc</import>
-                                <import>${project.basedir}/src/main/avro/ch/dvbern/kibon/exchange/commons/types/EinschulungTyp.avsc</import>
-                                <import>${project.basedir}/src/main/avro/ch/dvbern/kibon/exchange/commons/types/Mandant.avsc</import>
-                                <import>${project.basedir}/src/main/avro/ch/dvbern/kibon/exchange/commons/types/Regelwerk.avsc</import>
-                                <import>${project.basedir}/src/main/avro/ch/dvbern/kibon/exchange/commons/verfuegung/KindDTO.avsc</import>
-                                <import>${project.basedir}/src/main/avro/ch/dvbern/kibon/exchange/commons/verfuegung/KindDTOv1.avsc</import>
-                                <import>${project.basedir}/src/main/avro/ch/dvbern/kibon/exchange/commons/verfuegung/GesuchstellerDTO.avsc</import>
-                                <import>${project.basedir}/src/main/avro/ch/dvbern/kibon/exchange/commons/tagesschulen/ModulAuswahlDTO.avsc</import>
-                                <import>${project.basedir}/src/main/avro/ch/dvbern/kibon/exchange/commons/tagesschulen/ModulDTO.avsc</import>
-                                <import>${project.basedir}/src/main/avro/ch/dvbern/kibon/exchange/commons/tagesschulen/TarifDTO.avsc</import>
-                                <import>${project.basedir}/src/main/avro/ch/dvbern/kibon/exchange/commons/tagesschulen/TarifZeitabschnittDTO.avsc</import>
-                                <import>${project.basedir}/src/main/avro/ch/dvbern/kibon/exchange/commons/tagesschulen/TagesschuleModuleDTO.avsc</import>
-                                <import>${project.basedir}/src/main/avro/ch/dvbern/kibon/exchange/commons/tagesschulen/TagesschuleAnmeldungTarifeDTO.avsc</import>
-                                <import>${project.basedir}/src/main/avro/ch/dvbern/kibon/exchange/commons/tagesschulen/TagesschuleAnmeldungDetailsDTO.avsc</import>
-                                <import>${project.basedir}/src/main/avro/ch/dvbern/kibon/exchange/commons/tagesschulen/TagesschuleAnmeldungStatus.avsc</import>
-                            </imports>
                         </configuration>
                     </execution>
                 </executions>

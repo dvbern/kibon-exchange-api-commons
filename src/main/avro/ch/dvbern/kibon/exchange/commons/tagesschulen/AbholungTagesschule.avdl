@@ -1,0 +1,8 @@
+@namespace("ch.dvbern.kibon.exchange.commons.tagesschulen")
+protocol AbholungTagesschuleProto {
+
+	enum AbholungTagesschule {
+		ABHOLUNG,
+		ALLEINE_NACH_HAUSE
+	}
+}

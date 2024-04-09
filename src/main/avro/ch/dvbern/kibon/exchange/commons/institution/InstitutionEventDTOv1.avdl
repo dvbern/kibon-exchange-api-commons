@@ -1,0 +1,19 @@
+@namespace("ch.dvbern.kibon.exchange.commons.institution")
+protocol InstitutionEventv1Proto {
+
+	record AdresseDTO {
+		string strasse;
+		string? hausnummer = null;
+		string? adresszusatz = null;
+		string plz;
+		string ort;
+		string land;
+	}
+
+	record InstitutionEventDTOv1 {
+		string id;
+		string name;
+		string? traegerschaft = null;
+		AdresseDTO adresse;
+	}
+}

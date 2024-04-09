@@ -1,0 +1,10 @@
+@namespace("ch.dvbern.kibon.exchange.commons.types")
+protocol BetreuungsangebotTypProto {
+
+	enum BetreuungsangebotTyp {
+		KITA,
+		TAGESSCHULE,
+		TAGESFAMILIEN,
+		FERIENINSEL
+	}
+}

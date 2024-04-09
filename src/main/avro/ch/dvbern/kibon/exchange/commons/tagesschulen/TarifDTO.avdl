@@ -1,0 +1,11 @@
+@namespace("ch.dvbern.kibon.exchange.commons.tagesschulen")
+protocol TarifProto {
+
+	record TarifDTO {
+		int betreuungsMinutenProWoche = 0;
+		decimal(19,2)? betreuungsKostenProStunde = null;
+		decimal(19,2)? verpflegungsKostenProWoche = null;
+		decimal(19,2)? verpflegungsKostenVerguenstigung = null;
+		decimal(19,2)? totalKostenProWoche = null;
+	}
+}

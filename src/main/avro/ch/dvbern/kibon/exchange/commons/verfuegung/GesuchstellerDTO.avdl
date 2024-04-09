@@ -1,0 +1,9 @@
+@namespace("ch.dvbern.kibon.exchange.commons.verfuegung")
+protocol GesuchstellerProto {
+
+	record GesuchstellerDTO {
+        string vorname;
+        string nachname;
+        string? email = null;
+    }
+}

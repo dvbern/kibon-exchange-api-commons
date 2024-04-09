@@ -1,0 +1,52 @@
+@namespace("ch.dvbern.kibon.exchange.commons.verfuegung")
+protocol VerfuegungEventProto {
+	import idl "KindDTO.avdl";
+	import idl "GesuchstellerDTO.avdl";
+	import idl "../types/EinschulungTyp.avdl";
+	import idl "../types/BetreuungsangebotTyp.avdl";
+	import idl "../types/Regelwerk.avdl";
+	import idl "../types/Zeiteinheit.avdl";
+	import idl "../types/Mandant.avdl";
+
+	record ZeitabschnittDTO {
+		date von;
+		date bis;
+		int verfuegungNr;
+		decimal(19,2) effektiveBetreuungPct;
+		int anspruchPct;
+		decimal(19,2) verguenstigtPct;
+		decimal(19,2) vollkosten;
+		decimal(19,2) betreuungsgutschein;
+		decimal(19,2) minimalerElternbeitrag;
+		decimal(19,2) verguenstigung;
+		decimal(19,2) verfuegteAnzahlZeiteinheiten;
+		decimal(19,2) anspruchsberechtigteAnzahlZeiteinheiten;
+		ch.dvbern.kibon.exchange.commons.types.Zeiteinheit zeiteinheit;
+		ch.dvbern.kibon.exchange.commons.types.Regelwerk regelwerk = "ASIV";
+		boolean auszahlungAnEltern = false;
+		boolean besondereBeduerfnisse = false;
+		decimal(19,2)? massgebendesEinkommen = null;
+		decimal(19,2)? betreuungsgutscheinKanton = null;
+		boolean babyTarif = false;
+		decimal(19,2)? betreuungspensumZeiteinheit = null;
+		decimal(19,2)? elternbeitrag = null;
+	}
+
+	record VerfuegungEventDTO {
+		ch.dvbern.kibon.exchange.commons.verfuegung.KindDTO kind;
+		ch.dvbern.kibon.exchange.commons.verfuegung.GesuchstellerDTO gesuchsteller;
+		ch.dvbern.kibon.exchange.commons.types.BetreuungsangebotTyp betreuungsArt;
+		string refnr;
+		string institutionId;
+		date von;
+		date bis;
+		int version;
+		@logicalType("timestamp-micros") long verfuegtAm;
+		long gemeindeBfsNr;
+		string gemeindeName;
+		boolean auszahlungAnEltern = false;
+		array<ZeitabschnittDTO> zeitabschnitte = [];
+		array<ZeitabschnittDTO> ignorierteZeitabschnitte = [];
+		ch.dvbern.kibon.exchange.commons.types.Mandant? mandant = null;
+	}
+}
