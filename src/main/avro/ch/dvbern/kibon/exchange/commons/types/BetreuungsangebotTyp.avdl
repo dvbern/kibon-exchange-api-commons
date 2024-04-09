@@ -5,6 +5,8 @@ protocol BetreuungsangebotTypProto {
 		KITA,
 		TAGESSCHULE,
 		TAGESFAMILIEN,
-		FERIENINSEL
-	}
+		FERIENINSEL,
+		MITTAGSTISCH,
+		UNKNOWN
+	} = UNKNOWN;
 }
