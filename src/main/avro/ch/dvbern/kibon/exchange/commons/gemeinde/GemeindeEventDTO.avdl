@@ -1,0 +1,16 @@
+@namespace("ch.dvbern.kibon.exchange.commons.gemeinde")
+protocol GemeindeEventProto {
+	import idl "../types/Mandant.avdl";
+
+	record GemeindeEventDTO {
+		string gemeindeUUID = "";
+		string name = "";
+		date? betreuungsgutscheineAnbietenAb = null;
+		date? gueltigBis = null;
+		long bfsNummer = 0;
+		ch.dvbern.kibon.exchange.commons.types.Mandant? mandant = null;
+		boolean angebotBG = false;
+		boolean angebotTS = false;
+		boolean angebotFI = false;
+	}
+}

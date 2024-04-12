@@ -1,0 +1,35 @@
+@namespace("ch.dvbern.kibon.exchange.commons.platzbestaetigung")
+protocol BetreuungEventProto {
+	import idl "../types/Zeiteinheit.avdl";
+
+	record ZeitabschnittDTO {
+		decimal(19,2) betreuungskosten;
+		decimal(19,2) betreuungspensum;
+		date von;
+		date bis;
+		ch.dvbern.kibon.exchange.commons.types.Zeiteinheit pensumUnit;
+		decimal(19,2)? anzahlHauptmahlzeiten = null;
+		decimal(19,2)? anzahlNebenmahlzeiten = null;
+		decimal(19,2)? tarifProHauptmahlzeiten = null;
+		decimal(19,2)? tarifProNebenmahlzeiten = null;
+		EingewoehnungDTO? eingewoehnung = null;
+		boolean? betreuungInFerienzeit = false;
+	}
+
+	record EingewoehnungDTO {
+		decimal(19,2)? pauschale = null;
+		date? von = null;
+		date? bis = null;
+	}
+
+	record BetreuungEventDTO {
+		string institutionId;
+		string refnr;
+		array<ZeitabschnittDTO> zeitabschnitte = [];
+		long? gemeindeBfsNr = null;
+		string? gemeindeName = null;
+		boolean ausserordentlicherBetreuungsaufwand = false;
+		boolean eingewoehnungInPeriode = false;
+		boolean? sprachfoerderungBestaetigt = null;
+	}
+}

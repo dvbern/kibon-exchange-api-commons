@@ -1,0 +1,17 @@
+@namespace("ch.dvbern.kibon.exchange.commons.types")
+protocol GesuchstellerProto {
+	import idl "Geschlecht.avdl";
+	import idl "AdresseDTO.avdl";
+
+	record GesuchstellerDTO {
+		string vorname;
+		string nachname;
+		string? email = null;
+		Geschlecht? geschlecht = null;
+		date? geburtsdatum = null;
+		AdresseDTO? adresse = null;
+		string? mobile = null;
+		string? telefon = null;
+		string? telefonAusland = null;
+	}
+}

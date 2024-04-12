@@ -1,0 +1,16 @@
+@namespace("ch.dvbern.kibon.exchange.commons.tagesschulen")
+protocol TagesschuleAnmeldungDetailsProto {
+	import idl "ModulAuswahlDTO.avdl";
+	import idl "AbholungTagesschule.avdl";
+
+
+	record TagesschuleAnmeldungDetailsDTO {
+		string refnr;
+		date eintrittsdatum;
+		string? planKlasse = null;
+		AbholungTagesschule? abholung = null;
+		boolean abweichungZweitesSemester;
+		string? bemerkung = null;
+		array<ModulAuswahlDTO> module = [];
+	}
+}

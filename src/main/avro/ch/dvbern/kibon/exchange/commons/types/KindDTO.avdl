@@ -1,0 +1,12 @@
+@namespace("ch.dvbern.kibon.exchange.commons.types")
+protocol KindProto {
+	import idl "Geschlecht.avdl";
+
+	record KindDTO {
+		string vorname;
+		string nachname;
+		date geburtsdatum;
+		Geschlecht? geschlecht = null;
+	}
+}
+

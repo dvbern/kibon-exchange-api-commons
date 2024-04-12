@@ -1,0 +1,12 @@
+@namespace("ch.dvbern.kibon.exchange.commons.tagesschulen")
+protocol ModulAuswahlProto {
+	import idl "../types/Wochentag.avdl";
+	import idl "../types/Intervall.avdl";
+
+	record ModulAuswahlDTO {
+		string? modulId = null;
+		ch.dvbern.kibon.exchange.commons.types.Wochentag? wochentag = null;
+		ch.dvbern.kibon.exchange.commons.types.Intervall? intervall = null;
+		string? fremdId = null;
+	}
+}

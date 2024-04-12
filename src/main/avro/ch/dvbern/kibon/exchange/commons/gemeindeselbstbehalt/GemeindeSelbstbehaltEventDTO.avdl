@@ -1,0 +1,8 @@
+@namespace("ch.dvbern.kibon.exchange.commons.verfuegungselbstbehaltgemeinde")
+protocol GemeindeSelbstbehaltEventProto {
+
+	record GemeindeSelbstbehaltEventDTO {
+        string refnr;
+        boolean keinSelbstbehaltDurchGemeinde = false;
+    }
+}

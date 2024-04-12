@@ -1,0 +1,17 @@
+@namespace("ch.dvbern.kibon.exchange.commons.verfuegung")
+protocol KindProto {
+	import idl "../types/EinschulungTyp.avdl";
+
+	record KindDTO {
+		string vorname;
+		string nachname;
+		date geburtsdatum;
+		ch.dvbern.kibon.exchange.commons.types.EinschulungTyp? einschulungTyp = null;
+		boolean sozialeIndikation = false;
+		boolean sprachlicheIndikation = false;
+		boolean sprichtMuttersprache = false;
+		boolean ausserordentlicherAnspruch = false;
+		boolean kindAusAsylwesenAngabeElternGemeinde = false;
+		boolean keinSelbstbehaltDurchGemeinde = false;
+	}
+}

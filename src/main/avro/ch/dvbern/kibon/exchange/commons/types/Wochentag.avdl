@@ -1,0 +1,13 @@
+@namespace("ch.dvbern.kibon.exchange.commons.types")
+protocol WochentagProto {
+
+	enum Wochentag {
+		MONDAY,
+		TUESDAY,
+		WEDNESDAY,
+		THURSDAY,
+		FRIDAY,
+		SATURDAY,
+		SUNDAY
+	}
+}

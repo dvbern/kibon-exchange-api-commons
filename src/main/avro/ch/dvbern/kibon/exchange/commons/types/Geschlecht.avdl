@@ -1,0 +1,8 @@
+@namespace("ch.dvbern.kibon.exchange.commons.types")
+protocol GeschlechtProto {
+
+	enum Geschlecht {
+		WEIBLICH,
+		MAENNLICH
+	}
+}

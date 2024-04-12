@@ -1,0 +1,12 @@
+@namespace("ch.dvbern.kibon.exchange.commons.types")
+protocol MandantProto {
+
+	enum Mandant {
+		BERN,
+		LUZERN,
+		SOLOTHURN,
+		APPENZELL_AUSSERRHODEN,
+		SCHWYZ,
+		UNKNOWN
+	} = UNKNOWN;
+}

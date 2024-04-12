@@ -1,0 +1,9 @@
+@namespace("ch.dvbern.kibon.exchange.commons.types")
+protocol ZeiteinheitProto {
+
+	enum Zeiteinheit {
+		DAYS,
+		HOURS,
+		PERCENTAGE
+	}
+}

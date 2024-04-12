@@ -1,0 +1,10 @@
+@namespace("ch.dvbern.kibon.exchange.commons.tagesschulen")
+protocol TagesschuleAnmeldungTarifProto {
+	import idl "ModulAuswahlDTO.avdl";
+	import idl "TarifZeitabschnittDTO.avdl";
+
+	record TagesschuleAnmeldungTarifeDTO {
+		array<TarifZeitabschnittDTO> tarifZeitabschnitte = [];
+		boolean tarifeDefinitivAkzeptiert = false;
+	}
+}

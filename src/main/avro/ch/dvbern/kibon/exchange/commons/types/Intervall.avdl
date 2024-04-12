@@ -1,0 +1,8 @@
+@namespace("ch.dvbern.kibon.exchange.commons.types")
+protocol IntervallProto {
+
+	enum Intervall {
+		WOECHENTLICH,
+		ALLE_ZWEI_WOCHEN
+	}
+}

@@ -1,0 +1,18 @@
+@namespace("ch.dvbern.kibon.exchange.commons.tagesschulen")
+protocol ModulProto {
+	import idl "../types/Wochentag.avdl";
+	import idl "../types/Intervall.avdl";
+
+	record ModulDTO {
+		string id;
+		string bezeichnungDE = "";
+		string bezeichnungFR = "";
+		long? zeitVon = null;
+		long? zeitBis = null;
+		array<ch.dvbern.kibon.exchange.commons.types.Wochentag> wochentage = [];
+		array<ch.dvbern.kibon.exchange.commons.types.Intervall> erlaubteIntervalle = ["WOECHENTLICH"];
+		boolean wirdPaedagogischBetreut = true;
+		decimal(19,2)? verpflegungsKosten = null;
+		string? fremdId = null;
+	}
+}

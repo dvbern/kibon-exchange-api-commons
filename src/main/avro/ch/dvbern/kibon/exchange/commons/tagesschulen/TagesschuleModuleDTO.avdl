@@ -1,0 +1,10 @@
+@namespace("ch.dvbern.kibon.exchange.commons.tagesschulen")
+protocol TagesschuleModuleProto {
+	import idl "ModulDTO.avdl";
+
+	record TagesschuleModuleDTO {
+		date? periodeVon = null;
+		date? periodeBis = null;
+		array<ModulDTO> module = [];
+	}
+}

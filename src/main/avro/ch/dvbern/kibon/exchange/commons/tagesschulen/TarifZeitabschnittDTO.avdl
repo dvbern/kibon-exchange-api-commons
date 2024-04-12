@@ -1,0 +1,13 @@
+@namespace("ch.dvbern.kibon.exchange.commons.tagesschulen")
+protocol TarifZeitabschnittProto {
+	import idl "TarifDTO.avdl";
+
+	record TarifZeitabschnittDTO {
+		date? von = null;
+		date? bis = null;
+		decimal(19,2)? massgebendesEinkommen = null;
+		decimal(19,2)? familienGroesse = null;
+		TarifDTO? tarifPaedagogisch = null;
+		TarifDTO? tarifNichtPaedagogisch = null;
+	}
+}
