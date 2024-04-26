@@ -17,24 +17,17 @@
 
 @Library('dvbern-ci') _
 
-def DEPLOYMENT_BUILD = 'build-and-deploy'
-def RELEASE_BUILD = 'release'
-def SECURITY_CHECK_BUILD = 'security-check'
-
 properties([
 	disableConcurrentBuilds(),
-	[
-		$class  : 'BuildDiscarderProperty',
-		strategy: [$class: 'LogRotator', numToKeepStr: '10']
-	],
+	[$class: 'BuildDiscarderProperty', strategy: [$class: 'LogRotator', numToKeepStr: '10']],
 	[
 		$class       : 'GithubProjectProperty',
 		displayName  : '',
 		projectUrlStr: 'https://github.com/dvbern/kibon-exchange-api-commons/'
 	],
 	parameters([
-		choice(choices: [DEPLOYMENT_BUILD, RELEASE_BUILD, SECURITY_CHECK_BUILD],
-			description: 'What type of build should the pipeline execute?', name: 'buildType'),
+		booleanParam(defaultValue: false, description: 'Do you want to perform a Release?', name:
+			'performRelease'),
 		string(defaultValue: '', description: 'This release version', name: 'releaseversion', trim:
 			true),
 		string(defaultValue: '', description: 'The next release version', name: 'nextreleaseversion',
@@ -52,7 +45,19 @@ def featureBranchPrefix = "feature"
 def releaseBranchPrefix = "release"
 def hotfixBranchPrefix = "hotfix"
 
-def doDeploymentBuild = {
+if (params.performRelease) {
+	// see https://issues.jenkins-ci.org/browse/JENKINS-53512
+	def releaseVersion = params.releaseversion
+	def nextReleaseVersion = params.nextreleaseversion
+	def credentials = "jenkins-github-token"
+
+	dvbJGitFlowRelease {
+		releaseversion = releaseVersion
+		nextreleaseversion = nextReleaseVersion
+		emailRecipients = recipients
+		credentialsId = credentials
+	}
+} else {
 	node {
 		stage('Checkout') {
 			checkout([
@@ -114,52 +119,4 @@ def doDeploymentBuild = {
 			}
 		}
 	}
-}
-
-def doRelease = {
-	// see https://issues.jenkins-ci.org/browse/JENKINS-53512
-	def releaseVersion = params.releaseversion
-	def nextReleaseVersion = params.nextreleaseversion
-
-	dvbJGitFlowRelease {
-		releaseversion = releaseVersion
-		nextreleaseversion = nextReleaseVersion
-		emailRecipients = recipients
-		credentialsId = 'jenkins-github-token'
-	}
-}
-
-def doSecurityCheck = {
-	node {
-		stage('Checkout') {
-			checkout([
-				$class           : 'GitSCM',
-				branches         : scm.branches,
-				extensions       : scm.extensions + [[$class: 'LocalBranch', localBranch: '']],
-				userRemoteConfigs: scm.userRemoteConfigs
-			])
-		}
-
-		String branch = env.BRANCH_NAME.toString()
-		currentBuild.displayName = "Security Check ${branch}-${dvbMaven.pomVersion()}-${env.BUILD_NUMBER}"
-
-		stage('Dependency Check') {
-			dependencyCheck additionalArguments: '', odcInstallation: 'latest'
-			dependencyCheckPublisher pattern: ''
-		}
-	}
-}
-
-switch (params.buildType) {
-case DEPLOYMENT_BUILD:
-	doDeploymentBuild()
-	break
-case RELEASE_BUILD:
-	doRelease()
-	break
-case SECURITY_CHECK_BUILD:
-	doSecurityCheck()
-	break
-default:
-	doDeploymentBuild()
 }

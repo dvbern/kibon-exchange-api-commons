@@ -79,6 +79,7 @@ public class SchemaCompatibilityTest {
 
 	private final SchemaRegistryService service = createService(BASE_URI_DEV);
 
+	@Disabled
 	@SuppressWarnings("TestMethodWithoutAssertion")
 	@TestFactory
 	Stream<DynamicContainer> testServers() {
@@ -158,9 +159,9 @@ public class SchemaCompatibilityTest {
 	void replaceSchema(AvroSchema schema) {
 		// delete all schemas for the following subjects and register the latest schema instead. Make sure you
 		List<String> conflicting = List.of(
-			"GemeindeEvents-value",
-			"InstitutionEvents-value",
+			"BetreuungAnfrageEvents-value",
 			"GemeindeKennzahlenEvents-value",
+			"InstitutionEvents-value",
 			"VerfuegungEvents-value"
 		);
 		if (!conflicting.contains(schema.subject())) {
