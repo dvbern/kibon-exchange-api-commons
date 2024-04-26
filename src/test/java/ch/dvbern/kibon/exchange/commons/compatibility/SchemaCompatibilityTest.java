@@ -159,6 +159,7 @@ public class SchemaCompatibilityTest {
 		// delete all schemas for the following subjects and register the latest schema instead. Make sure you
 		List<String> conflicting = List.of(
 			"BetreuungAnfrageEvents-value",
+			"GemeindeKennzahlenEvents-value",
 			"InstitutionEvents-value",
 			"VerfuegungEvents-value"
 		);
