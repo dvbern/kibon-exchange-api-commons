@@ -18,7 +18,7 @@ protocol BetreuungEventProto {
 	}
 
 	record EingewoehnungDTO {
-		decimal(19,2)? pauschale = null;
+		decimal(19,2)? @aliases(["pauschale"]) kosten = null;
 		date? von = null;
 		date? bis = null;
 	}
