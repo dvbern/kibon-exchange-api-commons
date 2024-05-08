@@ -79,7 +79,6 @@ public class SchemaCompatibilityTest {
 
 	private final SchemaRegistryService service = createService(BASE_URI_DEV);
 
-	@Disabled
 	@SuppressWarnings("TestMethodWithoutAssertion")
 	@TestFactory
 	Stream<DynamicContainer> testServers() {
