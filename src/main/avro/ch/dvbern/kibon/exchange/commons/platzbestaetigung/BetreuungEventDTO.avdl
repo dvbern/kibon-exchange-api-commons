@@ -14,6 +14,7 @@ protocol BetreuungEventProto {
 		decimal(19,2)? tarifProNebenmahlzeiten = null;
 		EingewoehnungDTO? eingewoehnung = null;
 		boolean? betreuungInFerienzeit = false;
+		decimal(19,2)? betreuuteTage = null;
 	}
 
 	record EingewoehnungDTO {
