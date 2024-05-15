@@ -208,7 +208,7 @@ public class SchemaCompatibilityTest {
 			new AvroSchema("GemeindeEvents-value", GemeindeEventDTO.SCHEMA$),
 			new AvroSchema("AnmeldungEvents-value", TagesschuleAnmeldungEventDTO.SCHEMA$),
 			new AvroSchema("GemeindeKennzahlenEvents-value", GemeindeKennzahlenEventDTO.SCHEMA$),
-			new AvroSchema("GemeindeSelbstbehaltEvtens-value", GemeindeSelbstbehaltEventDTO.SCHEMA$)
+			new AvroSchema("GemeindeSelbstbehaltEvents-value", GemeindeSelbstbehaltEventDTO.SCHEMA$)
 		);
 	}
 
