@@ -7,6 +7,7 @@ protocol MandantProto {
 		SOLOTHURN,
 		APPENZELL_AUSSERRHODEN,
 		SCHWYZ,
+		ZUG,
 		UNKNOWN
 	} = UNKNOWN;
 }
