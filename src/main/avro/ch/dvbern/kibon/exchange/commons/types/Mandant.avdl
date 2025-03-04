@@ -8,6 +8,7 @@ protocol MandantProto {
 		APPENZELL_AUSSERRHODEN,
 		SCHWYZ,
 		ZUG,
+		DVB,
 		UNKNOWN
 	} = UNKNOWN;
 }
